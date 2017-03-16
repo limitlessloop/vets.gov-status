@@ -1,6 +1,6 @@
 ---
 title: Education Benefits
-date_added: 2016-03-05 00:00:00 -0500
+date_added: 2017-03-05 00:00:00 -0500
 vetsdotgov_url: https://www.vets.gov/education/apply-for-education-benefits/application/1995
 status: normal
 category: Manage
