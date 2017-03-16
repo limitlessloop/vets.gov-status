@@ -8,10 +8,20 @@ description: Veterans can manage eduction benefits online using any mobile devic
 screenshot: edumanage
 tiles:
 
+  - name: Increased security
+    layout: icon
+    icon: lock
+    text: Mitigated security issues with legacy site
+
   - name: Online applications submitted
     layout: basic
-    datapoint: "50"
+    datapoint: "1526"
     context: since public launch in March 2017
+
+  - name: Improved user experience
+    layout: icon
+    icon: heart-empty
+    text: Used human centered design to improve Veteran experience
 
 charts: 1995
 ---
