@@ -1,5 +1,4 @@
 # Vets.gov Executive Scorecard
-[![Build Status](https://dev.vets.gov/jenkins/buildStatus/icon?job=department-of-veterans-affairs/vets.gov-status/master)](http://jenkins.vetsgov-internal/job/department-of-veterans-affairs/job/vets.gov-status/job/master/)
 
 > A scorecard for vets.gov projects
 
