@@ -14,9 +14,9 @@ tiles:
     context: since public launch in March 2017
 
   - name: Application volume transitioned
-    layout: pie
-    datapoint: 69
-    context: Proportion of last year's submissions now on vets.gov
+    layout: basic
+    datapoint: "69%"
+    context: proportion of last year's submissions now on vets.gov
 
   - name: Improved user experience
     layout: icon
