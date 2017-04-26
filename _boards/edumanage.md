@@ -8,15 +8,15 @@ description: Veterans can manage eduction benefits online using any mobile devic
 screenshot: edumanage
 tiles:
 
-  - name: Increased security
-    layout: icon
-    icon: lock
-    text: Mitigated security issues with legacy site
-
   - name: Online applications submitted
     layout: basic
-    datapoint: "12,640"
+    datapoint: "15,702"
     context: since public launch in March 2017
+
+  - name: Application volume transitioned
+    layout: basic
+    datapoint: "69%"
+    context: proportion of last year's submissions now on vets.gov
 
   - name: Improved user experience
     layout: icon
