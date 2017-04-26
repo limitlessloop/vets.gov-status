@@ -27,7 +27,7 @@ def run_reports():
     weekly_df = weekly_df.reset_index()
     weekly_df['day'] = weekly_df['week'].apply(lambda x: week_to_day.loc[x,'day'])
 
-    print(weekly_df)
+#    print(weekly_df)
     output_csv(weekly_df, "../_data/core_signups.csv")
 
     total_df = get_df("../_data/core_signupstotal.csv")
@@ -35,7 +35,7 @@ def run_reports():
     total_df = total_df.groupby('week').max()
 
 
-    print(total_df)
+ #   print(total_df)
     output_csv(total_df, "../_data/core_signupstotal.csv")
 
 def output_csv(df, csv):
