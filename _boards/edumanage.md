@@ -14,9 +14,9 @@ tiles:
     text: Mitigated security issues with legacy site
 
   - name: Online applications submitted
-      layout: basic
-      datapoint: "15,702"
-      context: since public launch in March 2017
+    layout: basic
+    datapoint: "15,702"
+    context: since public launch in March 2017
 
   - name: Improved user experience
     layout: icon
