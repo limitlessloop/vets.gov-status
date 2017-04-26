@@ -1,6 +1,6 @@
 ---
-title: Veteran's Education Application
-date_added:
+title: Education Application
+date_added: 2016-11-11 00:00:00 -0500
 vetsdotgov_url: https://www.vets.gov/education/apply-for-education-benefits/
 status: normal
 category: Apply
@@ -8,20 +8,15 @@ description: Veterans can apply for eduction benefits online using any mobile de
 screenshot: eduapply
 tiles:
 
-  - name: Online applications for education benefits submitted
+  - name: Online applications submitted
     layout: basic
     datapoint: "100,644"
-    context: since public launch in November 2016 (Form 22-1990)
+    context: since public launch in November 2016
 
-  - name: Online applications for Veterans in the National Call to Service programs
+  - name: Online applications for dependents to get transferred benefits
     layout: basic
-    datapoint: "N/A"
-    context: Coming soon in May 2017 (Form 22-1990N)
-
-  - name: Improved user experience
-    layout: icon
-    icon: heart-empty
-    text: Used human centered design to improve Veteran experience
+    datapoint: "1,090"
+    context: since public launch in April 2017
 
 charts: 1990
 ---
