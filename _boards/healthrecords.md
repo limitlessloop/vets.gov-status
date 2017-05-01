@@ -4,7 +4,7 @@ date_added:
 vetsdotgov_url:
 status: progress
 category: Manage
-description: Electronic health records
+description: Veterans can view and download their electronic health records
 screenshot: placeholder
 tiles:
 
