@@ -15,8 +15,8 @@ tiles:
 
   - name: Online applications for Veterans in the National Call to Service programs
     layout: basic
-    datapoint: "Coming Soon"
-    context: in May 2017 (Form 22-1990N)
+    datapoint: "N/A"
+    context: coming soon in May 2017 (Form 22-1990N)
 
   - name: Improved user experience
     layout: icon
