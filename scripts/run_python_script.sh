@@ -13,8 +13,8 @@ bin/pip3 install wheel
 bin/pip3 install -r requirements.txt
 
 export GA_SERVICEACCOUNT=serviceaccount.p12
-export PROMETHEUS_API_SITE=http://prometheus-prod.vetsgov-internal:9090/api/v1
-export PROMETHEUS_API_UTILITY=http://prometheus-utility.vetsgov-internal:9090/api/v1
+export PROMETHEUS_API_SITE=http://prometheus-prod.vetsgov-internal:9090/prometheus/api/v1
+export PROMETHEUS_API_UTILITY=http://prometheus-utility.vetsgov-internal:9090/prometheus/api/v1
 
 
 bin/python3 update_data.py
