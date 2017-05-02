@@ -15,8 +15,8 @@ tiles:
 
   - name: Online applications to change schools for dependents in special circumstances submitted
     layout: basic
-    datapoint: "Coming Soon"
-    context: in May 2017 (Form 22-5495 for Dependents receiving benefits based on the Veteran's status)
+    datapoint: "N/A"
+    context: coming soon in May 2017 (Form 22-5495 for Dependents receiving benefits based on the Veteran's status)
 
   - name: Application volume transitioned
     layout: basic
