@@ -2,6 +2,7 @@
 
 import datetime
 import json
+import os
 
 from apiclient.discovery import build
 from oauth2client.service_account import ServiceAccountCredentials
@@ -14,7 +15,7 @@ import pandas as pd
 
 SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
 DISCOVERY_URI = ('https://analyticsreporting.googleapis.com/$discovery/rest')
-KEY_FILE_LOCATION = 'serviceaccount.p12'
+KEY_FILE_LOCATION = os.environ['GA_SERVICEACCOUNT']
 SERVICE_ACCOUNT_EMAIL = 'analytics@inductive-voice-142915.iam.gserviceaccount.com'
 
 
@@ -71,7 +72,7 @@ def get_reports(analytics, view_id, page_filter):
                         "filters": [
                             {
                               "dimensionName": "ga:pagePath",
-                              "operator": "BEGINS_WITH",
+                              "operator": "REGEXP",
                               "expressions": page_filter
                             }
                             ]}],
@@ -87,7 +88,7 @@ def get_reports(analytics, view_id, page_filter):
                        "filters": [
                            {
                              "dimensionName": "ga:pagePath",
-                             "operator": "BEGINS_WITH",
+                             "operator": "REGEXP",
                              "expressions": page_filter
                            }
                            ]}],
@@ -102,7 +103,7 @@ def get_reports(analytics, view_id, page_filter):
                        "filters": [
                            {
                              "dimensionName": "ga:pagePath",
-                             "operator": "BEGINS_WITH",
+                             "operator": "REGEXP",
                              "expressions": page_filter
                            }
                            ]}],
