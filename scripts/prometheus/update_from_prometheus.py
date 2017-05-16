@@ -1,9 +1,8 @@
-import code
 import datetime
 import os
+
 import pandas as pd
 import requests
-
 import ruamel.yaml as yaml
 
 PROXY_CONFIG    = {
