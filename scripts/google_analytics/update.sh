@@ -2,11 +2,13 @@
 
 # Meant to be invoked from scripts directory one level up
 
+echo "$PWD" "$CWD"
+
 # Create a virtual environment to run our script in to prevent any package version conflicts
 python3 -m venv update_data
 
 # move our scripts over into the venv
-cp -r google_analyics/* update_data/
+cp -r google_analytics/ update_data/
 
 cd update_data
 
