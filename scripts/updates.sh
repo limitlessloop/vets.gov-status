@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-echo "$DATA_DIR"
+cd scripts
 
 for SUBDIR in  */; do
-	echo "$SUBDIR"
+	echo "${SUBDIR}/update.sh"
+	${SUBDIR}/update.sh
 done

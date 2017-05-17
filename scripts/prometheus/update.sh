@@ -19,7 +19,7 @@ export PROMETHEUS_API_UTILITY=http://prometheus-utility.vetsgov-internal:9090/pr
 
 bin/python3 update_from_prometheus.py
 
-mv *.yml ../../_data
+mv *.yml $DATA_DIR
 
 cd ..
 

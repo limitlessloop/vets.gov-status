@@ -17,8 +17,8 @@ def find_sunday():
     days_after_sunday = datetime.timedelta(days=today.isoweekday())
     return today - days_after_sunday
 
-def run_reports():
-    df = get_df("../../_data/core_signups.csv")
+def run_reports(data_dir):
+    df = get_df(os.path.join(data_dir, "core_signups.csv"))
 
     week_to_day = df.reset_index()
     week_to_day = week_to_day[['day','week']].groupby('week').agg('max')
@@ -28,15 +28,15 @@ def run_reports():
     weekly_df['day'] = weekly_df['week'].apply(lambda x: week_to_day.loc[x,'day'])
 
 #    print(weekly_df)
-    output_csv(weekly_df, "../../_data/core_signups.csv")
+    output_csv(weekly_df, os.path.join(data_dir, "core_signups.csv"))
 
-    total_df = get_df("../../_data/core_signupstotal.csv")
+    total_df = get_df(os.path.join(data_dir, "core_signupstotal.csv"))
     total_df = total_df.reset_index()
     total_df = total_df.groupby('week').max()
 
 
  #   print(total_df)
-    output_csv(total_df, "../../_data/core_signupstotal.csv")
+    output_csv(total_df, os.path.join(data_dir, "core_signupstotal.csv"))
 
 def output_csv(df, csv):
     df = df.set_index('day')
@@ -61,7 +61,7 @@ def filter_timerange(df):
     return df[startDate:endDate]
 
 def main():
-    run_reports()
+    run_reports(os.environ['DATA_DIR'])
 
 if __name__ == '__main__':
     main()

@@ -2,7 +2,7 @@
 
 # Meant to be invoked from scripts directory one level up
 
-echo "$PWD" "$CWD"
+echo "$PWD" "$DATA_DIR"
 
 # Create a virtual environment to run our script in to prevent any package version conflicts
 python3 -m venv update_data
@@ -20,7 +20,7 @@ export GA_SERVICEACCOUNT=serviceaccount.p12
 
 bin/python3 update_data.py
 
-mv *.csv ../../_data
+mv *.csv $DATA_DIR
 
 cd ..
 

@@ -16,7 +16,7 @@ bin/pip3 install -r requirements.txt
 
 bin/python3 weekly_account_rollup.py
 
-mv *.csv ../../_data
+mv *.csv $DATA_DIR
 
 cd ..
 
