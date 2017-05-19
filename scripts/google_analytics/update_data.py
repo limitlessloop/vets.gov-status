@@ -112,6 +112,46 @@ def get_reports(analytics, view_id, page_filter):
         }
     ).execute()
 
+def get_clicks_reports(analytics, view_id):
+    """Use the Analytics Service Object to query Analytics Reporting API.
+
+    Pulls data from the prior full Sunday to 20 full weeks prior
+    """
+    startDate = (find_sunday() - datetime.timedelta(days=139)).isoformat()
+    endDate = find_sunday().isoformat()
+
+    return analytics.reports().batchGet(
+        body={
+            'reportRequests': [{
+                    'viewId': view_id,
+                    'dateRanges': [{'startDate': startDate,
+                                    'endDate': endDate}],
+                    'metrics': [{'expression': 'ga:totalEvents'}],
+                    'dimensions': [{'name': 'ga:isoYearIsoWeek'}],
+                    "dimensionFilterClauses": [{
+                        "operator": "OR",
+                        "filters": [
+                            {
+                              "dimensionName": "ga:eventLabel",
+                              "operator": "PARTIAL",
+                              "expressions": "veteranscrisisline"
+                            },
+                            {
+                              "dimensionName": "ga:eventLabel",
+                              "operator": "PARTIAL",
+                              "expressions": "sms:838255"
+                            },
+                            {
+                              "dimensionName": "ga:eventLabel",
+                              "operator": "PARTIAL",
+                              "expressions": "tel:18002738255"
+                            },
+                            ]}],
+                    "includeEmptyRows": "true",
+                }
+                ]
+        }
+    ).execute()
 
 def make_df(report):
     """Turn a single report from a Google Analytics response into dataframe"""
@@ -200,15 +240,33 @@ def run_reports(analytics, board, view_id, page_filter=""):
     pageviews_df = make_df(response['reports'][2])
     output_pageviews(pageviews_df, board)
 
+def run_click_reports(analytics, board, view_id):
+    response = get_reports(analytics, view_id)
+    vcl_df = make_df(response['reports'][0])
+    output_clicks(vcl_df, board)
+
+def output_clicks(df, board):
+    """Output a csv from dataframe contents."""
+
+    df.columns = ["all"]
+    filename = "{}_clicks.csv".format(board)
+    df.to_csv(filename, date_format="%m/%d/%y")
+
 def main():
     analytics = initialize_analyticsreporting()
 
-    with open('filtered.json') as json_data_file:
-        boards = json.load(json_data_file)['charts']
+    with open('config.json') as json_data_file:
+        config = json.load(json_data_file)
+        boards = config['charts']
+        clicks = config['clicks']
 
     for board in boards:
         details = boards[board]
         run_reports(analytics, board, details['view'], details['page_filter'])
+
+    for click in clicks:
+        details = clicks[click]
+        run_click_reports(analytics, click, details['view'])
 
 
 if __name__ == '__main__':

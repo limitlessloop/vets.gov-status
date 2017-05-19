@@ -19,7 +19,6 @@ bin/pip3 install -r requirements.txt
 export GA_SERVICEACCOUNT=serviceaccount.p12
 
 bin/python3 update_data.py
-bin/python3 update_clicks.py
 
 mv *.csv $DATA_DIR
 
