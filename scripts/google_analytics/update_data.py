@@ -112,7 +112,7 @@ def get_reports(analytics, view_id, page_filter):
         }
     ).execute()
 
-def get_clicks_reports(analytics, view_id):
+def get_click_reports(analytics, view_id):
     """Use the Analytics Service Object to query Analytics Reporting API.
 
     Pulls data from the prior full Sunday to 20 full weeks prior
@@ -241,7 +241,7 @@ def run_reports(analytics, board, view_id, page_filter=""):
     output_pageviews(pageviews_df, board)
 
 def run_click_reports(analytics, board, view_id):
-    response = get_reports(analytics, view_id)
+    response = get_click_reports(analytics, view_id)
     vcl_df = make_df(response['reports'][0])
     output_clicks(vcl_df, board)
 
