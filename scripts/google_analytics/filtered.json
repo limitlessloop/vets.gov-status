@@ -14,35 +14,35 @@
       },
       "core": {
         "view": "111433053",
-        "page_filter": ""
+        "page_filter": ".*"
       },
       "hca": {
         "view": "123860701",
-        "page_filter": ""
+        "page_filter": ".*"
       },
       "gibct": {
         "view": "111454100",
-        "page_filter": ""
+        "page_filter": ".*"
       },
       "vec":{
         "view" : "84936422",
-        "page_filter": ""
+        "page_filter": ".*"
       },
       "facility": {
         "view": "130690170",
-        "page_filter": ""
+        "page_filter": ".*"
       },
       "claims": {
         "view": "132929836",
-        "page_filter": ""
+        "page_filter": ".*"
       },
       "rx": {
         "view": "132496709",
-        "page_filter": ""
+        "page_filter": ".*"
       },
       "messaging": {
         "view": "132909478",
-        "page_filter": ""
+        "page_filter": ".*"
     }
   },
   "clicks": {

@@ -50,7 +50,7 @@ def find_sunday():
     return today - days_after_sunday
 
 
-def get_reports(analytics, view_id):
+def get_reports(analytics, view_id, page_filter):
     """Use the Analytics Service Object to query Analytics Reporting API.
 
     Pulls data from the prior full Sunday to 20 full weeks prior
@@ -60,13 +60,22 @@ def get_reports(analytics, view_id):
 
     return analytics.reports().batchGet(
         body={
-            'reportRequests': [{
+            'reportRequests': [
+                {
                     'viewId': view_id,
                     'dateRanges': [{'startDate': startDate,
                                     'endDate': endDate}],
                     'metrics': [{'expression': 'ga:users'},
                                 {'expression': 'ga:newUsers'}],
-                    'dimensions': [{'name': 'ga:isoYearIsoWeek'}]
+                    'dimensions': [{'name': 'ga:isoYearIsoWeek'}],
+                    "dimensionFilterClauses": [{
+                        "filters": [
+                            {
+                              "dimensionName": "ga:pagePath",
+                              "operator": "REGEXP",
+                              "expressions": page_filter
+                            }
+                            ]}],
                 },
                 {
                     'viewId': view_id,
@@ -74,14 +83,30 @@ def get_reports(analytics, view_id):
                                     'endDate': endDate}],
                     'metrics': [{'expression': 'ga:sessions'}],
                     'dimensions': [{'name': 'ga:isoYearIsoWeek'},
-                                   {'name': 'ga:deviceCategory'}]
+                                   {'name': 'ga:deviceCategory'}],
+                   "dimensionFilterClauses": [{
+                       "filters": [
+                           {
+                             "dimensionName": "ga:pagePath",
+                             "operator": "REGEXP",
+                             "expressions": page_filter
+                           }
+                           ]}],
                 },
                 {
                     'viewId': view_id,
                     'dateRanges': [{'startDate': startDate,
                                     'endDate': endDate}],
                     'metrics': [{'expression': 'ga:pageviews'}],
-                    'dimensions': [{'name': 'ga:isoYearIsoWeek'}]
+                    'dimensions': [{'name': 'ga:isoYearIsoWeek'}],
+                   "dimensionFilterClauses": [{
+                       "filters": [
+                           {
+                             "dimensionName": "ga:pagePath",
+                             "operator": "REGEXP",
+                             "expressions": page_filter
+                           }
+                           ]}],
                 }
                 ]
         }
@@ -166,8 +191,8 @@ def output_pageviews(df, board):
 
 
 
-def run_reports(analytics, board, view_id):
-    response = get_reports(analytics, view_id)
+def run_reports(analytics, board, view_id, page_filter=""):
+    response = get_reports(analytics, view_id, page_filter)
     user_df = make_df(response['reports'][0])
     output_users(user_df, board)
     device_df = make_df(response['reports'][1])
@@ -178,11 +203,12 @@ def run_reports(analytics, board, view_id):
 def main():
     analytics = initialize_analyticsreporting()
 
-    with open('config.json') as json_data_file:
-        boards = json.load(json_data_file)
+    with open('filtered.json') as json_data_file:
+        boards = json.load(json_data_file)['charts']
 
     for board in boards:
-        run_reports(analytics, board, boards[board])
+        details = boards[board]
+        run_reports(analytics, board, details['view'], details['page_filter'])
 
 
 if __name__ == '__main__':
