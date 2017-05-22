@@ -1,9 +1,9 @@
-import code
 import datetime
+import json
 import os
+
 import pandas as pd
 import requests
-
 import ruamel.yaml as yaml
 
 PROXY_CONFIG    = {
@@ -44,7 +44,7 @@ def df_from_response(response):
 
   data = {}
 
-  #print(response.text)
+  # print(response.text)
 
   parsed_response = response.json()
 
@@ -86,22 +86,28 @@ def query_prometheus(query):
 
   Example:
   `query`:
-    `endpoint`: 'http://prometheus-def.vetsgov-internal/api/v1/query',
+    `endpoint` -- the envvar with an API endpoint to hit
+    `endpoint_path` -- the path on API. Either /query_range or /query
     `params`:
-      `query`: 'avg_over_time(script_success[24h])'
+      `query`: A query, e.g., 'avg_over_time(script_success[24h])'
+      `days_back` -- How many days prior to last sunday to query
+      `step` -- Result resolution
 
   Returns: a response object from Prometheus
   """
 
   qparams = query['params'].copy()
 
-  # Convert start and end to unix timestamps
-  for k in ['start', 'end']:
-    p = qparams.get(k, None)
-    if p and type(p) in (datetime.datetime, datetime.date):
-      qparams[k] = (p - datetime.date(1970, 1, 1)).total_seconds()
+  if 'days_back' in qparams:
+      end = find_last_sunday()
+      start = end - datetime.timedelta(days=qparams['days_back'])
+      del qparams['days_back']
+      qparams['start'] = pd.Timestamp(start).isoformat() + 'Z'
+      qparams['end']= pd.Timestamp(end).isoformat() + 'Z'
 
-  return requests.get(query['endpoint'], params=qparams, proxies=PROXY_CONFIG)
+  return requests.get(query['endpoint']+query['endpoint_path'],
+                      params=qparams,
+                      proxies=PROXY_CONFIG)
 
 def write_report(report_definition):
     """ Write a CSV with 2 weeks of TS data for the given prometheus query
@@ -111,11 +117,11 @@ def write_report(report_definition):
 
     `report_definition`:
       `query`:
-        `endpoint` -- the API endpoint to hit. This can be either SOURCE + /query or SOURCE + /query_range
+        `endpoint` -- the envvar with an API endpoint to hit
+        `endpoint_path` -- the path on API. Either /query_range or /query
         `params`:
           `query` -- A prometheus query
-          `start` -- DateTime object, use with ranged queries only, starting time
-          `end` -- DateTime object, use with ranged queries only, ending time
+          `days_back` -- How many days prior to last sunday to query
           `step` -- Result resolution
 
       `path` -- path to write CSV output
@@ -128,79 +134,30 @@ def write_report(report_definition):
     df = df_from_response(response)
     df.to_csv(report_definition['path'], date_format='%m/%d/%y')
 
-REPORTS = [
-  # Estimated daily deployments
-  {
-    'query': {
-      'endpoint': os.environ['PROMETHEUS_API_UTILITY'] + '/query_range',
-      'params': {
-        'query': 'round(sum(changes(default_jenkins_builds_duration_milliseconds_summary_sum{exported_job="deploys/vets-api-prod"}[24h]))) + round(sum(delta(default_jenkins_builds_duration_milliseconds_summary_count{exported_job="testing/vets-website/production"}[24h])))',
-        'start': find_last_sunday() - datetime.timedelta(days=14),
-        'end': find_last_sunday(),
-        'step': '24h',
-      },
-    },
+def make_cloud_data():
+    output = {}
 
-    'path': 'deployments_daily.csv',
-  },
+    df = pd.read_csv("error_rate.csv", usecols=['day','value'], index_col='day', parse_dates=True)
+    output['error_rate'] = '{:.4%}'.format(df[-7:].mean().value.item())
 
-  # Projected monthly deployment count
-  {
-    'query': {
-      'endpoint': os.environ['PROMETHEUS_API_UTILITY'] + '/query',
-      'params': {
-        'query': 'round(sum(changes(default_jenkins_builds_duration_milliseconds_summary_sum{exported_job="deploys/vets-api-prod"}[2w]))) * 2',
-      },
-    },
+    df = pd.read_csv("reachability.csv", usecols=['day','value'], index_col='day', parse_dates=True)
+    output['reachability'] = '{:.4%}'.format(df[-7:].mean().value.item())
 
-    'path': 'deployments_monthly.csv',
-  },
+    df = pd.read_csv("deployments_monthly.csv", usecols=['day','value'], index_col='day', parse_dates=True)
+    output['deployments'] = df.iloc[0,0].item()
 
-  # Error rate daily
-  {
-    'query': {
-      'endpoint': os.environ['PROMETHEUS_API_SITE'] + '/query_range',
-      'params': {
-        'query': 'sum(rate(nginx_http_request_total{status=~"5.."}[24h])) / sum(rate(nginx_http_request_total[24h]))',
-        'start': find_last_sunday() - datetime.timedelta(days=14),
-        'end': find_last_sunday(),
-        'step': '24h',
-      },
-    },
+    with open('cloud.yml', 'w') as outfile:
+        outfile.write(yaml.dump(output, default_flow_style=False))
 
-    'path': 'error_rate.csv',
-  },
+def main():
 
-  # Total system reachability average (daily) (single EW instance)
-  {
-    'query': {
-      'endpoint': os.environ['PROMETHEUS_API_SITE'] + '/query_range',
-      'params': {
-        'query': 'avg(avg_over_time(probe_success{job="site"}[24h]))',
-        'start': find_last_sunday() - datetime.timedelta(days=14),
-        'end': find_last_sunday(),
-        'step': '24h',
-      },
-    },
+    with open('config.json') as json_data_file:
+        config = json.load(json_data_file)
 
-    'path': 'reachability.csv',
-  },
-]
+    for report_definition in config['reports']:
+        write_report(report_definition)
 
+    make_cloud_data()
 
-for report_definition in REPORTS:
-  write_report(report_definition)
-
-output = {}
-
-df = pd.read_csv("error_rate.csv", usecols=['day','value'], index_col='day', parse_dates=True)
-output['error_rate'] = '{:.4%}'.format(df[-7:].mean().value.item())
-
-df = pd.read_csv("reachability.csv", usecols=['day','value'], index_col='day', parse_dates=True)
-output['reachability'] = '{:.4%}'.format(df[-7:].mean().value.item())
-
-df = pd.read_csv("deployments_monthly.csv", usecols=['day','value'], index_col='day', parse_dates=True)
-output['deployments'] = df.iloc[0,0].item()
-
-with open('cloud.yml', 'w') as outfile:
-    outfile.write(yaml.dump(output, default_flow_style=False))
+if __name__ == '__main__':
+    main()
