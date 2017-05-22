@@ -10,8 +10,10 @@ git pull
 # Create branch for the update using data to differentiate
 git checkout -b "$(date -I)-ga-data"
 
+export DATA_DIR="${PWD}/_data"
+
 # Create a virtual environment to run our script in to prevent any package version conflicts
-scripts/run_python_script.sh
+scripts/updates.sh
 
 # Push our changes up to github and clean up local branch
 git add .
@@ -33,7 +35,7 @@ ISSUE="$(curl -H "Authorization: token $GH_TOKEN" \
      https://api.github.com/repos/department-of-veterans-affairs/vets.gov-status/pulls \
      2> /dev/null | grep \"number\": | sed 's/^\W*number\W*\([0-9][0-9]*\)\W*/\1/')"
 
-# Assign the pull request so an email notification gets sent
+# Assign the pull request so its easier to find
 curl -H "Authorization: token $GH_TOKEN" \
     --data "{
              \"assignee\": \"$(git config --get github.username)\"
