@@ -6,7 +6,7 @@
 python3 -m venv update_data
 
 # move our scripts over into the venv
-cp -r google_analytics/ update_data/
+cp -r google_analytics/* update_data/
 
 cd update_data
 
