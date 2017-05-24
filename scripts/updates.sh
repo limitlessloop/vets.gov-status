@@ -3,6 +3,6 @@
 cd scripts
 
 for SUBDIR in  */; do
-	echo "${SUBDIR}/update.sh"
-	${SUBDIR}/update.sh
+	echo "${SUBDIR}update.sh"
+	${SUBDIR}update.sh
 done
