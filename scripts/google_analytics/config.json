@@ -49,5 +49,43 @@
     "vcl": {
       "view": "111433053"
     }
+  },
+  "counts": {
+    "form1990": {
+      "view": "132469923",
+      "event_name": "edu-submission-successful"
+    },
+    "form1990n": {
+      "view": "132469923",
+      "event_name": "edu-1990n--submission-successful"
+    },
+    "form1990e": {
+      "view": "132469923",
+      "event_name": "edu-1990e--submission-successful"
+    },
+    "form5490": {
+      "view": "132469923",
+      "event_name": "edu-5490--submission-successful"
+    },
+    "form1995": {
+      "view": "132469923",
+      "event_name": "edu-1995--submission-successful"
+    },
+    "form5495": {
+      "view": "132469923",
+      "event_name": "edu-5495--submission-successful"
+    },
+    "hca": {
+      "view": "123860701",
+      "event_name": "Submission Successful"
+    },
+    "rxrefills": {
+      "view": "132496709",
+      "event_name": "rx-confirm-refill"
+    },
+    "smsent": {
+      "view": "132909478",
+      "event_name": "sm-send-message"
+    }
   }
 }
