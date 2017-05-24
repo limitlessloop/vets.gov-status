@@ -120,7 +120,7 @@ def main():
             output_dict[count] = "{:,}".format(total)
 
     with open(output_file, 'w') as output:
-        yaml.dump(output_dict, output, Dumper=yaml.RoundTripDumper)
+        yaml.dump(output_dict, output, Dumper=yaml.RoundTripDumper, default_style='"')
 
 if __name__ == '__main__':
     main()
