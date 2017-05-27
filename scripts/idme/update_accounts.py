@@ -1,4 +1,5 @@
 import datetime
+import os
 
 from googleapiclient import discovery
 from oauth2client.service_account import ServiceAccountCredentials
@@ -107,7 +108,7 @@ def output_csv(df, csv):
     df = df.set_index('day')
     if 'week' in df:
         del df['week']
-    df.to_csv(os.path.join(os.environ['DATA_DIR'], csv), date_format="%m/%d/%y")
+    df.to_csv(csv, date_format="%m/%d/%y")
 
 def filter_timerange(df):
     sunday = find_sunday()
@@ -118,7 +119,7 @@ def filter_timerange(df):
 
 def main():
 
-    reponse = fetch_sheet_data()
+    response = fetch_sheet_data()
     values = response['values']
     daily_signups_df = make_df(values)
 
