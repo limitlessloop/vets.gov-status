@@ -56,7 +56,7 @@ def output_loa3_count(loa3_accounts):
     with open(output_file, 'r') as output:
         output_dict = yaml.load(output, yaml.RoundTripLoader)
 
-    output_dict['loa3accounts'] = loa3_accounts
+    output_dict['loa3accounts'] = "{:,}".format(loa3_accounts)
 
     with open(output_file, 'w') as output:
         yaml.dump(output_dict, output, Dumper=yaml.RoundTripDumper, default_style='"')
