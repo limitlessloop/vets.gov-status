@@ -7,7 +7,8 @@ import requests
 import ruamel.yaml as yaml
 
 PROXY_CONFIG    = {
-  'http': 'socks5://127.0.0.1:2001'
+  'http': 'socks5h://127.0.0.1:2001',
+  'https': 'socks5h://127.0.0.1:2001'
 }
 
 def find_last_sunday():
@@ -105,6 +106,7 @@ def query_prometheus(query):
       qparams['start'] = pd.Timestamp(start).isoformat() + 'Z'
       qparams['end']= pd.Timestamp(end).isoformat() + 'Z'
 
+  print(query['endpoint']+query['endpoint_path'])
   return requests.get(query['endpoint']+query['endpoint_path'],
                       params=qparams,
                       proxies=PROXY_CONFIG)

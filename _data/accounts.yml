@@ -15,9 +15,9 @@
   data: _signupstotal_weekly
   context: Total accounts created since launch
   cols:
-    - id: totalloa1signups
+    - id: loa1signups
       label: Total LOA1 signups
       color: rgb(17,46,81)
-    - id: totalloa3signups
+    - id: loa3signups
       label: Total LOA3 signups
       color: rgb(175,175,175)

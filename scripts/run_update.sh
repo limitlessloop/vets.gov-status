@@ -28,7 +28,7 @@ GH_TOKEN=$( git config --get github.token )
 ISSUE="$(curl -H "Authorization: token $GH_TOKEN" \
      --data "{
               \"title\": \"$(date -I) automated GA data pull\",
-              \"body\": \"Weekly GA data pull\",
+              \"body\": \"Daily GA data pull\",
               \"head\": \"$(date -I)-ga-data\",
               \"base\": \"master\"
             }" \
