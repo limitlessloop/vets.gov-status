@@ -1,0 +1,13 @@
+pipeline {
+  agent any
+
+  stages {
+    stage('Build') {
+      steps {
+    		withCredentials([file(credentialsId: 'ga_serviceaccount', variable: 'GA_SERVICEACCOUNT')]) {
+          sh 'python3 --version'
+        }
+      }
+    }
+  }
+}

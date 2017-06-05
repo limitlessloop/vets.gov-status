@@ -4,12 +4,6 @@ pipeline {
   }
 
   stages {
-    stage('Checkout Code') {
-      steps {
-        checkout scm
-      }
-    }
-
     stage('Build') {
       steps {
         sh 'bash --login -c "bundle"'
@@ -39,6 +33,11 @@ pipeline {
           }
         }
       }
+    }
+  }
+  post {
+    always {
+      deleteDir() /* clean up our workspace */
     }
   }
 }

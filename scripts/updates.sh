@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
-cd scripts
+cd google_analytics
+python update_data.py
+python update_counts.py
 
-for SUBDIR in  */; do
-	echo "${SUBDIR}update.sh"
-	${SUBDIR}update.sh
-done
+cd ../idme
+python update_accounts.py
+
+cd ../prometheus
+python update_from_prometheus.py
