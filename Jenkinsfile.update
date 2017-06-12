@@ -38,7 +38,7 @@ def merge_pr = {
 
     //Delete extraneous branch
     def now = new Date().format('yyyy-MM-dd')
-    def update_branch = "refs/heads/update-${now}"
+    def update_branch = "heads/update-${now}"
     def ref = repo.getRef(update_branch)
     ref.delete()
   } else {
