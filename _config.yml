@@ -16,5 +16,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - Jenkinsfile
+  - Jenkinsfile.update
 
 baseurl: "/scorecard"
