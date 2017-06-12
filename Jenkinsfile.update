@@ -1,5 +1,38 @@
 import org.kohsuke.github.GitHub
 
+def merge_pr = {
+  github = GitHub.connect()
+
+  now = new Date().format('yyyy-MM-dd')
+  update_branch = "refs/heads/update-${now}"
+  target_branch = 'refs/heads/master'
+
+  pr_title = "Automatic Data Update on ${now}"
+  pr_body = 'Automatic Data Update run from Jenkins'
+
+  repo = github.getRepository('department-of-veterans-affairs/vets.gov-status')
+
+  try {
+    def pr = repo.createPullRequest(pr_title, update_branch, target_branch, pr_body)
+  } catch (IOException e) {
+    println "Creating a Pull Request failed: `${e}`"
+  }
+
+  // Intentionally fail this so it never gets merged
+  is_mergeable = false
+
+  // Do basic checks of mergeability
+  if (!pr.getMergeable() || pr.getMergeableState() != 'clean') {
+    is_mergeable = false
+  }
+
+  if (is_mergeable) {
+    pr.merge('Merged automatically by Jenkins.')
+  } else {
+    pr.comment('Skipping merge due to comment or change request!\ncc @robertfairhead')
+  }
+}
+
 pipeline {
   agent any
   environment {
@@ -45,36 +78,7 @@ pipeline {
     stage('Create and Merge PR') {
       steps {
         script{
-          github = GitHub.connect()
-
-          now = new Date().format('yyyy-MM-dd')
-          update_branch = "refs/heads/update-${now}"
-          target_branch = 'refs/heads/master'
-
-          pr_title = "Automatic Data Update on ${now}"
-          pr_body = 'Automatic Data Update run from Jenkins'
-
-          repo = github.getRepository('department-of-veterans-affairs/vets.gov-status')
-
-          try {
-            def pr = repo.createPullRequest(pr_title, update_branch, target_branch, pr_body)
-          } catch (IOException e) {
-            println "Creating a Pull Request failed: `${e}`"
-          }
-
-          // Intentionally fail this so it never gets merged
-          is_mergeable = false
-
-          // Do basic checks of mergeability
-          if (!pr.getMergeable() || pr.getMergeableState() != 'clean') {
-            is_mergeable = false
-          }
-
-          if (is_mergeable) {
-            pr.merge('Merged automatically by Jenkins.')
-          } else {
-            pr.comment('Skipping merge due to comment or change request!\ncc @robertfairhead')
-          }
+          merge_pr()
         }
       }
     }
