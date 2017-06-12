@@ -35,6 +35,12 @@ def merge_pr = {
 
   if (is_mergeable) {
     pr.merge('Merged automatically by Jenkins.')
+
+    //Delete extraneous branch
+    def now = new Date().format('yyyy-MM-dd')
+    def update_branch = "refs/heads/update-${now}"
+    def ref = repo.getRef(update_branch)
+    ref.delete()
   } else {
     pr.comment('Skipping merge!')
   }
