@@ -4,14 +4,14 @@ date_added: 2016-07-30 00:00:00 -0500
 vetsdotgov_url: https://www.vets.gov/healthcare/apply/
 status: normal
 category: Apply
-description: Increased online submissions from 62/day to 500/day
+description: Increased online submissions from 62/day to 440/day
 screenshot: healthcare
 tiles:
 
   - name: Daily online submissions
     layout: compare_bars
     id: submissions
-    datapoint: 500
+    datapoint: 440
     before: 62
     before_text: Veteran Online Application
 
