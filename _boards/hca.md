@@ -1,11 +1,11 @@
 ---
 title: Health Care Application
 date_added: 2016-07-30 00:00:00 -0500
-vetsdotgov_url: https://www.vets.gov/healthcare/apply/
+vetsdotgov_url: https://www.vets.gov/health-care/apply/
 status: normal
 category: Apply
 description: Increased online submissions from 62/day to 500/day
-screenshot: healthcare
+screenshot: hca
 tiles:
 
   - name: Daily online submissions
