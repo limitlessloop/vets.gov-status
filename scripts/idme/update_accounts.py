@@ -31,7 +31,7 @@ def fetch_sheet_data():
 
     request = (service.spreadsheets().values().get(
                 spreadsheetId='1WYHGRN51c7b1yVceA8uEG16lIhikxwOe25wbCSjB-S4',
-                range='A1:C',
+                range="'Signups per Day'!A1:C",
                 valueRenderOption='FORMATTED_VALUE',
                 dateTimeRenderOption='FORMATTED_STRING'))
     return request.execute()
