@@ -31,7 +31,6 @@ def createDashboardCSV(repo, markdown_files):
             migration_status.write(row[8:] + "\n")
 
 def docToRow(document):
-    print(document)
     lines = document.splitlines()
     lines = list(filter(lambda x: not re.match(r'^\s*$', x), lines))
     product_name = lines[0].split(":")[1].strip()
