@@ -13,6 +13,7 @@ IGNORE_LIST = ["readme.md",
                "project status template.md",
                "link to launch guide.md",
                "use this template.md",
+               "Veteran Verification Badge.md",
               ]
 
 def createDashboardCSV(repo, markdown_files):
@@ -30,6 +31,7 @@ def createDashboardCSV(repo, markdown_files):
             migration_status.write(row[8:] + "\n")
 
 def docToRow(document):
+    print(document)
     lines = document.splitlines()
     lines = list(filter(lambda x: not re.match(r'^\s*$', x), lines))
     product_name = lines[0].split(":")[1].strip()
