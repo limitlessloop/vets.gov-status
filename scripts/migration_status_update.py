@@ -13,7 +13,7 @@ IGNORE_LIST = ["readme.md",
                "project status template.md",
                "link to launch guide.md",
                "use this template.md",
-               "Veteran Verification Badge.md",
+               "veteran verification badge.md",
               ]
 
 def createDashboardCSV(repo, markdown_files):
