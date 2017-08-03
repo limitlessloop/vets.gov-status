@@ -10,7 +10,7 @@ tiles:
 
   - name: Annual Calls To VA About Appeals
     layout: basic
-    datapoint: 302,005
+    datapoint: "302,005"
     context: calls targeted for reduction with better online information
 
 ---
