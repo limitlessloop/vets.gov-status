@@ -2,15 +2,15 @@
 title: Appeals Status
 date_added:
 vetsdotgov_url:
-status: progress
+status: normal
 category: Track
 description: Veterans can monitor the status of their appeal
-screenshot: placeholder
+screenshot: appeals_status
 tiles:
 
-  - name: Mobile availability
-    layout: icon
-    icon: phone
-    text: Veterans can access health records from their mobile devices
+  - name: Annual Calls To VA About Appeals
+    layout: basic
+    datapoint: "302,005"
+    context: calls targeted for reduction with better online information
 
 ---
