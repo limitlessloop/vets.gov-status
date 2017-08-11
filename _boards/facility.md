@@ -21,7 +21,7 @@ tiles:
   - name: Increased transparency at the facility hospital level
     layout: icon
     icon: calendar
-    text: Reports percentage of Veterans who marked they were “always” or “usually” able to get an appointment
+    text:  Data on Veterans who reported “always” or “usually” able to make an appointment
 
 charts: facility
 ---
