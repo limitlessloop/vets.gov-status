@@ -13,7 +13,7 @@ tiles:
     datapoint: rxrefills
     context: since public launch in December 2016
 
-  - name: On-the-go access
+  - name: Mobile-friendly
     layout: icon
     icon: phone
     text: Veterans can refill their VA prescriptions from any device

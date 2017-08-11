@@ -8,9 +8,9 @@ description: Online submission of pension application
 screenshot: placeholder
 tiles:
 
-  - name: Mobile availability
+  - name: Mobile-friendly
     layout: icon
     icon: phone
-    text: Veterans can access health records from their mobile devices
+    text: Veterans can access health records from any device
 
 ---

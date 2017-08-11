@@ -13,10 +13,10 @@ tiles:
     datapoint: healthrecords
     context: since public launch in July 2017
 
-  - name: Mobile friendly
+  - name: Mobile-friendly
     layout: icon
     icon: phone
-    text: Veterans can download their medical records from their smartphone
+    text: Veterans can download their medical records from any device
 
   - name: Weekly downloads of Veteran records
     layout: basic

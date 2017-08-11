@@ -8,10 +8,10 @@ description: 1-click access from a mobile phone to text or call the crisis line
 screenshot: crisisline
 tiles:
 
-  - name: Simple access from mobile
+  - name: Mobile-friendly
     layout: icon
     icon: phone
-    text: One click to text or call from any mobile device
+    text: Veterans can use one click to text or call from any device
 
   - name: Improved content
     layout: icon
