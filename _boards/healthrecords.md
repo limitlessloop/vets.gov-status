@@ -20,7 +20,7 @@ tiles:
 
   - name: Weekly downloads of Veteran records
     layout: basic
-    datapoint: 137
+    datapoint: 662
     context: since public launch in July 2017
 
 charts: healthrecords
