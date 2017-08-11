@@ -1,16 +1,26 @@
 ---
 title: Health Records
 date_added:
-vetsdotgov_url:
-status: progress
+vetsdotgov_url: https://www.vets.gov/health-care/health-recordsß
+status: normal
 category: Manage
 description: Veterans can view and download their electronic health records
-screenshot: placeholder
+screenshot: healthrecords
 tiles:
 
-  - name: Mobile availability
+  - name: Total downloads of Veteran records
+    layout: basic_count
+    datapoint: healthrecords
+    context: since public launch in July 2017
+
+  - name: Mobile friendly
     layout: icon
     icon: phone
-    text: Veterans can access health records from their mobile devices
+    text: Veterans can download their medical records from their smartphone
+
+  - name: Weekly downloads of Veteran records
+    layout: basic
+    datapoint: 137
+    context: since public launch in July 2017
 
 ---

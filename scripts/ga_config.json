@@ -86,6 +86,10 @@
     "smsent": {
       "view": "132909478",
       "event_name": "sm-send-message"
+    },
+    "healthrecords": {
+      "view": "111433053",
+      "event_name": "health-record-download"
     }
   }
 }
