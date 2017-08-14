@@ -13,10 +13,10 @@ tiles:
     datapoint: smsent
     context: since public launch in December 2016
 
-  - name: Mobile availability
+  - name: Mobile-friendly
     layout: icon
     icon: phone
-    text: Veterans can message on their smartphones
+    text: Veterans can message on any device
 
 charts: messaging
 ---

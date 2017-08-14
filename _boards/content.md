@@ -13,9 +13,9 @@ tiles:
     datapoint: 100%
     context: in plain language
 
-  - name: Mobile availability
+  - name: Mobile-friendly
     layout: icon
     icon: phone
-    text: Content displays equally as well on mobile devices
+    text: Veterans can display content equally as well on any device
 
 ---
