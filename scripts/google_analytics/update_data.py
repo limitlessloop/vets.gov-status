@@ -146,6 +146,21 @@ def get_click_reports(analytics, view_id):
                               "operator": "PARTIAL",
                               "expressions": "tel:18002738255"
                             },
+                            {
+                              "dimensionName": "ga:eventAction",
+                              "operator": "PARTIAL",
+                              "expressions": "veteranscrisisline"
+                            },
+                            {
+                              "dimensionName": "ga:eventAction",
+                              "operator": "PARTIAL",
+                              "expressions": "sms:838255"
+                            },
+                            {
+                              "dimensionName": "ga:eventAction",
+                              "operator": "PARTIAL",
+                              "expressions": "tel:18002738255"
+                            },
                             ]}],
                     "includeEmptyRows": "true",
                 }
@@ -191,17 +206,9 @@ def output_users(df, board):
     """Output a csv from dataframe contents."""
 
     df.columns = ['new', 'all']
-    df['returning'] = df['all'] - df['new']
-
-    users = df.copy()
-    del users['new'], users['returning']
+    del df['new']
     filename = os.path.join(os.environ['DATA_DIR'],
                             "{}_users.csv".format(board))
-    users.to_csv(filename, date_format="%m/%d/%y")
-
-    del df['all']
-    filename = os.path.join(os.environ['DATA_DIR'],
-                            "{}_new.csv".format(board))
     df.to_csv(filename, date_format="%m/%d/%y")
 
 def output_device(df, board):
