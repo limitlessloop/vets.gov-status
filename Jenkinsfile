@@ -1,13 +1,18 @@
 pipeline {
   agent {
-    label 'rails-testing'
+    label 'vetsgov-general-purpose'
   }
 
   stages {
     stage('Build') {
       steps {
-        sh 'bash --login -c "bundle"'
-        sh 'bash --login -c "bundle exec jekyll build"'
+        script {
+          dockerImage = docker.build('scorecard-jekyll')
+          args = "-v ${pwd()}:/srv/jekyll"
+          dockerImage.inside(args) {
+            sh 'bundle exec jekyll build'
+          }
+        }
       }
     }
 
