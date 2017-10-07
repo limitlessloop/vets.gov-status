@@ -57,8 +57,8 @@
   "counts": {
     "form1990": {
       "view": "111433053",
-      "event_name": "edu-submission-successful",
-      "adjustment": 223137
+      "event_name": "edu--submission-successful",
+      "adjustment": 225875
     },
     "form1990n": {
       "view": "111433053",
