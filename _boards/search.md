@@ -10,17 +10,17 @@ tiles:
 
   - name: Searches
     layout: basic
-    datapoint: "27,150"
-    context: total during August 2017 on vets.gov
+    datapoint: "19,467"
+    context: total during September 2017 on vets.gov
 
   - name: One-click access target
     layout: basic
     datapoint: 100
     context: most frequent search terms
 
-  - name: Top search terms during August 2017
+  - name: Top search terms during September 2017
     layout: icon
     icon: search
-    text: 22-1995<br>certificate of eligibility<br>22-1990<br>22-5490<br>
+    text: 22-1995<br>22-1990<br>certificate of eligibility<br>22-5490<br>
 
 ---
