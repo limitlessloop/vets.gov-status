@@ -45,7 +45,9 @@ def merge_pr = {
 }
 
 pipeline {
-  agent any
+  agent {
+    label 'vetsgov-general-purpose'
+  }
   environment {
     GA_SERVICE_BASE64 = credentials('ga-serviceaccount-b64')
     GH = credentials('va-bot')
@@ -55,8 +57,8 @@ pipeline {
 
     stage('Setup Update Branch') {
       steps {
-        sh 'git config user.name "Robert Fairhead"'
-        sh 'git config user.email bob@adhocteam.us'
+        sh 'git config user.name "va-bot"'
+        sh 'git config user.email "james.kassemi+vabot@adhocteam.us"'
         sh 'git checkout -b update-$(date -I)'
       }
     }
@@ -83,7 +85,7 @@ pipeline {
       steps {
         sh 'git add .'
         sh "git commit -m 'Updated Data'"
-        sh 'git push -u origin HEAD'
+        sh 'git push https://${GH_USR}:${GH_PSW}@github.com/department-of-veterans-affairs/vets.gov-status.git HEAD'
       }
     }
 
@@ -109,7 +111,7 @@ pipeline {
       }
     }
 
-    stage('Create and Merge PR') {
+    stage('Merge PR and Delete Branch') {
       steps {
         script { merge_pr() }
       }
