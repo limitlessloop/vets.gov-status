@@ -57,6 +57,8 @@ pipeline {
 
     stage('Setup Update Branch') {
       steps {
+        sh 'git config user.name "va-bot"'
+        sh 'git config user.email "james.kassemi+vabot@adhocteam.us"'
         sh 'git checkout -b update-$(date -I)'
       }
     }
