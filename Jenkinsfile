@@ -10,6 +10,7 @@ pipeline {
           dockerImage = docker.build('scorecard-jekyll')
           args = "-v ${pwd()}:/srv/jekyll"
           dockerImage.inside(args) {
+            sh 'bundle install'
             sh 'bundle exec jekyll build'
           }
         }
