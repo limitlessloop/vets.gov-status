@@ -125,13 +125,13 @@ def main():
     daily_signups_df = make_df(values)
 
     # The added values are the totals prior to 1/6/2017 when the online gsheet counts begin
-    totals = daily_signups_df.sum() + pd.Series({'loa1signups': 26701,
-                                                 'loa3signups': 11046})
+    totals = daily_signups_df.sum() #+ pd.Series({'loa1signups': 26701, 'loa3signups': 11046})
+
     output_loa3_count(totals['loa3signups'])
 
     make_daily_chart(daily_signups_df)
 
-    total_signups_df = daily_signups_df.cumsum() + pd.Series({'loa1signups': 26701, 'loa3signups': 11046})
+    total_signups_df = daily_signups_df.cumsum() # + pd.Series({'loa1signups': 26701, 'loa3signups': 11046})
     make_total_chart(total_signups_df)
 
 if __name__ == '__main__':
