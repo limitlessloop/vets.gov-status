@@ -6,10 +6,10 @@ import pandas as pd
 import requests
 import ruamel.yaml as yaml
 
-# PROXY_CONFIG    = {
+#PROXY_CONF = {
 #   'http': 'socks5h://172.17.0.1:2001',
 #   'https': 'socks5h://172.17.0.1:2001'
-# }
+#}
 
 def find_last_sunday():
   """Finds the prior Sunday to ensure a full week of data
@@ -44,8 +44,6 @@ def df_from_response(response):
   """
 
   data = {}
-
-  # print(response.text)
 
   parsed_response = response.json()
 
@@ -106,9 +104,9 @@ def query_prometheus(query):
       qparams['start'] = pd.Timestamp(start).isoformat() + 'Z'
       qparams['end']= pd.Timestamp(end).isoformat() + 'Z'
 
-  print(query['endpoint']+query['endpoint_path'])
   return requests.get(query['endpoint']+query['endpoint_path'],
                       params=qparams)
+#                      params=qparams, proxies=PROXY_CONF)
 
 def run_report(report_definition):
     """ Create a dataframe with 2 weeks of TS data for the given prometheus query
@@ -138,19 +136,19 @@ def make_cloud_data(reports):
     output = {}
 
     df = reports["error_rate"]
-    df = df['day','value']
-    df.set_index('day')
-    output['error_rate'] = '{:.4%}'.format(df[-7:].mean().value.item())
+    series = pd.to_numeric(df.iloc[-7:,1])
+    mean_val = series.mean()
+    output['error_rate'] = '{:.4%}'.format(mean_val)
 
     df = reports["reachability"]
-    df = df['day','value']
-    df.set_index('day')
-    output['reachability'] = '{:.4%}'.format(df[-7:].mean().value.item())
+    mean_val = pd.to_numeric(df.iloc[-7:,1]).mean()
+    output['reachability'] = '{:.4%}'.format(mean_val)
 
     df = reports["deployments_monthly"]
-    df = df['day','value']
-    df.set_index('day')
-    output['deployments'] = df.iloc[0,0].item()
+    df = df[['day','value']]
+    df = df.set_index('day')
+    print(df.iloc[0,0])
+    output['deployments'] = df.iloc[0,0]
 
     output_file = os.path.join(os.environ['DATA_DIR'],'cloud.yml')
     with open(output_file, 'w') as outfile:
