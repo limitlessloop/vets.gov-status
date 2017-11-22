@@ -147,7 +147,6 @@ def make_cloud_data(reports):
     df = reports["deployments_monthly"]
     df = df[['day','value']]
     df = df.set_index('day')
-    print(df.iloc[0,0])
     output['deployments'] = df.iloc[0,0]
 
     output_file = os.path.join(os.environ['DATA_DIR'],'cloud.yml')
