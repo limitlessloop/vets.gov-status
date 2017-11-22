@@ -137,7 +137,7 @@ def run_report(report_definition):
 def make_cloud_data(reports):
     output = {}
 
-    df = reports["error_rate.csv"]
+    df = reports["error_rate"]
     df = df['day','value']
     df.set_index('day')
     output['error_rate'] = '{:.4%}'.format(df[-7:].mean().value.item())
