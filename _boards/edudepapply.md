@@ -4,7 +4,7 @@ date_added:
 vetsdotgov_url: https://www.vets.gov/education/apply-for-education-benefits/
 status: normal
 category: Apply
-description: Dependents can apply for eduction benefits online using any mobile device
+description: Dependents can apply for education benefits online using any mobile device
 screenshot: eduapply
 tiles:
 
