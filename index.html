@@ -4,6 +4,12 @@ mission_statement: Vets.gov enables Veterans to <b>discover</b>, <b>apply</b> fo
 access: Improving Veteran access to benefits and services
 tiles:
 
+  - name: Cloud infrastructure costs
+    layout: pie
+    id: savings
+    datapoint: 15
+    context: percentage of traditional VA options' costs
+
   - name: Vets.gov accounts
     layout: basic_count
     datapoint: loa3accounts
@@ -15,17 +21,17 @@ tiles:
     datapoint: 100
     before: 46
 
+  - name: Section 508 compliance
+    layout: basic
+    datapoint: 100%
+    context: according to accessibility scans—making the website accessible to Veterans who are blind or have low-vision
+
   - name: Percent of the 582k annual healthcare applications completed online
     layout: compare_pie
     id: applications
     datapoint: 50
     before: 10
     after_text: 2017
-
-  - name: Section 508 compliance
-    layout: basic
-    datapoint: 100%
-    context: according to accessibility scans—making the website accessible to Veterans who are blind or have low-vision
 
   - name: Days in VA release cycle
     layout: compare
