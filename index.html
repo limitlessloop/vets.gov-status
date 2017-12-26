@@ -73,9 +73,9 @@ cloud:
 
 {% include tile_section.html %}
 
-<div class="container">
+<div class="usa-grid-full">
   <div class="row subtitle">
-    <div class="col-md-12">
+    <div class="usa-width-one-whole">
       <p>Enabling Veterans to:</p>
     </div>
   </div>
@@ -86,16 +86,15 @@ cloud:
   {% for category in categories %}
   {% assign shaded = forloop.index | modulo: 2 %}
   <div class="band{% if shaded == 0 %} shaded{% endif %}">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 category-header">
+    <div class="usa-grid">
+        <div class="usa-width-one-whole category-header">
           <p>{{category}}</p>
         </div>
       </div>
-    <div class="row">
+    <div class="usa-grid">
       {% assign projects = site.boards | where: "category", category | sort: "status" %}
       {% for project in projects %}
-      <div class="col-sm-6 col-md-3">
+      <div class="usa-width-one-fourth">
         {% include tiles/project.html %}
       </div>
       {% endfor %}
@@ -106,9 +105,9 @@ cloud:
 </div>
 
 <div class="quote-band">
-  <div class="container">
+  <div class="usa-grid">
     <div class="row subtitle">
-      <div class="col-md-12">
+      <div class="usa-width-one-whole">
         <h3>Veteran-Centered Design</h3>
       </div>
     </div>
