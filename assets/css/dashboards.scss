@@ -1,7 +1,14 @@
 ---
 ---
 
-@import "variables";
+// Use a copied version of vets-website variables until design system available as a module
+@import "b-variables";
+
+// Use vendored copy of USWDS 1.4.4 for now
+@import 'lib/uswds/src/stylesheets/all';
+
+
+// Legacy styles to retire
 @import "va-notice";
 @import "header";
 @import "subhead";
