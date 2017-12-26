@@ -8,7 +8,7 @@
 
 .project-wrapper,
 .comingsoon-wrapper {
-  background-color: $medium-blue;
+  background-color: $color-primary-darker;
   color: white;
   padding: 20px;
   position: relative;
@@ -29,7 +29,7 @@
 }
 
 .project-wrapper:hover {
-    background-color: $bright-blue;
+    background-color: $color-focus;
 }
 
 
@@ -113,5 +113,5 @@
 }
 
 .shaded {
-  background-color: $light-gray;
+  background-color: $$color-gray-light;
 }
