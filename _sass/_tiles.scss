@@ -11,7 +11,7 @@
 .subtitle p {
   font-weight: bold;
   font-size: 36px;
-  color: $dark-blue;
+  color: $color-primary-darkest;
 }
 
 .access-sentence {
@@ -19,7 +19,7 @@
 }
 
 .chart-wrapper {
-  background: $light-gray;
+  background: $color-gray-light;
   padding: 20px;
   margin-bottom: 20px;
   min-height: 270px;
@@ -30,7 +30,7 @@
 }
 
 .chart-wrapper > .chart-title {
-  color: $dark-blue;
+  color: $color-primary-darkest;
   font-size: 24px;
   font-weight: 600;
   padding: 10px 10px 10px 0px;
@@ -59,7 +59,7 @@ canvas.metric-chart {
 .chart-stage .datapoint {
   font-size: 72px;
   font-weight: 700;
-  color: $bright-blue;
+  color: $color-primary-darker;
   line-height: 1em;
   margin: 0;
 }
@@ -72,7 +72,7 @@ canvas.metric-chart {
 }
 
 .compare-after  .chart-notes {
-  color: $bright-blue !important;
+  color: $color-primary-darker !important;
   font-weight: bold;
 }
 
@@ -88,7 +88,7 @@ canvas.metric-chart {
 }
 
 .before-text {
-  color: $medium-gray;
+  color: $color-gray-medium;
   font-size: 50px;
   font-weight: 700;
   line-height: 72px;
@@ -96,7 +96,7 @@ canvas.metric-chart {
 }
 
 .chart-wrapper .chart-notes {
-  color: $medium-gray;
+  color: $color-gray-medium;
   font-size: 16px;
 }
 
@@ -111,6 +111,6 @@ canvas.metric-chart {
 }
 
 .quotes-tile {
-  color: $bright-blue;
+  color: $color-primary-darker;
   opacity: 1;
 }

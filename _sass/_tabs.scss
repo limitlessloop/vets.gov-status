@@ -35,15 +35,15 @@
 
 
 .tabs-chart > li > a:hover {
-  background-color: $bright-blue;
-  border-top: 5px solid $bright-blue;
+  background-color: $color-primary-darker;
+  border-top: 5px solid $color-primary-darker;
 
 }
 
 .tabs-chart > li > a {
-  background-color: $medium-blue;
+  background-color: $color-primary-alt-darkest;
   color: white;
-  border-top: 5px solid $medium-blue;
+  border-top: 5px solid $color-primary-alt-darkest;
   border-radius: 0;
   font-size: .85em;
 }
@@ -51,17 +51,17 @@
 .tabs-chart > li.active > a,
 .tabs-chart > li.active > a:hover,
 .tabs-chart > li.active > a:focus {
-  background-color: $dark-blue;
+  background-color: $color-primary-alt-darkest;
   color: white;
   border-radius: 0;
   border-width: 0;
   text-decoration: none;
-  border-top: 5px solid $contrast-orange;
+  border-top: 5px solid $color-va-accent;
   position: relative;
 }
 
 .tab-content {
-  border: 1px solid $dark-blue;
+  border: 1px solid $$color-primary-alt-darkest;
 }
 
 .tab-icon {
