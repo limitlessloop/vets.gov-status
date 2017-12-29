@@ -3,11 +3,11 @@
 
 // Use a copied version of vets-website variables until design system available as a module
 @import "b-variables";
-@import "b-breakpoints";
 
 // Use vendored copy of USWDS 1.4.4 for now
 @import 'uswds-1.4.4/all';
 
+@import "b-breakpoints";
 @import "va";
 
 // Legacy styles to retire
