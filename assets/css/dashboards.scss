@@ -11,8 +11,6 @@
 @import "va";
 
 // Legacy styles to retire
-@import "va-notice";
-@import "header";
 @import "subhead";
 @import "tabs";
 @import "research-quotes";
@@ -23,12 +21,6 @@
 @import "migration";
 
 @import "shame";
-
-
-body.application {
-  background: white;
-  font-size: 16px;
-}
 
 body.application div[class^="col-"] {
   padding-left: 10px;
