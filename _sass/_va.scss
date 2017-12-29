@@ -134,14 +134,14 @@ dd + dt {
 }
 
 input::-webkit-input-placeholder{
-  color: $color-gray;
+  color: $color-gray-medium;
 }
 input::-moz-placeholder {
-  color: $color-gray;
+  color: $color-gray-medium;
 }
 
 input:-ms-input-placeholder {
-  color: $color-gray;
+  color: $color-gray-medium;
 }
 
 // Visually clear placeholder text on focus
