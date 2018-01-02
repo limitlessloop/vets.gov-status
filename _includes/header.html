@@ -54,13 +54,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </header>
 
-{% unless page.url == "/" %}
+
 <nav class="va-nav-breadcrumbs ">
   <ul class="row va-nav-breadcrumbs-list columns" role="menubar" aria-label="Primary">
-    <li><a href="/">Home</a></li>
+    {% unless page.url == "/" %}
+    <li><a href="{{site.baseurl}}/">Home</a></li>
+    {% endunless %}
   </ul>
 </nav>
-{% endunless %}
+
 
 <div id="content" class="interior ">
   <main>
