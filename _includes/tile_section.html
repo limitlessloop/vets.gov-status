@@ -1,34 +1,28 @@
 
-<div class="container tile-container">
+<div class="usa-grid-full tile-container">
 
 {% if page.tiles.size > 0 %}
-  <div class="row subtitle">
-    <div class="col-md-12">
+  <div class="subtitle">
+    <div class="usa-width-one-whole">
       {% unless page.access %}
-      <p>Featured Improvements</p>
+      <h3>Featured Improvements</h3>
       {% else %}
-      <p>Access Improvements</p>
-      <span class="access-sentence">{{page.access}}</span>
+      <h3>Access Improvements</h3>
+      <p>{{page.access}}</p>
       {% endunless %}
     </div>
   </div>
 
-
-
-{% assign featured = page.tiles | where_exp: "item", "item.layout != 'chart'" %}
-<div class="row row-tile">
+  {% assign featured = page.tiles | where_exp: "item", "item.layout != 'chart'" %}
   {% for tile in featured limit: 3 %}
     {% include tiles/{{tile.layout}}.html %}
   {% endfor %}
-</div>
 
-{% if featured.size > 3 %}
-<div class="row row-tile">
-  {% for tile in featured offset: 3 %}
-    {% include tiles/{{tile.layout}}.html %}
-  {% endfor %}
-</div>
-{% endif %}
+  {% if featured.size > 3 %}
+    {% for tile in featured offset: 3 %}
+      {% include tiles/{{tile.layout}}.html %}
+    {% endfor %}
+  {% endif %}
 
 {% endif %}
 
