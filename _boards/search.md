@@ -10,15 +10,10 @@ tiles:
 
   - name: Searches
     layout: basic
-    datapoint: "69,799"
-    context: total during November 2017 on vets.gov
+    datapoint: "51,853"
+    context: total during December 2017 on vets.gov
 
-  - name: One-click access target
-    layout: basic
-    datapoint: 100
-    context: most frequent search terms
-
-  - name: Top search terms during November 2017
+  - name: Top search terms during December 2017
     layout: icon
     icon: search
     text: id card<br>id card application<br>veterans id card<br>
