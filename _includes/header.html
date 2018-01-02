@@ -63,33 +63,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 {% endunless %}
 
 <div id="content" class="interior ">
-  <main class="va-l-detail-page">
-    <div class="usa-grid">
+  <main>
+    <div class="row">
+      <article class="usa-content columns">
+        <h1>{{page.title}}</h1>
+        <div class="va-introtext">
+          <p>
+              {% if page.date_added %}
+              Added {{page.date_added | date: '%B %Y'}}<br>
+              {% endif %}
 
-      <div class="usa-width-one-whole">
-        <h2>{{page.title}}</h2>
-      </div>
-
-      <div class="usa-width-one-whole">
-        <div class="usa-grid">
-          <div class="usa-width-three-fouths">
-            <p>
-            {% if page.date_added %}
-            Added {{page.date_added | date: '%B %Y'}}<br>
-            {% endif %}
-
-            {% if page.extended_description %}
-            {{page.extended_description}}
-            {% else %}
-            {{page.description}}
-            {% endif %}</p>
-          </div>
-          <div class="usa-width-one-fourth">
-            {% if page.vetsdotgov_url %}
-            <a class="btn btn-app" href="{{page.vetsdotgov_url}}">Visit {{page.title}}</a>
-            {% endif %}
-          </div>
+              {% if page.extended_description %}
+              {{page.extended_description}}
+              {% else %}
+              {{page.description}}
+              {% endif %}
+          </p>
         </div>
-      </div>
-
-      <div class="usa-width-one-whole">
+        {% if page.vetsdotgov_url %}
+        <p><a class="usa-button-primary va-button-primary" href="{{page.vetsdotgov_url}}">Visit {{page.title}}</a></p>
+        {% endif %}
+      </article>
+    </div>
+    <div class="row">
+      <div class="usa-content columns">
