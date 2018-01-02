@@ -54,39 +54,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </header>
 
-<div class="usa-grid row">
-  <div class="usa-width-one-whole">
-    <div class="breadcrumbs">
-      {% unless page.url == "/index.html" %}
-      <a href="{{site.baseurl}}/index.html">Home</a><span> / {{page.title}} - {{page.url}}</span>
-      {% endunless %}
-    </div>
-  </div>
+{% unless page.url == "/" %}
+<nav class="va-nav-breadcrumbs ">
+  <ul class="row va-nav-breadcrumbs-list columns" role="menubar" aria-label="Primary">
+    <li><a href="/">Home</a></li>
+  </ul>
+</nav>
+{% endunless %}
 
-  <div class="usa-width-one-whole">
-    <h2>{{page.title}}</h2>
-  </div>
-
-  <div class="usa-width-one-whole">
+<div id="content" class="interior ">
+  <main class="va-l-detail-page">
     <div class="usa-grid">
-      <div class="usa-width-three-fouths">
-        <p>
-        {% if page.date_added %}
-        Added {{page.date_added | date: '%B %Y'}}<br>
-        {% endif %}
 
-        {% if page.extended_description %}
-        {{page.extended_description}}
-        {% else %}
-        {{page.description}}
-        {% endif %}</p>
+      <div class="usa-width-one-whole">
+        <h2>{{page.title}}</h2>
       </div>
-      <div class="usa-width-one-fourth">
-        {% if page.vetsdotgov_url %}
-        <a class="btn btn-app" href="{{page.vetsdotgov_url}}">Visit {{page.title}}</a>
-        {% endif %}
-      </div>
-    </div>
-  </div>
 
-  <div class="usa-width-one-whole">
+      <div class="usa-width-one-whole">
+        <div class="usa-grid">
+          <div class="usa-width-three-fouths">
+            <p>
+            {% if page.date_added %}
+            Added {{page.date_added | date: '%B %Y'}}<br>
+            {% endif %}
+
+            {% if page.extended_description %}
+            {{page.extended_description}}
+            {% else %}
+            {{page.description}}
+            {% endif %}</p>
+          </div>
+          <div class="usa-width-one-fourth">
+            {% if page.vetsdotgov_url %}
+            <a class="btn btn-app" href="{{page.vetsdotgov_url}}">Visit {{page.title}}</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="usa-width-one-whole">
