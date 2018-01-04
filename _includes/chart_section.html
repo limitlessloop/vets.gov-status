@@ -14,7 +14,15 @@
     {% if page.charts or page.accounts or page.clicks %}
     <ul class="usa-accordion-bordered">
 
-      {% assign charts = site.data.charts | concat: site.data.accounts | concat: site.data.clicks %}
+      {% if page.charts %}
+        {% if page.accounts %}
+          {% assign charts = site.data.charts | concat: site.data.accounts %}
+        {% else %}
+          {% assign charts = site.data.charts %}
+        {% endif %}
+      {% elsif page.clicks %}
+        {% assign charts = site.data.clicks %}
+      {% endif %}
 
       {% for chart in charts %}
       <li>
