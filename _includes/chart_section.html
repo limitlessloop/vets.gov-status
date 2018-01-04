@@ -1,70 +1,50 @@
 {% if page.charts or page.accounts or page.clicks %}
 
-<div class="usa-grid-full tile-container">
+<div class="usa-grid-full">
 
-  <div class="usa-width-one-whole subtitle">
-      <p>Traffic &amp; Users</p>
+  <div class="usa-width-one-whole">
+      <h3>Traffic &amp; Users</h3>
   </div>
 
   <script>
   var myCharts = [];
   </script>
 
-  <div class="usa-width-one-whole"> <!-- required for floating -->
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs tabs-chart">
-          {% if page.charts %}
+  <div class="usa-width-one-whole">
+    {% if page.charts or page.accounts or page.clicks %}
+    <ul class="usa-accordion-bordered">
 
-            {% for chart in site.data.charts %}
-            <li {% if forloop.first == true %}class="active"{% endif %}><a href="#{{chart.data}}" data-toggle="tab"><span class="glyphicon glyphicon-{{chart.icon}} tab-icon" aria-hidden="true"></span><span>{{chart.name}}</span></a></li>
-            {% endfor %}
-          {% endif %}
-          {% if page.accounts %}
-            {% for chart in site.data.accounts %}
-            <li><a href="#{{chart.data}}" data-toggle="tab"><span class="glyphicon glyphicon-{{chart.icon}} tab-icon" aria-hidden="true"></span><span>{{chart.name}}</span></a></li>
-            {% endfor %}
-          {% endif %}
-          {% if page.clicks %}
-            {% for chart in site.data.clicks %}
-            <li {% if forloop.first == true %}class="active"{% endif %}><a href="#{{chart.data}}" data-toggle="tab"><span class="glyphicon glyphicon-{{chart.icon}} tab-icon" aria-hidden="true"></span><span>{{chart.name}}</span></a></li>
-            {% endfor %}
-          {% endif %}
-        </ul>
-        <!-- Tab panes -->
-        <div class="tab-content">
-          {% if page.charts %}
-            {% for chart in site.data.charts %}
-            <div class="tab-pane{% if forloop.first == true %} active{% endif %}" id="{{chart.data}}">{% include tiles/chart.html %}</div>
-            {% endfor %}
-          {% endif %}
-          {% if page.accounts %}
-            {% for chart in site.data.accounts %}
-            <div class="tab-pane" id="{{chart.data}}">{% include tiles/chart.html %}</div>
-            {% endfor %}
-          {% endif %}
-          {% if page.clicks %}
-            {% for chart in site.data.clicks %}
-            <div class="tab-pane{% if forloop.first == true %} active{% endif %}" id="{{chart.data}}">{% include tiles/chart.html %}</div>
-            {% endfor %}
-          {% endif %}
+      {% assign charts = page.charts | concat: page.accounts | concat: page.clicks %}
+
+      {% for chart in charts %}
+      <li>
+        <button class="usa-accordion-button"
+          aria-expanded={% if forloop.first == true %}"true"{% else %}"false"{% endif %}
+          aria-controls="b-a{{forloop.index}}">
+          {{chart.name}}
+        </button>
+        <div id="b-a{{forloop.index}}" class="usa-accordion-content">
+          {% include tiles/chart.html %}
         </div>
-    </div>
+      </li>
+      {% endfor %}
+    </ul>
   </div>
 
   <script>
   window.onload = function () {
     canvases = document.getElementsByClassName("metric-chart");
 
-    var i;
+    // var i;
 
     responsive : true;
     animation: true;
 
-    //Skip first that's already displayed
-    for (i = 1; i < canvases.length; i++) {
-        canvases[i].style.height=canvases[0].style.height;
-        canvases[i].style.width=canvases[0].style.width;
-    }
+    // //Skip first that's already displayed
+    // for (i = 1; i < canvases.length; i++) {
+    //     canvases[i].style.height=canvases[0].style.height;
+    //     canvases[i].style.width=canvases[0].style.width;
+    // }
   }
   </script>
 
