@@ -13,19 +13,17 @@
     </div>
   </div>
 
+  <div class="usa-width-one-whole">
   {% assign featured = page.tiles | where_exp: "item", "item.layout != 'chart'" %}
-  {% for tile in featured limit: 3 %}
+  {% for tile in featured %}
+    {% assign start = forloop.index | modulo: 2 %}
+
+    {% if start == 1 %}<div class="usa-grid-full">{% endif %}
     {% include tiles/{{tile.layout}}.html %}
+    {% if start == 0 or forloop.last %}</div>{% endif %}
   {% endfor %}
-
-  {% if featured.size > 3 %}
-    {% for tile in featured offset: 3 %}
-      {% include tiles/{{tile.layout}}.html %}
-    {% endfor %}
-  {% endif %}
-
+  </div>
 {% endif %}
+</div>
 
 {% include chart_section.html %}
-
-</div>
