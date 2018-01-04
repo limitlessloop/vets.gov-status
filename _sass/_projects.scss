@@ -61,9 +61,6 @@
   transition: all .2s ease-in-out;
 }
 
-.project-wrapper:hover p.project-title:after {
-}
-
 .project-title {
   font-weight: bold;
   font-size: 20px;
@@ -81,37 +78,4 @@
   font-weight: bold;
   font-size: 24px;
   color: $color-primary-darker;
-}
-
-.band {
-  display: block;
-  padding: 1.5em 0;
-  opacity: .95;
-  -webkit-transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  -o-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-  -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
-   backface-visibility: hidden;
-}
-
-.band-spaced {
-  margin-top: 80px;
-}
-
-.band:active, .band:hover {
-  opacity: 1;
-}
-
-.band:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-}
-
-.shaded {
-  background-color: $color-gray-light;
 }

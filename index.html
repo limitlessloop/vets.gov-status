@@ -73,9 +73,8 @@ cloud:
 {% include tile_section.html %}
 
 <div class="usa-grid-full">
-  <div class="row subtitle">
-    <div class="usa-width-one-whole">
-      <p>Enabling Veterans to:</p>
+  <div class="usa-width-one-whole">
+      <h3>Enabling Veterans to:</h3>
     </div>
   </div>
 </div>
@@ -83,24 +82,20 @@ cloud:
 <div class="category-grid">
   {% assign categories = "Discover, Apply, Track, Manage" | split: ", " %}
   {% for category in categories %}
-  {% assign shaded = forloop.index | modulo: 2 %}
-  <div class="band{% if shaded == 0 %} shaded{% endif %}">
-    <div class="usa-grid">
-        <div class="usa-width-one-whole category-header">
-          <p>{{category}}</p>
-        </div>
-      </div>
-    <div class="usa-grid">
-      {% assign projects = site.boards | where: "category", category | sort: "status" %}
-      {% for project in projects %}
-      <div class="usa-width-one-fourth">
-        {% include tiles/project.html %}
-      </div>
-      {% endfor %}
-      </div>
+  <div class="usa-grid-full">
+    <div class="usa-width-one-whole category-header">
+      <h4>{{category}}</h4>
     </div>
   </div>
+  {% assign projects = site.boards | where: "category", category | sort: "status" %}
+  {% for project in projects %}
+    {% assign start = forloop.index | modulo: 2 %}
+    {% if start == 1 %}<div class="usa-grid-full">{% endif %}
+    {% include tiles/project.html %}
+    {% if start == 0 or forloop.last %}</div>{% endif %}
   {% endfor %}
+</div>
+{% endfor %}
 </div>
 
 <div class="quote-band">
