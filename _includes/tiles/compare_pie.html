@@ -8,9 +8,6 @@
           <canvas id="{{tile.id}}-after" width="100" height="100"></canvas>
           <span class="chart-notes">{{tile.after_text | default: "After"}}: {{tile.datapoint}}%</span>
         </div>
-    </div>
-  </div>
-</div>
 <script>
 var ctx = document.getElementById("{{tile.id}}-before");
 var myChart = new Chart(ctx, {
@@ -61,3 +58,4 @@ var myChart = new Chart(ctx, {
     }
 });
 </script>
+{% include tiles/tile_footer.html %}

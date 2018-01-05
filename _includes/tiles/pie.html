@@ -2,9 +2,6 @@
 
       <canvas id="{{tile.id}}" width="300" height="100"></canvas>
       <span class="chart-notes">{{tile.context}}: {{tile.datapoint}}%</span>
-    </div>
-  </div>
-</div>
 <script>
 var ctx = document.getElementById("{{tile.id}}");
 var myChart = new Chart(ctx, {
@@ -31,3 +28,4 @@ var myChart = new Chart(ctx, {
     }
 });
 </script>
+{% include tiles/tile_footer.html %}

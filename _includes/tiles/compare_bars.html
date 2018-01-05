@@ -8,9 +8,6 @@
           <canvas id="{{tile.id}}-after" width="150" height="100"></canvas>
           <span class="chart-notes">{{tile.after_text | default: "After"}}: {{tile.datapoint}}</span>
         </div>
-    </div>
-  </div>
-</div>
 {% if tile.datapoint >= tile.before %}
   {% assign max-val = tile.datapoint %}
 {% else %}
@@ -90,3 +87,4 @@ var myChart = new Chart(ctx, {
     }
 });
 </script>
+{% include tiles/tile_footer.html %}
