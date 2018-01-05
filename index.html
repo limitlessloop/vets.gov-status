@@ -58,12 +58,12 @@ feedback:
 cloud:
 
   - name: Availability
-    layout: basic_cloud
+    layout: cloud_tile
     datapoint: reachability
     context: based on our continuous reachability monitoring
 
   - name: Error rate
-    layout: basic_cloud
+    layout: cloud_tile
     datapoint: error_rate
     context: of requests that our software does not handle successfully
 ---
@@ -109,7 +109,7 @@ cloud:
   </div>
 </div>
 
-{% include cloud.html %}
+{% include cloud/cloud.html %}
 
 {% include migration.html %}
 
