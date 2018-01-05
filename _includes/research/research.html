@@ -1,7 +1,6 @@
 {% if page.feedback.size > 0 %}
 
-
-    <div class="row row-tile">
+    <div class="usa-grid-full">
       {% for tile in page.feedback %}
         {% include research/{{tile.layout}}.html %}
       {% endfor %}
