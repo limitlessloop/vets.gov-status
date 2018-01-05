@@ -1,8 +1,8 @@
 
-<div class="usa-grid-full tile-container">
+<div class="tile-container">
 
 {% if page.tiles.size > 0 %}
-  <div class="subtitle">
+  <div class="usa-grid-full">
     <div class="usa-width-one-whole">
       {% unless page.access %}
       <h3>Featured Improvements</h3>
@@ -13,7 +13,6 @@
     </div>
   </div>
 
-  <div class="usa-width-one-whole">
   {% assign featured = page.tiles | where_exp: "item", "item.layout != 'chart'" %}
   {% for tile in featured %}
     {% assign start = forloop.index | modulo: 3 %}
@@ -22,7 +21,6 @@
     {% include tiles/{{tile.layout}}.html %}
     {% if start == 0 or forloop.last %}</div>{% endif %}
   {% endfor %}
-  </div>
 {% endif %}
 </div>
 
