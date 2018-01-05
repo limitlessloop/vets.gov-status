@@ -1,9 +1,4 @@
-<div class="usa-width-one-half">
-  <div class="chart-wrapper">
-    <div class="chart-title">
-      {{tile.name}}
-    </div>
-    <div class="chart-stage">
+{% include tiles/tile_header.html %}
       <canvas id="{{tile.id}}" width="300" height="100"></canvas>
       <span class="chart-notes">{{tile.context}}: {{tile.datapoint}}</span>
     </div>

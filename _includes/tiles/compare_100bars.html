@@ -1,9 +1,5 @@
-<div class="usa-width-one-half">
-  <div class="chart-wrapper">
-    <div class="chart-title">
-      {{tile.name}}
-    </div>
-    <div class="chart-stage">
+{% include tiles/tile_header.html %}
+
         <div class="compare compare-before">
           <canvas id="{{tile.id}}-before" width="150" height="100"></canvas>
           <span class="chart-notes">{{tile.before_text | default: "Before"}}: {{tile.before}}%</span>
