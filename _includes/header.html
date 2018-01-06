@@ -71,10 +71,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h1>{{page.title}}</h1>
         <div class="va-introtext">
           <p>
-              {% if page.date_added %}
-              Added {{page.date_added | date: '%B %Y'}}<br>
-              {% endif %}
-
               {% if page.extended_description %}
               {{page.extended_description}}
               {% else %}
@@ -83,7 +79,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </p>
         </div>
         {% if page.vetsdotgov_url %}
-        <p><a class="usa-button-primary va-button-primary" href="{{page.vetsdotgov_url}}">Visit {{page.title}}</a></p>
+        <p><a class="usa-button usa-button-secondary" href="{{page.vetsdotgov_url}}">Visit {{page.title}}</a></p>
         {% endif %}
       </article>
     </div>
