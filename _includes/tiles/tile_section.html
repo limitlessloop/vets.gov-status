@@ -5,10 +5,10 @@
   <div class="usa-grid-full">
     <div class="usa-width-one-whole">
       {% unless page.access %}
-      <h3>Featured Improvements</h3>
+      <h2>Featured Improvements</h2>
       {% else %}
-      <h3>Access Improvements</h3>
-      <p>{{page.access}}</p>
+      <h2>Access Improvements</h2>
+      <p class="usa-font-lead">{{page.access}}</p>
       {% endunless %}
     </div>
   </div>

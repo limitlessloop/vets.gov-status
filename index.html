@@ -65,47 +65,14 @@ cloud:
 
 {% include header.html %}
 
-{% include tile_section.html %}
+{% include tiles/tile_section.html %}
 
-<div class="usa-grid-full">
-  <div class="usa-width-one-whole">
-      <h3>Enabling Veterans to:</h3>
-  </div>
-</div>
+{% include projects/project_section.html %}
 
-<div class="category-grid">
-  {% assign categories = "Discover, Apply, Track, Manage" | split: ", " %}
-  {% for category in categories %}
-  <div class="usa-grid-full">
-    <div class="usa-width-one-whole category-header">
-      <h4>{{category}}</h4>
-    </div>
-  </div>
-  {% assign projects = site.boards | where: "category", category | sort: "status" %}
-  {% for project in projects %}
-    {% assign start = forloop.index | modulo: 4 %}
-    {% if start == 1 %}<div class="usa-grid-full">{% endif %}
-    {% include project.html %}
-    {% if start == 0 or forloop.last %}</div>{% endif %}
-  {% endfor %}
-{% endfor %}
-</div>
+{% include research/research_section.html%}
 
-<div class="usa-grid-full">
-  <div class="usa-width-one-whole">
-    <h3>Veteran-Centered Design</h3>
-  </div>
-</div>
-{% include research/research.html %}
-<div class="usa-grid-full">
-  <div class="usa-width-one-third"><br></div>
-  <div class="usa-width-one-third">
-    <a class="usa-button" href="research.html">Learn about our use of human-centered design to build Vets.gov</a>
-  </div>
-</div>
+{% include cloud/cloud_section.html %}
 
-{% include cloud/cloud.html %}
-
-{% include migration.html %}
+{% include migration_section.html %}
 
 {% include footer.html %}

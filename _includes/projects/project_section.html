@@ -1,0 +1,23 @@
+<div class="usa-grid-full">
+  <div class="usa-width-one-whole">
+    <h3>Enabling Veterans to:</h3>
+  </div>
+</div>
+
+<div class="category-grid">
+    {% assign categories = "Discover, Apply, Track, Manage" | split: ", " %}
+    {% for category in categories %}
+    <div class="usa-grid-full">
+        <div class="usa-width-one-whole category-header">
+        <h2>{{category}}</h2>
+        </div>
+    </div>
+    {% assign projects = site.boards | where: "category", category | sort: "status" %}
+    {% for project in projects %}
+        {% assign start = forloop.index | modulo: 4 %}
+        {% if start == 1 %}<div class="usa-grid-full">{% endif %}
+        {% include projects/project.html %}
+        {% if start == 0 or forloop.last %}</div>{% endif %}
+    {% endfor %}
+    {% endfor %}
+</div>
