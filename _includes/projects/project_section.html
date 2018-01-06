@@ -7,7 +7,7 @@
 <div class="category-grid">
     {% assign categories = "Discover, Apply, Track, Manage" | split: ", " %}
     {% for category in categories %}
-        {% cycle 'open': '', '<div class="feature">' %}
+        {% cycle 'open': '', '<div class="va-callout">' %}
         <div class="usa-grid-full">
             <div class="usa-width-one-whole category-header">
             <h3>{{category}}</h3>
