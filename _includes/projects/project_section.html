@@ -20,6 +20,6 @@
             {% include projects/project.html %}
             {% if start == 0 or forloop.last %}</div>{% endif %}
         {% endfor %}
+        {% cycle 'close': '', '</div>' %}
     {% endfor %}
-    {% cycle 'close': '', '</div>' %}
 </div>
