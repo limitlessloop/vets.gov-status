@@ -9,7 +9,7 @@
     {% for category in categories %}
     <div class="usa-grid-full">
         <div class="usa-width-one-whole category-header">
-        <h2>{{category}}</h2>
+        <h3>{{category}}</h3>
         </div>
     </div>
     {% assign projects = site.boards | where: "category", category | sort: "status" %}
