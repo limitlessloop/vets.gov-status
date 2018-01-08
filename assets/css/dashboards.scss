@@ -13,7 +13,6 @@
 @import "m-footer";
 
 // Legacy styles to retire?
-@import "subhead";
 @import "research-quotes";
 @import "tiles";
 @import "projects";
@@ -25,4 +24,9 @@
 b {
   color: $color-va-accent;
   line-height: 1em;
+}
+
+.interior h2 {
+  margin-top: 1em !important;
+  margin-bottom: 1em !important;
 }
