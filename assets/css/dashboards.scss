@@ -13,10 +13,8 @@
 @import "m-footer";
 
 // Legacy styles to retire?
-@import "research-quotes";
 @import "tiles";
 @import "projects";
-@import "screenshots";
 @import "migration";
 
 @import "shame";
@@ -34,4 +32,18 @@ b {
 #slogan {
   font-weight: 400;
   padding: 2em 0.75em 0;
+}
+
+.ux-compare img {
+  margin-bottom: 3em;
+  border: 1px solid #ccc;
+}
+
+.quotes {
+  opacity: .2;
+  padding-top: 1.5em;
+  font-size: 100px;
+  font-weight: 700;
+  vertical-align: top;
+  line-height: 100px;
 }
