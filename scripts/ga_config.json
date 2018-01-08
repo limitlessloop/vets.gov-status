@@ -47,6 +47,14 @@
       "healthrecords": {
         "view": "111433053",
         "page_filter": "/health-?care/health-records.*"
+      },
+      "burial": {
+        "view": "111433053",
+        "page_filter": "/burials-and-memorials/application.*"
+      },
+      "pension": {
+        "view": "111433053",
+        "page_filter": "/pension/application.*"
       }
   },
   "clicks": {
@@ -104,6 +112,16 @@
       "view": "111433053",
       "event_name": "health-record-download",
       "adjustment": 4324
+    },
+    "form530": {
+      "view": "111433053",
+      "event_name": "burials-530--submission-successful",
+      "adjustment": 95
+    },
+    "form527ez": {
+      "view": "111433053",
+      "event_name": "pensions-527EZ--submission-successful",
+      "adjustment": 175
     }
   }
 }

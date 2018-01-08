@@ -17,10 +17,5 @@ tiles:
     datapoint: form1990n
     context: since public launch in May 2017 (Form 22-1990N)
 
-  - name: Improved user experience
-    layout: icon
-    icon: heart-empty
-    text: Used human centered design to improve Veteran experience
-
 charts: 1990
 ---

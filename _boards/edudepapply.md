@@ -17,10 +17,5 @@ tiles:
     datapoint: form5490
     context: since public launch in April 2017 (Form 22-5490)
 
-  - name: Improved user experience
-    layout: icon
-    icon: heart-empty
-    text: Used human centered design to improve Veteran experience
-
 charts: edu_dep
 ---
