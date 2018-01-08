@@ -15,7 +15,7 @@
 
   {% assign featured = page.tiles | where_exp: "item", "item.layout != 'chart'" %}
   {% for tile in featured %}
-    {% assign start = forloop.index | modulo: 3 %}
+    {% assign start = forloop.index | modulo: 2 %}
 
     {% if start == 1 %}<div class="usa-grid-full">{% endif %}
     {% include tiles/{{tile.layout}}.html %}
