@@ -1,25 +1,27 @@
-<div class="usa-grid-full">
-  <div class="usa-width-one-whole">
-    <h2>Enabling Veterans to:</h2>
-  </div>
-</div>
+<section>
+    <div class="usa-grid-full">
+    <div class="usa-width-one-whole">
+        <h2>Enabling Veterans to:</h2>
+    </div>
+    </div>
 
-<div class="category-grid">
-    {% assign categories = "Discover, Apply, Track, Manage" | split: ", " %}
-    {% for category in categories %}
-        {% cycle 'open': '', '<div class="va-callout">' %}
-        <div class="usa-grid-full">
-            <div class="usa-width-one-whole category-header">
-            <h3>{{category}}</h3>
+    <div class="category-grid">
+        {% assign categories = "Discover, Apply, Track, Manage" | split: ", " %}
+        {% for category in categories %}
+            {% cycle 'open': '', '<div class="va-callout">' %}
+            <div class="usa-grid-full">
+                <div class="usa-width-one-whole category-header">
+                <h3>{{category}}</h3>
+                </div>
             </div>
-        </div>
-        {% assign projects = site.boards | where: "category", category | sort: "status" %}
-        {% for project in projects %}
-            {% assign start = forloop.index | modulo: 4 %}
-            {% if start == 1 %}<div class="usa-grid-full">{% endif %}
-            {% include projects/project.html %}
-            {% if start == 0 or forloop.last %}</div>{% endif %}
+            {% assign projects = site.boards | where: "category", category | sort: "status" %}
+            {% for project in projects %}
+                {% assign start = forloop.index | modulo: 4 %}
+                {% if start == 1 %}<div class="usa-grid-full">{% endif %}
+                {% include projects/project.html %}
+                {% if start == 0 or forloop.last %}</div>{% endif %}
+            {% endfor %}
+            {% cycle 'close': '', '</div>' %}
         {% endfor %}
-        {% cycle 'close': '', '</div>' %}
-    {% endfor %}
-</div>
+    </div>
+</section>

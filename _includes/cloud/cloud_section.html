@@ -1,12 +1,14 @@
-<div class="usa-grid-full">
-  <div class="usa-width-one-whole">
-    <h2>Cloud Infrastructure</h2>
-    <p class="usa-font-lead">Operational efficency and system stability from commercial cloud technology</span>
+<section>
+  <div class="usa-grid-full">
+    <div class="usa-width-one-whole">
+      <h2>Cloud Infrastructure</h2>
+      <p class="usa-font-lead">Operational efficency and system stability from commercial cloud technology</span>
+    </div>
   </div>
-</div>
 
-<div class="usa-grid-full">
-  {% for tile in page.cloud limit: 3 %}
-    {% include cloud/{{tile.layout}}.html %}
-  {% endfor %}
-</div>
+  <div class="usa-grid-full">
+    {% for tile in page.cloud limit: 3 %}
+      {% include cloud/{{tile.layout}}.html %}
+    {% endfor %}
+  </div>
+</section>

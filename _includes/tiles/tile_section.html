@@ -1,4 +1,5 @@
 {% if page.tiles.size > 0 %}
+<section>
   <div class="usa-grid-full">
     <div class="usa-width-one-whole">
       {% unless page.access %}
@@ -18,6 +19,7 @@
     {% include tiles/{{tile.layout}}.html %}
     {% if start == 0 or forloop.last %}</div>{% endif %}
   {% endfor %}
+</section>
 {% endif %}
 
 {% include charts/chart_section.html %}
