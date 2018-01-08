@@ -1,7 +1,7 @@
 {% include tiles/tile_header.html %}
 
       <canvas id="{{tile.id}}" width="300" height="100"></canvas>
-      <span class="chart-notes">{{tile.context}}: {{tile.datapoint}}%</span>
+      <span class="tile-notes">{{tile.context}}: {{tile.datapoint}}%</span>
 <script>
 var ctx = document.getElementById("{{tile.id}}");
 var myChart = new Chart(ctx, {

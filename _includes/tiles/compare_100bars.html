@@ -2,11 +2,11 @@
 
         <div class="compare compare-before">
           <canvas id="{{tile.id}}-before" width="150" height="100"></canvas>
-          <span class="chart-notes">{{tile.before_text | default: "Before"}}: {{tile.before}}%</span>
+          <span class="tile-notes">{{tile.before_text | default: "Before"}}: {{tile.before}}%</span>
         </div>
         <div class="compare compare-after">
           <canvas id="{{tile.id}}-after" width="150" height="100"></canvas>
-          <span class="chart-notes">{{tile.after_text | default: "After"}}: {{tile.datapoint}}%</span>
+          <span class="tile-notes">{{tile.after_text | default: "After"}}: {{tile.datapoint}}%</span>
         </div>
 <script>
 var ctx = document.getElementById("{{tile.id}}-before");
