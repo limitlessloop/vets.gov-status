@@ -12,11 +12,6 @@ tiles:
     datapoint: "1.74M"
     context: helped make more informed choices when they utilize their hard-earned GI Bill benefits
 
-  - name: Real-time caution warnings
-    layout: icon
-    icon: warning-sign
-    text: Warns on schools that are not performing well immediately
-
   - name: Page views since November 2015
     layout: basic
     datapoint: "5.6M"

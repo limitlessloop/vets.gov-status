@@ -1,20 +1,10 @@
-.tile-container {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.subtitle {
-  padding-top: 2rem;
-  padding-bottom: 4rem;
-}
-
-.chart-wrapper {
+.tile-wrapper {
   padding: 20px;
   margin-bottom: 20px;
   min-height: 270px;
 }
 
-.real-chart {
+.chart-wrapper {
   margin-bottom: 0;
 }
 
@@ -39,7 +29,9 @@
   padding-right: 10px;
 }
 
-canvas.metric-chart {
+// Charts of metrics in accordians
+
+.metric-chart {
   display: block !important;
   overflow: auto !important;
 }
