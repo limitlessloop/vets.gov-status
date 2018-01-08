@@ -21,8 +21,8 @@
   font-size: 6rem;
   font-weight: 700;
   color: $color-primary-darker;
-  line-height: 1em;
-  margin: 0 0 15px 0;
+  line-height: 72px;
+  margin: 0;
 }
 
 .compare {
@@ -32,7 +32,7 @@
   text-align: center;
 }
 
-.compare-after  .tile-notes {
+.compare-after .tile-notes {
   color: $color-primary-darker !important;
   font-weight: bold;
 }
@@ -52,7 +52,7 @@
   color: $color-gray-medium;
   font-size: 5rem;
   font-weight: 700;
-  line-height: 1em;
+  line-height: 72px;
   margin: 0;
 }
 
