@@ -1,14 +1,7 @@
 .tile-wrapper {
-  padding: 20px;
-  margin-bottom: 20px;
-  min-height: 270px;
+  min-height: 240px;
 }
-
-.chart-wrapper {
-  margin-bottom: 0;
-}
-
-.chart-wrapper > .chart-title {
+.tile-wrapper .chart-title {
   color: $color-primary-darkest;
   font-size: 2rem;
   padding: 10px 10px 10px 0px;
@@ -16,27 +9,20 @@
   line-height: 1em;
 }
 
-.chart-wrapper .chart-stage {
+.tile-wrapper .chart-stage {
   overflow: hidden;
   padding: 5px 10px;
   position: relative;
   min-height: 135px;
 }
 
-.chart-wrapper .chart-holder {
+.tile-wrapper .chart-holder {
   position: relative !important;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-// Charts of metrics in accordians
-
-.metric-chart {
-  display: block !important;
-  overflow: auto !important;
-}
-
-.chart-stage .datapoint {
+.tile-stage .datapoint {
   font-size: 72px;
   font-weight: 700;
   color: $color-primary-darker;
@@ -75,22 +61,15 @@
   margin: 0;
 }
 
-.chart-wrapper .chart-notes {
+.til-wrapper .chart-notes {
   color: $color-gray-medium;
   font-size: 16px;
 }
 
-.chart-title {
-  margin: 0;
-  padding: 0 0 1.5em 0;
-  opacity: .9;
-}
 
-.lead {
-  font-size: 16pt;
-}
+// Charts of metrics in accordians
 
-.quotes-tile {
-  color: $color-primary-darker;
-  opacity: 1;
+.metric-chart {
+  display: block !important;
+  overflow: auto !important;
 }
