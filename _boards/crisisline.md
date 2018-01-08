@@ -1,6 +1,5 @@
 ---
 title: Veterans Crisis Line
-date_added:
 vetsdotgov_url:
 status: normal
 category: Manage

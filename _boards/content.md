@@ -1,6 +1,5 @@
 ---
 title: Content
-date_added:
 vetsdotgov_url:
 status: normal
 category: Discover

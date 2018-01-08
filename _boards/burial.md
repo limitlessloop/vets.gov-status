@@ -1,6 +1,5 @@
 ---
 title: Burial Benefits
-date_added:
 vetsdotgov_url:
 status: progress
 category: Apply

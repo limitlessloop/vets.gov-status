@@ -1,7 +1,6 @@
 ---
 title: Manage Education Benefits
-date_added:
-vetsdotgov_url: https://www.vets.gov/education/apply-for-education-benefits/application/1995
+vetsdotgov_url: /education/apply-for-education-benefits/application/1995
 status: normal
 category: Manage
 description: Veterans can manage education benefits online using any mobile device

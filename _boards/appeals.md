@@ -1,6 +1,5 @@
 ---
 title: Appeals Status
-date_added:
 vetsdotgov_url:
 status: normal
 category: Track
