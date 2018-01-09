@@ -5,12 +5,12 @@ vetsdotgov_url:
 status: progress
 category: Apply
 description:  Online application for Veterans to plan their burials
-screenshot: placeholder
 tiles:
 
-  - name: Mobile-friendly
-    layout: icon
-    icon: phone
-    text: Veterans can access health records from any device
+  - name: Online applications for burial benefits
+    layout: basic_count
+    datapoint: form530
+    context: since public launch
 
+charts: burial
 ---

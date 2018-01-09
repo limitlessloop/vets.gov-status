@@ -5,12 +5,12 @@ vetsdotgov_url:
 status: progress
 category: Apply
 description: Online submission of pension application
-screenshot: placeholder
 tiles:
 
-  - name: Mobile-friendly
-    layout: icon
-    icon: phone
-    text: Veterans can access health records from any device
+  - name: Online applications for a pension
+    layout: basic_count
+    datapoint: form527ez
+    context: since public launch
 
+charts: pension
 ---
