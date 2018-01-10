@@ -76,7 +76,6 @@ def get_reports(analytics, view_id, page_filter):
                               "expressions": page_filter
                             }
                             ]}],
-                    "useResourceQuotas": "true"
                 },
                 {
                     'viewId': view_id,
@@ -93,7 +92,6 @@ def get_reports(analytics, view_id, page_filter):
                              "expressions": page_filter
                            }
                            ]}],
-                    "useResourceQuotas": "true"
                 },
                 {
                     'viewId': view_id,
@@ -109,9 +107,9 @@ def get_reports(analytics, view_id, page_filter):
                              "expressions": page_filter
                            }
                            ]}],
-                    "useResourceQuotas": "true"
                 }
-                ]
+            ],
+            "useResourceQuotas": true
         }
     ).execute()
 
@@ -166,9 +164,9 @@ def get_click_reports(analytics, view_id):
                             },
                             ]}],
                     "includeEmptyRows": "true",
-                    "useResourceQuotas": "true"
                 }
-                ]
+            ],
+            "useResourceQuotas": true
         }
     ).execute()
 
