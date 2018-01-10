@@ -109,7 +109,7 @@ def get_reports(analytics, view_id, page_filter):
                            ]}],
                 }
             ],
-            "useResourceQuotas": true
+            "useResourceQuotas": True
         }
     ).execute()
 
@@ -166,7 +166,7 @@ def get_click_reports(analytics, view_id):
                     "includeEmptyRows": "true",
                 }
             ],
-            "useResourceQuotas": true
+            "useResourceQuotas": True
         }
     ).execute()
 
