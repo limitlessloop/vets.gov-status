@@ -68,7 +68,8 @@ def get_count_report(analytics, view_id, event_name):
                             }
                             ]}],
                 }
-            ]
+            ],
+            "useResourceQuotas": True
         }
     ).execute()
 

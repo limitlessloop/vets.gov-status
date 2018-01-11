@@ -84,7 +84,7 @@ def get_reports(analytics, view_id, page_filter):
                     'metrics': [{'expression': 'ga:sessions'}],
                     'dimensions': [{'name': 'ga:isoYearIsoWeek'},
                                    {'name': 'ga:deviceCategory'}],
-                   "dimensionFilterClauses": [{
+                    "dimensionFilterClauses": [{
                        "filters": [
                            {
                              "dimensionName": "ga:pagePath",
@@ -99,7 +99,7 @@ def get_reports(analytics, view_id, page_filter):
                                     'endDate': endDate}],
                     'metrics': [{'expression': 'ga:pageviews'}],
                     'dimensions': [{'name': 'ga:isoYearIsoWeek'}],
-                   "dimensionFilterClauses": [{
+                    "dimensionFilterClauses": [{
                        "filters": [
                            {
                              "dimensionName": "ga:pagePath",
@@ -108,7 +108,8 @@ def get_reports(analytics, view_id, page_filter):
                            }
                            ]}],
                 }
-                ]
+            ],
+            "useResourceQuotas": True
         }
     ).execute()
 
@@ -164,7 +165,8 @@ def get_click_reports(analytics, view_id):
                             ]}],
                     "includeEmptyRows": "true",
                 }
-                ]
+            ],
+            "useResourceQuotas": True
         }
     ).execute()
 
