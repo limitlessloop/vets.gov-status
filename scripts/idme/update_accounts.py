@@ -12,7 +12,6 @@ import ruamel.yaml as yaml
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 DISCOVERY_URI = ('https://analyticsreporting.googleapis.com/$discovery/rest')
 KEY_FILE_LOCATION = os.environ['GA_SERVICEACCOUNT']
-SERVICE_ACCOUNT_EMAIL = 'analytics@inductive-voice-142915.iam.gserviceaccount.com'
 
 def fetch_sheet_data():
     """Initializes an analyticsreporting service object.
@@ -21,10 +20,8 @@ def fetch_sheet_data():
     analytics an authorized analyticsreporting service object.
     """
 
-    credentials = ServiceAccountCredentials.from_p12_keyfile(
-        SERVICE_ACCOUNT_EMAIL, KEY_FILE_LOCATION, scopes=SCOPES)
-
-    http = credentials.authorize(httplib2.Http())
+    credentials = ServiceAccountCredentials.from_json_keyfile_name(
+      KEY_FILE_LOCATION, SCOPES)
 
     # Build the service object.
     service = discovery.build('sheets', 'v4', credentials=credentials)
