@@ -8,7 +8,7 @@ description: Veterans can learn how to apply for a discharge upgrade
 screenshot: discharge
 tiles:
 
-  - name: Customized content provided to Veterans before
+  - name: Customized content provided to Veterans
     layout: compare
     datapoint: 10k
     after_text: variations on our results page
