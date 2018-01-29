@@ -55,6 +55,10 @@
       "pension": {
         "view": "111433053",
         "page_filter": "/pension/application.*"
+      },
+      "discharge": {
+        "view": "111433053",
+        "page_filter": "/discharge-upgrade-instructions.*"
       }
   },
   "clicks": {
