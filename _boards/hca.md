@@ -20,7 +20,7 @@ tiles:
     datapoint: hca
     context: since public launch in July 2016
 
-  - name: Online portion of 582k annual healthcare applications
+  - name: Online portion of 621k annual healthcare applications (based on FY17 data)
     layout: compare_pie
     id: applications
     datapoint: 50
