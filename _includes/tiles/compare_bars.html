@@ -21,7 +21,7 @@
   {% assign max-val = tile.before %}
 {% endif %}
 
-<script>
+<script nonce="**CSP_NONCE**">
 var ctx = document.getElementById("{{tile.id}}-before");
 var myChart = new Chart(ctx, {
     type: 'bar',
