@@ -1,7 +1,7 @@
 {% include tiles/tile_header.html %}
       <canvas id="{{tile.id}}" width="300" height="100"></canvas>
       <span class="tile-notes">{{tile.context}}: {{tile.datapoint}}</span>
-<script>
+<script nonce="**CSP_NONCE**">
 var ctx = document.getElementById("{{tile.id}}");
 var myChart = new Chart(ctx, {
     type: 'bar',

@@ -3,7 +3,7 @@
   <canvas class="metric-chart" id="{{chart.data}}-chart" width="600" height="250"></canvas>
 </div>
 
-<script>
+<script nonce="**CSP_NONCE**">
 var ctx = document.getElementById("{{chart.data}}-chart");
 {% capture datafile %}{{ page.charts | append: chart.data }}{% endcapture %}
 {% if page.clicks %}

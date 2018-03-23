@@ -8,7 +8,7 @@
           <canvas id="{{tile.id}}-after" width="150" height="100"></canvas>
           <span class="tile-notes">{{tile.after_text | default: "After"}}: {{tile.datapoint}}%</span>
         </div>
-<script>
+<script nonce="**CSP_NONCE**">
 var ctx = document.getElementById("{{tile.id}}-before");
 var myChart = new Chart(ctx, {
     type: 'bar',
