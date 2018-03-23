@@ -5,7 +5,7 @@
     </div>
   </div>
 
-<script>
+<script nonce="**CSP_NONCE**">
 var ctx = document.getElementById("{{chart.data}}-chart");
 {% capture datafile %}{{ page.charts | append: chart.data }}{% endcapture %}
 {% if page.clicks %}
