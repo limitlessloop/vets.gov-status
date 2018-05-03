@@ -34,9 +34,8 @@ description: Beta for internal demo only
                 <tr>
                     <td>{{ product.name }}</td>
                     <td>{{ product.lead }}</td>
-                    <td>{{ product.business_owner }}</td>
 
-                    {% assign sections = "definition,discovery,prototype,preflight,go_live" | split: ',' %}
+                    {% assign sections = "pre-intake,oit_intake" | split: ',' %}
                     {% for section in sections %}
                         <td class="{% case product[section] %}
                                         {% when 'Complete' %} complete
@@ -50,7 +49,41 @@ description: Beta for internal demo only
                             {% if product[section] == 'N/A' %}N/A{% endif %}
                         </td>
                     {% endfor %}
-                    <td>{{ product.launch_date }}</td>
+
+                    <td>{{ product.migrate_to_cloud }}</td>
+
+                    {% assign sections = "migration_planning,migration_cutover" | split: ',' %}
+                    {% for section in sections %}
+                        <td class="{% case product[section] %}
+                                        {% when 'Complete' %} complete
+                                        {% when 'N/A' %} complete
+                                        {% when 'Green' %} in-progress
+                                        {% when 'Yellow' %} low-risk
+                                        {% when 'Red' %} high-risk
+                                        {% else %} not-started
+                                   {% endcase %}">
+                            {% if product[section] == 'Complete' %}Complete{% endif %}
+                            {% if product[section] == 'N/A' %}N/A{% endif %}
+                        </td>
+                    {% endfor %}
+
+                    <td>{{ product.cutover_complete }}</td>
+
+                    {% assign sections = "decom" | split: ',' %}
+                    {% for section in sections %}
+                        <td class="{% case product[section] %}
+                                        {% when 'Complete' %} complete
+                                        {% when 'N/A' %} complete
+                                        {% when 'Green' %} in-progress
+                                        {% when 'Yellow' %} low-risk
+                                        {% when 'Red' %} high-risk
+                                        {% else %} not-started
+                                   {% endcase %}">
+                            {% if product[section] == 'Complete' %}Complete{% endif %}
+                            {% if product[section] == 'N/A' %}N/A{% endif %}
+                            
+                        </td>
+                    {% endfor %}
                 </tr>
                 {% endfor %}
             </tbody>
