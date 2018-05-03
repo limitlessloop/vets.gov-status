@@ -31,7 +31,13 @@
     background-color: #f1f1f1; }
 
 .migration_table thead th {
-    text-align: left; }
+    text-align: center; }
+
+.migration_table thead th span{
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+}
 
 .migration_table th,
 .migration_table td {
