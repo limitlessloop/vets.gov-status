@@ -13,6 +13,9 @@ IGNORE_LIST = ["readme.md",
                "project status template.md",
                "link to launch guide.md",
                "use this template.md",
+               "OLD Service and Facility Locator.md",
+               "OLD USE THIS TEMPLATE.md",
+               "OLD Vocational Rehabilitation and Employment.md"
               ]
 
 def createDashboardCSV(repo, markdown_files):
