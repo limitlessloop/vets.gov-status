@@ -35,7 +35,7 @@ description: Beta for internal demo only
                     <td>{{ product.name }}</td>
                     <td>{{ product.lead }}</td>
 
-                    {% assign sections = "pre-intake,oit_intake" | split: ',' %}
+                    {% assign sections = "pre_intake,oit_intake" | split: ',' %}
                     {% for section in sections %}
                         <td class="{% case product[section] %}
                                         {% when 'Complete' %} complete
@@ -81,7 +81,7 @@ description: Beta for internal demo only
                                    {% endcase %}">
                             {% if product[section] == 'Complete' %}Complete{% endif %}
                             {% if product[section] == 'N/A' %}N/A{% endif %}
-                            
+
                         </td>
                     {% endfor %}
                 </tr>

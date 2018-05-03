@@ -18,7 +18,7 @@ IGNORE_LIST = ["readme.md",
 def createDashboardCSV(repo, markdown_files):
     output_file = os.path.join(os.environ['DATA_DIR'], 'migration_status.csv')
     with open(output_file, 'w') as migration_status:
-        migration_status.write('name,lead,pre-intake,oit_intake,migrate_to_cloud,migration_planning,migration_cutover,cutover_complete,decom\n')
+        migration_status.write('name,lead,pre_intake,oit_intake,migrate_to_cloud,migration_planning,migration_cutover,cutover_complete,decom\n')
         product_rows = []
         for md in markdown_files:
             if md.lower() not in IGNORE_LIST:
@@ -49,7 +49,7 @@ def docToRow(document):
 
     for line in lines:
         if "COMPLETE ALL (PRE Intake) Modernization and Decommission Planning TASKS" in line:
-            pre-intake = get_status(line)
+            pre_intake = get_status(line)
         elif "COMPLETE ALL OIT Intake TASKS " in line:
             oit_intake = get_status(line)
         elif "COMPLETE ALL Migration Planning and onboarding Tasks" in line:
@@ -59,7 +59,7 @@ def docToRow(document):
         elif "COMPLETE ALL Decommission Tasks" in line:
             decom = get_status(line)
 
-    return ",".join((year, month, product_name, product_lead, pre-intake,
+    return ",".join((year, month, product_name, product_lead, pre_intake,
                      oit_intake, migrate_to_cloud, migration_planning, migration_cutover, cutover_complete, decom))
 
 def get_status(string):
