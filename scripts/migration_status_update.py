@@ -51,7 +51,7 @@ def docToRow(document):
     #    month = "0" + month
 
     for line in lines:
-        if "COMPLETE ALL (PRE Intake) Modernization and Decommission Planning TASKS" in line:
+        if "COMPLETE ALL (PRE Intake)" in line:
             pre_intake = get_status(line)
         elif "COMPLETE ALL OIT Intake TASKS " in line:
             oit_intake = get_status(line)
