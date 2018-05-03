@@ -59,7 +59,7 @@ def docToRow(document):
         elif "COMPLETE ALL Decommission Tasks" in line:
             decom = get_status(line)
 
-    return ",".join((year, month, product_name, product_lead, pre_intake,
+    return ",".join((product_name, product_lead, pre_intake,
                      oit_intake, migrate_to_cloud, migration_planning, migration_cutover, cutover_complete, decom))
 
 def get_status(string):
