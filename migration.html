@@ -33,6 +33,7 @@ description: Beta for internal demo only
                 {% for product in site.data.migration_status %}
                 <tr>
                     <td>{{ product.name }}</td>
+                    
                     <td>{{ product.lead }}</td>
 
                     {% assign sections = "pre_intake,oit_intake" | split: ',' %}
