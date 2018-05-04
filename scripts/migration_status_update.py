@@ -31,7 +31,6 @@ def createDashboardCSV(repo, markdown_files):
             if md.casefold() not in IGNORE_LIST:
                 full_path = MARKDOWN_DIR + '/' + md
                 doc_path = repo.html_url + '/blob/master/' + quote(full_path)
-                print(doc_path)
                 document = repo.file_contents(full_path).decoded.decode('utf-8')
                 product_rows.append(docToRow(document, doc_path))
         product_rows.sort()
@@ -60,8 +59,6 @@ def docToRow(document, doc_path):
             decom = get_status(line)
 
     product_link = "\"" + doc_path + "\""
-    #product_link = "\"" + 'https://github.com/department-of-veterans-affairs/vets.gov-team/blob/master/Communications/OLD_Status%20Reports/Sample-Status-Reports/System%201%20TEST.md/' + "\""
-    print(product_link)
 
     return ",".join((product_name, product_link, product_lead, pre_intake,
                      oit_intake, migrate_to_cloud, migration_planning,
