@@ -13,12 +13,15 @@ IGNORE_LIST = ["readme.md",
                "project status template.md",
                "link to launch guide.md",
                "use this template.md",
+               "OLD Service and Facility Locator.md",
+               "OLD USE THIS TEMPLATE.md",
+               "OLD Vocational Rehabilitation and Employment.md"
               ]
 
 def createDashboardCSV(repo, markdown_files):
     output_file = os.path.join(os.environ['DATA_DIR'], 'migration_status.csv')
     with open(output_file, 'w') as migration_status:
-        migration_status.write('name,lead,business_owner,definition,discovery,prototype,preflight,go_live,launch_date\n')
+        migration_status.write('name,lead,pre_intake,oit_intake,migrate_to_cloud,migration_planning,migration_cutover,cutover_complete,decom\n')
         product_rows = []
         for md in markdown_files:
             if md.lower() not in IGNORE_LIST:
@@ -34,33 +37,33 @@ def docToRow(document):
     lines = list(filter(lambda x: not re.match(r'^\s*$', x), lines))
     product_name = lines[0].split(":")[1].strip()
     product_lead = lines[1].split(":")[1].strip()
-    business_owner = lines[2].split(":")[1].strip()
-    launch_date = lines[3].split(":")[1].strip()
+    migrate_to_cloud = lines[2].split(":")[1].strip()
+    cutover_complete = lines[3].split(":")[1].strip()
 
-    if "/" in launch_date:
-        year = launch_date.split("/")[1].strip()
-        month = launch_date.split("/")[0].strip()
-    else:
-        year = "2020"
-        month = "12"
+    #if "/" in launch_date:
+    #    year = launch_date.split("/")[1].strip()
+    #    month = launch_date.split("/")[0].strip()
+    #else:
+    #    year = "2020"
+    #    month = "12"
 
-    if len(month) < 2:
-        month = "0" + month
+    #if len(month) < 2:
+    #    month = "0" + month
 
     for line in lines:
-        if "COMPLETE ALL PRODUCT DEFINITION TASKS" in line:
-            product_definition = get_status(line)
-        elif "COMPLETE ALL DISCOVERY TASKS " in line:
-            discovery = get_status(line)
-        elif "COMPLETE ALL DESIGN TASKS" in line:
-            prototype = get_status(line)
-        elif "COMPLETE ALL PRE FLIGHT TASKS" in line:
-            preflight = get_status(line)
-        elif "COMPLETE ALL GO LIVE TASKS" in line:
-            go_live = get_status(line)
+        if "COMPLETE ALL (PRE Intake)" in line:
+            pre_intake = get_status(line)
+        elif "COMPLETE ALL OIT Intake TASKS " in line:
+            oit_intake = get_status(line)
+        elif "COMPLETE ALL Migration Planning and onboarding Tasks" in line:
+            migration_planning = get_status(line)
+        elif "COMPLETE ALL Migration Build and Cutover Tasks" in line:
+            migration_cutover = get_status(line)
+        elif "COMPLETE ALL Decommission Tasks" in line:
+            decom = get_status(line)
 
-    return ",".join((year, month, product_name, product_lead, business_owner, product_definition,
-                     discovery, prototype, preflight, go_live, launch_date))
+    return ",".join((product_name, product_lead, pre_intake,
+                     oit_intake, migrate_to_cloud, migration_planning, migration_cutover, cutover_complete, decom))
 
 def get_status(string):
     """remove everything before first | and after last |"""
