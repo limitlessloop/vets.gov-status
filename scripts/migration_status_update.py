@@ -9,7 +9,8 @@ import json
 import github3
 
 MARKDOWN_DIR = "Communications/OLD_Status Reports/Sample-Status-Reports"
-IGNORE_LIST = ["readme.md",
+IGNORE_LIST = [item.casefold() for item in [
+               "readme.md",
                "project status template.md",
                "link to launch guide.md",
                "use this template.md",
@@ -17,6 +18,7 @@ IGNORE_LIST = ["readme.md",
                "OLD USE THIS TEMPLATE.md",
                "OLD Vocational Rehabilitation and Employment.md"
               ]
+]
 
 def createDashboardCSV(repo, markdown_files):
     output_file = os.path.join(os.environ['DATA_DIR'], 'migration_status.csv')
@@ -24,7 +26,7 @@ def createDashboardCSV(repo, markdown_files):
         migration_status.write('name,lead,pre_intake,oit_intake,migrate_to_cloud,migration_planning,migration_cutover,cutover_complete,decom\n')
         product_rows = []
         for md in markdown_files:
-            if md.lower() not in IGNORE_LIST:
+            if md.casefold() not in IGNORE_LIST:
                 full_path = MARKDOWN_DIR + '/' + md
                 document = repo.file_contents(full_path).decoded.decode('utf-8')
                 product_rows.append(docToRow(document))
