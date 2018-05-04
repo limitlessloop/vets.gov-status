@@ -50,7 +50,6 @@ def docToRow(document, doc_path):
     lines = document.splitlines()
     lines = list(filter(lambda x: not re.match(r'^\s*$', x), lines))
     product_name = lines[0].split(":")[1].strip()
-    product_link = doc_path
     product_lead = lines[1].split(":")[1].strip()
     migrate_to_cloud = lines[2].split(":")[1].strip()
     cutover_complete = lines[3].split(":")[1].strip()
@@ -66,6 +65,8 @@ def docToRow(document, doc_path):
             migration_cutover = get_status(line)
         elif "COMPLETE ALL Decommission Tasks" in line:
             decom = get_status(line)
+
+    product_link = "\"" + doc_path + "\""
 
     return ",".join((product_name, product_link, product_lead, pre_intake,
                      oit_intake, migrate_to_cloud, migration_planning,
