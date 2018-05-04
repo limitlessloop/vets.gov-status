@@ -42,16 +42,6 @@ def docToRow(document):
     migrate_to_cloud = lines[2].split(":")[1].strip()
     cutover_complete = lines[3].split(":")[1].strip()
 
-    #if "/" in launch_date:
-    #    year = launch_date.split("/")[1].strip()
-    #    month = launch_date.split("/")[0].strip()
-    #else:
-    #    year = "2020"
-    #    month = "12"
-
-    #if len(month) < 2:
-    #    month = "0" + month
-
     for line in lines:
         if "COMPLETE ALL (PRE Intake)" in line:
             pre_intake = get_status(line)
