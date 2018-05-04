@@ -24,15 +24,7 @@ IGNORE_LIST = [item.casefold() for item in [
 def createDashboardCSV(repo, markdown_files):
     output_file = os.path.join(os.environ['DATA_DIR'], 'migration_status.csv')
     with open(output_file, 'w') as migration_status:
-        migration_status.write('name,\
-                                lead,\
-                                pre_intake,\
-                                oit_intake,\
-                                migrate_to_cloud,\
-                                migration_planning,\
-                                migration_cutover,\
-                                cutover_complete,\
-                                decom\n')
+        migration_status.write('name,lead,pre_intake,oit_intake,migrate_to_cloud,migration_planning,migration_cutover,cutover_complete,decom\n')
         product_rows = []
         for md in markdown_files:
             if md.casefold() not in IGNORE_LIST:
