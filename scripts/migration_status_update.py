@@ -41,7 +41,7 @@ def createDashboardCSV(repo, markdown_files):
                 product_rows.append(docToRow(document))
         product_rows.sort()
         for row in product_rows:
-            migration_status.write(row[8:] + "\n")
+            migration_status.write(row + "\n")
 
 
 def docToRow(document):
