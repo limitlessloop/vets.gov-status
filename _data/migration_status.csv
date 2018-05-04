@@ -1,6 +1,6 @@
-name,                                lead,                                pre_intake,                                oit_intake,                                migrate_to_cloud,                                migration_planning,                                migration_cutover,                                cutover_complete,                                decom
-System 1 TEST,T. Smith / B. White,Red,,,,,,
-System 2 TEST,R. Lin / S. Jones,Complete,Complete,No,N/A,N/A,N/A,Green
-System 3 TEST,T. Jones / K. Lee,Complete,Complete,Yes,Complete,Complete,Yes,Complete
-System 4 TEST,C. Davis / K. Lee,Complete,Complete,Yes,Yellow,No,No,
-System 5 TEST,B. Williams / K. Lee,Complete,Yellow,Yes,,No,No,
+name,                                link,                                lead,                                pre_intake,                                oit_intake,                                migrate_to_cloud,                                migration_planning,                                migration_cutover,                                cutover_complete,                                decom
+System 1 TEST,https://github.com/department-of-veterans-affairs/vets.gov-team/Communications/OLD_Status Reports/Sample-Status-Reports/System 1 TEST.md,T. Smith / B. White,Red,,,,,,
+System 2 TEST,https://github.com/department-of-veterans-affairs/vets.gov-team/Communications/OLD_Status Reports/Sample-Status-Reports/System 2 TEST.md,R. Lin / S. Jones,Complete,Complete,No,N/A,N/A,N/A,Green
+System 3 TEST,https://github.com/department-of-veterans-affairs/vets.gov-team/Communications/OLD_Status Reports/Sample-Status-Reports/System 3 TEST.md,T. Jones / K. Lee,Complete,Complete,Yes,Complete,Complete,Yes,Complete
+System 4 TEST,https://github.com/department-of-veterans-affairs/vets.gov-team/Communications/OLD_Status Reports/Sample-Status-Reports/System 4 TEST.md,C. Davis / K. Lee,Complete,Complete,Yes,Yellow,No,No,
+System 5 TEST,https://github.com/department-of-veterans-affairs/vets.gov-team/Communications/OLD_Status Reports/Sample-Status-Reports/System 5 TEST.md,B. Williams / K. Lee,Complete,Yellow,Yes,,No,No,
