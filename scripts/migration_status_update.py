@@ -30,7 +30,7 @@ def createDashboardCSV(repo, markdown_files):
         for md in markdown_files:
             if md.casefold() not in IGNORE_LIST:
                 full_path = MARKDOWN_DIR + '/' + md
-                doc_path = repo.html_url + '/' + full_path
+                doc_path = repo.html_url + '/' + quote(full_path)
                 print(doc_path)
                 document = repo.file_contents(full_path).decoded.decode('utf-8')
                 product_rows.append(docToRow(document, doc_path))
@@ -59,7 +59,7 @@ def docToRow(document, doc_path):
         elif "COMPLETE ALL Decommission Tasks" in line:
             decom = get_status(line)
 
-    product_link = "\"" + quote(doc_path) + "\""
+    product_link = "\"" + doc_path + "\""
     #product_link = "\"" + 'https://github.com/department-of-veterans-affairs/vets.gov-team/blob/master/Communications/OLD_Status%20Reports/Sample-Status-Reports/System%201%20TEST.md/' + "\""
     print(product_link)
 
