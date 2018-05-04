@@ -24,19 +24,21 @@ IGNORE_LIST = [item.casefold() for item in [
 def createDashboardCSV(repo, markdown_files):
     output_file = os.path.join(os.environ['DATA_DIR'], 'migration_status.csv')
     with open(output_file, 'w') as migration_status:
-        migration_status.write('name,lead,pre_intake,oit_intake,migrate_to_cloud,migration_planning,migration_cutover,cutover_complete,decom\n')
+        migration_status.write('name,link,lead,pre_intake,oit_intake,migrate_to_cloud,migration_planning,migration_cutover,cutover_complete,decom\n')
         product_rows = []
         for md in markdown_files:
             if md.casefold() not in IGNORE_LIST:
                 full_path = MARKDOWN_DIR + '/' + md
+                doc_path = repo.html_url + full_path
+                print(doc_path)
                 document = repo.file_contents(full_path).decoded.decode('utf-8')
-                product_rows.append(docToRow(document))
+                product_rows.append(docToRow(document, doc_path))
         product_rows.sort()
         for row in product_rows:
             migration_status.write(row + "\n")
 
 
-def docToRow(document):
+def docToRow(document, doc_path):
     lines = document.splitlines()
     lines = list(filter(lambda x: not re.match(r'^\s*$', x), lines))
     product_name = lines[0].split(":")[1].strip()
@@ -56,10 +58,11 @@ def docToRow(document):
         elif "COMPLETE ALL Decommission Tasks" in line:
             decom = get_status(line)
 
-    product_link = "\"" + 'https://github.com/department-of-veterans-affairs/vets.gov-team/blob/master/Communications/OLD_Status%20Reports/Sample-Status-Reports/System%201%20TEST.md/' + "\""
+    product_link = "\"" + doc_path + "\""
+    #product_link = "\"" + 'https://github.com/department-of-veterans-affairs/vets.gov-team/blob/master/Communications/OLD_Status%20Reports/Sample-Status-Reports/System%201%20TEST.md/' + "\""
     print(product_link)
 
-    return ",".join((product_name, product_lead, pre_intake,
+    return ",".join((product_name, product_link, product_lead, pre_intake,
                      oit_intake, migrate_to_cloud, migration_planning,
                      migration_cutover, cutover_complete, decom))
 
