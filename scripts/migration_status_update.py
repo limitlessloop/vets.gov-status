@@ -38,7 +38,7 @@ def createDashboardCSV(repo, markdown_files):
         for md in markdown_files:
             if md.casefold() not in IGNORE_LIST:
                 full_path = MARKDOWN_DIR + '/' + md
-                doc_path = repo.html_url + '/' + full_path
+                doc_path = 'https://github.com/department-of-veterans-affairs/vets.gov-team/blob/master/Communications/OLD_Status%20Reports/Sample-Status-Reports/System%201%20TEST.md/' + full_path
                 document = repo.file_contents(full_path).decoded.decode('utf-8')
                 product_rows.append(docToRow(document, doc_path))
         product_rows.sort()
