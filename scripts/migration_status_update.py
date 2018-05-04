@@ -30,7 +30,7 @@ def createDashboardCSV(repo, markdown_files):
         for md in markdown_files:
             if md.casefold() not in IGNORE_LIST:
                 full_path = MARKDOWN_DIR + '/' + md
-                doc_path = repo.html_url + '/' + quote(full_path)
+                doc_path = repo.html_url + '/blob/master/' + quote(full_path)
                 print(doc_path)
                 document = repo.file_contents(full_path).decoded.decode('utf-8')
                 product_rows.append(docToRow(document, doc_path))
