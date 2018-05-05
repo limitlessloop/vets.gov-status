@@ -32,7 +32,7 @@ description: Beta for internal demo only
             <tbody>
                 {% for product in site.data.migration_status %}
                 <tr>
-                    <td>{{ product.name }}</td>
+                    <td><a href={{product.link}}>{{ product.name }}</a></td>
                     <td>{{ product.lead }}</td>
 
                     {% assign sections = "pre_intake,oit_intake" | split: ',' %}
