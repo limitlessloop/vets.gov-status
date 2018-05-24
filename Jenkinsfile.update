@@ -83,6 +83,7 @@ pipeline {
 
     stage('Push Update Branch to Github') {
       steps {
+        sh 'echo $(date) > lastupdate.txt'
         sh 'git add .'
         sh "git commit -m 'Updated Data'"
         sh 'git push https://${GH_USR}:${GH_PSW}@github.com/department-of-veterans-affairs/vets.gov-status.git HEAD'
