@@ -2,10 +2,9 @@
 title: Pension
 date_added:
 vetsdotgov_url:
-status: normal
+status: progress
 category: Apply
 description: Online submission of pension application
-screenshot: pension
 tiles:
 
   - name: Online applications for a pension
