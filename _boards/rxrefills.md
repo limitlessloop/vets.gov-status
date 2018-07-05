@@ -20,18 +20,8 @@ tiles:
 
   - name: Call center phone refills per year
     layout: basic
-    datapoint: "1,172,845"
+    datapoint: 2.1M
     context: targeted for conversion to online transactions
-
-  - name: Annual refills on MyHealtheVet
-    layout: basic
-    datapoint: "18.5M"
-    context:
-
-  - name: MyHealtheVet quarterly refill requests
-    layout: basic
-    datapoint: "5.2M"
-    context:
 
 charts: rx
 ---
