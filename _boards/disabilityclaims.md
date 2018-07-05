@@ -20,8 +20,8 @@ tiles:
 
   - name: Claims phone calls per year
     layout: basic
-    datapoint: 1.65M
-    context: total FY17 calls to VA about Claims status
-    
+    datapoint: 1.5M
+    context: targeted for conversion to simple online interactions
+
 charts: claims
 ---
