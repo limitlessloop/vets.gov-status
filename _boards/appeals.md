@@ -10,7 +10,7 @@ tiles:
 
   - name: Annual Calls To VA About Appeals
     layout: basic
-    datapoint: "302,005"
-    context: calls targeted for reduction with better online information
+    datapoint: "363,341"
+    context: total FY17 calls to VA about appeals status
 
 ---
