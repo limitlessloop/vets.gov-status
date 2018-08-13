@@ -18,6 +18,7 @@ IGNORE_LIST = [item.casefold() for item in [
                "OLD Service and Facility Locator.md",
                "OLD USE THIS TEMPLATE.md",
                "OLD Vocational Rehabilitation and Employment.md"
+               "TEMPLATE.md"
                ]
                ]
 
