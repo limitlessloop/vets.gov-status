@@ -26,8 +26,8 @@ description: Beta for internal demo only
                     <th>ECSO Planning</th>
                     <th>Provisioning</th>
                     <th>Build Out & Cutover</th>
-                    <th>Migration Complete <span>(Yes/No)</span></th>
                     <th>Cloud Operations</th>
+                    <th>Migration Complete <span>(Yes/No)</span></th>
                     <th>Retire/Decommission</th>
                 </tr>
             </thead>
@@ -54,7 +54,7 @@ description: Beta for internal demo only
 
                     <td>{{ product.migrate_to_cloud }}</td>
 
-                    {% assign sections = "migration_planning,migration_cutover" | split: ',' %}
+                    {% assign sections = "migration_planning,provisioning_tasks,migration_cutover,operations_tasks" | split: ',' %}
                     {% for section in sections %}
                         <td class="{% case product[section] %}
                                         {% when 'Complete' %} complete
@@ -92,5 +92,5 @@ description: Beta for internal demo only
         </table>
     </div>
 </div>
-Last Update: Tue Aug 14 00:05:34 UTC 2018
+Last Update: Tue Aug 14 00:16:21 UTC 2018
 {% include footer.html %}
