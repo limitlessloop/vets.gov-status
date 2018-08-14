@@ -18,6 +18,7 @@ IGNORE_LIST = [item.casefold() for item in [
                "OLD Service and Facility Locator.md",
                "OLD USE THIS TEMPLATE.md",
                "OLD Vocational Rehabilitation and Employment.md"
+               "TEMPLATE.md"
                ]
                ]
 
@@ -47,22 +48,26 @@ def docToRow(document, doc_path):
     cutover_complete = lines[3].split(":")[1].strip()
 
     for line in lines:
-        if "COMPLETE ALL (PRE Intake)" in line:
+        if "COMPLETED ALL (PRE Intake) Tasks" in line:
             pre_intake = get_status(line)
-        elif "COMPLETE ALL OIT Intake TASKS " in line:
+        elif "COMPLETED ALL OIT Intake Tasks" in line:
             oit_intake = get_status(line)
-        elif "COMPLETE ALL Migration Planning and onboarding Tasks" in line:
+        elif "COMPLETED ALL Migration Planning and Onboarding Tasks" in line:
             migration_planning = get_status(line)
-        elif "COMPLETE ALL Migration Build and Cutover Tasks" in line:
+        elif "COMPLETED ALL Provisioning Tasks" in line:
+            provisioning_tasks = get_status(line)
+        elif "COMPLETED ALL Build Out and Cutover Tasks" in line:
             migration_cutover = get_status(line)
-        elif "COMPLETE ALL Decommission Tasks" in line:
+        elif "COMPLETED ALL Operations Tasks" in line:
+            operations_tasks = get_status(line)
+        elif "COMPLETED ALL Decommission Tasks" in line:
             decom = get_status(line)
 
     product_link = "\"" + doc_path + "\""
 
     return ",".join((product_name, product_link, product_lead, pre_intake,
-                     oit_intake, migrate_to_cloud, migration_planning,
-                     migration_cutover, cutover_complete, decom))
+                     oit_intake, migrate_to_cloud, migration_planning,provisioning_tasks,
+                     migration_cutover, operations_tasks,cutover_complete, decom))
 
 
 def get_status(string):
