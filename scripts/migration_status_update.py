@@ -1,32 +1,35 @@
-import datetime
+#import datetime
 import os
 import re
-import textwrap
-import time
-import pdb
-import json
-from urllib.parse import quote
+#import textwrap
+#import time
+#import pdb
+#import json
+#from urllib.parse import quote
 
-import github3
+#import github3
 
 MARKDOWN_DIR = "scripts/migration_status"
-IGNORE_LIST = [item.casefold() for item in [
-               "readme.md",
-               "project status template.md",
-               "link to launch guide.md",
-               "use this template.md",
-               "OLD Service and Facility Locator.md",
-               "OLD USE THIS TEMPLATE.md",
-               "OLD Vocational Rehabilitation and Employment.md"
-               "TEMPLATE.md"
+IGNORE_LIST = [item.casefold() for item in
+               [
+                   "readme.md",
+                   "project status template.md",
+                   "link to launch guide.md",
+                   "use this template.md",
+                   "OLD Service and Facility Locator.md",
+                   "OLD USE THIS TEMPLATE.md",
+                   "OLD Vocational Rehabilitation and Employment.md"
+                   "TEMPLATE.md"
                ]
-               ]
+              ]
 
 
 def createDashboardCSV(repo, markdown_files):
     output_file = os.path.join(os.environ['DATA_DIR'], 'migration_status.csv')
     with open(output_file, 'w') as migration_status:
-        migration_status.write('name,link,lead,pre_intake,oit_intake,migrate_to_cloud,migration_planning,migration_cutover,cutover_complete,decom\n')
+        migration_status.write('name,link,lead,pre_intake,oit_intake, \
+                                migrate_to_cloud,migration_planning, \
+                                migration_cutover,cutover_complete,decom\n')
         product_rows = []
         for md in markdown_files:
             if md.casefold() not in IGNORE_LIST:
@@ -34,9 +37,6 @@ def createDashboardCSV(repo, markdown_files):
                 print('Adding: ' + full_path)
                 document = open(full_path, 'r', encoding='utf8').read()
                 doc_path = repo + '/blob/master/' + full_path
-                #full_path = MARKDOWN_DIR + '/' + md
-                #doc_path = repo.html_url + '/blob/master/' + quote(full_path)
-                #document = repo.file_contents(full_path).decoded.decode('utf-8')
                 product_rows.append(docToRow(document, doc_path))
         product_rows.sort()
         for row in product_rows:
@@ -70,8 +70,9 @@ def docToRow(document, doc_path):
     product_link = "\"" + doc_path + "\""
 
     return ",".join((product_name, product_link, product_lead, pre_intake,
-                     oit_intake, migrate_to_cloud, migration_planning,provisioning_tasks,
-                     migration_cutover, operations_tasks,cutover_complete, decom))
+                     oit_intake, migrate_to_cloud, migration_planning,
+                     provisioning_tasks, migration_cutover, operations_tasks,
+                     cutover_complete, decom))
 
 
 def get_status(string):
@@ -80,14 +81,7 @@ def get_status(string):
 
 
 def main():
-    #gh_client = github3.GitHub(os.environ["GH_USER"],
-    #                           token=os.environ["GH_TOKEN"])
-    #repo = gh_client.repository("department-of-veterans-affairs",
-    #                            "vets.gov-status")
-    #markdown_files = repo.directory_contents(MARKDOWN_DIR, return_as=dict)
-    #print(os.getcwd())
-    #cwd = os.getcwd()
-    #print(os.listdir(cwd))
+
     repo = 'https://github.com/department-of-veterans-affairs/vets.gov-status'
     markdown_files = os.listdir(MARKDOWN_DIR)
 
