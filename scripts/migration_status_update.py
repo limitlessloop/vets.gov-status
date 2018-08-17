@@ -31,10 +31,9 @@ def createDashboardCSV(repo, markdown_files):
         for md in markdown_files:
             if md.casefold() not in IGNORE_LIST:
                 full_path = str(MARKDOWN_DIR + '/' + md)
-                print(full_path)
-                print(type(full_path))
+                print('Adding: ' + full_path)
                 document = open(full_path, 'r', encoding='utf8').read()
-                doc_path = repo.html_url + 'blob/master/' + full_path
+                doc_path = repo + '/blob/master/' + full_path
                 #full_path = MARKDOWN_DIR + '/' + md
                 #doc_path = repo.html_url + '/blob/master/' + quote(full_path)
                 #document = repo.file_contents(full_path).decoded.decode('utf-8')
@@ -81,14 +80,15 @@ def get_status(string):
 
 
 def main():
-    gh_client = github3.GitHub(os.environ["GH_USER"],
-                               token=os.environ["GH_TOKEN"])
-    repo = gh_client.repository("department-of-veterans-affairs",
-                                "vets.gov-status")
+    #gh_client = github3.GitHub(os.environ["GH_USER"],
+    #                           token=os.environ["GH_TOKEN"])
+    #repo = gh_client.repository("department-of-veterans-affairs",
+    #                            "vets.gov-status")
     #markdown_files = repo.directory_contents(MARKDOWN_DIR, return_as=dict)
     #print(os.getcwd())
     #cwd = os.getcwd()
     #print(os.listdir(cwd))
+    repo = 'https://github.com/department-of-veterans-affairs/vets.gov-status'
     markdown_files = os.listdir(MARKDOWN_DIR)
 
     createDashboardCSV(repo, markdown_files)
