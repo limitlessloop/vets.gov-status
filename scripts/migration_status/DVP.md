@@ -12,31 +12,31 @@ Cutover Completed:
 Task                                              | Status   | Comments (only if yellow or red)
 ------------                                      | -------- | ------------- 
 Identify VA application owner                     | Green     | Need to identify application owner (Tim is PM)
-Initial cloud suitability 6 questions completed   |  N/A    | decision made without using these b/c they did not yet exist
-ITOPs to review if "obsolete" system based on usage     |      | 
+Initial cloud suitability 6 questions completed   |  N/A    | Ken/Intake team have not yet deployed these in VIPR intake process
+ITOPs to review if "obsolete" system based on usage     | N/A     | Not applicable because this is a new system
 ECSO Migration wave planning started              | Complete    |  Wave 1
-Baseline costs (pre-cloud) documented             |      | all project teams need to understand this given primary goal of cloud migration is cost savings
-Validated ACTIVE users / traffic analytics for past 12 months   |      | ask Tim
+Baseline costs (pre-cloud) documented             |  N/A    | No baseline (pre-cloud) costs because this is a new system
+Validated ACTIVE users / traffic analytics for past 12 months   |      | Need data on demand for this application
 ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. | Complete     | Yes funded for cloud; OIT dollars
 VIPR Epics completed                              | Complete     | confirm w/ Tim
 Routing tab in VIPR workbook completed            | N/A     | Team began work before Ken/Intake team deployed workbook
 100% complete pre-intake checklist                |  N/A    | Checklist under development by CAS; not yet available 
-COMPLETED ALL (PRE Intake) Tasks                  | Yellow    | unsure about baseline costs and some intake tasks; although ECSO is not making early migrators repeat intake, tasks like knowing basline costs are important to measure cost savings.
+COMPLETED ALL (PRE Intake) Tasks                  | Green   | Usage data needed; confirm what is VA / user demand for this system
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
 ------------                                                  | -------- | -------------
 VIPR ID created               |   Complete   | V17-01347-000
-VIPR workbook (tab for cloud) 100% completed              | N/A     | Workbook not yet deployed
-EPMO IA analysis completed              |      | 
+VIPR workbook (tab for cloud) 100% completed              | N/A     | Workbook not yet deployed / available by Ken/Intake team.
+EPMO IA analysis completed              |      | Confirm with Rushika's team
 ECSO wave migration designated              |   Complete   | Wave 1
 EPMO PM assigned              |  Complete    | Tim Robinson
-Confirmed adequate funding and resources in place for migration based on ROM              | Complete     | 
+Confirmed adequate funding and resources in place for migration based on ROM              | Complete   | 
 Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)         | Complete     | 
-CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)        |      | 
-Approved architecture by ITOPs              |      | 
+CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)        |      | CAS to do
+Approved architecture by ITOPs              |      | Chris Cardella's team to do; CAS to coordinate with Chris
 Intake checklist 100% completed               | N/A     | Checklist under development by CAS; not yet available                                       
-COMPLETED ALL OIT Intake Tasks                 |      | 
+COMPLETED ALL OIT Intake Tasks                 | Green     | 
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
