@@ -35,7 +35,7 @@ Confirmed adequate funding and resources in place for migration based on ROM    
 Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)       | Complete     | 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)              |      | in progress
 Approved architecture by ITOPs                          |      | 
-Intake checklist 100% completed                          |      |                                        
+Intake checklist 100% completed                          |      |  Checklist in development by CAS                                      
 COMPLETED ALL OIT Intake Tasks                           |  Red   | No VIPR ID; not in VIPR (all cloud projects supposed to be tracked in VIPR)
 
 ### ECSO / VAEC Detailed Migration Planning 
@@ -55,10 +55,9 @@ SLAs for operations defined and approved with ITOPs                 |       |
 CSP accounts and sub accounts created                 | Complete | Sub account of FBMT
 Release agent identified or waiver                 |       |
 Sustainment organization identified                 |       |
-VIP CD 1 checklist is 100% completed                 |       |
-CD1 decision made                 |       |
-Planning checklist 100% completed                 |       |
-COMPLETED ALL Migration Planning and Onboarding Tasks                 |       | 
+CD1 decision made                 |       | Date:
+Planning checklist 100% completed                 |       |Checklist in development by CAS
+COMPLETED ALL Migration Planning and Onboarding Tasks                 | Green      | 
 
 
 ### Provisioning
@@ -73,8 +72,8 @@ Operational security tools onboarding completed                 |       |
 Billing and reporting set up                 |       | 
 Team has access to all required tools and environments                 |       | 
 Working session to complete operations handoff with ITOPs                 |       | 
-Provisioning checklist 100% completed                 |       | 
-COMPLETED ALL Provisioning Tasks                 |       | 
+Provisioning checklist 100% completed                 |       | Checklist in development by CAS
+COMPLETED ALL Provisioning Tasks                 | Green      | 
 
 
 
@@ -91,8 +90,7 @@ ATO approved                |       |
 Operations handoff completed (per ATO approval)                |       | 
 EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)                |       | 
 Validate Disaster Recovery (DR) and Backup                |       | 
-CD2 checklist 100% completed                |       | 
-CD2 decision                |       | 
+CD2 decision                |       | Date:
 Build out and cutover checklist 100% complete                |       | 
 COMPLETED ALL Build Out and Cutover Tasks                   |       |  
 
@@ -110,7 +108,7 @@ Complete any outstanding contract actions (including cancellations, mods, etc.)�
 Implemented operational RACIs with VA staff              |       | 
 Begin decommission plan tasks              |       | 
 100% post-cutover checklist completed              |       | 
-COMPLETED ALL Operations Tasks              |       | 
+COMPLETED ALL Operations Tasks              |       | Checklist in development by CAS
 
 ### Retire / Decommission Legacy System
 Task                                                    | Status    | Comments (only if yellow or red)
@@ -120,5 +118,5 @@ Contracts modified or cancelled            |       |
 Cost savings report delivered            |       | 
 Archiving completed / data transferring completed            |       | 
 100% ITOPs decommission checklist completed            |       | 
-COMPLETED ALL Decommission Tasks              |       | 
+COMPLETED ALL Decommission Tasks              |       | Checklist in development by CAS
 
