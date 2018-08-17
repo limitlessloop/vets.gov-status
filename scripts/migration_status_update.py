@@ -9,7 +9,7 @@ from urllib.parse import quote
 
 import github3
 
-MARKDOWN_DIR = "Communications/OLD_Status Reports/Sample-Status-Reports"
+MARKDOWN_DIR = "scripts/migration_status"
 IGNORE_LIST = [item.casefold() for item in [
                "readme.md",
                "project status template.md",
@@ -30,9 +30,11 @@ def createDashboardCSV(repo, markdown_files):
         product_rows = []
         for md in markdown_files:
             if md.casefold() not in IGNORE_LIST:
-                full_path = MARKDOWN_DIR + '/' + md
-                doc_path = repo.html_url + '/blob/master/' + quote(full_path)
-                document = repo.file_contents(full_path).decoded.decode('utf-8')
+                full_path = MARKDOWN_DIR + '/' + md,
+                document = open(full_path).read().decode('utf8')
+                #full_path = MARKDOWN_DIR + '/' + md
+                #doc_path = repo.html_url + '/blob/master/' + quote(full_path)
+                #document = repo.file_contents(full_path).decoded.decode('utf-8')
                 product_rows.append(docToRow(document, doc_path))
         product_rows.sort()
         for row in product_rows:
@@ -79,8 +81,12 @@ def main():
     gh_client = github3.GitHub(os.environ["GH_USER"],
                                token=os.environ["GH_TOKEN"])
     repo = gh_client.repository("department-of-veterans-affairs",
-                                "vets.gov-team")
-    markdown_files = repo.directory_contents(MARKDOWN_DIR, return_as=dict)
+                                "vets.gov-status")
+    #markdown_files = repo.directory_contents(MARKDOWN_DIR, return_as=dict)
+    #print(os.getcwd())
+    #cwd = os.getcwd()
+    #print(os.listdir(cwd))
+    markdown_files = os.listdir(MARKDOWN_DIR)
 
     createDashboardCSV(repo, markdown_files)
 
