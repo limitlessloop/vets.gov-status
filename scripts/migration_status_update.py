@@ -9,7 +9,7 @@ from urllib.parse import quote
 
 import github3
 
-MARKDOWN_DIR = "migration_status"
+MARKDOWN_DIR = "scripts/migration_status"
 IGNORE_LIST = [item.casefold() for item in [
                "readme.md",
                "project status template.md",
@@ -83,12 +83,12 @@ def main():
     repo = gh_client.repository("department-of-veterans-affairs",
                                 "vets.gov-status")
     #markdown_files = repo.directory_contents(MARKDOWN_DIR, return_as=dict)
-    print(os.getcwd())
-    cwd = os.getcwd()
-    print(os.listdir(cwd))
-    #markdown_files = os.listdir(MARKDOWN_DIR)
+    #print(os.getcwd())
+    #cwd = os.getcwd()
+    #print(os.listdir(cwd))
+    markdown_files = os.listdir(MARKDOWN_DIR)
 
-    #createDashboardCSV(repo, markdown_files)
+    createDashboardCSV(repo, markdown_files)
 
 
 if __name__ == "__main__":
