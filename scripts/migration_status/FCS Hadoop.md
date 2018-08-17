@@ -42,7 +42,6 @@ COMPLETED ALL OIT Intake Tasks                 | Red     | This system did not g
 Task                                              | Status    | Comments (only if yellow or red)
 ------------                                      | --------- | ------------- 
 ISSO assigned                                     |      | Joe Fourcade for ECSO; need project team ISSO name   
-Tailoring plan (for exit criteria and checklists) approved by ECSO and application owner         |       |
 Application workload and compute / network requirements documented                 |  Green     |in progress
 ITOPs (Chris) validates workload compute / network requirements                 |       |
 Confirmed RACI and roles (per the CONOPS)                 | Green      | ECSO working on RACI; need updated CONOPS
@@ -92,7 +91,6 @@ ATO approved                |       |
 Operations handoff completed (per ATO approval)                |       | 
 EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)                |       | 
 Validate Disaster Recovery (DR) and Backup                |       | 
-CD2 checklist 100% completed                |       | 
 CD2 decision                |       | 
 Build out and cutover checklist 100% complete                |       | Checklist in development by CAS; not yet available
 COMPLETED ALL Build Out and Cutover Tasks                   |       |  
