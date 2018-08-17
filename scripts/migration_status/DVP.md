@@ -42,7 +42,6 @@ COMPLETED ALL OIT Intake Tasks                 | Green     |
 Task                                              | Status    | Comments (only if yellow or red)
 ------------                                      | --------- | ------------- 
 ISSO assigned | Complete | Charles Solomon- Jackson
-Tailoring plan (for exit criteria and checklists) approved by ECSO and application owner        |       |
 Application workload and compute / network requirements documented                 |       |
 ITOPs (Chris) validates workload compute / network requirements                 |       | heavey ITOPs involvement
 Confirmed RACI and roles (per the CONOPS)                 |       |
