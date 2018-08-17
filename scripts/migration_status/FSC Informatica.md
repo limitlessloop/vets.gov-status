@@ -11,39 +11,38 @@ Cutover Completed:
 ### (Pre-Intake) Modernization and Decommission Planning
 Task                                              | Status   | Comments (only if yellow or red)
 ------------                                      | -------- | ------------- 
-Identify VA application owner                     |      | Application owner?
-Initial cloud suitability 6 questions completed   |      |
-ITOPs to review if "obsolete" system based on usage     |      | didn't go through VIPR; need to understand which financial systems will be shut down
+Identify VA application owner                     |Yellow      | Application owner?
+Initial cloud suitability 6 questions completed   | N/A     | Ken/Intake team have not deployed these yet.
+ITOPs to review if "obsolete" system based on usage     |      | Did Chris Cardella's team review to confirm not an obsolete system?
 ECSO Migration wave planning started              | Complete   |  Wave 2
-Baseline costs (pre-cloud) documented             |      |
-Validated ACTIVE users / traffic analytics for past 12 months   |      |
+Baseline costs (pre-cloud) documented             |      |Need baseline costs to calcuate cost savings in cloud, primary goal of VA cloud migration
+Validated ACTIVE users / traffic analytics for past 12 months   |      | 
 ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. |      |
 VIPR Epics completed                              |      |
-Routing tab in VIPR workbook completed            |      | 
-100% complete pre-intake checklist                |      | 
-COMPLETED ALL (PRE Intake) Tasks                  |      | did not go through VIPR, but still want this info (baseline costs, etc.)
+Routing tab in VIPR workbook completed            | N/A  | Ken/Intake team has not yet deployed this
+100% complete pre-intake checklist                |      | Checklist in development by CAS
+COMPLETED ALL (PRE Intake) Tasks                  | Green   | 
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
 ------------                                                  | -------- | -------------
-VIPR ID created               |  Red    | 
-VIPR workbook (tab for cloud) 100% completed              |      | 
-EPMO IA analysis completed              |      | 
-ECSO wave migration designated              | Complete     | Wave 2
-EPMO PM assigned              | Complete     | Jonathan
-Confirmed adequate funding and resources in place for migration based on ROM              | Complete     | Funded at the portfolio level
+VIPR ID created                                          |  Red    | Did not go through VIPR; what info need to be in VIPR?
+VIPR workbook (tab for cloud) 100% completed              |  N/A    | Ken/Intake has not deployed this yet
+EPMO IA analysis completed                               |      | Rushika's team
+ECSO wave migration designated                        | Complete     | Wave 2
+EPMO PM assigned                                      | Complete     | Jonathan
+Confirmed adequate funding and resources in place for migration based on ROM     | Complete     | Funded at the portfolio level
 Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)       | Complete     | 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)              |      | in progress
-Approved architecture by ITOPs              |      | 
-Intake checklist 100% completed               |      |                                        
-COMPLETED ALL OIT Intake Tasks                 |  Yellow   | No VIPR ID
+Approved architecture by ITOPs                          |      | 
+Intake checklist 100% completed                          |      |                                        
+COMPLETED ALL OIT Intake Tasks                           |  Red   | No VIPR ID; not in VIPR (all cloud projects supposed to be tracked in VIPR)
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
 ------------                                      | --------- | ------------- 
-ISSO assigned   |  | Joe Fourcade ECSO ISSO; no project level ISSO
-Tailoring plan (for exit criteria and checklists) approved by ECSO and application owner                 |       |
-Application workload and compute / network requirements documented                 |       |
+ISSO assigned                                     |          | Joe Fourcade ECSO ISSO; no project level ISSO
+Application workload and compute / network requirements documented              |       |
 ITOPs (Chris) validates workload compute / network requirements                 |       |
 Confirmed RACI and roles (per the CONOPS)                 |       |
 CSP selection criteria (analysis for AWS versus Azure)                 | Complete      | MAG
