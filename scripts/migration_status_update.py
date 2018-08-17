@@ -9,7 +9,7 @@ from urllib.parse import quote
 
 import github3
 
-MARKDOWN_DIR = "scripts/migraton_status"
+MARKDOWN_DIR = "migraton_status"
 IGNORE_LIST = [item.casefold() for item in [
                "readme.md",
                "project status template.md",
