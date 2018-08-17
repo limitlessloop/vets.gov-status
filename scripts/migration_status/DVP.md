@@ -55,8 +55,7 @@ SLAs for operations defined and approved with ITOPs        |       | Chris Carde
 CSP accounts and sub accounts created                 | Complete    | 
 Release agent identified or waiver                 |       |
 Sustainment organization identified                 |       |
-VIP CD 1 checklist is 100% completed                 |       | Date of CD1
-CD1 decision made                 |       |
+CD1 decision made                 |       | Date:
 Planning checklist 100% completed                 |       | Checklist under development by CAS; not yet available
 COMPLETED ALL Migration Planning and Onboarding Tasks                 | Green      | 
 
@@ -91,8 +90,7 @@ ATO approved                |  Complete     | 8.15.18
 Operations handoff completed (per ATO approval)                |       | Is there anything Tim needs from ITOP?
 EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)        |       | is this applicable?
 Validate Disaster Recovery (DR) and Backup                |  Complete     | part of ATO; (can this be deleted--is it already covered in ATO?)
-CD2 checklist 100% completed                |       | date of CD2: 
-CD2 decision                                 |       | 
+CD2 decision                                 |       | Date:
 Build out and cutover checklist 100% complete                |       | Checklist under development by CAS; not yet available
 COMPLETED ALL Build Out and Cutover Tasks                   | Green      |  
 
