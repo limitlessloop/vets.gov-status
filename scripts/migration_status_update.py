@@ -84,9 +84,11 @@ def main():
                                 "vets.gov-status")
     #markdown_files = repo.directory_contents(MARKDOWN_DIR, return_as=dict)
     print(os.getcwd())
-    markdown_files = os.listdir(MARKDOWN_DIR)
+    cwd = os.getcwd()
+    print(os.listdir(cwd))
+    #markdown_files = os.listdir(MARKDOWN_DIR)
 
-    createDashboardCSV(repo, markdown_files)
+    #createDashboardCSV(repo, markdown_files)
 
 
 if __name__ == "__main__":
