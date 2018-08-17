@@ -11,7 +11,7 @@ Cutover Completed:
 ### (Pre-Intake) Modernization and Decommission Planning
 Task                                              | Status   | Comments (only if yellow or red)
 ------------                                      | -------- | ------------- 
-Identify VA application owner                     |         | Gary is PM; who is application owner?
+Identify VA application owner                     | Yellow        | Gary is PM; who is application owner?
 Initial cloud suitability 6 questions completed   |        |
 ITOPs to review if "obsolete" system based on usage   |  Complete   | Not obsolete
 ECSO Migration wave planning started              | Complete   |  Wave 2
@@ -20,8 +20,8 @@ Validated ACTIVE users / traffic analytics for past 12 months   |      |
 ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. | Complete     |
 VIPR Epics completed                              |      |
 Routing tab in VIPR workbook completed            |      | Did not go through VIPR
-100% complete pre-intake checklist                |      | 
-COMPLETED ALL (PRE Intake) Tasks                  |      | 
+100% complete pre-intake checklist                |      | Checklist in development by CAS
+COMPLETED ALL (PRE Intake) Tasks                  | Yellow   | 
 
 ### OIT Unified Intake (VIPR)
 Task                                          | Status   | Comments (only if yellow or red)
@@ -35,7 +35,7 @@ Confirmed adequate funding and resources in place for migration based on ROM    
 Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)     | Complete     | 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)          |      | Not CAS, but others? (note to kelly to ask DSVA)
 Approved architecture by ITOPs              |      | ask Gary / Chris
-Intake checklist 100% completed               |      |                                        
+Intake checklist 100% completed               |      | Checklist in development by CAS                                       
 COMPLETED ALL OIT Intake Tasks                 |  RED    | No VIPR ID; should this be broken into smaller projects given size?
 
 ### ECSO / VAEC Detailed Migration Planning 
@@ -58,7 +58,7 @@ Release agent identified or waiver                 |       |
 Sustainment organization identified                 |       |
 VIP CD 1 checklist is 100% completed                 |       |
 CD1 decision made                 |Complete       | confirm w/ Gary; dates
-Planning checklist 100% completed                 |       |
+Planning checklist 100% completed                 |       | Checklist in development by CAS
 COMPLETED ALL Migration Planning and Onboarding Tasks                 |       | 
 
 
@@ -74,7 +74,7 @@ Operational security tools onboarding completed                 |       | is thi
 Billing and reporting set up                 | Complete      | 
 Team has access to all required tools and environments                 |       | 
 Working session to complete operations handoff with ITOPs                 |       | 
-Provisioning checklist 100% completed                 |       | 
+Provisioning checklist 100% completed                 |       | Checklist in development by CAS
 COMPLETED ALL Provisioning Tasks                 |       | 
 
 
@@ -94,7 +94,7 @@ EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)  �
 Validate Disaster Recovery (DR) and Backup                |       | 
 CD2 checklist 100% completed                |       | 
 CD2 decision                |       | 
-Build out and cutover checklist 100% complete                |       | 
+Build out and cutover checklist 100% complete                |       | Checklist in development by CAS
 COMPLETED ALL Build Out and Cutover Tasks                   |       |  
 
 
@@ -110,7 +110,7 @@ Continuous monitoring of security, compute usage, performance, availability, etc
 Complete any outstanding contract actions (including cancellations, mods, etc.)              |       | 
 Implemented operational RACIs with VA staff              |       | 
 Begin decommission plan tasks              |       | 
-100% post-cutover checklist completed              |       | 
+100% post-cutover checklist completed              |       | Checklist in development by CAS
 COMPLETED ALL Operations Tasks              |       | 
 
 ### Retire / Decommission Legacy System
@@ -120,6 +120,6 @@ Systems identified as obsolete are retired and decommissioned immediately     
 Contracts modified or cancelled            |       | 
 Cost savings report delivered            |       | 
 Archiving completed / data transferring completed            |       | 
-100% ITOPs decommission checklist completed            |       | 
+100% ITOPs decommission checklist completed            |       | Checklist in development by CAS
 COMPLETED ALL Decommission Tasks              |       | 
 
