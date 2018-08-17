@@ -11,7 +11,7 @@ Cutover Completed:
 ### (Pre-Intake) Modernization and Decommission Planning
 Task                                              | Status   | Comments (only if yellow or red)
 ------------                                      | -------- | ------------- 
-Identify VA application owner                     | Green     | Need to identify application owner (Tim is PM)
+Identify VA application owner                     | Yellow     | Need to identify application owner (Tim is PM)
 Initial cloud suitability 6 questions completed   |  N/A    | Ken/Intake team have not yet deployed these in VIPR intake process
 ITOPs to review if "obsolete" system based on usage     | N/A     | Not applicable because this is a new system
 ECSO Migration wave planning started              | Complete    |  Wave 1
@@ -41,24 +41,24 @@ COMPLETED ALL OIT Intake Tasks                 | Green     |
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
 ------------                                      | --------- | ------------- 
-ISSO assigned | Complete | Charles Solomon- Jackson
+ISSO assigned                                     | Complete | Charles Solomon- Jackson
 Application workload and compute / network requirements documented                 |       |
-ITOPs (Chris) validates workload compute / network requirements                 |       | heavey ITOPs involvement
-Confirmed RACI and roles (per the CONOPS)                 |       |
+ITOPs (Chris) validates workload compute / network requirements                 |       | Chris Cardella to confirm
+Confirmed RACI and roles (per the CONOPS)                 |       | Need updated CONOPS
 CSP selection criteria (analysis for AWS versus Azure)                 |  Complete     | AWS
 Support contracts for application teams awarded (as needed) / resource onboarding completed (GFE, PIV, VA account set up, etc.) | Complete   |   Liberty IT                
 Cloud credits purchased (do not expire)                 |   Complete    |
 ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)   | Complete      |
-Decommission plan completed (incl. contracting, security, etc.)               |   NA    | Not applicable
-SLAs for applications defined and approved                 |       |
-SLAs for operations defined and approved with ITOPs        |       |
-CSP accounts and sub accounts created                 | Complete      | ask ketan what "sub accounts" are?
+Decommission plan completed (incl. contracting, security, etc.)               |   NA    | Not applicable because new system
+SLAs for applications defined and approved                 |       | Any SLA / OLA in addition to AWS standard SLAs?
+SLAs for operations defined and approved with ITOPs        |       | Chris Cardella
+CSP accounts and sub accounts created                 | Complete    | 
 Release agent identified or waiver                 |       |
 Sustainment organization identified                 |       |
-VIP CD 1 checklist is 100% completed                 |       | confirm w/ Tim; get dates
+VIP CD 1 checklist is 100% completed                 |       | Date of CD1
 CD1 decision made                 |       |
 Planning checklist 100% completed                 |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Migration Planning and Onboarding Tasks                 |       | 
+COMPLETED ALL Migration Planning and Onboarding Tasks                 | Green      | 
 
 
 ### Provisioning
