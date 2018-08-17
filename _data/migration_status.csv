@@ -1,8 +1,5 @@
 name,link,lead,pre_intake,oit_intake,migrate_to_cloud,migration_planning,migration_cutover,cutover_complete,decom
-Digital Veterans Platform (AWS),"https://github.com/department-of-veterans-affairs/vets.gov-team/blob/master/Communications/OLD_Status%20Reports/Sample-Status-Reports/DVP.md",Tim Robinson,,,Yes,,,,,,
-Financial Management Business Transformation (FBMT) (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-team/blob/master/Communications/OLD_Status%20Reports/Sample-Status-Reports/FBMT.md",,,,Yes,,,,,,
+Digital Veterans Platform (AWS),"https://github.com/department-of-veterans-affairs/vets.gov-team/blob/master/Communications/OLD_Status%20Reports/Sample-Status-Reports/DVP.md",Tim Robinson,Yellow,,Yes,,,,,,
 Financial Service Center (FCS) Informatica (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-team/blob/master/Communications/OLD_Status%20Reports/Sample-Status-Reports/FSC%20Informatica.md",Jonathan Lindow,,Yellow,Yes,,,,,,
-Financial Service Center (FSC) Hadoop (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-team/blob/master/Communications/OLD_Status%20Reports/Sample-Status-Reports/FCS.md",Jonathan Lindow,Yellow,Red,Yes,,,,,,
-Memorial Benefits Management System (MBMS) (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-team/blob/master/Communications/OLD_Status%20Reports/Sample-Status-Reports/MBMS.md",Christina Palumbo,,,Yes,,,,,,
-Portfolio Project Management Tool (PPMT) (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-team/blob/master/Communications/OLD_Status%20Reports/Sample-Status-Reports/PPMT.md",Timothy Ethier,,Red,Yes,,,,,,
-Veterans Benefits Management System (VBMS) (AWS),"https://github.com/department-of-veterans-affairs/vets.gov-team/blob/master/Communications/OLD_Status%20Reports/Sample-Status-Reports/VBMS.md",Gary Dameron,Yellow,Red,Yes,,,,,,
+Financial Service Center (FSC) Hadoop (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-team/blob/master/Communications/OLD_Status%20Reports/Sample-Status-Reports/FCS%20Hadoop.md",Jonathan Lindow,,,Yes,,,,,,
+Veterans Benefits Management System (VBMS) (AWS),"https://github.com/department-of-veterans-affairs/vets.gov-team/blob/master/Communications/OLD_Status%20Reports/Sample-Status-Reports/VBMS.md",Gary Dameron,,Red,Yes,,,,,,
