@@ -1,13 +1,5 @@
-#import datetime
 import os
 import re
-#import textwrap
-#import time
-#import pdb
-#import json
-#from urllib.parse import quote
-
-#import github3
 
 MARKDOWN_DIR = "scripts/migration_status"
 IGNORE_LIST = [item.casefold() for item in
