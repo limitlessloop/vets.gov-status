@@ -41,11 +41,11 @@ COMPLETED ALL OIT Intake Tasks                 | Red     | This system did not g
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
 ------------                                      | --------- | ------------- 
-ISSO assigned                                     |      | Joe Fourcade for ECSO; need project team ISSO   
+ISSO assigned                                     |      | Joe Fourcade for ECSO; need project team ISSO name   
 Tailoring plan (for exit criteria and checklists) approved by ECSO and application owner         |       |
-Application workload and compute / network requirements documented                 |       |in progress
+Application workload and compute / network requirements documented                 |  Green     |in progress
 ITOPs (Chris) validates workload compute / network requirements                 |       |
-Confirmed RACI and roles (per the CONOPS)                 |       | ECSO working on RACI
+Confirmed RACI and roles (per the CONOPS)                 | Green      | ECSO working on RACI; need updated CONOPS
 CSP selection criteria (analysis for AWS versus Azure)                 |  Complete     | MAG
 Support contracts for application teams awarded (as needed) / resource onboarding completed (GFE, PIV, VA account set up, etc.) |     |   Part of larger FMBT portfolio (finanical management business transformation)               
 Cloud credits purchased (do not expire)                 | Complete      | 726 credits for hadoop and informatica combined
@@ -59,7 +59,7 @@ Sustainment organization identified                 |       |
 VIP CD 1 checklist is 100% completed                 |       |
 CD1 decision made                 |       |
 Planning checklist 100% completed                 |       | Checklist in development by CAS; not yet available
-COMPLETED ALL Migration Planning and Onboarding Tasks                 |       | 
+COMPLETED ALL Migration Planning and Onboarding Tasks                 |  Green     | 
 
 
 ### Provisioning
