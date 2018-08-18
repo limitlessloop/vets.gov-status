@@ -21,7 +21,7 @@ ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. 
 VIPR Epics completed                              | Yellow     | Did not go through VIPR; does info need to be entered?
 Routing tab in VIPR workbook completed            | Yellow     | Did not go through VIPR; does info need to be entered?
 100% complete pre-intake checklist                |  N/A    | Checklist in development by CAS
-COMPLETED ALL (PRE Intake) Tasks                  | Yellow   | 
+COMPLETED ALL (PRE Intake) Tasks                  | Complete  | 
 
 ### OIT Unified Intake (VIPR)
 Task                                          | Status   | Comments (only if yellow or red)
@@ -36,7 +36,7 @@ Decision finalized: migrate to cloud, decommission obsolete / duplicate system, 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)          |      | Not CAS, but others? (note to kelly to ask DSVA)
 Approved architecture by ITOPs              |      | ask Gary / Chris
 Intake checklist 100% completed               | N/A     | Checklist in development by CAS                                       
-COMPLETED ALL OIT Intake Tasks                 |  RED    | No VIPR ID; should this be broken into smaller projects given size and entered in VIPR?
+COMPLETED ALL OIT Intake Tasks                 |  Completed   | No VIPR ID; should this be broken into smaller projects given size and entered in VIPR?
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
@@ -92,7 +92,7 @@ EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)  �
 Validate Disaster Recovery (DR) and Backup                |       | 
 CD2 decision                |       | 
 Build out and cutover checklist 100% complete                |       | Checklist in development by CAS
-COMPLETED ALL Build Out and Cutover Tasks                   |       |  
+COMPLETED ALL Build Out and Cutover Tasks                   | Complete      |  
 
 
 ### Cloud Operations
@@ -108,7 +108,7 @@ Complete any outstanding contract actions (including cancellations, mods, etc.)�
 Implemented operational RACIs with VA staff              |       | 
 Begin decommission plan tasks              |       | 
 100% post-cutover checklist completed              |       | Checklist in development by CAS
-COMPLETED ALL Operations Tasks              |       | 
+COMPLETED ALL Operations Tasks              | NA      | 
 
 ### Retire / Decommission Legacy System
 Task                                                    | Status    | Comments (only if yellow or red)
@@ -118,5 +118,5 @@ Contracts modified or cancelled            |       |
 Cost savings report delivered            |       | 
 Archiving completed / data transferring completed            |       | 
 100% ITOPs decommission checklist completed            |       | Checklist in development by CAS
-COMPLETED ALL Decommission Tasks              |       | 
+COMPLETED ALL Decommission Tasks              |  NA     | 
 
