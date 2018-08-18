@@ -4,7 +4,7 @@ Business and Application Owers: Tim Robinson
 
 Migrate to Cloud: Yes
 
-Cutover Completed: 
+Cutover Completed: Yes
 
 
 
