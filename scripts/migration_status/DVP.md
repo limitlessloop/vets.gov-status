@@ -118,5 +118,5 @@ Contracts modified or cancelled            |       |
 Cost savings report delivered            |       | 
 Archiving completed / data transferring completed            |       | 
 100% ITOPs decommission checklist completed            |       | 
-COMPLETED ALL Decommission Tasks              |  N/A     | Not applicable (new system in AWS)
+COMPLETED ALL Decommission Tasks              | Completed      | Not applicable (new system in AWS)
 
