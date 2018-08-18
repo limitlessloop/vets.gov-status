@@ -21,7 +21,7 @@ ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. 
 VIPR Epics completed                              | Yellow    | Not in VIPR
 Routing tab in VIPR workbook completed            | N/A     | Ken/Intake team has not rolled this out yet
 100% complete pre-intake checklist                |      | Checklist in development by CAS; not yet available
-COMPLETED ALL (PRE Intake) Tasks                  |      | 
+COMPLETED ALL (PRE Intake) Tasks                  | Green     | 
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
