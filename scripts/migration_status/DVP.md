@@ -42,7 +42,7 @@ COMPLETED ALL OIT Intake Tasks                 | Complete     | Need to make sur
 Task                                              | Status    | Comments (only if yellow or red)
 ------------                                      | --------- | ------------- 
 ISSO assigned                                     | Complete | Charles Solomon-Jackson
-Application workload and compute / network requirements documented                 |       |
+Application workload and compute / network requirements documented       | Complete      |
 ITOPs (Chris) validates workload compute / network requirements                 |       | Chris Cardella to confirm
 Confirmed RACI and roles (per the CONOPS)                 |       | Need updated CONOPS
 CSP selection criteria (analysis for AWS versus Azure)                 |  Complete     | AWS
@@ -55,7 +55,7 @@ SLAs for operations defined and approved with ITOPs        |       | Chris Carde
 CSP accounts and sub accounts created                 | Complete    | 
 Release agent identified or waiver                 |       |
 Sustainment organization identified                 |       |
-CD1 decision made                 |       | Date:
+CD1 decision made                 | Complete      | Date: June 30, 2017
 Planning checklist 100% completed                 |       | Checklist under development by CAS; not yet available
 COMPLETED ALL Migration Planning and Onboarding Tasks                 | Red     | 
 
