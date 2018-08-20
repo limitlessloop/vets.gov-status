@@ -86,11 +86,11 @@ All testing cheklists have been completed / met acceptance criteria (security an
 Cutover checklist approved                |       | do teams use a checklist? is this applicable for a new sytem in cloud? would it be helpful?
 Monitoring tools in place                | Complete      | specific tools for DVP?
 Decommission plan approved                |  N/A     | not applicable b/c new system stood up in AWS
-ATO approved                |  Complete     | 8.15.18
-Operations handoff completed (per ATO approval)                | Green      | Handoff planned for next summer
+ATO approved                |  Complete     | 8.15.18 Handoff planned for next summer
+Operations handoff completed (per ATO approval)                | Green      | 
 EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)        |       | is this applicable?
 Validate Disaster Recovery (DR) and Backup                |  Complete     | part of ATO; (can this be deleted--is it already covered in ATO?)
-CD2 decision                                 |       | Date:
+CD2 decision                                 |       | Date: March 2018
 Build out and cutover checklist 100% complete                |       | Checklist under development by CAS; not yet available
 COMPLETED ALL Build Out and Cutover Tasks                   | Green     |  
 
