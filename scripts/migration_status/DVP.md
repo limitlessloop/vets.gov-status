@@ -13,11 +13,11 @@ Task                                              | Status   | Comments (only if
 ------------                                      | -------- | ------------- 
 Identify VA application owner                     | Complete  |  Dr. Shamen Singh (Business Owner) Drew Myklegard (Application Owner) 
 Initial cloud suitability 6 questions completed   |  N/A    | Ken/Intake team have not yet deployed these in VIPR intake process
-ITOPs to review if "obsolete" system based on usage     | N/A     | Not applicable because this is a new system
+ITOPs to review if "obsolete" system based on usage     | N/A     | New system was approved by ITOPs
 ECSO Migration wave planning started              | Complete    |  Wave 1
 Baseline costs (pre-cloud) documented             |  N/A    | No baseline (pre-cloud) costs because this is a new system
-Validated ACTIVE users / traffic analytics for past 12 months   | Yellow     | Need data on demand for this application
-ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. | Complete     | Yes funded for cloud; OIT dollars
+Validated ACTIVE users / traffic analytics for past 12 months   | Complete    | 100,000 users projected and provided to ECSO in steady state; no users at this time
+ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. | Complete     | Yes funded for cloud for FY18 OIT dollars; not complete for FY19
 VIPR Epics completed                              | Complete     | confirm w/ Tim
 Routing tab in VIPR workbook completed            | N/A     | Team began work before Ken/Intake team deployed workbook
 100% complete pre-intake checklist                |  N/A    | Checklist under development by CAS; not yet available 
