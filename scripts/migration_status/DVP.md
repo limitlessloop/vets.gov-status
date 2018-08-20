@@ -11,7 +11,7 @@ Cutover Completed: Yes
 ### (Pre-Intake) Modernization and Decommission Planning
 Task                                              | Status   | Comments (only if yellow or red)
 ------------                                      | -------- | ------------- 
-Identify VA application owner                    | Complete  |  Dr. Shamen Singh (Business Owner) Drew Myklegard (Application Owner) Tom Robinson PM 
+Identify VA application owner                    | Complete  |  Dr. Shamen Singh (Business Owner) Drew Myklegard (Application Owner) Tim Robinson PM 
 Initial cloud suitability 6 questions completed   |  N/A    | Ken/Intake team have not yet deployed these in VIPR intake process
 ITOPs to review if "obsolete" system based on usage     | N/A     | New system was approved by ITOPs
 ECSO Migration wave planning started              | Complete    |  Wave 1
