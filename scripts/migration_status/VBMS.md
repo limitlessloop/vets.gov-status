@@ -36,7 +36,7 @@ Decision finalized: migrate to cloud, decommission obsolete / duplicate system, 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)          |      | Not CAS, but others? (note to kelly to ask DSVA)
 Approved architecture by ITOPs              |      | ask Gary / Chris
 Intake checklist 100% completed               | N/A     | Checklist in development by CAS                                       
-COMPLETED ALL OIT Intake Tasks                 |  Completed   | No VIPR ID; should this be broken into smaller projects given size and entered in VIPR?
+COMPLETED ALL OIT Intake Tasks                 |  Complete   | No VIPR ID; should this be broken into smaller projects given size and entered in VIPR?
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
