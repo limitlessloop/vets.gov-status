@@ -1,6 +1,6 @@
 # Name: Digital Veterans Platform (AWS)
 
-Business and Application Owers: Tim Robinson 
+Business and Application Owers: Dr. Shamen Singh (Business Owner), Drew M. (Application Owner) Tim Robinson (PM) 
 
 Migrate to Cloud: Yes
 
