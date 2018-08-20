@@ -98,7 +98,7 @@ COMPLETED ALL Build Out and Cutover Tasks                   | Green    
 ### Cloud Operations
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-Go-live / production              |  Complete    | are they passing user data? usage data? 
+Go-live / production              |  Complete    | No users yet
 Go live operational kickoff with ITOPs              |       | is this applicable? Does ITOPS have role on this applicaiton?
 Closeout session with Risk Vision working group              |       | 
 ECSO ongoing governing / operational processes in place              |       | ? ESCO - what is this process?
