@@ -81,13 +81,13 @@ COMPLETED ALL Provisioning Tasks                       | Green     |
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
 Application team environment, configuration and build out complete           | Complete      | 
-Change management and comms plan approved (incl. VA training requirements)    |       | What would be helpful for Tim here?
+Change management and comms plan approved (incl. VA training requirements)    |       | Operations planning
 All testing cheklists have been completed / met acceptance criteria (security and operations)     | Complete      | 
 Cutover checklist approved                |       | do teams use a checklist? is this applicable for a new sytem in cloud? would it be helpful?
 Monitoring tools in place                | Complete      | specific tools for DVP?
 Decommission plan approved                |  N/A     | not applicable b/c new system stood up in AWS
 ATO approved                |  Complete     | 8.15.18
-Operations handoff completed (per ATO approval)                |       | Is there anything Tim needs from ITOP?
+Operations handoff completed (per ATO approval)                | Green      | 
 EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)        |       | is this applicable?
 Validate Disaster Recovery (DR) and Backup                |  Complete     | part of ATO; (can this be deleted--is it already covered in ATO?)
 CD2 decision                                 |       | Date:
