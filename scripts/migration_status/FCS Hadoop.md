@@ -4,8 +4,7 @@ Business and Application Owers: Jonathan Lindow
 
 Migrate to Cloud: Yes
 
-Cutover Completed: 
-
+Cutover Completed: Yes
 
 
 ### (Pre-Intake) Modernization and Decommission Planning
@@ -74,7 +73,7 @@ Billing and reporting set up                 |       |
 Team has access to all required tools and environments                 |       | 
 Working session to complete operations handoff with ITOPs                 |       | 
 Provisioning checklist 100% completed                 |       | Checklist in development by CAS; not yet available
-COMPLETED ALL Provisioning Tasks                 |       | 
+COMPLETED ALL Provisioning Tasks                 | Yellow      | 
 
 
 
@@ -93,7 +92,7 @@ EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)  �
 Validate Disaster Recovery (DR) and Backup                |       | 
 CD2 decision                |       | 
 Build out and cutover checklist 100% complete                |       | Checklist in development by CAS; not yet available
-COMPLETED ALL Build Out and Cutover Tasks                   |       |  
+COMPLETED ALL Build Out and Cutover Tasks                   | Green      |  
 
 
 ### Cloud Operations
@@ -109,7 +108,7 @@ Complete any outstanding contract actions (including cancellations, mods, etc.)�
 Implemented operational RACIs with VA staff              |       | 
 Begin decommission plan tasks              |       | 
 100% post-cutover checklist completed              |       | Checklist in development by CAS; not yet available
-COMPLETED ALL Operations Tasks              |       | 
+COMPLETED ALL Operations Tasks              |   Red    | 
 
 ### Retire / Decommission Legacy System
 Task                                                    | Status    | Comments (only if yellow or red)
@@ -119,5 +118,5 @@ Contracts modified or cancelled            |       |
 Cost savings report delivered            |       | 
 Archiving completed / data transferring completed            |       | 
 100% ITOPs decommission checklist completed            |       | Checklist in development by CAS; not yet available
-COMPLETED ALL Decommission Tasks              |       | 
+COMPLETED ALL Decommission Tasks              | Green      | 
 

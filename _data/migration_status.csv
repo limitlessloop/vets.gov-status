@@ -1,5 +1,6 @@
 name,link,lead,pre_intake,oit_intake,                                 migrate_to_cloud,migration_planning,                                 migration_cutover,cutover_complete,decom
-Digital Veterans Platform (AWS),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/DVP.md",Tim Robinson,Green,Green,Yes,Green,Green,Green,Green,,N/A
+Digital Veterans Platform (AWS),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/DVP.md",Tim Robinson,Green,Yellow,Yes,Red,Green,Yellow,Red,Yes,Green
+Digital Veterans Platform (AWS),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/Test New Project.md",Tim Robinson,Complete,Completed,Yes,Green,Yellow,Yellow,Red,Yes,Red
 Financial Service Center (FCS) Informatica (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/FSC Informatica.md",Jonathan Lindow,Green,Red,Yes,Green,Green,,,,
-Financial Service Center (FSC) Hadoop (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/FCS Hadoop.md",Jonathan Lindow,Green,Red,Yes,Green,,,,,
-Veterans Benefits Management System (VBMS) (AWS),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/VBMS.md",Gary Dameron,Yellow,Red,Yes,Green,Green,,,,
+Financial Service Center (FSC) Hadoop (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/FCS Hadoop.md",Jonathan Lindow,Green,Red,Yes,Green,Yellow,Green,Red,Yes,Green
+Veterans Benefits Management System (VBMS) (AWS),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/VBMS.md",Gary Dameron,Complete,Completed,Yes,Green,Green,Complete,Na,,Na
