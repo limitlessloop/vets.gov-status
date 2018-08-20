@@ -1,6 +1,6 @@
 name,link,lead,pre_intake,oit_intake,migrate_to_cloud,migration_planning,provisioning_tasks,migration_cutover,operations_tasks,cutover_complete,decom
 Digital Veterans Platform (AWS),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/DVP.md",Dr. Shamen Singh (Business Owner) Drew Myklegard (Application Owner) Tim Robinson (PM),Complete,Complete,Yes,Red,Green,Green,Red,Yes,Green
-Financial Service Center (FCS) Informatica (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/FSC Informatica.md",Jonathan Lindow,Green,Red,Yes,Green,Green,,,,
-Financial Service Center (FSC) Hadoop (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/FCS Hadoop.md",Jonathan Lindow,Green,Red,Yes,Green,Yellow,Green,Red,Yes,Green
-Test,"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/Test New Project.md",Name,Complete,Completed,Yes,Green,Yellow,Yellow,Red,Yes,Red
-Veterans Benefits Management System (VBMS) (AWS),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/VBMS.md",Gary Dameron,Complete,Completed,Yes,Green,Green,Complete,Na,,Na
+Financial Service Center (FCS) Informatica (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/FSC_Informatica.md",Jonathan Lindow,Green,Red,Yes,Green,Green,,,,
+Financial Service Center (FSC) Hadoop (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/FCS_Hadoop.md",Jonathan Lindow,Green,Red,Yes,Green,Yellow,Green,Red,Yes,Green
+Test,"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/Test_New_Project.md",Name,Complete,Completed,Yes,Green,Yellow,Yellow,Red,Yes,Red
+Veterans Benefits Management System (VBMS) (AWS),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/VBMS.md",Gary Dameron,Complete,Complete,Yes,Green,Green,Complete,Na,,Na
