@@ -42,11 +42,11 @@ COMPLETED ALL OIT Intake Tasks                 | Complete     | Need to make sur
 Task                                              | Status    | Comments (only if yellow or red)
 ------------                                      | --------- | ------------- 
 ISSO assigned                                     | Complete | Charles Solomon-Jackson
-Application workload and compute / network requirements documented       | Complete      |
-ITOPs (Chris) validates workload compute / network requirements                 |       | Chris Cardella to confirm
-Confirmed RACI and roles (per the CONOPS)                 |       | Need updated CONOPS
-CSP selection criteria (analysis for AWS versus Azure)                 |  Complete     | AWS
-Support contracts for application teams awarded (as needed) / resource onboarding completed (GFE, PIV, VA account set up, etc.) | Complete   |   Liberty IT                
+Application workload and compute / network requirements documented       | Complete      | All docs DVP Share portal; ECSO does not require this of all project teams
+ITOPs (Chris) validates workload compute / network requirements                 |       | 
+Confirmed RACI and roles (per the CONOPS)                 | Complete      | 
+CSP selection criteria (analysis for AWS versus Azure)                 |  NA     | Not yet implemented
+Support contracts for application teams awarded (as needed) / resource onboarding completed (GFE, PIV, VA account set up, etc.) | Complete   |   Liberty IT, Mulesoft, CGS               
 Cloud credits purchased (do not expire)                 |   Complete    |
 ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)   | Complete      |
 Decommission plan completed (incl. contracting, security, etc.)               |   NA    | Not applicable because new system
