@@ -87,7 +87,7 @@ Cutover checklist approved                |       | do teams use a check
 Monitoring tools in place                | Complete      | specific tools for DVP?
 Decommission plan approved                |  N/A     | not applicable b/c new system stood up in AWS
 ATO approved                |  Complete     | 8.15.18
-Operations handoff completed (per ATO approval)                | Green      | 
+Operations handoff completed (per ATO approval)                | Green      | Handoff planned for next summer
 EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)        |       | is this applicable?
 Validate Disaster Recovery (DR) and Backup                |  Complete     | part of ATO; (can this be deleted--is it already covered in ATO?)
 CD2 decision                                 |       | Date:
