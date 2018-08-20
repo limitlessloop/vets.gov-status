@@ -50,8 +50,8 @@ Support contracts for application teams awarded (as needed) / resource onboardin
 Cloud credits purchased (do not expire)                 |   Complete    |
 ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)   | Complete      |
 Decommission plan completed (incl. contracting, security, etc.)               |   NA    | Not applicable because new system
-SLAs for applications defined and approved                 |       | Application SLAs other than AWS standard ones? how does Tim measure success for this system?
-SLAs for operations defined and approved with ITOPs        |       | Chris Cardella
+SLAs for applications defined and approved                 | Complete      | using AWS SLAs 
+SLAs for operations defined and approved with ITOPs        |       | 
 CSP accounts and sub accounts created                 | Complete    | 
 Release agent identified or waiver                 |       |
 Sustainment organization identified                 |       |
