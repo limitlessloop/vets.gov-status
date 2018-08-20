@@ -36,12 +36,12 @@ Decision finalized: migrate to cloud, decommission obsolete / duplicate system, 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)        | Complete     | worked with ITOPS; completed Osama Lel-Zorkani (ITOPs)
 Approved architecture by ITOPs              |      | Chris Cardella's team to do; CAS to coordinate with Chris
 Intake checklist 100% completed               | N/A     | Checklist under development by CAS; not yet available                                       
-COMPLETED ALL OIT Intake Tasks                 | Yellow     | 
+COMPLETED ALL OIT Intake Tasks                 | Complete     | Need to make sure project is APPROVED
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
 ------------                                      | --------- | ------------- 
-ISSO assigned                                     | Complete | Charles Solomon- Jackson
+ISSO assigned                                     | Complete | Charles Solomon-Jackson
 Application workload and compute / network requirements documented                 |       |
 ITOPs (Chris) validates workload compute / network requirements                 |       | Chris Cardella to confirm
 Confirmed RACI and roles (per the CONOPS)                 |       | Need updated CONOPS
