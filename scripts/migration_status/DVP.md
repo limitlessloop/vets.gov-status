@@ -92,7 +92,7 @@ EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)  �
 Validate Disaster Recovery (DR) and Backup                |  Complete     | part of ATO; (can this be deleted--is it already covered in ATO?)
 CD2 decision                                 |       | Date:
 Build out and cutover checklist 100% complete                |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Build Out and Cutover Tasks                   | Yellow     |  
+COMPLETED ALL Build Out and Cutover Tasks                   | Green     |  
 
 
 ### Cloud Operations
