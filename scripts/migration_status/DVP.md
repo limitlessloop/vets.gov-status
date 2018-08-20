@@ -1,6 +1,6 @@
 # Name: Digital Veterans Platform (AWS)
 
-Business and Application Owers: Dr. Shamen Singh (Business Owner), Drew M. (Application Owner) Tim Robinson (PM) 
+Business and Application Owers: Dr. Shamen Singh (Business Owner) Drew Myklegard (Application Owner) Tim Robinson (PM) 
 
 Migrate to Cloud: Yes
 
@@ -11,37 +11,37 @@ Cutover Completed: Yes
 ### (Pre-Intake) Modernization and Decommission Planning
 Task                                              | Status   | Comments (only if yellow or red)
 ------------                                      | -------- | ------------- 
-Identify VA application owner                     | Yellow     | Need to identify application owner (Tim is PM)
+Identify VA application owner                    | Complete  |  Dr. Shamen Singh (Business Owner) Drew Myklegard (Application Owner) 
 Initial cloud suitability 6 questions completed   |  N/A    | Ken/Intake team have not yet deployed these in VIPR intake process
-ITOPs to review if "obsolete" system based on usage     | N/A     | Not applicable because this is a new system
+ITOPs to review if "obsolete" system based on usage     | N/A     | New system was approved by ITOPs
 ECSO Migration wave planning started              | Complete    |  Wave 1
 Baseline costs (pre-cloud) documented             |  N/A    | No baseline (pre-cloud) costs because this is a new system
-Validated ACTIVE users / traffic analytics for past 12 months   | Yellow     | Need data on demand for this application
-ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. | Complete     | Yes funded for cloud; OIT dollars
+Validated ACTIVE users / traffic analytics for past 12 months   | Complete    | 100,000 users projected and provided to ECSO in steady state; no users at this time
+ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. | Complete     | Yes funded for cloud for FY18 OIT dollars; not complete for FY19
 VIPR Epics completed                              | Complete     | confirm w/ Tim
 Routing tab in VIPR workbook completed            | N/A     | Team began work before Ken/Intake team deployed workbook
 100% complete pre-intake checklist                |  N/A    | Checklist under development by CAS; not yet available 
-COMPLETED ALL (PRE Intake) Tasks                  | Green   | Usage data needed; confirm what is VA / user demand for this system
+COMPLETED ALL (PRE Intake) Tasks                  | Complete   | Usage data needed; confirm what is VA / user demand for this system
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
 ------------                                                  | -------- | -------------
 VIPR ID created               |   Complete   | V17-01347-000
 VIPR workbook (tab for cloud) 100% completed              | N/A     | Workbook not yet deployed / available by Ken/Intake team.
-EPMO IA analysis completed              |      | Confirm with Rushika's team
+EPMO IA analysis completed              | Green     | Confirmed workign with Rushika's team; need to confirm with Ruchika if an IA analysis was completed
 ECSO wave migration designated              |   Complete   | Wave 1
 EPMO PM assigned              |  Complete    | Tim Robinson
-Confirmed adequate funding and resources in place for migration based on ROM              | Complete   | 
+Confirmed adequate funding and resources in place for migration based on ROM              | Complete   | no ROM; funding for FY18; need funding FY19; need to know what project team will fund and what ECSO will fund
 Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)         | Complete     | 
-CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)        |      | CAS to do
+CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)        | Complete     | worked with ITOPS; completed Osama Lel-Zorkani (ITOPs)
 Approved architecture by ITOPs              |      | Chris Cardella's team to do; CAS to coordinate with Chris
 Intake checklist 100% completed               | N/A     | Checklist under development by CAS; not yet available                                       
-COMPLETED ALL OIT Intake Tasks                 | Yellow     | 
+COMPLETED ALL OIT Intake Tasks                 | Complete     | Need to make sure project is APPROVED
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
 ------------                                      | --------- | ------------- 
-ISSO assigned                                     | Complete | Charles Solomon- Jackson
+ISSO assigned                                     | Complete | Charles Solomon-Jackson
 Application workload and compute / network requirements documented                 |       |
 ITOPs (Chris) validates workload compute / network requirements                 |       | Chris Cardella to confirm
 Confirmed RACI and roles (per the CONOPS)                 |       | Need updated CONOPS
