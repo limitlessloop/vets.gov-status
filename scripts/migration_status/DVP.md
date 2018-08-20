@@ -1,6 +1,6 @@
 # Name: Digital Veterans Platform (AWS)
 
-Business and Application Owers: Dr. Shamen Singh (Business Owner), Drew M. (Application Owner) Tim Robinson (PM) 
+Business and Application Owers: Dr. Shamen Singh (Business Owner) Drew Myklegard (Application Owner) Tim Robinson (PM) 
 
 Migrate to Cloud: Yes
 
@@ -11,7 +11,7 @@ Cutover Completed: Yes
 ### (Pre-Intake) Modernization and Decommission Planning
 Task                                              | Status   | Comments (only if yellow or red)
 ------------                                      | -------- | ------------- 
-Identify VA application owner                     | Yellow     | Need to identify application owner (Tim is PM)
+Identify VA application owner                     | Complete    Dr. Shamen Singh (Business Owner) Drew Myklegard (Application Owner) 
 Initial cloud suitability 6 questions completed   |  N/A    | Ken/Intake team have not yet deployed these in VIPR intake process
 ITOPs to review if "obsolete" system based on usage     | N/A     | Not applicable because this is a new system
 ECSO Migration wave planning started              | Complete    |  Wave 1
