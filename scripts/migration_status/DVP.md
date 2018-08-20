@@ -64,14 +64,14 @@ COMPLETED ALL Migration Planning and Onboarding Tasks                 | Red     
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
 ATO actions started; must demonstrate progress          | Complete      | ATO approved 8.15.18
-Apps code assigned in coordination with ITOPs           | Complete      | Tim to confirm
+Apps code assigned in coordination with ITOPs           | Complete      |
 Identify and apply tagging and billing                 |  Complete     | 
 Dev/Test/Staging/Prod environment set up completed     | Complete      | 
 Provided inherited controls for CSP                    | Complete      | 
-Operational security tools onboarding completed          |Complete  | Tim to confirm
+Operational security tools onboarding completed          |Complete  | 
 Billing and reporting set up                          | Complete     | 
 Team has access to all required tools and environments                 |  Complete   | 
-Working session to complete operations handoff with ITOPs                 |       | Chris Carella's team
+Working session to complete operations handoff with ITOPs                 |       | 
 Provisioning checklist 100% completed                 |       | Checklist under development by CAS; not yet available
 COMPLETED ALL Provisioning Tasks                       | Green     | 
 
