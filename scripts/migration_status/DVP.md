@@ -57,7 +57,7 @@ Release agent identified or waiver                 |       |
 Sustainment organization identified                 |       |
 CD1 decision made                 | Complete      | Date: June 30, 2017
 Planning checklist 100% completed                 |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Migration Planning and Onboarding Tasks                 | Red     | 
+COMPLETED ALL Migration Planning and Onboarding Tasks                 | Complete    | 
 
 
 ### Provisioning
@@ -73,7 +73,7 @@ Billing and reporting set up                          | Complete     |
 Team has access to all required tools and environments                 |  Complete   | 
 Working session to complete operations handoff with ITOPs                 |       | 
 Provisioning checklist 100% completed                 |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Provisioning Tasks                       | Green     | 
+COMPLETED ALL Provisioning Tasks                       | Complete     | 
 
 
 
@@ -108,7 +108,7 @@ Complete any outstanding contract actions (including cancellations, mods, etc.)�
 Implemented operational RACIs with VA staff              |       | 
 Begin decommission plan tasks              |  N/A     | Not applicable
 100% post-cutover checklist completed              |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Operations Tasks              | Red      | 
+COMPLETED ALL Operations Tasks              | Green     | 
 
 ### Retire / Decommission Legacy System
 Task                                                    | Status    | Comments (only if yellow or red)
@@ -118,5 +118,5 @@ Contracts modified or cancelled            |       |
 Cost savings report delivered            |       | 
 Archiving completed / data transferring completed            |       | 
 100% ITOPs decommission checklist completed            |       | 
-COMPLETED ALL Decommission Tasks              | Green      | Not applicable (new system in AWS)
+COMPLETED ALL Decommission Tasks              |       | Not applicable (new system in AWS)
 
