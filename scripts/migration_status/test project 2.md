@@ -2,9 +2,9 @@
 
 Business and Application Owers: Name
 
-Migrate to Cloud: Yes
+Migrate to Cloud: No
 
-Cutover Completed: Yes
+Cutover Completed: 
 
 
 
@@ -41,7 +41,7 @@ COMPLETED ALL OIT Intake Tasks                 | completed     |
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
 ------------                                      | --------- | ------------- 
-ISSO assigned                                     | Complete | Charles Solomon- Jackson
+ISSO assigned                                     |  | 
 Application workload and compute / network requirements documented                 |       |
 ITOPs (Chris) validates workload compute / network requirements                 |       | Chris Cardella to confirm
 Confirmed RACI and roles (per the CONOPS)                 |       | Need updated CONOPS
@@ -57,7 +57,7 @@ Release agent identified or waiver                 |       |
 Sustainment organization identified                 |       |
 CD1 decision made                 |       | Date:
 Planning checklist 100% completed                 |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Migration Planning and Onboarding Tasks                 | green      | 
+COMPLETED ALL Migration Planning and Onboarding Tasks                 |      | 
 
 
 ### Provisioning
@@ -70,10 +70,10 @@ Dev/Test/Staging/Prod environment set up completed     | Complete      |
 Provided inherited controls for CSP                    | Complete      | 
 Operational security tools onboarding completed          |Complete  | Tim to confirm
 Billing and reporting set up                          | Complete     | 
-Team has access to all required tools and environments                 |  Complete   | 
+Team has access to all required tools and environments                 |    | 
 Working session to complete operations handoff with ITOPs                 |       | Chris Carella's team
 Provisioning checklist 100% completed                 |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Provisioning Tasks                       |  Yellow     | 
+COMPLETED ALL Provisioning Tasks                       |      | 
 
 
 
@@ -92,7 +92,7 @@ EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)  �
 Validate Disaster Recovery (DR) and Backup                |  Complete     | part of ATO; (can this be deleted--is it already covered in ATO?)
 CD2 decision                                 |       | Date:
 Build out and cutover checklist 100% complete                |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Build Out and Cutover Tasks                   | yellow      |  
+COMPLETED ALL Build Out and Cutover Tasks                   |      |  
 
 
 ### Cloud Operations
@@ -108,7 +108,7 @@ Complete any outstanding contract actions (including cancellations, mods, etc.)�
 Implemented operational RACIs with VA staff              |       | 
 Begin decommission plan tasks              |  N/A     | Not applicable
 100% post-cutover checklist completed              |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Operations Tasks              | Red      | 
+COMPLETED ALL Operations Tasks              |     | 
 
 ### Retire / Decommission Legacy System
 Task                                                    | Status    | Comments (only if yellow or red)
@@ -118,5 +118,5 @@ Contracts modified or cancelled            |       |
 Cost savings report delivered            |       | 
 Archiving completed / data transferring completed            |       | 
 100% ITOPs decommission checklist completed            |       | 
-COMPLETED ALL Decommission Tasks              | red     | Not applicable (new system in AWS)
+COMPLETED ALL Decommission Tasks              | Complete     | Not applicable (new system in AWS)
 
