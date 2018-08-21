@@ -1,6 +1,6 @@
 # Name: Digital Veterans Platform (AWS)
 
-Business and Application Owers:  Drew Myklegard 
+Business and Application Owers:  Shamen Singh Drew Myklegard
 
 Migrate to Cloud: Yes
 
