@@ -20,7 +20,7 @@ ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. 
 VIPR Epics completed                              | Yellow    | Not in VIPR
 Routing tab in VIPR workbook completed            | N/A     | Ken/Intake team has not rolled this out yet
 100% complete pre-intake checklist                |      | Checklist in development by CAS; not yet available
-COMPLETED ALL (PRE Intake) Tasks                  | Green     | 
+COMPLETED ALL (PRE Intake) Tasks                  |     | 
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
@@ -35,7 +35,7 @@ Decision finalized: migrate to cloud, decommission obsolete / duplicate system, 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)          |      | in progress
 Approved architecture by ITOPs              |      | Chris Cardella team
 Intake checklist 100% completed               |      | Checklist in development by CAS; not yet available                                      
-COMPLETED ALL OIT Intake Tasks                 | Red     | This system did not go through VIPR (does it need to be in VIPR?)
+COMPLETED ALL OIT Intake Tasks                 |      | This system did not go through VIPR (does it need to be in VIPR?)
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
@@ -57,7 +57,7 @@ Sustainment organization identified                 |       |
 VIP CD 1 checklist is 100% completed                 |       |
 CD1 decision made                 |       |
 Planning checklist 100% completed                 |       | Checklist in development by CAS; not yet available
-COMPLETED ALL Migration Planning and Onboarding Tasks                 |  Green     | 
+COMPLETED ALL Migration Planning and Onboarding Tasks                 |       | 
 
 
 ### Provisioning
@@ -73,7 +73,7 @@ Billing and reporting set up                 |       |
 Team has access to all required tools and environments                 |       | 
 Working session to complete operations handoff with ITOPs                 |       | 
 Provisioning checklist 100% completed                 |       | Checklist in development by CAS; not yet available
-COMPLETED ALL Provisioning Tasks                 | Yellow      | 
+COMPLETED ALL Provisioning Tasks                 |      | 
 
 
 
@@ -92,7 +92,7 @@ EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)  �
 Validate Disaster Recovery (DR) and Backup                |       | 
 CD2 decision                |       | 
 Build out and cutover checklist 100% complete                |       | Checklist in development by CAS; not yet available
-COMPLETED ALL Build Out and Cutover Tasks                   | Green      |  
+COMPLETED ALL Build Out and Cutover Tasks                   |       |  
 
 
 ### Cloud Operations
@@ -118,5 +118,5 @@ Contracts modified or cancelled            |       |
 Cost savings report delivered            |       | 
 Archiving completed / data transferring completed            |       | 
 100% ITOPs decommission checklist completed            |       | Checklist in development by CAS; not yet available
-COMPLETED ALL Decommission Tasks              | Green      | 
+COMPLETED ALL Decommission Tasks              |      | 
 
