@@ -1,6 +1,6 @@
-# Name: PPMT (MAG)
+# Name: Portfolio Project Management Tool (PPMT) (MAG)
 
-Business and Application Owers: Name
+Business and Application Owers: Tim Ethier
 
 Migrate to Cloud: Yes
 
