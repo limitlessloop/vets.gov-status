@@ -21,7 +21,7 @@ ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. 
 VIPR Epics completed                              | Yellow     | Did not go through VIPR; does info need to be entered?
 Routing tab in VIPR workbook completed            | Yellow     | Did not go through VIPR; does info need to be entered?
 100% complete pre-intake checklist                |  N/A    | Checklist in development by CAS
-COMPLETED ALL (PRE Intake) Tasks                  | Complete  | 
+COMPLETED ALL (PRE Intake) Tasks                  |  | 
 
 ### OIT Unified Intake (VIPR)
 Task                                          | Status   | Comments (only if yellow or red)
@@ -36,7 +36,7 @@ Decision finalized: migrate to cloud, decommission obsolete / duplicate system, 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)          |      | Not CAS, but others? (note to kelly to ask DSVA)
 Approved architecture by ITOPs              |      | ask Gary / Chris
 Intake checklist 100% completed               | N/A     | Checklist in development by CAS                                       
-COMPLETED ALL OIT Intake Tasks                 |  Red | No VIPR ID; should this be broken into smaller projects given size and entered in VIPR? Example: Phase 1: migrate data from Terramark using AWS Snowball.
+COMPLETED ALL OIT Intake Tasks                 |   | No VIPR ID; should this be broken into smaller projects given size and entered in VIPR? Example: Phase 1: migrate data from Terramark using AWS Snowball.
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
@@ -57,7 +57,7 @@ Release agent identified or waiver                 |       |
 Sustainment organization identified                 |       |
 CD1 decision made                 |Complete       | Date:
 Planning checklist 100% completed                 |       | Checklist in development by CAS
-COMPLETED ALL Migration Planning and Onboarding Tasks     | Green      | 
+COMPLETED ALL Migration Planning and Onboarding Tasks     |       | 
 
 
 ### Provisioning
@@ -73,7 +73,7 @@ Billing and reporting set up                 | Complete      |
 Team has access to all required tools and environments                 |       | 
 Working session to complete operations handoff with ITOPs                 |       | 
 Provisioning checklist 100% completed                 |       | Checklist in development by CAS
-COMPLETED ALL Provisioning Tasks                 |  Green     | 
+COMPLETED ALL Provisioning Tasks                 |      | 
 
 
 
