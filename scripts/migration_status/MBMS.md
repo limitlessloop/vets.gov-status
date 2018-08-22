@@ -1,6 +1,6 @@
-# Name: Portfolio Project Management Tool (PPMT) (MAG)
+# Name: Memorial Benefits Management System (MBMS) (MAG)
 
-Business and Application Owers: Tim Ethier
+Business and Application Owers: Christina Palumbo
 
 Migrate to Cloud: Yes
 
@@ -116,4 +116,3 @@ Cost savings report delivered            |       |
 Archiving completed / data transferring completed            |       | 
 100% ITOPs decommission checklist completed            |       | 
 COMPLETED ALL Decommission Tasks              |      | 
-

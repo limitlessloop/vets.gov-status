@@ -21,7 +21,7 @@ ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. 
 VIPR Epics completed                              |      |
 Routing tab in VIPR workbook completed            | N/A  | Ken/Intake team has not yet deployed this
 100% complete pre-intake checklist                |      | Checklist in development by CAS
-COMPLETED ALL (PRE Intake) Tasks                  | Green   | 
+COMPLETED ALL (PRE Intake) Tasks                  |    | 
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
@@ -36,7 +36,7 @@ Decision finalized: migrate to cloud, decommission obsolete / duplicate system, 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)              |      | in progress
 Approved architecture by ITOPs                          |      | 
 Intake checklist 100% completed                          |      |  Checklist in development by CAS                                      
-COMPLETED ALL OIT Intake Tasks                           |  Red   | No VIPR ID; not in VIPR (all cloud projects supposed to be tracked in VIPR)
+COMPLETED ALL OIT Intake Tasks                           |    | No VIPR ID; not in VIPR (all cloud projects supposed to be tracked in VIPR)
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
@@ -73,7 +73,7 @@ Billing and reporting set up                 |       |
 Team has access to all required tools and environments                 |       | 
 Working session to complete operations handoff with ITOPs                 |       | 
 Provisioning checklist 100% completed                 |       | Checklist in development by CAS
-COMPLETED ALL Provisioning Tasks                 | Green      | 
+COMPLETED ALL Provisioning Tasks                 |       | 
 
 
 
