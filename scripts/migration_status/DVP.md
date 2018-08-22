@@ -92,7 +92,7 @@ EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)  �
 Validate Disaster Recovery (DR) and Backup                |  Complete     | part of ATO; (can this be deleted--is it already covered in ATO?)
 CD2 decision                                 |       | Date: March 2018
 Build out and cutover checklist 100% complete                |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Build Out and Cutover Tasks                   | Green     |  
+COMPLETED ALL Build Out and Cutover Tasks                   | Green     | no real users on the system yet; will not have users until spring 2019
 
 
 ### Cloud Operations
@@ -108,7 +108,7 @@ Complete any outstanding contract actions (including cancellations, mods, etc.)�
 Implemented operational RACIs with VA staff              |       | 
 Begin decommission plan tasks              |  N/A     | Not applicable
 100% post-cutover checklist completed              |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Operations Tasks              | Green     | 
+COMPLETED ALL Operations Tasks              | Green     | no real users on the system yet; will not have users until spring 2019
 
 ### Retire / Decommission Legacy System
 Task                                                    | Status    | Comments (only if yellow or red)
