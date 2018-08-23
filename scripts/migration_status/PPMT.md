@@ -16,7 +16,7 @@ Initial cloud suitability 6 questions completed   |      |
 ITOPs to review if "obsolete" system based on usage     |     | 
 ECSO Migration wave planning started              |     |  familiar with 10 step process
 Baseline costs (pre-cloud) documented             |      | 
-Validated ACTIVE users / traffic analytics for past 12 months   |     | 
+Validated ACTIVE users / traffic analytics for past 12 months   | Complete    | Internal users: 50; reporting function stakeholders; front end Sharepoint; SQL server databased; MS BI reporting; 5.3M square feet of space; 5M Veteran affected
 ROM and funding information provided (e.g., UFR, research vs. OIT
 100% complete pre-intake checklist                |     |  
 COMPLETED ALL (PRE Intake) Tasks                  |   |  
