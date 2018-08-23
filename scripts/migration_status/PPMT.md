@@ -24,7 +24,7 @@ COMPLETED ALL (PRE Intake) Tasks                  |   |
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
 ------------                                                  | -------- | -------------
-VIPR ID created               |     | 
+VIPR ID created               | Complete    | V18-00176-000
 VIPR workbook (tab for cloud) 100% completed              |     | 
 EPMO IA analysis completed              |      | 
 ECSO wave migration designated              |      | 
@@ -39,13 +39,13 @@ COMPLETED ALL OIT Intake Tasks                 |    |
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
 ------------                                      | --------- | ------------- 
-ISSO assigned                                     |  | 
+ISSO assigned                                     |Complete   | Karrin Orler
 Application workload and compute / network requirements documented                 |       |
 ITOPs (Chris) validates workload compute / network requirements                 |       | 
 Confirmed RACI and roles (per the CONOPS)                 |       | 
 CSP selection criteria (analysis for AWS versus Azure)                 |       | 
 Cloud credits purchased (do not expire)                 |      |
-ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)   |      |
+ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)   |      | able to use Sharepoint ATOs
 Decommission plan completed (incl. contracting, security, etc.)               |       | 
 SLAs for applications defined and approved                 |       | 
 SLAs for operations defined and approved with ITOPs        |       | 
