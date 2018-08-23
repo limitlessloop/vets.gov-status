@@ -14,7 +14,7 @@ Task                                              | Status   | Comments (only if
 Identify VA application owner                     | Complete   | OALC office ; Tim - Application owner
 Initial cloud suitability 6 questions completed   |      | 
 ITOPs to review if "obsolete" system based on usage     |     | 
-ECSO Migration wave planning started              |     |  familiar with 10 step process
+ECSO Migration wave planning started              | Yellow    |  Wave 2 ? September? ; familiar with 10 step process
 Baseline costs (pre-cloud) documented             |      | 
 Validated ACTIVE users / traffic analytics for past 12 months   | Complete    | Internal users: 50; reporting function stakeholders; front end Sharepoint; SQL server databased; MS BI reporting 700 users; 5.3M square feet of space; 5M Veteran affected
 ROM and funding information provided (e.g., UFR, research vs. OIT   |complete| funded FY19 and approved by OIT
@@ -27,8 +27,8 @@ Task                                                          | Status   | Comme
 VIPR ID created               | Complete    | V18-00176-000
 VIPR workbook (tab for cloud) 100% completed              |     | 
 EPMO IA analysis completed              |      | 
-ECSO wave migration designated              |      | 
-EPMO PM assigned              |     | 
+ECSO wave migration designated              | Yellow     | originally planned july; updated to Planned Wave 2 (sept); but may change due to a recent architecture change
+EPMO PM assigned              | Complete    | Gina Williams-Davis
 Confirmed adequate funding and resources in place for migration based on ROM              |    | 
 Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)         |      | 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)        |      | CAS to do
