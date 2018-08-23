@@ -61,7 +61,7 @@ Task                                                    | Status    | Comments (
 ATO actions started; must demonstrate progress          | Green    | In progress; inherit Sharepoint
 Apps code assigned in coordination with ITOPs           |       | Not yet; ITOPs team to do
 Identify and apply tagging and billing                 | Complete     | 
-Dev/Test/Staging/Prod environment set up completed     |Red       | Have a dev environment set up in non-VA environment; is this the ECSO process? 
+Dev/Test/Staging/Prod environment set up completed     |Green      | Have a dev environment set up in non-VA environment; is this the ECSO process? 
 Provided inherited controls for CSP                    |     | 
 Operational security tools onboarding completed        |     | Depends on environments
 Billing and reporting set up                          |      | 
