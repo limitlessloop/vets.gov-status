@@ -19,7 +19,7 @@ Baseline costs (pre-cloud) documented             |      |
 Validated ACTIVE users / traffic analytics for past 12 months   | Complete    | Internal VAusers: 50; reporting function ~800 stakeholders; 5M Veterans impacted by space (system handles 5.3M square ft. of VHA space)
 ROM and funding information provided (e.g., UFR, research vs. OIT   |complete| funded but not sure if FY 18 or FY19 
 100% complete pre-intake checklist                |     |  
-COMPLETED ALL (PRE Intake) Tasks                  |     |  
+COMPLETED ALL (PRE Intake) Tasks                  | Green    |  
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
