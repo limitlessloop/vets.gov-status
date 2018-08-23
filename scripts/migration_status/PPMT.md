@@ -68,7 +68,7 @@ Billing and reporting set up                          |      |
 Team has access to all required tools and environments                 |    | 
 Working session to complete operations handoff with ITOPs                 |       |
 Provisioning checklist 100% completed                 |       | 
-COMPLETED ALL Provisioning Tasks                       | Green    | 
+COMPLETED ALL Provisioning Tasks                       | Yellow    | Is it ideal to set up dev environments in non VA / non-VAEC environments?
 
 
 
