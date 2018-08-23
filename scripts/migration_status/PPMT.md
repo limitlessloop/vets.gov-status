@@ -28,10 +28,10 @@ VIPR ID created               | Complete    | V18-00176-000
 VIPR workbook (tab for cloud) 100% completed              |     | 
 EPMO IA analysis completed              |      | 
 ECSO wave migration designated              | Yellow     | originally planned july; updated to Planned Wave 2 (sept); but may change due to a recent architecture change
-EPMO PM assigned              | Complete    | Gina Williams-Davis
+EPMO PM assigned              | Complete    | Gina Williams-Davis; Grant Turner
 Confirmed adequate funding and resources in place for migration based on ROM              |    | 
-Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)         |      | 
-CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)        |      | CAS to do
+Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)     | Complete  | other real property components; plan it to get rid RPPTS
+CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)        | Complete     | Sharepoint front end; SQL database; Tableau issue so using MS Power BI
 Approved architecture by ITOPs              |      | 
 Intake checklist 100% completed               |     |                                        
 COMPLETED ALL OIT Intake Tasks                 |    | 
@@ -40,11 +40,11 @@ COMPLETED ALL OIT Intake Tasks                 |    |
 Task                                              | Status    | Comments (only if yellow or red)
 ------------                                      | --------- | ------------- 
 ISSO assigned                                     |Complete   | Karrin Orler
-Application workload and compute / network requirements documented                 |       |
+Application workload and compute / network requirements documented            |       | OIT has done some work;unsure 
 ITOPs (Chris) validates workload compute / network requirements                 |       | 
-Confirmed RACI and roles (per the CONOPS)                 |       | 
-CSP selection criteria (analysis for AWS versus Azure)                 |       | 
-Cloud credits purchased (do not expire)                 |      |
+Confirmed RACI and roles (per the CONOPS)                 |       | Confirmed this would be helpful; business customers need more info about the process; need to be more customer-focused
+CSP selection criteria (analysis for AWS versus Azure)                 | Complete | Decision 3 months; decision maker?
+Cloud credits purchased (do not expire)                 | Complete     | Funding approval included Year 1 credits coveredb by OIT
 ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)   |      | able to use Sharepoint ATOs
 Decommission plan completed (incl. contracting, security, etc.)               |       | 
 SLAs for applications defined and approved                 |       | 
