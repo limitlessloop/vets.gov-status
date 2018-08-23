@@ -57,7 +57,7 @@ Release agent identified or waiver                 |       |
 Sustainment organization identified                 |       |
 CD1 decision made                 |       | Date:
 Planning checklist 100% completed                 |       |Checklist in development by CAS
-COMPLETED ALL Migration Planning and Onboarding Tasks                 | Green      | 
+COMPLETED ALL Migration Planning and Onboarding Tasks                 |      | 
 
 
 ### Provisioning

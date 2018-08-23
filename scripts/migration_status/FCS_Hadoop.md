@@ -108,7 +108,7 @@ Complete any outstanding contract actions (including cancellations, mods, etc.)�
 Implemented operational RACIs with VA staff              |       | 
 Begin decommission plan tasks              |       | 
 100% post-cutover checklist completed              |       | Checklist in development by CAS; not yet available
-COMPLETED ALL Operations Tasks              |   Red    | 
+COMPLETED ALL Operations Tasks              |      | 
 
 ### Retire / Decommission Legacy System
 Task                                                    | Status    | Comments (only if yellow or red)
