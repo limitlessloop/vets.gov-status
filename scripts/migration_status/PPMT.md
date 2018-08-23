@@ -14,45 +14,45 @@ Task                                              | Status   | Comments (only if
 Identify VA application owner                     | Complete   | OALC office ; Tim - Application owner
 Initial cloud suitability 6 questions completed   |      | 
 ITOPs to review if "obsolete" system based on usage     |     | 
-ECSO Migration wave planning started              | Yellow    |  Wave 2 ? September? ; familiar with 10 step process
+ECSO Migration wave planning started              | Yellow    |  Original plan July 2018; updated to Sept 2018 (Wave 2) but probably will be moved again; familiar with 10 step process
 Baseline costs (pre-cloud) documented             |      | 
-Validated ACTIVE users / traffic analytics for past 12 months   | Complete    | Internal users: 50; reporting function stakeholders; front end Sharepoint; SQL server databased; MS BI reporting 700 users; 5.3M square feet of space; 5M Veteran affected
-ROM and funding information provided (e.g., UFR, research vs. OIT   |complete| funded FY19 and approved by OIT
+Validated ACTIVE users / traffic analytics for past 12 months   | Complete    | Internal VAusers: 50; reporting function ~800 stakeholders; 5M Veterans impacted by space (system handles 5.3M square ft. of VHA space)
+ROM and funding information provided (e.g., UFR, research vs. OIT   |complete| funded but not sure if FY 18 or FY19 
 100% complete pre-intake checklist                |     |  
-COMPLETED ALL (PRE Intake) Tasks                  |   |  
+COMPLETED ALL (PRE Intake) Tasks                  |     |  
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
 ------------                                                  | -------- | -------------
 VIPR ID created               | Complete    | V18-00176-000
-VIPR workbook (tab for cloud) 100% completed              |     | 
+VIPR workbook (tab for cloud) 100% completed              |     | Not applicable; not yet deployed
 EPMO IA analysis completed              |      | 
-ECSO wave migration designated              | Yellow     | originally planned july; updated to Planned Wave 2 (sept); but may change due to a recent architecture change
+ECSO wave migration designated              | Yellow   | originally planned july; updated to Planned Wave 2 (sept); but may change due to a recent architecture change
 EPMO PM assigned              | Complete    | Gina Williams-Davis; Grant Turner
-Confirmed adequate funding and resources in place for migration based on ROM              |    | 
-Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)     | Complete  | other real property components; plan it to get rid RPPTS
+Confirmed adequate funding and resources in place for migration based on ROM              | Complete   | 
+Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)   | Complete  | This system is part of larger RPPTS system; plan is to eventually decommission larger system once compoents are migrated
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)        | Complete     | Sharepoint front end; SQL database; Tableau issue so using MS Power BI
 Approved architecture by ITOPs              |      | 
-Intake checklist 100% completed               |     |                                        
-COMPLETED ALL OIT Intake Tasks                 |    | 
+Intake checklist 100% completed               |    |   CAS to complete checklist                                     
+COMPLETED ALL OIT Intake Tasks                 |  Green  | 
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
 ------------                                      | --------- | ------------- 
 ISSO assigned                                     |Complete   | Karrin Orler
-Application workload and compute / network requirements documented            |       | OIT has done some work;unsure 
+Application workload and compute / network requirements documented            |       | OIT has done some work;unsure of status 
 ITOPs (Chris) validates workload compute / network requirements                 |       | 
 Confirmed RACI and roles (per the CONOPS)                 |       | Confirmed this would be helpful; business customers need more info about the process; need to be more customer-focused
 CSP selection criteria (analysis for AWS versus Azure)                 | Complete | Decision 3 months; decision maker?
 Cloud credits purchased (do not expire)                 | Complete     | Funding approval included Year 1 credits coveredb by OIT
 ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)   | Complete     | able to use Sharepoint ATOs; will inherit Sharepoint info
-Decommission plan completed (incl. contracting, security, etc.)            |       | Not started; relevant
+Decommission plan completed (incl. contracting, security, etc.)            |       | Not started
 SLAs for applications defined and approved                 |       | OIT ITOPS will manage the operations once deployed; looking to them to support this task
 SLAs for operations defined and approved with ITOPs        |       | 
 CSP accounts and sub accounts created                 | Green    | In progress
 CD1 decision made                 |Complete     | Date: April 2018
 Planning checklist 100% completed                 |       | 
-COMPLETED ALL Migration Planning and Onboarding Tasks                 |      | 
+COMPLETED ALL Migration Planning and Onboarding Tasks              | Green     | 
 
 
 ### Provisioning
@@ -61,14 +61,14 @@ Task                                                    | Status    | Comments (
 ATO actions started; must demonstrate progress          | Green    | In progress; inherit Sharepoint
 Apps code assigned in coordination with ITOPs           |       | Not yet; ITOPs team to do
 Identify and apply tagging and billing                 | Complete     | 
-Dev/Test/Staging/Prod environment set up completed     |       | Have a dev environment set up in non-VA 
+Dev/Test/Staging/Prod environment set up completed     |Red       | Have a dev environment set up in non-VA environment; is this the ECSO process? 
 Provided inherited controls for CSP                    |     | 
 Operational security tools onboarding completed        |     | Depends on environments
 Billing and reporting set up                          |      | 
 Team has access to all required tools and environments                 |    | 
 Working session to complete operations handoff with ITOPs                 |       |
 Provisioning checklist 100% completed                 |       | 
-COMPLETED ALL Provisioning Tasks                       |      | 
+COMPLETED ALL Provisioning Tasks                       | Green    | 
 
 
 
