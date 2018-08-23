@@ -45,14 +45,12 @@ ITOPs (Chris) validates workload compute / network requirements                 
 Confirmed RACI and roles (per the CONOPS)                 |       | Confirmed this would be helpful; business customers need more info about the process; need to be more customer-focused
 CSP selection criteria (analysis for AWS versus Azure)                 | Complete | Decision 3 months; decision maker?
 Cloud credits purchased (do not expire)                 | Complete     | Funding approval included Year 1 credits coveredb by OIT
-ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)   |      | able to use Sharepoint ATOs
-Decommission plan completed (incl. contracting, security, etc.)               |       | 
-SLAs for applications defined and approved                 |       | 
+ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)   | Complete     | able to use Sharepoint ATOs; will inherit Sharepoint info
+Decommission plan completed (incl. contracting, security, etc.)            |       | Not started; relevant
+SLAs for applications defined and approved                 |       | OIT ITOPS will manage the operations once deployed; looking to them to support this task
 SLAs for operations defined and approved with ITOPs        |       | 
-CSP accounts and sub accounts created                 |     | 
-Release agent identified or waiver                 |       |
-Sustainment organization identified                 |       |
-CD1 decision made                 |       | Date:
+CSP accounts and sub accounts created                 | Green    | In progress
+CD1 decision made                 |Complete     | Date: April 2018
 Planning checklist 100% completed                 |       | 
 COMPLETED ALL Migration Planning and Onboarding Tasks                 |      | 
 
@@ -60,12 +58,12 @@ COMPLETED ALL Migration Planning and Onboarding Tasks                 |      |
 ### Provisioning
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-ATO actions started; must demonstrate progress          |      | 
-Apps code assigned in coordination with ITOPs           |       | 
-Identify and apply tagging and billing                 |      | 
-Dev/Test/Staging/Prod environment set up completed     |       | 
+ATO actions started; must demonstrate progress          | Green    | In progress; inherit Sharepoint
+Apps code assigned in coordination with ITOPs           |       | Not yet; ITOPs team to do
+Identify and apply tagging and billing                 | Complete     | 
+Dev/Test/Staging/Prod environment set up completed     |       | Have a dev environment set up in non-VA 
 Provided inherited controls for CSP                    |     | 
-Operational security tools onboarding completed          |  | 
+Operational security tools onboarding completed        |     | Depends on environments
 Billing and reporting set up                          |      | 
 Team has access to all required tools and environments                 |    | 
 Working session to complete operations handoff with ITOPs                 |       |
