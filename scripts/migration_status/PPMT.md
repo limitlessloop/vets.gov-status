@@ -19,7 +19,7 @@ Baseline costs (pre-cloud) documented             |      |
 Validated ACTIVE users / traffic analytics for past 12 months   | Complete    | Internal VAusers: 50; reporting function ~800 stakeholders; 5M Veterans impacted by space (system handles 5.3M square ft. of VHA space)
 ROM and funding information provided (e.g., UFR, research vs. OIT   |complete| funded but not sure if FY 18 or FY19 
 100% complete pre-intake checklist                |     |  
-COMPLETED ALL (PRE Intake) Tasks                  |     |  
+COMPLETED ALL (PRE Intake) Tasks                  | Green    |  
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
@@ -61,7 +61,7 @@ Task                                                    | Status    | Comments (
 ATO actions started; must demonstrate progress          | Green    | In progress; inherit Sharepoint
 Apps code assigned in coordination with ITOPs           |       | Not yet; ITOPs team to do
 Identify and apply tagging and billing                 | Complete     | 
-Dev/Test/Staging/Prod environment set up completed     |Red       | Have a dev environment set up in non-VA environment; is this the ECSO process? 
+Dev/Test/Staging/Prod environment set up completed     |Green      | Have a dev environment set up in non-VA environment; is this the ECSO process? 
 Provided inherited controls for CSP                    |     | 
 Operational security tools onboarding completed        |     | Depends on environments
 Billing and reporting set up                          |      | 
