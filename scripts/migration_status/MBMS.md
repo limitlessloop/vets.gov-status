@@ -19,7 +19,7 @@ Baseline costs (pre-cloud) documented             |      |
 Validated ACTIVE users / traffic analytics for past 12 months   |     | 
 ROM and funding information provided (e.g., UFR, research vs. OIT
 100% complete pre-intake checklist                |     |  
-COMPLETED ALL (PRE Intake) Tasks                  |   |  
+COMPLETED ALL (PRE Intake) Tasks                  |   |  New dev; replacement of BOS; 12 modules; bulding in Salesforce
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
