@@ -1,6 +1,6 @@
 # Name: Financial Service Center (FCS) Informatica (MAG)
 
-Business and Application Owers: Jonathan Lindow
+Business and Application Owers: Wallace French Jonathan Lindow
 
 Migrate to Cloud: Yes
 
@@ -11,14 +11,14 @@ Cutover Completed:
 ### (Pre-Intake) Modernization and Decommission Planning
 Task                                              | Status   | Comments (only if yellow or red)
 ------------                                      | -------- | ------------- 
-Identify VA application owner                     |Yellow      | Application owner?
+Identify VA application owner                     |Complete     | Wallace French Business Owner; Jonathan Lindow is the PM
 Initial cloud suitability 6 questions completed   | N/A     | Ken/Intake team have not deployed these yet.
 ITOPs to review if "obsolete" system based on usage     |      | Did Chris Cardella's team review to confirm not an obsolete system?
-ECSO Migration wave planning started              | Complete   |  Wave 2
-Baseline costs (pre-cloud) documented             |      |Need baseline costs to calcuate cost savings in cloud, primary goal of VA cloud migration
-Validated ACTIVE users / traffic analytics for past 12 months   |      | 
-ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. |      |
-VIPR Epics completed                              |      |
+ECSO Migration wave planning started              |    |  Met with VAEC team; kickoff meetings
+Baseline costs (pre-cloud) documented             |Complete      |
+Validated ACTIVE users / traffic analytics for past 12 months   |      | B2B tool; used in the data migration and data cleansing process
+ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. | Complete     |Under FMBT program
+VIPR Epics completed                              | Complete |Did epics but not in VIPR; Sharepoint system used by OIT (Austin); follows VIPR process but different reporting system (franchise fund at VA); lack of business ID from ITOPs.  
 Routing tab in VIPR workbook completed            | N/A  | Ken/Intake team has not yet deployed this
 100% complete pre-intake checklist                |      | Checklist in development by CAS
 COMPLETED ALL (PRE Intake) Tasks                  |    | 
@@ -26,23 +26,23 @@ COMPLETED ALL (PRE Intake) Tasks                  |    |
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
 ------------                                                  | -------- | -------------
-VIPR ID created                                          |  Red    | Did not go through VIPR; what info need to be in VIPR?
+VIPR ID created                                          |      | Can we confirm this is in VIPR system? check with Sue; Uses VIP process; Don't use the VIPR system
 VIPR workbook (tab for cloud) 100% completed              |  N/A    | Ken/Intake has not deployed this yet
-EPMO IA analysis completed                               |      | Rushika's team
-ECSO wave migration designated                        | Complete     | Wave 2
+EPMO IA analysis completed                               |      | Rushika's team just starting this
+ECSO wave migration designated                        | Yellow    |unsure of wave designation; wasn't in place yet
 EPMO PM assigned                                      | Complete     | Jonathan
 Confirmed adequate funding and resources in place for migration based on ROM     | Complete     | Funded at the portfolio level
 Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)       | Complete     | 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)              |      | in progress
 Approved architecture by ITOPs                          |      | 
 Intake checklist 100% completed                          |      |  Checklist in development by CAS                                      
-COMPLETED ALL OIT Intake Tasks                           |    | No VIPR ID; not in VIPR (all cloud projects supposed to be tracked in VIPR)
+COMPLETED ALL OIT Intake Tasks                           |Green    | No VIPR ID; not in VIPR (all cloud projects supposed to be tracked in VIPR)
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
 ------------                                      | --------- | ------------- 
-ISSO assigned                                     |          | Joe Fourcade ECSO ISSO; no project level ISSO
-Application workload and compute / network requirements documented              |       |
+ISSO assigned                                     |          | Joe Fourcade and Lee Zierbel ECSO ISSO; Leigh Taylor ISSO
+Application workload and compute / network requirements documented       | Complete  |
 ITOPs (Chris) validates workload compute / network requirements                 |       |
 Confirmed RACI and roles (per the CONOPS)                 |       |
 CSP selection criteria (analysis for AWS versus Azure)                 | Complete      | MAG
