@@ -47,15 +47,15 @@ ITOPs (Chris) validates workload compute / network requirements                 
 Confirmed RACI and roles (per the CONOPS)                 |       |
 CSP selection criteria (analysis for AWS versus Azure)                 | Complete      | MAG
 Support contracts for application teams awarded (as needed) / resource onboarding completed (GFE, PIV, VA account set up, etc.) | Complete   |                   
-Cloud credits purchased (do not expire)                 |       | 726 credits purchased for Hadoop and Informatica combined
-ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)       |       |
-Decommission plan completed (incl. contracting, security, etc.)               |       |
-SLAs for applications defined and approved                 |       |
-SLAs for operations defined and approved with ITOPs                 |       |
+Cloud credits purchased (expire at end of contract)        | Complete      | 924 credits purchased 
+ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)    | Complete   |IFAM ATO Sept / Oct 2018
+Decommission plan completed (incl. contracting, security, etc.)            |       |10-year plan
+SLAs for applications defined and approved                 | Yellow   |Need list of SLAs from MAG; have internal SLAs for business (timeframes, restore, etc.)
+SLAs for operations defined and approved with ITOPs        |       |
 CSP accounts and sub accounts created                 | Complete | Sub account of FBMT
-Release agent identified or waiver                 |       |
-Sustainment organization identified                 |       |
-CD1 decision made                 |       | Date:
+Release agent identified or waiver                  |       |
+Sustainment organization identified                 | Complete   |FSC 
+CD1 decision made                                   |       | Not done yet; aligning with IFAMS
 Planning checklist 100% completed                 |       |Checklist in development by CAS
 COMPLETED ALL Migration Planning and Onboarding Tasks                 |      | 
 
@@ -63,14 +63,14 @@ COMPLETED ALL Migration Planning and Onboarding Tasks                 |      |
 ### Provisioning
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-ATO actions started; must demonstrate progress                 |       | 
-Apps code assigned in coordination with ITOPs                 |  Complete  | 
-Identify and apply tagging and billing                 | Complete      | 
-Dev/Test/Staging/Prod environment set up completed                 |       | Dev/Test set up
-Provided inherited controls for CSP                 |       | 
+ATO actions started; must demonstrate progress                 | Green      | In progress; would like process defined
+Apps code assigned in coordination with ITOPs                 | Red    | Apps gets identified w/ VAEC during intake; App code is blocker; business ID was not created in intake (note: is this the "business ID" that is missing")
+Identify and apply tagging and billing                 | Complete    | 
+Dev/Test/Staging/Prod environment set up completed                 |       | Resource groups for environment are set up; blocked on setting up VMs (can't do backups themselves, MS team trying to solve but unable to date, etc)
+Provided inherited controls from CSP                 |Yellow  | Might be complete (IFAMS team would know); need better documentation
 Operational security tools onboarding completed                 |       | 
-Billing and reporting set up                 |       | 
-Team has access to all required tools and environments                 |       | 
+Billing and reporting set up                           | Red     | Power BI reporting tool; VA needs to request access; no access to reports yet; would like visibility into the process (credits used, consumption rate)
+Team has access to all required tools and environments               | Red      | Hurting productivity; have access tools but not active directory portion (IO controlling; teams used to have access control)
 Working session to complete operations handoff with ITOPs                 |       | 
 Provisioning checklist 100% completed                 |       | Checklist in development by CAS
 COMPLETED ALL Provisioning Tasks                 |       | 
@@ -80,7 +80,7 @@ COMPLETED ALL Provisioning Tasks                 |       |
 ### BUILD OUT, OPERATIONS HANDOFF, & CUTOVER
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-Application team environment, configuration and build out complete                |       | 
+Application team environment, configuration and build out complete      |  Yellow     | Access to POC environment; duplicate work as a result of access issues
 Change management and comms plan approved (incl. VA training requirements)                |       | 
 All testing cheklists have been completed / met acceptance criteria (security and operations)                |       | 
 Cutover checklist approved                |       | 
