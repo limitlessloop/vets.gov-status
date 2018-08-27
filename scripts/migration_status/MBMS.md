@@ -11,7 +11,7 @@ Cutover Completed:
 ### (Pre-Intake) Modernization and Decommission Planning
 Task                                              | Status   | Comments (only if yellow or red)
 ------------                                      | -------- | ------------- 
-Identify VA application owner                     |    |
+Identify VA application owner                     |Complete    | Bill Barnes business owner; Howard Bromwell is PM
 Initial cloud suitability 6 questions completed   |      | 
 ITOPs to review if "obsolete" system based on usage     |     | 
 ECSO Migration wave planning started              |     |  
