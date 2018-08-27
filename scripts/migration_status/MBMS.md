@@ -1,6 +1,6 @@
 # Name: Memorial Benefits Management System (MBMS) (MAG)
 
-Business and Application Owers: Christina Palumbo
+Business and Application Owers: Bill Barnes Howard Bromwell
 
 Migrate to Cloud: Yes
 
