@@ -52,9 +52,6 @@ Decommission plan completed (incl. contracting, security, etc.)             |   
 SLAs for applications defined and approved                 |       | Microsoft SLAs; any other application level SLAs / OLAs
 SLAs for operations defined and approved with ITOPs                 |       |
 CSP accounts and sub accounts created                 | Complete    | 
-Release agent identified or waiver                 |       |
-Sustainment organization identified                 |       |
-VIP CD 1 checklist is 100% completed                 |       |
 CD1 decision made                 |       |
 Planning checklist 100% completed                 |       | Checklist in development by CAS; not yet available
 COMPLETED ALL Migration Planning and Onboarding Tasks                 |       | 
@@ -83,7 +80,7 @@ Task                                                    | Status    | Comments (
 Application team environment, configuration and build out complete                |       | 
 Change management and comms plan approved (incl. VA training requirements)                |       | 
 All testing cheklists have been completed / met acceptance criteria (security and operations)                |       | 
-Cutover checklist approved                |       | 
+ECSSB decisions / tasks completed if applicable for connections               |       | 
 Monitoring tools in place                |       | 
 Decommission plan approved                |       | 
 ATO approved                |       | 
