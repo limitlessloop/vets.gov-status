@@ -39,20 +39,20 @@ COMPLETED ALL OIT Intake Tasks                 |    |
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
 ------------                                      | --------- | ------------- 
-ISSO assigned                                     |  | 
-Application workload and compute / network requirements documented                 |       |
-ITOPs (Chris) validates workload compute / network requirements                 |       | 
-Confirmed RACI and roles (per the CONOPS)                 |       | 
-CSP selection criteria (analysis for AWS versus Azure)                 |       | 
-Cloud credits purchased (do not expire)                 |      |
-ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)   |      |
-Decommission plan completed (incl. contracting, security, etc.)               |       | 
-SLAs for applications defined and approved                 |       | 
+ISSO assigned                                     | Complete    | Bernadette Bowen-Welch, NCA ISSO
+Application workload and compute / network requirements documented          |       |  
+ITOPs (Chris) validates workload compute / network requirements             | Complete      | 
+Confirmed RACI and roles (per the CONOPS)                 | Complete      | 
+CSP selection criteria (analysis for AWS versus Azure)    |  Complete     | AoA
+Cloud credits purchased (do not expire)                 | Complete     |
+ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)  | Complete     |
+Decommission plan completed (incl. contracting, security, etc.)      | Complete      | BOS will be decommissioned; TRS support vendor
+SLAs for applications defined and approved                 | In progress      | 
 SLAs for operations defined and approved with ITOPs        |       | 
-CSP accounts and sub accounts created                 |     | 
-Release agent identified or waiver                 |       |
-Sustainment organization identified                 |       |
-CD1 decision made                 |       | Date:
+CSP accounts and sub accounts created                 | Complete    | 
+Release agent identified or waiver                 |  Complete     |
+Sustainment organization identified                 | Complete      |
+CD1 decision made                 | Complete      | Date: 2016
 Planning checklist 100% completed                 |       | 
 COMPLETED ALL Migration Planning and Onboarding Tasks                 |      | 
 
@@ -60,14 +60,14 @@ COMPLETED ALL Migration Planning and Onboarding Tasks                 |      |
 ### Provisioning
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-ATO actions started; must demonstrate progress          |      | 
+ATO actions started; must demonstrate progress          | In progress     | 
 Apps code assigned in coordination with ITOPs           |       | 
-Identify and apply tagging and billing                 |      | 
-Dev/Test/Staging/Prod environment set up completed     |       | 
-Provided inherited controls for CSP                    |     | 
-Operational security tools onboarding completed          |  | 
+Identify and apply tagging and billing                  |      | 
+Dev/Test/Staging/Prod environment set up completed      |Complete       | 
+Provided inherited controls for CSP                     |     | Expecting to inherit infrasture controls from MAG or Salesforce?
+Operational security tools onboarding completed         |      | unsure
 Billing and reporting set up                          |      | 
-Team has access to all required tools and environments                 |    | 
+Team has access to all required tools and environments        | In progress | Using demo versions of "Open Shift" software; need to procure  
 Working session to complete operations handoff with ITOPs                 |       |
 Provisioning checklist 100% completed                 |       | 
 COMPLETED ALL Provisioning Tasks                       |      | 
@@ -83,7 +83,7 @@ All testing cheklists have been completed / met acceptance criteria (security an
 Cutover checklist approved                |       |  
 Monitoring tools in place                |       |
 Decommission plan approved                |      | 
-ATO approved                |      | 
+ATO approved                |      | Expected early Oct. 2018
 Operations handoff completed (per ATO approval)                |       | 
 EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)        |       | 
 Validate Disaster Recovery (DR) and Backup                |       | 
