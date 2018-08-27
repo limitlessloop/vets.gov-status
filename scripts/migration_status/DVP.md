@@ -83,7 +83,7 @@ Task                                                    | Status    | Comments (
 Application team environment, configuration and build out complete           | Complete      | 
 Change management and comms plan approved (incl. VA training requirements)    |       | Operations planning
 All testing cheklists have been completed / met acceptance criteria (security and operations)     | Complete      | 
-Cutover checklist approved                |       | do teams use a checklist? is this applicable for a new sytem in cloud? would it be helpful?
+ECSSB decisions / tasks completed if applicable for connections         |       | 
 Monitoring tools in place                | Complete      | specific tools for DVP?
 Decommission plan approved                |  N/A     | not applicable b/c new system stood up in AWS
 ATO approved                |  Complete     | 8.15.18 Handoff planned for next summer
