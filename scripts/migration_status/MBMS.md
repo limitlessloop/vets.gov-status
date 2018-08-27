@@ -19,7 +19,7 @@ Baseline costs (pre-cloud) documented             |Complete  | completed detaile
 Validated ACTIVE users / traffic analytics for past 12 months   | Complete    | Internal NCA users ~1,200
 ROM and funding information provided (e.g., UFR, research vs. OIT
 100% complete pre-intake checklist                |     |  
-COMPLETED ALL (PRE Intake) Tasks                  |   |  New dev; replacement of BOS; 12 modules; bulding in Salesforce; first consumer of BIP
+COMPLETED ALL (PRE Intake) Tasks                  |   |  New dev; replacement of BOS; 12 modules; bulding in Salesforce; first consumer of BIP (AWS) will need to interface with VBMS
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
