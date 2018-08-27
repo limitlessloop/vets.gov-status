@@ -42,7 +42,7 @@ Task                                              | Status    | Comments (only i
 ISSO assigned                                     | Complete    | Bernadette Bowen-Welch, NCA ISSO
 Application workload and compute / network requirements documented          |       |  
 ITOPs (Chris) validates workload compute / network requirements             | Complete      | 
-Confirmed RACI and roles (per the CONOPS)                 | Complete      | 
+Confirmed RACI and roles (application team vs. ECSO team)           | Complete      | 
 CSP selection criteria (analysis for AWS versus Azure)    |  Complete     | AoA
 Cloud credits purchased (do not expire)                 | Complete     |
 ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)  | Complete     |
@@ -80,7 +80,7 @@ Task                                                    | Status    | Comments (
 Application team environment, configuration and build out complete     | In Progress     | Planned Oct. 2018: NCA users will use salesforce in cloud to create new cases; will schedule burials at requested cemetaries, record to BOS database migration comes later
 Change management and comms plan approved (incl. VA training requirements)    |  In progress     | 
 All testing cheklists have been completed / met acceptance criteria (security and operations)     |      | 
-Cutover checklist approved                |       |  very specific; generic checklist probably not helpful
+ECSSB decisions / tasks completed if applicable                | Red      |  very specific; generic checklist probably not helpful
 Monitoring tools in place                 | In progress      |
 Decommission plan approved                |         | plan in development
 ATO approved                |      | Expected early Oct. 2018
@@ -89,7 +89,7 @@ EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)  �
 Validate Disaster Recovery (DR) and Backup                |       | 
 CD2 decision                                 |       | Date: will happen after ATO prior to go live in Oct.
 Build out and cutover checklist 100% complete                |       | 
-COMPLETED ALL Build Out and Cutover Tasks                   |      |  
+COMPLETED ALL Build Out and Cutover Tasks                   | Yellow     |  ECSSB is blocker
 
 
 ### Cloud Operations
