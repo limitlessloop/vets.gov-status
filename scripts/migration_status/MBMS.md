@@ -80,7 +80,7 @@ Task                                                    | Status    | Comments (
 Application team environment, configuration and build out complete     | In Progress     | Planned Oct. 2018: NCA users will use salesforce in cloud to create new cases; will schedule burials at requested cemetaries, record to BOS database migration comes later
 Change management and comms plan approved (incl. VA training requirements)    |  In progress     | 
 All testing cheklists have been completed / met acceptance criteria (security and operations)     |      | 
-ECSSB decisions / tasks completed if applicable                | Red      |  very specific; generic checklist probably not helpful
+ECSSB decisions / tasks completed if applicable for connections              | Red      |  Blocker
 Monitoring tools in place                 | In progress      |
 Decommission plan approved                |         | plan in development
 ATO approved                |      | Expected early Oct. 2018
