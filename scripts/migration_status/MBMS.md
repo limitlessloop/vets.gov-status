@@ -67,7 +67,7 @@ Dev/Test/Staging/Prod environment set up completed      |Complete       |
 Provided inherited controls for CSP                     |     | Expecting to inherit infrasture controls from MAG or Salesforce?
 Operational security tools onboarding completed         |      | unsure
 Billing and reporting set up                          |      | 
-Team has access to all required tools and environments        | In progress | Using demo versions of "Open Shift" software; need to procure  
+Team has access to all required tools and environments        | In progress | Using demo versions of "Open Shift" software; need to procure; (container platform to scale database)
 Working session to complete operations handoff with ITOPs                 |       |
 Provisioning checklist 100% completed                 |       | 
 COMPLETED ALL Provisioning Tasks                       |      | 
@@ -77,17 +77,17 @@ COMPLETED ALL Provisioning Tasks                       |      |
 ### BUILD OUT, OPERATIONS HANDOFF, & CUTOVER
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-Application team environment, configuration and build out complete           |      | 
-Change management and comms plan approved (incl. VA training requirements)    |       | 
+Application team environment, configuration and build out complete     | In Progress     | Planned Oct. 2018: NCA users will use salesforce in cloud to create new cases; will schedule burials at requested cemetaries, record to BOS database migration comes later
+Change management and comms plan approved (incl. VA training requirements)    |  In progress     | 
 All testing cheklists have been completed / met acceptance criteria (security and operations)     |      | 
-Cutover checklist approved                |       |  
-Monitoring tools in place                |       |
-Decommission plan approved                |      | 
+Cutover checklist approved                |       |  very specific; generic checklist probably not helpful
+Monitoring tools in place                 | In progress      |
+Decommission plan approved                |         | plan in development
 ATO approved                |      | Expected early Oct. 2018
-Operations handoff completed (per ATO approval)                |       | 
+Operations handoff completed (per ATO approval)             |       | Dedicated scrum team from develpment contractor (DevOps) Booz Allen H.
 EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)        |       | 
 Validate Disaster Recovery (DR) and Backup                |       | 
-CD2 decision                                 |       | Date:
+CD2 decision                                 |       | Date: will happen after ATO prior to go live in Oct.
 Build out and cutover checklist 100% complete                |       | 
 COMPLETED ALL Build Out and Cutover Tasks                   |      |  
 
@@ -95,8 +95,8 @@ COMPLETED ALL Build Out and Cutover Tasks                   |      |
 ### Cloud Operations
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-Go-live / production              |      | 
-Go live operational kickoff with ITOPs              |       | 
+Go-live / production                                 |      | 
+Go live operational kickoff with ITOPs              |       | applicable?
 Closeout session with Risk Vision working group              |       | 
 ECSO ongoing governing / operational processes in place              |       |
 Validation that all SLAs being met              |       | 
