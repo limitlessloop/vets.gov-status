@@ -12,22 +12,22 @@ Cutover Completed:
 Task                                              | Status   | Comments (only if yellow or red)
 ------------                                      | -------- | ------------- 
 Identify VA application owner                     |Complete     | Wallace French Business Owner; Jonathan Lindow is the PM
-Initial cloud suitability 6 questions completed   | N/A     | Ken/Intake team have not deployed these yet.
+Initial cloud suitability 6 questions completed   |     | Ken/Intake team have not deployed these yet.
 ITOPs to review if "obsolete" system based on usage     |      | Did Chris Cardella's team review to confirm not an obsolete system?
 ECSO Migration wave planning started              |    |  Met with VAEC team; kickoff meetings
 Baseline costs (pre-cloud) documented             |Complete      |
 Validated ACTIVE users / traffic analytics for past 12 months   |      | B2B tool; used in the data migration and data cleansing process
 ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. | Complete     |Under FMBT program
 VIPR Epics completed                              | Complete |Did epics but not in VIPR; Sharepoint system used by OIT (Austin); follows VIPR process but different reporting system (franchise fund at VA); lack of business ID from ITOPs.  
-Routing tab in VIPR workbook completed            | N/A  | Ken/Intake team has not yet deployed this
+Routing tab in VIPR workbook completed            |  | Ken/Intake team has not yet deployed this
 100% complete pre-intake checklist                |      | Checklist in development by CAS
-COMPLETED ALL (PRE Intake) Tasks                  |    | 
+COMPLETED ALL (PRE Intake) Tasks                  | Green   | 
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
 ------------                                                  | -------- | -------------
 VIPR ID created                                          |      | Can we confirm this is in VIPR system? check with Sue; Uses VIP process; Don't use the VIPR system
-VIPR workbook (tab for cloud) 100% completed              |  N/A    | Ken/Intake has not deployed this yet
+VIPR workbook (tab for cloud) 100% completed              |     | Ken/Intake has not deployed this yet
 EPMO IA analysis completed                               |      | Rushika's team just starting this
 ECSO wave migration designated                        | Yellow    |unsure of wave designation; wasn't in place yet
 EPMO PM assigned                                      | Complete     | Jonathan
@@ -36,7 +36,7 @@ Decision finalized: migrate to cloud, decommission obsolete / duplicate system, 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)              |      | in progress
 Approved architecture by ITOPs                          |      | 
 Intake checklist 100% completed                          |      |  Checklist in development by CAS                                      
-COMPLETED ALL OIT Intake Tasks                           |Green    | No VIPR ID; not in VIPR (all cloud projects supposed to be tracked in VIPR)
+COMPLETED ALL OIT Intake Tasks                           |Yellow    | No VIPR ID
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
@@ -83,7 +83,7 @@ Task                                                    | Status    | Comments (
 Application team environment, configuration and build out complete      |  Yellow     | Access to POC environment; duplicate work as a result of access issues
 Change management and comms plan approved (incl. VA training requirements)                |       | 
 All testing cheklists have been completed / met acceptance criteria (security and operations)                |       | 
-Cutover checklist approved                |       | 
+ECSSB decisions complete (if applicable               | Red      | 
 Monitoring tools in place                |       | 
 Decommission plan approved                |       | 
 ATO approved                |       | 
@@ -92,7 +92,7 @@ EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)  �
 Validate Disaster Recovery (DR) and Backup                |       | 
 CD2 decision                |       | Date:
 Build out and cutover checklist 100% complete                |       | 
-COMPLETED ALL Build Out and Cutover Tasks                   |       |  
+COMPLETED ALL Build Out and Cutover Tasks                   | Red      |  
 
 
 ### Cloud Operations
