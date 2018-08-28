@@ -12,13 +12,13 @@ Cutover Completed:
 Task                                              | Status   | Comments (only if yellow or red)
 ------------                                      | -------- | ------------- 
 Identify VA application owner                     |Complete     | Wallace French Business Owner; Jonathan Lindow is the PM
-Initial cloud suitability 6 questions completed   |     | Ken/Intake team have not deployed these yet.
+Initial cloud suitability 6 questions completed   |     | Ken/Intake team have not deployed these yet
 ITOPs to review if "obsolete" system based on usage     |      | Did Chris Cardella's team review to confirm not an obsolete system?
 ECSO Migration wave planning started              |    |  Met with VAEC team; kickoff meetings
 Baseline costs (pre-cloud) documented             |Complete      |
 Validated ACTIVE users / traffic analytics for past 12 months   |      | B2B tool; used in the data migration and data cleansing process
 ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. | Complete     |Under FMBT program
-VIPR Epics completed                              | Complete |Did epics but not in VIPR; Sharepoint system used by OIT (Austin); follows VIPR process but different reporting system (franchise fund at VA); lack of business ID from ITOPs.  
+VIPR Epics completed                              | Complete |Did epics but not in VIPR; Sharepoint system used by OIT (Austin); follows VIPR process but different reporting system (franchise fund at VA); lack of business ID from ITOPs  
 Routing tab in VIPR workbook completed            |  | Ken/Intake team has not yet deployed this
 100% complete pre-intake checklist                |      | Checklist in development by CAS
 COMPLETED ALL (PRE Intake) Tasks                  | Green   | 
@@ -49,13 +49,13 @@ CSP selection criteria (analysis for AWS versus Azure)                 | Complet
 Support contracts for application teams awarded (as needed) / resource onboarding completed (GFE, PIV, VA account set up, etc.) | Complete   |                   
 Cloud credits purchased (expire at end of contract)        | Complete      | 924 credits purchased 
 ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)    | Complete   |IFAM ATO Sept / Oct 2018
-Decommission plan completed (incl. contracting, security, etc.)            |       |10-year plan
-SLAs for applications defined and approved                 | Yellow   |Need list of SLAs from MAG; have internal SLAs for business (timeframes, restore, etc.)
+Decommission plan completed (incl. contracting, security, etc.)            |       |10 year plan
+SLAs for applications defined and approved                 | Yellow   |Need list of SLAs from MAG have internal SLAs for business (timeframes, restore, etc.)
 SLAs for operations defined and approved with ITOPs        |       |
 CSP accounts and sub accounts created                 | Complete | Sub account of FBMT
 Release agent identified or waiver                  |       |
 Sustainment organization identified                 | Complete   |FSC 
-CD1 decision made                                   |       | Not done yet; aligning with IFAMS
+CD1 decision made                                   |       | Not done yet aligning with IFAMS
 Planning checklist 100% completed                 |       |Checklist in development by CAS
 COMPLETED ALL Migration Planning and Onboarding Tasks                 |      | 
 
@@ -63,13 +63,13 @@ COMPLETED ALL Migration Planning and Onboarding Tasks                 |      |
 ### Provisioning
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-ATO actions started; must demonstrate progress                 | Green      | In progress; would like process defined
-Apps code assigned in coordination with ITOPs                 | Red    | Apps gets identified w/ VAEC during intake; App code is blocker; business ID was not created in intake (note: is this the "business ID" that is missing")
+ATO actions started; must demonstrate progress                 | Green      | In progress would like process defined
+Apps code assigned in coordination with ITOPs                 | Red    | Apps gets identified w/ VAEC during intake App code is blocker; business ID was not created in intake (note: is this the "business ID" that is missing")
 Identify and apply tagging and billing                 | Complete    | 
-Dev/Test/Staging/Prod environment set up completed                 |       | Resource groups for environment are set up; blocked on setting up VMs (can't do backups themselves, MS team trying to solve but unable to date, etc)
-Provided inherited controls from CSP                 |Yellow  | Might be complete (IFAMS team would know); need better documentation
+Dev/Test/Staging/Prod environment set up completed                 |       | Resource groups for environment are set up blocked on setting up VMs (can't do backups themselves, MS team trying to solve but unable to date, etc)
+Provided inherited controls from CSP                 |Yellow  | Might be complete (IFAMS team would know) need better documentation
 Operational security tools onboarding completed                 |       | 
-Billing and reporting set up                           | Red     | Power BI reporting tool; VA needs to request access; no access to reports yet; would like visibility into the process (credits used, consumption rate)
+Billing and reporting set up                           | Red     | Power BI reporting tool VA needs to request access; no access to reports yet; would like visibility into the process (credits used, consumption rate)
 Team has access to all required tools and environments               | Red      | Hurting productivity; have access tools but not active directory portion (IO controlling; teams used to have access control)
 Working session to complete operations handoff with ITOPs                 |       | 
 Provisioning checklist 100% completed                 |       | Checklist in development by CAS
@@ -117,6 +117,6 @@ Systems identified as obsolete are retired and decommissioned immediately     
 Contracts modified or cancelled            |       | 
 Cost savings report delivered            |       | 
 Archiving completed / data transferring completed            |       | 
-100% ITOPs decommission checklist completed            |       | 
-COMPLETED ALL Decommission Tasks              |       | Checklist in development by CAS
+100% ITOPs decommission checklist completed            |       | Checklist in development by CAS
+COMPLETED ALL Decommission Tasks              |       | 
 
