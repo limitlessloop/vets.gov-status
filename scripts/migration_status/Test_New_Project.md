@@ -4,7 +4,7 @@ Business and Application Owers: Name
 
 Migrate to Cloud: Yes
 
-Cutover Completed: Yes
+Cutover Completed: 
 
 
 
@@ -21,7 +21,7 @@ ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. 
 VIPR Epics completed                              | Complete     | confirm w/ Tim
 Routing tab in VIPR workbook completed            | N/A     | Team began work before Ken/Intake team deployed workbook
 100% complete pre-intake checklist                |  N/A    | Checklist under development by CAS; not yet available 
-COMPLETED ALL (PRE Intake) Tasks                  | Green  | Usage data needed; confirm what is VA / user demand for this system
+COMPLETED ALL (PRE Intake) Tasks                  | Red  | Usage data needed; confirm what is VA / user demand for this system
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
@@ -36,7 +36,7 @@ Decision finalized: migrate to cloud, decommission obsolete / duplicate system, 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)        |      | CAS to do
 Approved architecture by ITOPs              |      | Chris Cardella's team to do; CAS to coordinate with Chris
 Intake checklist 100% completed               | N/A     | Checklist under development by CAS; not yet available                                       
-COMPLETED ALL OIT Intake Tasks                 |Green    | 
+COMPLETED ALL OIT Intake Tasks                 |Red   | 
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
@@ -57,7 +57,7 @@ Release agent identified or waiver                 |       |
 Sustainment organization identified                 |       |
 CD1 decision made                 |       | Date:
 Planning checklist 100% completed                 |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Migration Planning and Onboarding Tasks                 | green      | 
+COMPLETED ALL Migration Planning and Onboarding Tasks                 | Red    | 
 
 
 ### Provisioning
@@ -73,7 +73,7 @@ Billing and reporting set up                          | Complete     |
 Team has access to all required tools and environments                 |  Complete   | 
 Working session to complete operations handoff with ITOPs                 |       | Chris Carella's team
 Provisioning checklist 100% completed                 |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Provisioning Tasks                       |  Yellow     | 
+COMPLETED ALL Provisioning Tasks                       |  Red     | 
 
 
 
@@ -92,7 +92,7 @@ EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)  �
 Validate Disaster Recovery (DR) and Backup                |  Complete     | part of ATO; (can this be deleted--is it already covered in ATO?)
 CD2 decision                                 |       | Date:
 Build out and cutover checklist 100% complete                |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Build Out and Cutover Tasks                   | yellow      |  
+COMPLETED ALL Build Out and Cutover Tasks                   |Red    |  
 
 
 ### Cloud Operations
