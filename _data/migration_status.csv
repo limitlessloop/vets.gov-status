@@ -3,5 +3,5 @@ Digital Veterans Platform (AWS),"https://github.com/department-of-veterans-affai
 Financial Service Center (FCS) Informatica (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/FSC_Informatica.md",Wallace French Jonathan Lindow,Green,Yellow,Yes,,,Red,,,
 Memorial Benefits Management System (MBMS) (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/MBMS.md",Bill Barnes Howard Bromwell,Complete,Complete,Yes,Green,Green,Yellow,,,
 Portfolio Project Management Tool (PPMT) (MAG),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/PPMT.md",Tim Ethier,Green,Green,Yes,Green,Yellow,,,,
-Test,"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/Test_New_Project.md",Name,Green,Green,Yes,Green,Yellow,Yellow,Red,Yes,Red
+Test,"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/Test_New_Project.md",Name,Red,Red,Yes,Red,Red,Red,Red,,Red
 Veterans Benefits Management System (VBMS) (AWS),"https://github.com/department-of-veterans-affairs/vets.gov-status/blob/master/scripts/migration_status/VBMS.md",Gary Dameron,,,Yes,,,,,,
