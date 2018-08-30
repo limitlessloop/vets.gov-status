@@ -19,7 +19,7 @@ Baseline costs (pre-cloud) documented             |Complete      |
 Validated ACTIVE users / traffic analytics for past 12 months   |      | B2B tool; used in the data migration and data cleansing process
 ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. | Complete     |Under FMBT program
 VIPR Epics completed                              | Complete |Did epics but not in VIPR; Sharepoint system used by OIT (Austin); follows VIPR process but different reporting system (franchise fund at VA); lack of business ID from ITOPs  
-Routing tab in VIPR workbook completed            |  | Ken/Intake team has not yet deployed this
+Routing tab in VIPR workbook completed            |      | Ken/Intake team has not yet deployed this
 100% complete pre-intake checklist                |      | Checklist in development by CAS
 COMPLETED ALL (PRE Intake) Tasks                  | Green   | 
 
@@ -28,15 +28,15 @@ Task                                                          | Status   | Comme
 ------------                                                  | -------- | -------------
 VIPR ID created                                          |      | Can we confirm this is in VIPR system? check with Sue; Uses VIP process; Don't use the VIPR system
 VIPR workbook (tab for cloud) 100% completed              |     | Ken/Intake has not deployed this yet
-EPMO IA analysis completed                               |      | Rushika's team just starting this
+EPMO IA analysis completed                               |      | Rushika's team just starting this; unsure of what this is
 ECSO wave migration designated                        | Yellow    |unsure of wave designation; wasn't in place yet
-EPMO PM assigned                                      | Complete     | Jonathan
+EPMO PM assigned                                      | Complete     | Jonathan Lindow
 Confirmed adequate funding and resources in place for migration based on ROM     | Complete     | Funded at the portfolio level
-Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)       | Complete     | 
+Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)       | Complete| 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)              |      | in progress
 Approved architecture by ITOPs                          |      | 
 Intake checklist 100% completed                          |      |  Checklist in development by CAS                                      
-COMPLETED ALL OIT Intake Tasks                           |Yellow    | No VIPR ID
+COMPLETED ALL OIT Intake Tasks                           |Red   | No VIPR ID; blocker need a "business ID"; blocker ECSSB decision for connection to IFAM
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
@@ -53,17 +53,15 @@ Decommission plan completed (incl. contracting, security, etc.)            |    
 SLAs for applications defined and approved                 | Yellow   |Need list of SLAs from MAG have internal SLAs for business (timeframes, restore, etc.)
 SLAs for operations defined and approved with ITOPs        |       |
 CSP accounts and sub accounts created                 | Complete | Sub account of FBMT
-Release agent identified or waiver                  |       |
-Sustainment organization identified                 | Complete   |FSC 
 CD1 decision made                                   |       | Not done yet aligning with IFAMS
 Planning checklist 100% completed                 |       |Checklist in development by CAS
-COMPLETED ALL Migration Planning and Onboarding Tasks                 |      | 
+COMPLETED ALL Migration Planning and Onboarding Tasks                 | Red     | blocker ECSSB decision needed for connection to IFAM system; team needs permissions and processses put in place
 
 
 ### Provisioning
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-ATO actions started; must demonstrate progress                 | Green      | In progress would like process defined
+ATO actions started; must demonstrate progress                 | Green      | In progress would like process defined; blockers with tasks including Ansible security tower not being set up
 Apps code assigned in coordination with ITOPs                 | Red    | Apps gets identified w/ VAEC during intake App code is blocker; business ID was not created in intake (note: is this the "business ID" that is missing")
 Identify and apply tagging and billing                 | Complete    | 
 Dev/Test/Staging/Prod environment set up completed                 |       | Resource groups for environment are set up blocked on setting up VMs (can't do backups themselves, MS team trying to solve but unable to date, etc)
