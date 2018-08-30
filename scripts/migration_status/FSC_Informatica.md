@@ -13,20 +13,20 @@ Task                                              | Status   | Comments (only if
 ------------                                      | -------- | ------------- 
 Identify VA application owner                     |Complete     | Wallace French Business Owner; Jonathan Lindow is the PM
 Initial cloud suitability 6 questions completed   |     | Ken/Intake team have not deployed these yet
-ITOPs to review if "obsolete" system based on usage     |      | Did Chris Cardella's team review to confirm not an obsolete system?
-ECSO Migration wave planning started              |    |  Met with VAEC team; kickoff meetings
+ITOPs to review if "obsolete" system based on usage     |      | Need to confirm w/ Chris / ITOPS
+ECSO Migration wave planning started              |      |  Met with VAEC team; kickoff meetings; unsure of "wave"
 Baseline costs (pre-cloud) documented             |Complete      |
-Validated ACTIVE users / traffic analytics for past 12 months   |      | B2B tool; used in the data migration and data cleansing process
+Validated ACTIVE users / traffic analytics for past 12 months   |N/A      | B2B tool; used in the data migration and data cleansing process
 ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. | Complete     |Under FMBT program
 VIPR Epics completed                              | Complete |Did epics but not in VIPR; Sharepoint system used by OIT (Austin); follows VIPR process but different reporting system (franchise fund at VA); lack of business ID from ITOPs  
-Routing tab in VIPR workbook completed            |      | Ken/Intake team has not yet deployed this
+Routing tab in VIPR workbook completed            | N/A    | Ken/Intake team has not yet deployed this
 100% complete pre-intake checklist                |      | Checklist in development by CAS
 COMPLETED ALL (PRE Intake) Tasks                  | Green   | 
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
 ------------                                                  | -------- | -------------
-VIPR ID created                                          |      | Can we confirm this is in VIPR system? check with Sue; Uses VIP process; Don't use the VIPR system
+VIPR ID created                                          |  Red   | No VIPR ID in ECSO tracker; check with Sue; Uses VIP process; Don't use the VIPR system
 VIPR workbook (tab for cloud) 100% completed              |     | Ken/Intake has not deployed this yet
 EPMO IA analysis completed                               |      | Rushika's team just starting this; unsure of what this is
 ECSO wave migration designated                        | Yellow    |unsure of wave designation; wasn't in place yet
