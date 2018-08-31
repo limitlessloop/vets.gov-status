@@ -36,7 +36,7 @@ Decision finalized: migrate to cloud, decommission obsolete / duplicate system, 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)              |      | in progress
 Approved architecture by ITOPs                          |      | 
 Intake checklist 100% completed                          |      |  Checklist in development by CAS                                      
-COMPLETED ALL OIT Intake Tasks                           |Red   | No VIPR ID; blocker need a "business ID"; blocker ESCCB decision for connection to IFAM
+COMPLETED ALL OIT Intake Tasks                           |Red   | No VIPR ID; blocker need a VASI ID / "business ID"; blocker ESCCB decision for connection to IFAM
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
