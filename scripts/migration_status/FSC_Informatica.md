@@ -36,7 +36,7 @@ Decision finalized: migrate to cloud, decommission obsolete / duplicate system, 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)              |      | in progress
 Approved architecture by ITOPs                          |      | 
 Intake checklist 100% completed                          |      |  Checklist in development by CAS                                      
-COMPLETED ALL OIT Intake Tasks                           |Red   | No VIPR ID; blocker need a "business ID"; blocker ECSSB decision for connection to IFAM
+COMPLETED ALL OIT Intake Tasks                           |Red   | No VIPR ID; blocker need a "business ID"; blocker ESCCB decision for connection to IFAM
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
@@ -55,7 +55,7 @@ SLAs for operations defined and approved with ITOPs        |       |
 CSP accounts and sub accounts created                 | Complete | Sub account of FBMT
 CD1 decision made                                   |       | Not done yet aligning with IFAMS
 Planning checklist 100% completed                 |       |Checklist in development by CAS
-COMPLETED ALL Migration Planning and Onboarding Tasks                 | Red     | blocker ECSSB decision needed for connection to IFAM system; team needs permissions and processses put in place
+COMPLETED ALL Migration Planning and Onboarding Tasks                 | Red     | blocker ESCCB decision needed for connection to IFAM system; team needs permissions and processses put in place
 
 
 ### Provisioning
