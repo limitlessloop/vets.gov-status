@@ -1,4 +1,4 @@
-# Name: Test 2
+# Name: A Test Project
 
 Business and Application Owers: Name
 
