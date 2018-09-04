@@ -1,6 +1,6 @@
 # Name: Veterans Benefits Management System (VBMS) (AWS)
 
-Business and Application Owers: Gary Dameron
+Business and Application Owers: Kenneth Wimsats Gary Dameron
 
 Migrate to Cloud: Yes
 
@@ -11,23 +11,23 @@ Cutover Completed:
 ### (Pre-Intake) Modernization and Decommission Planning
 Task                                              | Status   | Comments (only if yellow or red)
 ------------                                      | -------- | ------------- 
-Identify VA application owner                     | Yellow        | Gary is PM; who is application owner?
+Identify VA application owner                     |       | Gary is System Owner; Kenneth Winsat is business owner; PM for migration Duane Worfill
 Initial cloud suitability 6 questions completed   |  N/A      | Ken/Intake has not deployed this yet
 ITOPs to review if "obsolete" system based on usage   |  Complete   | Not obsolete
 ECSO Migration wave planning started              | Complete   |  Wave 2
 Baseline costs (pre-cloud) documented             |      | Need baseline costs to calculate cost savings
 Validated ACTIVE users / traffic analytics for past 12 months   |      |
-ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. | Complete     |
-VIPR Epics completed                              | Yellow     | Did not go through VIPR; does info need to be entered?
-Routing tab in VIPR workbook completed            | Yellow     | Did not go through VIPR; does info need to be entered?
+ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. | Complete     | Cost analysis for IBM 
+VIPR Epics completed                              |      | VBMS has VIPR; but did not go through a specific process for migration
+Routing tab in VIPR workbook completed            |    | Did not go through VIPR; does info need to be entered?
 100% complete pre-intake checklist                |  N/A    | Checklist in development by CAS
 COMPLETED ALL (PRE Intake) Tasks                  |  | 
 
 ### OIT Unified Intake (VIPR)
 Task                                          | Status   | Comments (only if yellow or red)
 ------------                                 | -------- | -------------
-VIPR ID created                               | RED     | No VIPR ID
-VIPR workbook (tab for cloud) 100% completed              |      | 
+VIPR ID created                               |      | No VIPR ID; part of BAM portfolio
+VIPR workbook (tab for cloud) 100% completed   |      | 
 EPMO IA analysis completed              |      | 
 ECSO wave migration designated              |Complete      | Wave 2
 EPMO PM assigned              |  Complete    | Gary
@@ -41,17 +41,17 @@ COMPLETED ALL OIT Intake Tasks                 |   | No VIPR ID; should this be 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
 ------------                                      | --------- | ------------- 
-ISSO assigned                                      |       | 
-Application workload and compute / network requirements documented           | Complete  |Confirm with Duane
-ITOPs (Chris) validates workload compute / network requirements                 |       | 
-Confirmed RACI and roles (per the CONOPS)                 |       |
-CSP selection criteria (analysis for AWS versus Azure)                 | Complete       | AWS
-Support contracts for application teams awarded (as needed) / resource onboarding completed (GFE, PIV, VA account set up, etc.) |    |   In progress?                
-Cloud credits purchased (do not expire)                 | Complete      |
-ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)  |       |
-Decommission plan completed (incl. contracting, security, etc.)           |       | important
-SLAs for applications defined and approved                 |       | Any SLAs in addition to AWS standard ones?
-SLAs for operations defined and approved with ITOPs                 |       |
+ISSO assigned                                      |  Complete    | James Boring and Eguardo Rivera
+Application workload and compute / network requirements documented    | Complete  |Confirm with Duane
+ITOPs (Chris) validates workload compute / network requirements       |       | Unsure
+Confirmed RACI and roles                            | Green      | Gary and Duane are managing the four tracks; Gary is backup 
+CSP selection criteria (analysis for AWS versus Azure)        | Complete       | AWS
+Support contracts for application teams awarded (as needed) / resource onboarding completed (GFE, PIV, VA account set up, etc.) |    |   Contract in process to support migration (9 month contract to be awarded)               
+Cloud credits purchased (do not expire)                 | Complete   |
+ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)  |  Complete     | ATO for production for 150; ATO for test not required
+Decommission plan completed (incl. contracting, security, etc.)        |       |  not started
+SLAs for applications defined and approved                 | Complete      | SLAs with the business
+SLAs for operations defined and approved with ITOPs        |       |
 CSP accounts and sub accounts created                 |Complete       | 
 Release agent identified or waiver                 |       |
 Sustainment organization identified                 |       |
@@ -83,7 +83,7 @@ Task                                                    | Status    | Comments (
 Application team environment, configuration and build out complete             |       | 
 Change management and comms plan approved (incl. VA training requirements)                |       | 
 All testing cheklists have been completed / met acceptance criteria (security and operations)                |       | 
-Cutover checklist approved                |       | 
+ESCCB decisions complete (if applicable)                |       | 
 Monitoring tools in place                |       | 
 Decommission plan approved                |       | 
 ATO approved                |       | 
