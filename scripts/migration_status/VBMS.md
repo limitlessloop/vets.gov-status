@@ -51,11 +51,9 @@ Cloud credits purchased (do not expire)                 | Complete   |
 ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)  |  Complete     | ATO for production for 150; ATO for test not required
 Decommission plan completed (incl. contracting, security, etc.)        |       |  not started
 SLAs for applications defined and approved                 | Complete      | SLAs with the business
-SLAs for operations defined and approved with ITOPs        |       |
-CSP accounts and sub accounts created                 |Complete       | 
-Release agent identified or waiver                 |       |
-Sustainment organization identified                 |       |
-CD1 decision made                 |Complete       | Date:
+SLAs for operations defined and approved with ITOPs        | Complete      |
+CSP accounts and sub accounts created                 |Complete     | 
+CD1 decision made                                   |N/A       | Not relevant
 Planning checklist 100% completed                 |       | Checklist in development by CAS
 COMPLETED ALL Migration Planning and Onboarding Tasks     |       | 
 
@@ -63,15 +61,15 @@ COMPLETED ALL Migration Planning and Onboarding Tasks     |       |
 ### Provisioning
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-ATO actions started; must demonstrate progress                 |       | 
-Apps code assigned in coordination with ITOPs                 |       | ECSO not informed in this process
-Identify and apply tagging and billing                 |       | In progress VAEC ID tag set up; unsure what has been provisioned.
-Dev/Test/Staging/Prod environment set up completed                 |       | In progress; not complete; get details
-Provided inherited controls for CSP                 |       | Is ISSO aware?
-Operational security tools onboarding completed                 |       | is this applicable? If using GSS, then complete.
-Billing and reporting set up                 | Complete      | 
-Team has access to all required tools and environments                 |       | 
-Working session to complete operations handoff with ITOPs                 |       | 
+ATO actions started; must demonstrate progress          |  Complete     | 
+Apps code assigned in coordination with ITOPs           | N/A      | Unsure what this is? Need info from ITOPS.
+Identify and apply tagging and billing                  | Green      | In progress VAEC ID tag set up; unsure what has been provisioned.
+Dev/Test/Staging/Prod environment set up completed       | Green      | In progress; no blockers
+Provided inherited controls for CSP                      |  Complete     | 
+Operational security tools onboarding completed          | Green       | Early stages of this work
+Billing and reporting set up                             | Complete    | 
+Team has access to all required tools and environments                 |       | In progress; unsure of comprehensive tools
+Working session to complete operations handoff with ITOPs                 |       | Don't work w/ ITOPs; unsure of role if ITOPs for migration.
 Provisioning checklist 100% completed                 |       | Checklist in development by CAS
 COMPLETED ALL Provisioning Tasks                 |      | 
 
@@ -80,17 +78,17 @@ COMPLETED ALL Provisioning Tasks                 |      |
 ### BUILD OUT, OPERATIONS HANDOFF, & CUTOVER
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-Application team environment, configuration and build out complete             |       | 
-Change management and comms plan approved (incl. VA training requirements)                |       | 
-All testing cheklists have been completed / met acceptance criteria (security and operations)                |       | 
-ESCCB decisions complete (if applicable)                |       | 
-Monitoring tools in place                |       | 
+Application team environment, configuration and build out complete        |  Green     | In progress
+Change management and comms plan approved (incl. VA training requirements)    |       | Not applicable
+All testing cheklists have been completed / met acceptance criteria (security and operations)      |       | In progress
+ESCCB decisions complete (if applicable)                |       | In progess
+Monitoring tools in place                |       | In progress; depends on what AWS offers
 Decommission plan approved                |       | 
 ATO approved                |       | 
 Operations handoff completed (per ATO approval)                |       | 
-EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)                |       | 
+EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)                |Complete       | Gary and Duane
 Validate Disaster Recovery (DR) and Backup                |       | 
-CD2 decision                |       | 
+CD2 decision                | N/A      | Not relevant
 Build out and cutover checklist 100% complete                |       | Checklist in development by CAS
 COMPLETED ALL Build Out and Cutover Tasks                   |      |  
 
