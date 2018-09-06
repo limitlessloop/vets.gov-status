@@ -21,7 +21,7 @@ ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. 
 VIPR Epics completed                              |      | VBMS has VIPR; but did not go through a specific process for migration
 Routing tab in VIPR workbook completed            |    | Did not go through VIPR; does info need to be entered?
 100% complete pre-intake checklist                |  N/A    | Checklist in development by CAS
-COMPLETED ALL (PRE Intake) Tasks                  |  | 
+COMPLETED ALL (PRE Intake) Tasks                  | Complete | 
 
 ### OIT Unified Intake (VIPR)
 Task                                          | Status   | Comments (only if yellow or red)
@@ -36,7 +36,7 @@ Decision finalized: migrate to cloud, decommission obsolete / duplicate system, 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)          |      | Not CAS, but others? (note to kelly to ask DSVA)
 Approved architecture by ITOPs              |      | ask Gary / Chris
 Intake checklist 100% completed               | N/A     | Checklist in development by CAS                                       
-COMPLETED ALL OIT Intake Tasks                 |   | No VIPR ID; should this be broken into smaller projects given size and entered in VIPR? Example: Phase 1: migrate data from Terramark using AWS Snowball.
+COMPLETED ALL OIT Intake Tasks                 | Complete   | No VIPR ID; should this be broken into smaller projects given size and entered in VIPR? Example: Phase 1: migrate data from Terramark using AWS Snowball.
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
@@ -55,7 +55,7 @@ SLAs for operations defined and approved with ITOPs        | Complete      |
 CSP accounts and sub accounts created                 |Complete     | 
 CD1 decision made                                   |N/A       | Not relevant
 Planning checklist 100% completed                 |       | Checklist in development by CAS
-COMPLETED ALL Migration Planning and Onboarding Tasks     |       | 
+COMPLETED ALL Migration Planning and Onboarding Tasks     |  Green     | 
 
 
 ### Provisioning
@@ -71,7 +71,7 @@ Billing and reporting set up                             | Complete    |
 Team has access to all required tools and environments                 |       | In progress; unsure of comprehensive tools
 Working session to complete operations handoff with ITOPs                 |       | Don't work w/ ITOPs; unsure of role if ITOPs for migration.
 Provisioning checklist 100% completed                 |       | Checklist in development by CAS
-COMPLETED ALL Provisioning Tasks                 |      | 
+COMPLETED ALL Provisioning Tasks                 | Green     | 
 
 
 
@@ -90,7 +90,7 @@ EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)  �
 Validate Disaster Recovery (DR) and Backup                |       | 
 CD2 decision                | N/A      | Not relevant
 Build out and cutover checklist 100% complete                |       | Checklist in development by CAS
-COMPLETED ALL Build Out and Cutover Tasks                   |      |  
+COMPLETED ALL Build Out and Cutover Tasks                   | Green     |  
 
 
 ### Cloud Operations
