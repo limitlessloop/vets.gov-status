@@ -19,45 +19,43 @@ Baseline costs (pre-cloud) documented             |  N/A    | No baseline (pre-c
 Validated ACTIVE users / traffic analytics for past 12 months   | Complete    | 100,000 estimated users projected for steady state; no users at this time; planning to onboard users in spring 2019
 ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. | Complete     | Yes funded for cloud for FY18 OIT dollars; not complete for FY19
 VIPR Epics completed                              | Complete     | 
-Routing tab in VIPR workbook completed            | No     | Early migration; intake workbook not yet deployed
+Routing tab in VIPR workbook completed            | No    | Early migration; intake workbook not yet deployed
 100% complete pre-intake checklist                |  N/A    | Checklist under development by CAS; not yet available 
-COMPLETED ALL (PRE Intake) Tasks                  | Complete   | Early migration and therefore immature process; 
+COMPLETED ALL (PRE Intake) Tasks                  | Complete   | Early migration; many processes, tools, and exit criteria not yet in place.
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
 ------------                                                  | -------- | -------------
 VIPR ID created                                         |   Complete   | V17-01347-000
 VIPR workbook (tab for cloud) 100% completed              | No     | Early migration; workbook not yet deployed.
-EPMO IA analysis completed              | Green     | Confirmed they worked with Rushika's team, but not clear on the output or artivact of this work.
-ECSO wave migration designated              |   Complete   | Wave 1
-EPMO PM assigned              |  Complete    | Tim Robinson
-Confirmed adequate funding and resources in place for migration based on ROM              | Complete   | no ROM; funding for FY18 complete (OIT dollars); need funding FY19; need to know what project team will fund and what ECSO will fund
+EPMO IA analysis completed                          | Green     | Confirmed they worked with Rushika's team, but not clear on the output or artivact of this work.
+ECSO wave migration designated                      |   Complete   | Wave 1
+EPMO PM assigned                                     |  Complete    | Tim Robinson
+Confirmed adequate funding and resources in place for migration based on ROM       | Complete   | no ROM; funding for FY18 complete (OIT dollars); need funding FY19; need to know what project team will fund and what ECSO will fund
 Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)    | Complete     | 
 Architecture review completed (proposed plan to refactor, rearchitect, etc.)        | Complete     | completed with Osama Lel-Zorkani (ITOPs)
 Approved architecture by ITOPs              |  Complete    | Chris Cardella's team to do; CAS to coordinate with Chris
 Intake checklist 100% completed               | No     | Checklist under development by CAS; not yet available                                       
-COMPLETED ALL OIT Intake Tasks                 | Complete     | 
+COMPLETED ALL OIT Intake Tasks                 | Complete     | Early migration; many processes, tools, and exit criteria not yet in place.
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
 ------------                                      | --------- | ------------- 
 ISSO assigned                                     | Complete | Charles Solomon-Jackson
-Application workload and compute / network requirements documented       | Complete      | All docs DVP Share portal; ECSO does not require this of all project teams
-ITOPs (Chris) validates workload compute / network requirements                 |       | 
-Confirmed RACI and roles (per the CONOPS)                 | Complete      | 
-CSP selection criteria (analysis for AWS versus Azure)                 |  NA     | Not yet implemented
-Support contracts for application teams awarded (as needed) / resource onboarding completed (GFE, PIV, VA account set up, etc.) | Complete   |   Liberty IT, Mulesoft, CGS               
+Application workload and compute / network requirements documented       | Complete      | All docs are in DVP Sharepoint portal.
+ITOPs (Chris) validates workload compute / network requirements                 |  Yellow     | Unsure if applicable given this is a new system?
+Confirmed RACI and roles (per the ECSO CONOPS)                 | Yellow    | ECSO CONOPS currently being updated; some questions about what project teams will do vs. ECSO.
+CSP selection criteria (analysis for AWS versus Azure)          |  No    | Early migration; not yet implemented
+Support contracts for application teams awarded (as needed) / resource onboarding completed | Complete   |   Liberty IT, Mulesoft, CGS are support vendors               
 Cloud credits purchased (do not expire)                 |   Complete    |
-ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)   | Complete      |
+ATO plan started and entered GRC tool                | Complete      |
 Decommission plan completed (incl. contracting, security, etc.)               |   NA    | Not applicable because new system
-SLAs for applications defined and approved                 | Complete      | using AWS SLAs 
-SLAs for operations defined and approved with ITOPs        |       | 
+SLAs for applications defined and approved                 | Yellow     | using AWS SLAs; unsure if application level SLAs are needed; also unsure of exactly what AWS SLAs include 
+SLAs for operations defined and approved with ITOPs        |  No     | see note above
 CSP accounts and sub accounts created                 | Complete    | 
-Release agent identified or waiver                 |       |
-Sustainment organization identified                 |       |
-CD1 decision made                 | Complete      | Date: June 30, 2017
-Planning checklist 100% completed                 |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Migration Planning and Onboarding Tasks                 | Complete    | 
+CD1 decision made                                   | Complete      | Date: June 30, 2017
+Planning checklist 100% completed                 | No      | Checklist under development by CAS; not yet available
+COMPLETED ALL Migration Planning and Onboarding Tasks        | Complete    | 
 
 
 ### Provisioning
@@ -70,9 +68,9 @@ Dev/Test/Staging/Prod environment set up completed     | Complete      |
 Provided inherited controls for CSP                    | Complete      | 
 Operational security tools onboarding completed          |Complete  | 
 Billing and reporting set up                          | Complete     | 
-Team has access to all required tools and environments                 |  Complete   | 
-Working session to complete operations handoff with ITOPs                 |       | 
-Provisioning checklist 100% completed                 |       | Checklist under development by CAS; not yet available
+Team has access to all required tools and environments          |  Complete   | 
+Working session to complete operations handoff with ITOPs                 |  No     | Unclear what ITOPs role is for new systems
+Provisioning checklist 100% completed                 |  No     | Checklist under development by CAS; not yet available
 COMPLETED ALL Provisioning Tasks                       | Complete     | 
 
 
