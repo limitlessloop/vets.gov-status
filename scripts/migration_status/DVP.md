@@ -21,7 +21,7 @@ ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. 
 VIPR Epics completed                              | Complete     | confirm w/ Tim
 Routing tab in VIPR workbook completed            | N/A     | Team began work before Ken/Intake team deployed workbook
 100% complete pre-intake checklist                |  N/A    | Checklist under development by CAS; not yet available 
-COMPLETED ALL (PRE Intake) Tasks                  | Complete   | Usage data needed; confirm what is VA / user demand for this system
+COMPLETED ALL (PRE Intake) Tasks                  | Complete   | Description in ECSO Tracker: "Consolidation the sharing of information; allow migration from legacy systems; integrate existing systems; provide real-time connectivity to external systems; and be fully compliant with VA’s corporate (i.e., enterprise) architecture. These new business capabilities will enhance VA’s capability to provide benefits and services for Veterans, care providers, and beneficiaries."
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
