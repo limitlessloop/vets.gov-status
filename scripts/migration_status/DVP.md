@@ -79,34 +79,31 @@ COMPLETED ALL Provisioning Tasks                       | Complete     |
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
 Application team environment, configuration and build out complete           | Complete      | 
-Change management and comms plan approved (incl. VA training requirements)    |       | Operations planning
-All testing cheklists have been completed / met acceptance criteria (security and operations)     | Complete      | 
-ECSSB decisions / tasks completed if applicable for connections         |       | 
-Monitoring tools in place                | Complete      | specific tools for DVP?
+Change management and comms plan approved (incl. VA training requirements)    |       | 
+ECSSB decisions / tasks completed if applicable for connections         |  Complete     | ATO completed
+Monitoring tools in place                | Complete      | 
 Decommission plan approved                |  N/A     | not applicable b/c new system stood up in AWS
-ATO approved                |  Complete     | 8.15.18 Handoff planned for next summer
-Operations handoff completed (per ATO approval)                | Green      | 
-EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)        |       | is this applicable?
-Validate Disaster Recovery (DR) and Backup                |  Complete     | part of ATO; (can this be deleted--is it already covered in ATO?)
+ATO approved                           |  Complete     | 8.15.18 Handoff planned for next summer
+Operations handoff completed (per ATO approval)                | N/A      | New system
 CD2 decision                                 |       | Date: March 2018
-Build out and cutover checklist 100% complete                |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Build Out and Cutover Tasks                   | Green     | no real users on the system yet; will not have users until spring 2019
+Build out and cutover checklist 100% complete                | No      | Checklist under development by CAS; not yet available
+COMPLETED ALL Build Out and Cutover Tasks                   | Complete    | no real users on the system yet; will not have users until spring 2019
 
 
 ### Cloud Operations
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-Go-live / production              |  Complete    | No users yet
-Go live operational kickoff with ITOPs              |       | is this applicable? Does ITOPS have role on this applicaiton?
-Closeout session with Risk Vision working group              |       | 
-ECSO ongoing governing / operational processes in place              |       | ? ESCO - what is this process?
-Validation that all SLAs being met              |       | are there SLAs other than AWS ones? how are these being monitored and reported to VA?
-Continuous monitoring of security, compute usage, performance, availability, etc. fully operational   |       | AWS does this?
-Complete any outstanding contract actions (including cancellations, mods, etc.)         |       | 
+Go-live / production              |  Complete    | Has been cutover to production, but no users yet
+Go live operational kickoff with ITOPs              |   No    | is this applicable? Does ITOPS have role on this applicaiton?
+Closeout session with Risk Vision working group              | Green      | ATO just completed 8/15/18
+ECSO ongoing governing / operational processes in place              | Yellow      | Need to define roles and processes for operation
+Validation that all SLAs being met              |Yellow       | Are there application-level SLAs other than infrastructure (AWS) that need to be defined?
+Continuous monitoring of security, compute usage, performance, availability, etc. fully operational   | Green      | AWS does this
+Complete any outstanding contract actions (including cancellations, mods, etc.)         |  N/A     | 
 Implemented operational RACIs with VA staff              |       | 
 Begin decommission plan tasks              |  N/A     | Not applicable
-100% post-cutover checklist completed              |       | Checklist under development by CAS; not yet available
-COMPLETED ALL Operations Tasks              | Green     | no real users on the system yet; will not have users until spring 2019
+100% post-cutover checklist completed              | No      | Checklist under development by CAS; not yet available
+COMPLETED ALL Operations Tasks              | Yellow     | Cutover has happened but no real users planned until spring 2019; questions about roles, funding (FY19+) and ongoing operations with ECSO; are appliation level SLA's needed?
 
 ### Retire / Decommission Legacy System
 Task                                                    | Status    | Comments (only if yellow or red)
@@ -116,5 +113,5 @@ Contracts modified or cancelled            |       |
 Cost savings report delivered            |       | 
 Archiving completed / data transferring completed            |       | 
 100% ITOPs decommission checklist completed            |       | 
-COMPLETED ALL Decommission Tasks              |       | Not applicable (new system in AWS)
+COMPLETED ALL Decommission Tasks              | N/A      | Not applicable (new system in AWS)
 
