@@ -16,7 +16,7 @@ Initial cloud suitability 6 questions completed   | No    | Early migration; not
 ITOPs to review if "obsolete" system based on usage     |      | Need to confirm w/ Chris / ITOPS
 ECSO Migration wave planning started              | Yellow     |  Unsure of wave
 Baseline costs (pre-cloud) documented             |Complete      |
-Validated ACTIVE users / traffic analytics for past 12 months   |N/A      | B2B tool; used in the data migration and data cleansing process for VA's larger FMBT initiative
+Validated ACTIVE users / traffic analytics for past 12 months   |N/A      | B2B tool PaaS; data Analytics for FMBT tools to manage data and data cleanse
 ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. | Complete     |Under FMBT program
 VIPR Epics completed                              | Complete |Did epics but not in VIPR; Sharepoint system used by OIT (Austin); follows VIPR process but different reporting system (franchise fund at VA); lack of business ID from ITOPs  
 Routing tab in VIPR workbook completed            | No   | Early migration; intake workbook not yet deployed
