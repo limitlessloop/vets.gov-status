@@ -26,7 +26,7 @@ COMPLETED ALL (PRE Intake) Tasks                  | Complete   | Early migration
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
 ------------                                                  | -------- | -------------
-VIPR ID created                                          |  Complete   |  Uses FMBT VIPR ID
+VIPR ID created                                          |  Yellow   |  Using VA FMBT VIPR ID; does this need to go through the intake process as its own project for migration?
 VIPR workbook (tab for cloud) 100% completed              |     | Ken/Intake has not deployed this yet
 EPMO IA analysis completed                               |      | Rushika's team just starting this; unsure of what this is
 ECSO wave migration designated                        | Yellow    |unsure of wave designation; wasn't in place yet
@@ -36,7 +36,7 @@ Decision finalized: migrate to cloud, decommission obsolete / duplicate system, 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)              |      | in progress
 Approved architecture by ITOPs                          |      | 
 Intake checklist 100% completed                          |      |  Checklist in development by CAS                                      
-COMPLETED ALL OIT Intake Tasks                           | Green     | 
+COMPLETED ALL OIT Intake Tasks                           | Yellow     | process question about Unified Intake and VIPR process for projects that are part of larger VA portfolios (FMBT)
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
