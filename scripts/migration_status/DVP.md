@@ -21,7 +21,7 @@ ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. 
 VIPR Epics completed                              | Complete     | 
 Routing tab in VIPR workbook completed            | No    | Early migration; intake workbook not yet deployed
 100% complete pre-intake checklist                |  No   | Checklist under development by CAS; not yet available 
-COMPLETED ALL (PRE Intake) Tasks                  | Complete   | Early migration; many processes, tools, and exit criteria not yet in place.
+COMPLETED ALL (PRE Intake) Tasks                  | Complete   | Early migration; many ECSO processes, tools, and exit criteria not yet in place.
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
