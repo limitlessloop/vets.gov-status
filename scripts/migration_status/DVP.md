@@ -12,31 +12,31 @@ Cutover Completed: Yes
 Task                                              | Status   | Comments (only if yellow or red)
 ------------                                      | -------- | ------------- 
 Identify VA application owner                    | Complete  |  Dr. Shamen Singh (Business Owner) Drew Myklegard (Application Owner) Tim Robinson PM 
-Initial cloud suitability 6 questions completed   |  N/A    | Ken/Intake team have not yet deployed these in VIPR intake process
-ITOPs to review if "obsolete" system based on usage     | N/A     | New system was approved by ITOPs
+Initial cloud suitability 6 questions completed   |  No    | 
+ITOPs to review if "obsolete" system based on usage     | Complete    | New system was approved by ITOPs
 ECSO Migration wave planning started              | Complete    |  Wave 1
 Baseline costs (pre-cloud) documented             |  N/A    | No baseline (pre-cloud) costs because this is a new system
-Validated ACTIVE users / traffic analytics for past 12 months   | Complete    | 100,000 users projected and provided to ECSO in steady state; no users at this time
+Validated ACTIVE users / traffic analytics for past 12 months   | Complete    | 100,000 estimated users projected for steady state; no users at this time; planning to onboard users in spring 2019
 ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. | Complete     | Yes funded for cloud for FY18 OIT dollars; not complete for FY19
-VIPR Epics completed                              | Complete     | confirm w/ Tim
-Routing tab in VIPR workbook completed            | N/A     | Team began work before Ken/Intake team deployed workbook
+VIPR Epics completed                              | Complete     | 
+Routing tab in VIPR workbook completed            | No     | Early migration; intake workbook not yet deployed
 100% complete pre-intake checklist                |  N/A    | Checklist under development by CAS; not yet available 
-COMPLETED ALL (PRE Intake) Tasks                  | Complete   | Description in ECSO Tracker: "Consolidation the sharing of information; allow migration from legacy systems; integrate existing systems; provide real-time connectivity to external systems; and be fully compliant with VA’s corporate (i.e., enterprise) architecture. These new business capabilities will enhance VA’s capability to provide benefits and services for Veterans, care providers, and beneficiaries."
+COMPLETED ALL (PRE Intake) Tasks                  | Complete   | Early migration and therefore immature process; 
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
 ------------                                                  | -------- | -------------
-VIPR ID created               |   Complete   | V17-01347-000
-VIPR workbook (tab for cloud) 100% completed              | N/A     | Workbook not yet deployed / available by Ken/Intake team.
-EPMO IA analysis completed              | Green     | Confirmed workign with Rushika's team; need to confirm with Ruchika if an IA analysis was completed
+VIPR ID created                                         |   Complete   | V17-01347-000
+VIPR workbook (tab for cloud) 100% completed              | No     | Early migration; workbook not yet deployed.
+EPMO IA analysis completed              | Green     | Confirmed they worked with Rushika's team, but not clear on the output or artivact of this work.
 ECSO wave migration designated              |   Complete   | Wave 1
 EPMO PM assigned              |  Complete    | Tim Robinson
-Confirmed adequate funding and resources in place for migration based on ROM              | Complete   | no ROM; funding for FY18; need funding FY19; need to know what project team will fund and what ECSO will fund
-Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)         | Complete     | 
-CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)        | Complete     | worked with ITOPS; completed Osama Lel-Zorkani (ITOPs)
-Approved architecture by ITOPs              |      | Chris Cardella's team to do; CAS to coordinate with Chris
-Intake checklist 100% completed               | N/A     | Checklist under development by CAS; not yet available                                       
-COMPLETED ALL OIT Intake Tasks                 | Complete     | Need to make sure project is APPROVED
+Confirmed adequate funding and resources in place for migration based on ROM              | Complete   | no ROM; funding for FY18 complete (OIT dollars); need funding FY19; need to know what project team will fund and what ECSO will fund
+Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)    | Complete     | 
+Architecture review completed (proposed plan to refactor, rearchitect, etc.)        | Complete     | completed with Osama Lel-Zorkani (ITOPs)
+Approved architecture by ITOPs              |  Complete    | Chris Cardella's team to do; CAS to coordinate with Chris
+Intake checklist 100% completed               | No     | Checklist under development by CAS; not yet available                                       
+COMPLETED ALL OIT Intake Tasks                 | Complete     | 
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
