@@ -12,7 +12,7 @@ Cutover Completed: Yes
 Task                                              | Status   | Comments (only if yellow or red)
 ------------                                      | -------- | ------------- 
 Identify VA application owner                    | Complete  |  Dr. Shamen Singh (Business Owner) Drew Myklegard (Application Owner) Tim Robinson PM 
-Initial cloud suitability 6 questions completed   |  No    | 
+Initial cloud suitability 6 questions completed   |  No    | Early migration; not yet deployed
 ITOPs to review if "obsolete" system based on usage     | Complete    | New system was approved by ITOPs
 ECSO Migration wave planning started              | Complete    |  Wave 1
 Baseline costs (pre-cloud) documented             |  N/A    | No baseline (pre-cloud) costs because this is a new system
