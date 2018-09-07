@@ -12,22 +12,22 @@ Cutover Completed:
 Task                                              | Status   | Comments (only if yellow or red)
 ------------                                      | -------- | ------------- 
 Identify VA application owner                     |Complete    | Bill Barnes business owner; Howard Bromwell is PM; Bill Wigton app owner
-Initial cloud suitability 6 questions completed   | N/A     | Not yet deployed 
-ITOPs to review if "obsolete" system based on usage     | Complete | 1,200 NCA users internal facing system
+Initial cloud suitability 6 questions completed   | No     | Early migration; not yet deployed
+ITOPs to review if "obsolete" system based on usage     | Complete | 1,200 NCA users; internal facing system
 ECSO Migration wave planning started              | Complete    | Unsure of wave; NCA building currently in VAEC; assume Wave 1 to confirm w/ Sue K.
 Baseline costs (pre-cloud) documented             |Complete  | completed detailed AoA for CSP; cost is not the primary driver; BOS is non-compliant w/ security and 508
 Validated ACTIVE users / traffic analytics for past 12 months   | Complete    | Internal NCA users 1,200
 ROM and funding information provided (e.g., UFR, research vs. OIT
-100% complete pre-intake checklist                |N/A     | ECSO CAS team developing 
-COMPLETED ALL (PRE Intake) Tasks                  | Complete  |  New dev; replacement of BOS; 12 modules; bulding in Salesforce
+100% complete pre-intake checklist                |No    | ECSO CAS team developing 
+COMPLETED ALL (PRE Intake) Tasks                  | Complete  |  New system (using Salesforce); part of BOS replacement of  12 BOS modules.
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
 ------------                                                  | -------- | -------------
 VIPR ID created                                          | Complete    | Multiple VIP entries;V17-01145-000; V17-01146-000; V17-01147-000 
-VIPR workbook (tab for cloud) 100% completed              | N/A    | Not deployed
-EPMO IA analysis completed                   |      | unsure of this task; need clarification from Ruchika
-ECSO wave migration designated              |      | check with Sue K.; assume Wave 1
+VIPR workbook (tab for cloud) 100% completed              | No    | Early migration; not yet deployed
+EPMO IA analysis completed                   | Yellow     | Unsure of this task; need clarification from Ruchika
+ECSO wave migration designated              |      |  Unsure of wave
 EPMO PM assigned              | Complete    | Debbi Lawson
 Confirmed adequate funding and resources in place for migration based on ROM              |  Complete   | 
 Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)     |  Complete    | New dev in MAG
