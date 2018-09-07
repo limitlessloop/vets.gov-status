@@ -20,7 +20,7 @@ Validated ACTIVE users / traffic analytics for past 12 months   | Complete    | 
 ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. | Complete     | Yes funded for cloud for FY18 OIT dollars; not complete for FY19
 VIPR Epics completed                              | Complete     | 
 Routing tab in VIPR workbook completed            | No    | Early migration; intake workbook not yet deployed
-100% complete pre-intake checklist                |  N/A    | Checklist under development by CAS; not yet available 
+100% complete pre-intake checklist                |  No   | Checklist under development by CAS; not yet available 
 COMPLETED ALL (PRE Intake) Tasks                  | Complete   | Early migration; many processes, tools, and exit criteria not yet in place.
 
 ### OIT Unified Intake (VIPR)
