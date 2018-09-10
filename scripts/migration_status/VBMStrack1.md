@@ -89,7 +89,7 @@ EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)  �
 Validate Disaster Recovery (DR) and Backup                |       | 
 CD2 decision                | N/A      | Not relevant
 Build out and cutover checklist 100% complete                |       | Checklist in development by CAS
-COMPLETED ALL Build Out and Cutover Tasks                   | Red  | Data will be migrated out of Terremark by December 2018; but overall VBMS be out of IBM/Terremark by March 2019 (not end of calendar year 2018)
+COMPLETED ALL Build Out and Cutover Tasks                   | Yellow | Track 1 (bulk of storage, but not all storage) Bulk of data will be migrated out of Terremark by December 2018; but overall VBMS won't be out of IBM/Terremark by March 2019 (not end of calendar year 2018)
 
 
 ### Cloud Operations
