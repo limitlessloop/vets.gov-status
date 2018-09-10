@@ -50,8 +50,8 @@ Support contracts for application teams awarded (as needed) / resource onboardin
 Cloud credits purchased (do not expire)                 | Complete   |
 ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)  |  Complete     | ATO for production for 150; ATO for test not required
 Decommission plan completed (incl. contracting, security, etc.)        | N/A      |  Not part of this track of work.
-SLAs for applications defined and approved                 | Complete      | SLAs with the business
-SLAs for operations defined and approved with ITOPs        | Complete      |
+SLAs for applications defined and approved                 |       | Not started
+SLAs for operations defined and approved with ITOPs        |      |
 CSP accounts and sub accounts created                 |Complete     | 
 CD1 decision made                                   |N/A       | Not relevant for this track of work
 Planning checklist 100% completed                 | No      | Checklist in development by CAS
