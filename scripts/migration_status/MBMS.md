@@ -28,7 +28,7 @@ VIPR ID created                                          | Complete    | Multipl
 VIPR workbook (tab for cloud) 100% completed              | No    | Early migration; not yet deployed
 EPMO IA analysis completed                   | Yellow     | Unsure of this task; need clarification from Ruchika
 ECSO wave migration designated              | Yellow     |  Unsure of wave
-EPMO PM assigned              | Complete    | Debbi Lawson is COR; (note Howard to confirm; see note above)
+EPMO PM assigned              | Complete    | Debbi Lawson is PgM and COR; (note Howard to confirm; see note above)
 Confirmed adequate funding and resources in place for migration based on ROM              |  Complete   | 
 Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)     |  Complete    | New dev in MAG
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)        |Green   | MBMS PMO contractors provide some architecture support; FTC is vendor
