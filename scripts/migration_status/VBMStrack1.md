@@ -46,7 +46,7 @@ Application workload and compute / network requirements documented    | Complete
 ITOPs (Chris) validates workload compute / network requirements       |       | Unsure; not sure if this is relevant
 Confirmed RACI and roles                            | Green      | Gary and Dwayne are managing the four tracks; Gary is backup 
 CSP selection criteria (analysis for AWS versus Azure)        | Complete       | AWS
-Support contracts for application teams awarded (as needed) / resource onboarding completed (GFE, PIV, VA account set up, etc.) |    |   Contract in process to support migration (9 month contract to be awarded)               
+Support contracts for application teams awarded (as needed) / resource onboarding completed (GFE, PIV, VA account set up, etc.) |  Complete  |                  
 Cloud credits purchased (do not expire)                 | Complete   |
 ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)  |  Complete     | ATO for production for 150; ATO for test not required
 Decommission plan completed (incl. contracting, security, etc.)        | N/A      |  Not part of this track of work.
