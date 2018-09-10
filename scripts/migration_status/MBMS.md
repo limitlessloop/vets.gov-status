@@ -34,7 +34,7 @@ Decision finalized: migrate to cloud, decommission obsolete / duplicate system, 
 CAS architecture review completed (proposed plan to refactor, rearchitect, etc.)        |Green   | MBMS PMO contractors provide some architecture support; FTC is vendor
 Approved architecture by ITOPs              |  Complete    | Reviewed and approved and published
 Intake checklist 100% completed               | No   | ECSO CAS team developing                                       
-COMPLETED ALL OIT Intake Tasks                 |Yellow    | Tasks completed, but unsure of wave
+COMPLETED ALL OIT Intake Tasks                 |Green   | Tasks completed, but unsure of wave
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
