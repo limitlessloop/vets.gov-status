@@ -82,8 +82,8 @@ Application team environment, configuration and build out complete        |  
 Change management and comms plan approved (incl. VA training requirements)    | N/A      | Not applicable
 ESCCB decisions complete (if applicable)                |  Green     | In progess
 Monitoring tools in place                |   Green    | In progress; depends on what AWS offers
-Decommission plan approved                |       | 
-ATO approved                |       | 
+Decommission plan approved                |       | relevant, but not started yet
+ATO approved                | Green      | 150 day ATO (Jan 2019); 45 days prior to end new authorization starts
 Operations handoff completed (per ATO approval)                |       | 
 EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)             |Complete       | Gary and Dwayne
 Validate Disaster Recovery (DR) and Backup                |       | 
