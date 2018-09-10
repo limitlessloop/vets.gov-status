@@ -11,7 +11,7 @@ Cutover Completed:
 ### (Pre-Intake) Modernization and Decommission Planning
 Task                                              | Status   | Comments (only if yellow or red)
 ------------                                      | -------- | ------------- 
-Identify VA application owner                     |Complete    | Bill Barnes business owner; Howard Bromwell is PM (need to confirm); Bill Wigton app owner
+Identify VA application owner                     |Complete    | Bill Barnes business owner; TBD (note Howard Bromwell will confirm info and get back to us)
 Initial cloud suitability 6 questions completed   | No     | Early migration; not yet deployed
 ITOPs to review if "obsolete" system based on usage     | Complete | 1,200 NCA users; internal facing system
 ECSO Migration wave planning started              | Complete    | Unsure of wave; NCA building currently in VAEC; assume Wave 1 to confirm w/ Sue K.
