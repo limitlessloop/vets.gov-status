@@ -80,7 +80,7 @@ Task                                                    | Status    | Comments (
 Application team environment, configuration and build out complete     | Green     | in progress; planned Oct. 2018: NCA users will use salesforce in cloud to create new cases; will schedule burials at requested cemetaries, record to BOS database migration comes later
 Change management and comms plan approved (incl. VA training requirements)    | Green    | in progress
 All testing cheklists have been completed / met acceptance criteria (security and operations)     |      | 
-ESCCBB decisions / tasks completed if applicable for connections              | Red      |  Blocker; require connections to VA BOS system; request was made months ago (Get date from Debbi)
+ESCCBB decisions / tasks completed if applicable for connections              | Green    |  need to build production then will request for connection
 Monitoring tools in place                 | Green    |
 Decommission plan approved                | Green        | plan in development
 ATO approved                | Green     | Expected early Oct. 2018
@@ -89,7 +89,7 @@ EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)  �
 Validate Disaster Recovery (DR) and Backup                |       | 
 CD2 decision                                 |       | Date: will happen after ATO prior to go live in Oct.
 Build out and cutover checklist 100% complete                | No      | ECSO CAS team to develop
-COMPLETED ALL Build Out and Cutover Tasks                   | Red     |  ESCCB is blocker
+COMPLETED ALL Build Out and Cutover Tasks                   | Red    |  lower environments green; production blocked
 
 
 ### Cloud Operations
