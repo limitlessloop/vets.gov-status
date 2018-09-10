@@ -11,7 +11,7 @@ Cutover Completed:
 ### (Pre-Intake) Modernization and Decommission Planning
 Task                                              | Status   | Comments (only if yellow or red)
 ------------                                      | -------- | ------------- 
-Identify VA application owner                     |  Complete     | Gary Dameron is System Owner; Kenneth Winsat is business owner; PM for migration Dwayne Wirfel
+Identify VA application owner                     |  Complete     | Gary Dameron is System Owner; Kenneth Winsat is business owner; PM for migration Dwayne Wirfel. 
 Initial cloud suitability 6 questions completed   |  No     | Early migration; not yet deployed
 ITOPs to review if "obsolete" system based on usage   |  Complete   | 
 ECSO Migration wave planning started              | Complete   |  Wave 2
