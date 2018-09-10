@@ -39,7 +39,7 @@ COMPLETED ALL OIT Intake Tasks                 |Green   | Tasks completed, but u
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
 ------------                                      | --------- | ------------- 
-ISSO assigned                                     | Complete    | Bernadette Bowen-Welch, NCA ISSO
+ISSO assigned                                     | Complete    | Edgardo Rivera, NCA ISSO
 Application workload and compute / network requirements documented          |Complete       |  
 ITOPs (Chris) validates workload compute / network requirements             |  No    | Unsure if ITOPs was involved
 Confirmed RACI and roles (application team vs. ECSO team)           | Green      | NCA roles defined but need to understand ECSO detailed roles
