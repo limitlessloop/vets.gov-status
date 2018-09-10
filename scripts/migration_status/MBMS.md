@@ -47,7 +47,7 @@ CSP selection criteria (analysis for AWS versus Azure)              |  Complete 
 Cloud credits purchased (do not expire)                 | Complete     |
 ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)  | Complete     |
 Decommission plan completed (incl. contracting, security, etc.)      | Green     | In progress; BOS will be decommissioned; TRS support vendor
-SLAs for applications defined and approved                 | Green     | In progress
+SLAs for applications defined and approved                 | Green     | In progress; working with Tonia Fulton (is she ECSO)
 SLAs for operations defined and approved with ITOPs        |       | 
 CSP accounts and sub accounts created                 | Complete    | 
 Release agent identified or waiver                 |  Complete     |
