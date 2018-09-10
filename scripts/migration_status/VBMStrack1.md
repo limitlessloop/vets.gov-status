@@ -26,7 +26,7 @@ COMPLETED ALL (PRE Intake) Tasks                  | Complete | This track 1 is s
 ### OIT Unified Intake (VIPR)
 Task                                          | Status   | Comments (only if yellow or red)
 ------------                                 | -------- | -------------
-VIPR ID created                               | Yellow     | No VIPR ID; part of BAM portfolio; how will large efforts like VBMS be recorded in VIPR unified intake process for cloud migration? 
+VIPR ID created                               | Yellow     | No VIPR ID found
 VIPR workbook (tab for cloud) 100% completed   |  No    | Early migration; not deployed yet.
 EPMO IA analysis completed              | Yellow     | Unsure what this is
 ECSO wave migration designated              |Complete      | Wave 2
