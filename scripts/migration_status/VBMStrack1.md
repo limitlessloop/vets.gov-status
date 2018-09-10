@@ -89,7 +89,7 @@ EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)  �
 Validate Disaster Recovery (DR) and Backup                |       | 
 CD2 decision                | N/A      | Not relevant
 Build out and cutover checklist 100% complete                |       | Checklist in development by CAS
-COMPLETED ALL Build Out and Cutover Tasks                   | Yellow   | Will VBMS be out of IBM/Terremark by the end of the calendar year [2018] ?
+COMPLETED ALL Build Out and Cutover Tasks                   | Red  | Will VBMS be out of IBM/Terremark by the end of the calendar year [2018] ?
 
 
 ### Cloud Operations
