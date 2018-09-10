@@ -15,11 +15,11 @@ Identify VA application owner                     |Complete    | Bill Barnes bus
 Initial cloud suitability 6 questions completed   | No     | Early migration; not yet deployed
 ITOPs to review if "obsolete" system based on usage     | Complete | 1,200 NCA users; internal facing system
 ECSO Migration wave planning started              | Complete    | Unsure of wave; NCA building currently in VAEC; assume Wave 1 to confirm w/ Sue K.
-Baseline costs (pre-cloud) documented             |Complete  | completed detailed AoA for CSP; cost is not the primary driver; BOS is non-compliant w/ security and 508
+Baseline costs (pre-cloud) documented             |Complete  | completed detailed AoA for CSP; cost is not the primary driver; BOSS is non-compliant w/ security and 508
 Validated ACTIVE users / traffic analytics for past 12 months   | Complete    | Internal NCA users 1,200
 ROM and funding information provided (e.g., UFR, research vs. OIT
 100% complete pre-intake checklist                |No    | ECSO CAS team developing 
-COMPLETED ALL (PRE Intake) Tasks                  | Complete  |  New system (using Salesforce); part of BOSS replacement of  12 BOS modules; this piece will enable NCA users to create new cases; will schedule burials at requested cemetaries; record to BOS database migration comes later.
+COMPLETED ALL (PRE Intake) Tasks                  | Complete  |  New system (using Salesforce); part of BOSS replacement of  12 BOSS modules; this piece will enable NCA users to create new cases; will schedule burials at requested cemetaries; record to BOS database migration comes later.
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
@@ -46,7 +46,7 @@ Confirmed RACI and roles (application team vs. ECSO team)           | Green     
 CSP selection criteria (analysis for AWS versus Azure)              |  Complete     | MAG
 Cloud credits purchased (do not expire)                 | Complete     |
 ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)  | Complete     |
-Decommission plan completed (incl. contracting, security, etc.)      | Green     | In progress; BOS will be decommissioned; TRS support vendor
+Decommission plan completed (incl. contracting, security, etc.)      | Green     | In progress; BOSS will be decommissioned; TRS support vendor
 SLAs for applications defined and approved                 | Green     | In progress; working with Tonia Fulton (is she ECSO)
 SLAs for operations defined and approved with ITOPs        |       | 
 CSP accounts and sub accounts created                 | Complete    | 
@@ -77,7 +77,7 @@ COMPLETED ALL Provisioning Tasks                       | Green    | In progress
 ### BUILD OUT, OPERATIONS HANDOFF, & CUTOVER
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-Application team environment, configuration and build out complete     | Green     | in progress; planned Oct. 2018: NCA users will use salesforce in cloud to create new cases; will schedule burials at requested cemetaries, record to BOS database migration comes later
+Application team environment, configuration and build out complete     | Green     | in progress; planned Oct. 2018: NCA users will use salesforce in cloud to create new cases; will schedule burials at requested cemetaries, record to BOSS database migration comes later
 Change management and comms plan approved (incl. VA training requirements)    | Green    | in progress
 All testing cheklists have been completed / met acceptance criteria (security and operations)     |      | 
 ESCCBB decisions / tasks completed if applicable for connections              | Green    |  need to build production then will request for connection
