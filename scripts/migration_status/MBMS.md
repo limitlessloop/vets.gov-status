@@ -19,7 +19,7 @@ Baseline costs (pre-cloud) documented             |Complete  | completed detaile
 Validated ACTIVE users / traffic analytics for past 12 months   | Complete    | Internal NCA users 1,200
 ROM and funding information provided (e.g., UFR, research vs. OIT
 100% complete pre-intake checklist                |No    | ECSO CAS team developing 
-COMPLETED ALL (PRE Intake) Tasks                  | Complete  |  New system (using Salesforce); part of BOS replacement of  12 BOS modules; this piece will enable NCA users to create new cases; will schedule burials at requested cemetaries; record to BOS database migration comes later.
+COMPLETED ALL (PRE Intake) Tasks                  | Complete  |  New system (using Salesforce); part of BOSS replacement of  12 BOS modules; this piece will enable NCA users to create new cases; will schedule burials at requested cemetaries; record to BOS database migration comes later.
 
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
