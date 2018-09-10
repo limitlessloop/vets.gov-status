@@ -1,6 +1,6 @@
 # Name: VBMS Track 1 Document Upload Transition (AWS)
 
-Business and Application Owers: Kenneth Wimsats Gary Dameron
+Business and Application Owners: Kenneth Wimsats, Gary Dameron
 
 Migrate to Cloud: Yes
 
@@ -11,7 +11,7 @@ Cutover Completed:
 ### (Pre-Intake) Modernization and Decommission Planning
 Task                                              | Status   | Comments (only if yellow or red)
 ------------                                      | -------- | ------------- 
-Identify VA application owner                     |  Complete     | Gary Dameron is System Owner; Kenneth Winsat is business owner; PM for migration Duane Worfill
+Identify VA application owner                     |  Complete     | Gary Dameron is System Owner; Kenneth Winsat is business owner; PM for migration Dwayne Wirfel
 Initial cloud suitability 6 questions completed   |  No     | Early migration; not yet deployed
 ITOPs to review if "obsolete" system based on usage   |  Complete   | 
 ECSO Migration wave planning started              | Complete   |  Wave 2
@@ -42,9 +42,9 @@ COMPLETED ALL OIT Intake Tasks                 | Complete   | No VIPR ID referen
 Task                                              | Status    | Comments (only if yellow or red)
 ------------                                      | --------- | ------------- 
 ISSO assigned                                      |  Complete    | James Boring and Eguardo Rivera
-Application workload and compute / network requirements documented    | Complete  |Confirm with Duane
+Application workload and compute / network requirements documented    | Complete  |Confirm with Dwayne
 ITOPs (Chris) validates workload compute / network requirements       |       | Unsure; not sure if this is relevant
-Confirmed RACI and roles                            | Green      | Gary and Duane are managing the four tracks; Gary is backup 
+Confirmed RACI and roles                            | Green      | Gary and Dwayne are managing the four tracks; Gary is backup 
 CSP selection criteria (analysis for AWS versus Azure)        | Complete       | AWS
 Support contracts for application teams awarded (as needed) / resource onboarding completed (GFE, PIV, VA account set up, etc.) |    |   Contract in process to support migration (9 month contract to be awarded)               
 Cloud credits purchased (do not expire)                 | Complete   |
@@ -85,7 +85,7 @@ Monitoring tools in place                |   Green    | In progress; dep
 Decommission plan approved                |       | 
 ATO approved                |       | 
 Operations handoff completed (per ATO approval)                |       | 
-EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)             |Complete       | Gary and Duane
+EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)             |Complete       | Gary and Dwayne
 Validate Disaster Recovery (DR) and Backup                |       | 
 CD2 decision                | N/A      | Not relevant
 Build out and cutover checklist 100% complete                |       | Checklist in development by CAS
