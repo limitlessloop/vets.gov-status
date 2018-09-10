@@ -47,7 +47,7 @@ ITOPs (Chris) validates workload compute / network requirements       |       | 
 Confirmed RACI and roles                            | Green      | Gary and Dwayne are managing the four tracks; Gary is backup 
 CSP selection criteria (analysis for AWS versus Azure)        | Complete       | AWS
 Support contracts for application teams awarded (as needed) / resource onboarding completed (GFE, PIV, VA account set up, etc.) |  Complete  |                  
-Cloud credits purchased (do not expire)                 | Complete   |
+Cloud credits purchased (do not expire)                 | Complete   | credits are specific to Snowball
 ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)  |  Complete     | ATO for production for 150; ATO for test not required
 Decommission plan completed (incl. contracting, security, etc.)        | N/A      |  Not part of this track of work.
 SLAs for applications defined and approved                 |       | Not started
