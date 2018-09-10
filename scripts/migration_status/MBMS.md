@@ -26,7 +26,7 @@ Task                                                          | Status   | Comme
 ------------                                                  | -------- | -------------
 VIPR ID created                                          | Complete    | Multiple VIP entries;V17-01145-000; V17-01146-000; V17-01147-000 
 VIPR workbook (tab for cloud) 100% completed              | No    | Early migration; not yet deployed
-EPMO IA analysis completed                   | Yellow     | Unsure of this task; need clarification from Ruchika
+EPMO IA analysis completed                   | Green   | work underway; Howard to confirm with Darla
 ECSO wave migration designated              | Yellow     |  Unsure of wave
 EPMO PM assigned              | Complete    | Debbi Lawson is PgM and COR; (note Howard to confirm; see note above)
 Confirmed adequate funding and resources in place for migration based on ROM              |  Complete   | 
