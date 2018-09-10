@@ -64,7 +64,7 @@ ATO actions started; must demonstrate progress          | Green    | In progress
 Apps code assigned in coordination with ITOPs           |       | Unsure
 Identify and apply tagging and billing                  |      | Unsure
 Dev/Test/Staging/Prod environment set up completed      |Green       | Prod not yet set up
-Provided inherited controls for CSP                     | Yellow    | Expecting to inherit infrasture controls from MAG or Salesforce? Need to confirm this is correct approach from ECSO security team
+Provided inherited controls for CSP                     | Red    | Expecting to inherit infrasture controls from MAG or Salesforce? Need to confirm this is correct approach from ECSO security team
 Operational security tools onboarding completed         |      | unsure
 Billing and reporting set up                          |      | unsure
 Team has access to all required tools and environments        | In progress | Using demo versions of Open Shift software; need to procure; (container platform to scale database)
