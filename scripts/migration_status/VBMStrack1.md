@@ -68,7 +68,7 @@ Dev/Test/Staging/Prod environment set up completed       | Green      | In progr
 Provided inherited controls for CSP                      |  Complete     | 
 Operational security tools onboarding completed          | Green       | Early stages of this work
 Billing and reporting set up                             | Complete    | 
-Team has access to all required tools and environments                 |       | In progress; unsure of comprehensive tools
+Team has access to all required tools and environments                 |  Green     | In progress; unsure of comprehensive tools
 Working session to complete operations handoff with ITOPs         | Yellow     | Don't work w/ ITOPs; unsure of role if ITOPs for migration.
 Provisioning checklist 100% completed                 |  No     | Checklist in development by CAS
 COMPLETED ALL Provisioning Tasks                 | Yellow    | Need clarity of ITOPs role here (if any)
