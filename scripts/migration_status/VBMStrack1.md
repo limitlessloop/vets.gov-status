@@ -33,8 +33,8 @@ ECSO wave migration designated              |Complete      | Wave 2
 EPMO PM assigned              |  Complete    | Gary Dameron 
 Confirmed adequate funding and resources in place for migration based on ROM              |Complete      | 
 Decision finalized: migrate to cloud, decommission obsolete / duplicate system, or waiver (stay as is)     | Complete     | 
-Architecture review completed (proposed plan to refactor, rearchitect, etc.)          |      | Unsure
-Approved architecture by ITOPs              |      | Unsure
+Architecture review completed (proposed plan to refactor, rearchitect, etc.)          | Green     | in progress; Checking if TIC can handle bandwidth; architecture adjustments are small.
+Approved architecture by ITOPs              | Green   | 
 Intake checklist 100% completed               | No    | Checklist in development by CAS                                       
 COMPLETED ALL OIT Intake Tasks                 | Complete   | No VIPR ID referenced in ECSO tracker
 
