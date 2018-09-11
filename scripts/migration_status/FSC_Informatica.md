@@ -49,7 +49,7 @@ CSP selection criteria (analysis for AWS versus Azure)                 | Complet
 Support contracts for application teams awarded (as needed) / resource onboarding completed  | Complete   |                   
 Cloud credits purchased (expire at end of contract)        | Complete      | 924 credits purchased 
 ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)    | Complete   |IFAM ATO Sept / Oct 2018
-ESCCB decisions completed (if applicable)         | Red      | Blocker; was previously online now manual; process is broken (forms don't exist, missing documentation, no guidance on how to fill out forms)
+ESCCB decisions completed (if applicable)         | Red      | Blocker; was previously online now manual; process is broken (forms don't exist, missing documentation, no guidance on how to fill out forms. need a list of connection IDs, need examples)
 SLAs for applications defined and approved                 | Yellow   |They have application levels SLAs, but they need to know the MAG SLAs
 SLAs for operations defined and approved with ITOPs        | Yellow      | See note above
 CSP accounts and sub accounts created                 | Complete | Sub account of FBMT
