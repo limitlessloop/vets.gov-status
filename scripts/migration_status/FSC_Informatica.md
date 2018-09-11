@@ -86,7 +86,7 @@ Decommission plan approved                |       |
 ATO approved                |       | 
 Operations handoff completed (per ATO approval)                |       | 
 EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)                |       | 
-Validate Disaster Recovery (DR) and Backup                |       | 
+Validate Disaster Recovery (DR) and Backup                | Yellow      | Need standard process across VA (e.g.,  inconsistent site recovery process; each customer is inconsistent)
 CD2 decision                |       | Date:
 Build out and cutover checklist 100% complete                |       | 
 COMPLETED ALL Build Out and Cutover Tasks                   | Red     |  
