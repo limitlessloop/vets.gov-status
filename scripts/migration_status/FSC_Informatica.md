@@ -14,7 +14,7 @@ Task                                              | Status   | Comments (only if
 Identify VA application owner                     |Complete     | Wallace French Business Owner; Jonathan Lindow PM
 Initial cloud suitability 6 questions completed   | No    | Early migration; not yet deployed
 ITOPs to review if "obsolete" system based on usage     |      | Need to confirm w/ Chris / ITOPS
-ECSO Migration wave planning started              | Yellow     |  Unsure of wave
+ECSO Migration wave planning started              | N/A   |  Explanation of the waves was confusing; customers need to understand this.
 Baseline costs (pre-cloud) documented             |Complete      |
 Validated ACTIVE users / traffic analytics for past 12 months   |N/A      | B2B tool PaaS; data Analytics for FMBT tools to manage data and data cleanse
 ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. | Complete     |Under FMBT program
@@ -26,7 +26,7 @@ COMPLETED ALL (PRE Intake) Tasks                  | Complete   | Early migration
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
 ------------                                                  | -------- | -------------
-VIPR ID created                                          |  Yellow   |  Using VA FMBT VIPR ID; does this need to go through the intake process as its own project for migration?
+VIPR ID created                                          |  Yellow   |  Confusion about "IDs" (VIPR ID, VASI ID, etc.) 
 VIPR workbook (tab for cloud) 100% completed              |     | Ken/Intake has not deployed this yet
 EPMO IA analysis completed                               |      | Rushika's team just starting this; unsure of what this is
 ECSO wave migration designated                        | Yellow    |unsure of wave designation; wasn't in place yet
@@ -49,29 +49,29 @@ CSP selection criteria (analysis for AWS versus Azure)                 | Complet
 Support contracts for application teams awarded (as needed) / resource onboarding completed  | Complete   |                   
 Cloud credits purchased (expire at end of contract)        | Complete      | 924 credits purchased 
 ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)    | Complete   |IFAM ATO Sept / Oct 2018
-Decommission plan completed (incl. contracting, security, etc.)            |       |10 year plan; not started
-SLAs for applications defined and approved                 | Yellow   |Need list of SLAs from MAG have internal SLAs for business (timeframes, restore, etc.)
-SLAs for operations defined and approved with ITOPs        | Yellow      | Need understanding of MAG SLAs first
+ESCCB decisions completed (if applicable)         | Red      | Blocker; was previously online now manual; process is broken (forms don't exist, missing documentation, no guidance on how to fill out forms. need a list of connection IDs, need examples)
+SLAs for applications defined and approved                 | Yellow   |They have application levels SLAs, but they need to know the MAG SLAs
+SLAs for operations defined and approved with ITOPs        | Yellow      | See note above
 CSP accounts and sub accounts created                 | Complete | Sub account of FBMT
 CD1 decision made                                   |  Green     | In progress; aligning with IFAMS
 Planning checklist 100% completed                 |  No     |Checklist in development by CAS
-COMPLETED ALL Migration Planning and Onboarding Tasks                 | Red   | blocker ESCCB decision needed for connection to IFAM system; process started XXX
+COMPLETED ALL Migration Planning and Onboarding Tasks                 | Red   | Blocker ESCCB decision
 
 
 ### Provisioning
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-ATO actions started; must demonstrate progress                 | Yellow      | In progress but would like this process defined / better communicated; blockers with tasks including Ansible security tower not being set up
+ATO actions started; must demonstrate progress                 | Yellow      | Need consistent info; VAEC, cloud ISO group, IA, and other security groups provide different/conflicting information. 
 Apps code assigned in coordination with ITOPs                 | Red    | Issue with ITOPs and getting a VASI ID for NSD system
 Identify and apply tagging and billing                 | Complete    | 
-Dev/Test/Staging/Prod environment set up completed                 | Yellow      | Resource groups for environment are set up blocked on setting up VMs (can't do backups themselves, MS team trying to solve but unable to date, etc)
+Dev/Test/Staging/Prod environment set up completed                 | Red      | host name creation, security group names approved by ITOPS only. No access to create objects using appropriate names for customers, loss of capability to keep performing same business functions.
 Provided inherited controls from CSP                 |Yellow  | Might be complete (IFAMS team would know) need better documentation
 Operational security tools onboarding completed                 |       | 
-Billing and reporting set up                           | Red     | Power BI reporting tool VA needs to request access; no access to reports yet; would like visibility into the process (credits used, consumption rate)
+Billing and reporting set up                           | Red     | Process needs to be communicated; Power BI reporting tool VA needs to request access; no access to reports yet; would like visibility into the process (credits used, consumption rate)
 Team has access to all required tools and environments               | Red      | Hurting productivity; have access tools but not active directory portion (IO controlling; VA teams used to have access control but no longer)
 Working session to complete operations handoff with ITOPs                 |       | 
 Provisioning checklist 100% completed                 |  No     | Checklist in development by CAS
-COMPLETED ALL Provisioning Tasks                 | Yellow      | (Need to validate this section w/ Johnny)
+COMPLETED ALL Provisioning Tasks                 | Red     | 
 
 
 
@@ -79,18 +79,17 @@ COMPLETED ALL Provisioning Tasks                 | Yellow      | (Need to valida
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
 Application team environment, configuration and build out complete      |  Yellow     | Access to POC environment; duplicate work as a result of access issues
-Change management and comms plan approved (incl. VA training requirements)                |       | 
-All testing cheklists have been completed / met acceptance criteria (security and operations)                |       | 
-ECSSB decisions complete (if applicable               | Red      | Validate with Johnny
-Monitoring tools in place                |       | 
+Change management and comms plan approved (incl. VA training requirements)        |       | 
+ESCCB decisions complete (if applicable               | Yellow      | 
+Monitoring tools in place                |  Red     | Need documenation and process; need access to tools; multiple groups are responsible for this so it's confusing for customers.
 Decommission plan approved                |       | 
 ATO approved                |       | 
 Operations handoff completed (per ATO approval)                |       | 
 EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)                |       | 
-Validate Disaster Recovery (DR) and Backup                |       | 
+Validate Disaster Recovery (DR) and Backup                | Yellow      | Need standard process across VA (e.g.,  inconsistent site recovery process; each customer is inconsistent)
 CD2 decision                |       | Date:
 Build out and cutover checklist 100% complete                |       | 
-COMPLETED ALL Build Out and Cutover Tasks                   | Red      |  
+COMPLETED ALL Build Out and Cutover Tasks                   | Red     |  
 
 
 ### Cloud Operations
