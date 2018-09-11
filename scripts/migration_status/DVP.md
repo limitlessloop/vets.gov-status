@@ -36,7 +36,7 @@ Decision finalized: migrate to cloud, decommission obsolete / duplicate system, 
 Architecture review completed (proposed plan to refactor, rearchitect, etc.)        | Complete     | completed with Osama Lel-Zorkani (ITOPs)
 Approved architecture by ITOPs              |  Complete    | Chris Cardella's team to do; CAS to coordinate with Chris
 Intake checklist 100% completed               | No     | Checklist under development by CAS; not yet available                                       
-COMPLETED ALL OIT Intake Tasks                 | Complete     | Early migration; many processes, tools, and exit criteria not yet in place.
+COMPLETED ALL OIT Intake Tasks                 | Complete     | This platform supports API development and deployment; for internal and external users.
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)
@@ -87,7 +87,7 @@ ATO approved                           |  Complete     | 8.15.18 Handoff
 Operations handoff completed (per ATO approval)                | N/A      | New system
 CD2 decision                                 |       | Date: March 2018
 Build out and cutover checklist 100% complete                | No      | Checklist under development by CAS; not yet available
-COMPLETED ALL Build Out and Cutover Tasks                   | Complete    | no real users on the system yet; will not have users until spring 2019
+COMPLETED ALL Build Out and Cutover Tasks                   | Complete    | PATS-R Integration project is already migrated; larger rollout to 6-8 projects planned  spring 2019
 
 
 ### Cloud Operations
