@@ -50,8 +50,8 @@ Support contracts for application teams awarded (as needed) / resource onboardin
 Cloud credits purchased (expire at end of contract)        | Complete      | 924 credits purchased 
 ATO plan started (inherited controls, documentation, etc.) ; entered GRC tool (Risk Vision Working Group)    | Complete   |IFAM ATO Sept / Oct 2018
 Decommission plan completed (incl. contracting, security, etc.)            |       |10 year plan; not started
-SLAs for applications defined and approved                 | Yellow   |Need list of SLAs from MAG have internal SLAs for business (timeframes, restore, etc.)
-SLAs for operations defined and approved with ITOPs        | Yellow      | Need understanding of MAG SLAs first
+SLAs for applications defined and approved                 | Yellow   |They have application levels SLAs, but they need to know the MAG SLAs
+SLAs for operations defined and approved with ITOPs        | Yellow      | See note above
 CSP accounts and sub accounts created                 | Complete | Sub account of FBMT
 CD1 decision made                                   |  Green     | In progress; aligning with IFAMS
 Planning checklist 100% completed                 |  No     |Checklist in development by CAS
