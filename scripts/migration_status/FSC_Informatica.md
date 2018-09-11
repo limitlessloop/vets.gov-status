@@ -61,7 +61,7 @@ COMPLETED ALL Migration Planning and Onboarding Tasks                 | Red   | 
 ### Provisioning
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-ATO actions started; must demonstrate progress                 | Yellow      | Need consistent info; VAEC, cloud ISO group, IA, and other security groups provide different, sometimes conflicting informatin. 
+ATO actions started; must demonstrate progress                 | Yellow      | Need consistent info; VAEC, cloud ISO group, IA, and other security groups provide different/conflicting information. 
 Apps code assigned in coordination with ITOPs                 | Red    | Issue with ITOPs and getting a VASI ID for NSD system
 Identify and apply tagging and billing                 | Complete    | 
 Dev/Test/Staging/Prod environment set up completed                 | Yellow      | Resource groups for environment are set up blocked on setting up VMs (can't do backups themselves, MS team trying to solve but unable to date, etc)
