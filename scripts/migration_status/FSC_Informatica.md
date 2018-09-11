@@ -67,7 +67,7 @@ Identify and apply tagging and billing                 | Complete    |
 Dev/Test/Staging/Prod environment set up completed                 | Red      | host name creation, security group names approved by ITOPS only. No access to create objects using appropriate names for customers, loss of capability to keep performing same business functions.
 Provided inherited controls from CSP                 |Yellow  | Might be complete (IFAMS team would know) need better documentation
 Operational security tools onboarding completed                 |       | 
-Billing and reporting set up                           | Red     | Power BI reporting tool VA needs to request access; no access to reports yet; would like visibility into the process (credits used, consumption rate)
+Billing and reporting set up                           | Red     | Process needs to be communicated; Power BI reporting tool VA needs to request access; no access to reports yet; would like visibility into the process (credits used, consumption rate)
 Team has access to all required tools and environments               | Red      | Hurting productivity; have access tools but not active directory portion (IO controlling; VA teams used to have access control but no longer)
 Working session to complete operations handoff with ITOPs                 |       | 
 Provisioning checklist 100% completed                 |  No     | Checklist in development by CAS
