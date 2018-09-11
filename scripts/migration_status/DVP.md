@@ -61,7 +61,7 @@ COMPLETED ALL Migration Planning and Onboarding Tasks        | Complete    |
 ### Provisioning
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-ATO actions started; must demonstrate progress          | Complete      | ATO approved 8.15.18
+ATO actions started; must demonstrate progress          | Complete      | ATO approved 8.16.18
 Apps code assigned in coordination with ITOPs           | Complete      |
 Identify and apply tagging and billing                 |  Complete     | 
 Dev/Test/Staging/Prod environment set up completed     | Complete      | 
@@ -80,10 +80,10 @@ Task                                                    | Status    | Comments (
 ------------                                            | --------- | ------------- 
 Application team environment, configuration and build out complete           | Complete      | 
 Change management and comms plan approved (incl. VA training requirements)    |       | 
-ECSSB decisions / tasks completed if applicable for connections         |  Complete     | ATO completed
+ECSSB decisions / tasks completed if applicable for connections         |  Complete     | ATO completed 8.16.18
 Monitoring tools in place                | Complete      | 
 Decommission plan approved                |  N/A     | not applicable b/c new system stood up in AWS
-ATO approved                           |  Complete     | 8.15.18 Handoff planned for next summer
+ATO approved                           |  Complete     | 8.16.18 Handoff planned for next summer
 Operations handoff completed (per ATO approval)                | N/A      | New system
 CD2 decision                                 |       | Date: March 2018
 Build out and cutover checklist 100% complete                | No      | Checklist under development by CAS; not yet available
@@ -95,7 +95,7 @@ Task                                                    | Status    | Comments (
 ------------                                            | --------- | ------------- 
 Go-live / production              |  Complete    | Has been cutover to production, but no users yet
 Go live operational kickoff with ITOPs              |   No    | is this applicable? Does ITOPS have role on this applicaiton?
-Closeout session with Risk Vision working group              | Green      | ATO just completed 8/15/18
+Closeout session with Risk Vision working group              | Green      | ATO just completed 8/16/18
 ECSO ongoing governing / operational processes in place              | Yellow      | Need to define roles and processes for operation
 Validation that all SLAs being met              |Yellow       | Are there application-level SLAs other than infrastructure (AWS) that need to be defined? Would like to see the AWS SLAs.
 Continuous monitoring of security, compute usage, performance, availability, etc. fully operational   | Green      | AWS does this
