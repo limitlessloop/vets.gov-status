@@ -14,7 +14,7 @@ Task                                              | Status   | Comments (only if
 Identify VA application owner                     |Complete     | Wallace French Business Owner; Jonathan Lindow PM
 Initial cloud suitability 6 questions completed   | No    | Early migration; not yet deployed
 ITOPs to review if "obsolete" system based on usage     |      | Need to confirm w/ Chris / ITOPS
-ECSO Migration wave planning started              | Yellow     |  Wave approach was confusing b/c assumption was that it was funding driven; if you have funding you could be expedited, but that did not happen.
+ECSO Migration wave planning started              | N/A   |  Explanation of the waves was confusing; customers need to understand this.
 Baseline costs (pre-cloud) documented             |Complete      |
 Validated ACTIVE users / traffic analytics for past 12 months   |N/A      | B2B tool PaaS; data Analytics for FMBT tools to manage data and data cleanse
 ROM and funding information provided (e.g., UFR, research vs. OIT dollars, etc. | Complete     |Under FMBT program
