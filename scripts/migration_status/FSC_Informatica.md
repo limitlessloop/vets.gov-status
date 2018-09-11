@@ -26,7 +26,7 @@ COMPLETED ALL (PRE Intake) Tasks                  | Complete   | Early migration
 ### OIT Unified Intake (VIPR)
 Task                                                          | Status   | Comments (only if yellow or red)
 ------------                                                  | -------- | -------------
-VIPR ID created                                          |  Yellow   |  Using VA FMBT VIPR ID; does this need to go through the intake process as its own project for migration?
+VIPR ID created                                          |  Yellow   |  Confusion about "IDs" (VIPR ID, VASI ID, etc.) 
 VIPR workbook (tab for cloud) 100% completed              |     | Ken/Intake has not deployed this yet
 EPMO IA analysis completed                               |      | Rushika's team just starting this; unsure of what this is
 ECSO wave migration designated                        | Yellow    |unsure of wave designation; wasn't in place yet
