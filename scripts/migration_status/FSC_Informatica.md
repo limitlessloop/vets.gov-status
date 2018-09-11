@@ -64,7 +64,7 @@ Task                                                    | Status    | Comments (
 ATO actions started; must demonstrate progress                 | Yellow      | Need consistent info; VAEC, cloud ISO group, IA, and other security groups provide different/conflicting information. 
 Apps code assigned in coordination with ITOPs                 | Red    | Issue with ITOPs and getting a VASI ID for NSD system
 Identify and apply tagging and billing                 | Complete    | 
-Dev/Test/Staging/Prod environment set up completed                 | Yellow      | Resource groups for environment are set up blocked on setting up VMs (can't do backups themselves, MS team trying to solve but unable to date, etc)
+Dev/Test/Staging/Prod environment set up completed                 | Red      | Resource groups for environment are set up blocked on setting up VMs (self-service is no longer possible, MS team trying to solve but unable to date, etc)
 Provided inherited controls from CSP                 |Yellow  | Might be complete (IFAMS team would know) need better documentation
 Operational security tools onboarding completed                 |       | 
 Billing and reporting set up                           | Red     | Power BI reporting tool VA needs to request access; no access to reports yet; would like visibility into the process (credits used, consumption rate)
