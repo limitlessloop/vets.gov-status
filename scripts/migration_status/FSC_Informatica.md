@@ -71,7 +71,7 @@ Billing and reporting set up                           | Red     | Process needs
 Team has access to all required tools and environments               | Red      | Hurting productivity; have access tools but not active directory portion (IO controlling; VA teams used to have access control but no longer)
 Working session to complete operations handoff with ITOPs                 |       | 
 Provisioning checklist 100% completed                 |  No     | Checklist in development by CAS
-COMPLETED ALL Provisioning Tasks                 | Yellow      | (Need to validate this section w/ Johnny)
+COMPLETED ALL Provisioning Tasks                 | Red     | 
 
 
 
