@@ -97,13 +97,13 @@ Go-live / production              |  Complete    | Has been cutover to pr
 Go live operational kickoff with ITOPs              |   No    | is this applicable? Does ITOPS have role on this applicaiton?
 Closeout session with Risk Vision working group              | Green      | ATO just completed 8/15/18
 ECSO ongoing governing / operational processes in place              | Yellow      | Need to define roles and processes for operation
-Validation that all SLAs being met              |Yellow       | Are there application-level SLAs other than infrastructure (AWS) that need to be defined?
+Validation that all SLAs being met              |Yellow       | Are there application-level SLAs other than infrastructure (AWS) that need to be defined? Would like to see the AWS SLAs.
 Continuous monitoring of security, compute usage, performance, availability, etc. fully operational   | Green      | AWS does this
 Complete any outstanding contract actions (including cancellations, mods, etc.)         |  N/A     | 
 Implemented operational RACIs with VA staff              |       | 
 Begin decommission plan tasks              |  N/A     | Not applicable
 100% post-cutover checklist completed              | No      | Checklist under development by CAS; not yet available
-COMPLETED ALL Operations Tasks              | Yellow     | Cutover has happened but no real users planned until spring 2019; questions about roles, funding (FY19+) and ongoing operations with ECSO; are appliation level SLA's needed?
+COMPLETED ALL Operations Tasks              | Yellow     | Unsure about funding for FY19; appliation SLA's need to be developed.
 
 ### Retire / Decommission Legacy System
 Task                                                    | Status    | Comments (only if yellow or red)
