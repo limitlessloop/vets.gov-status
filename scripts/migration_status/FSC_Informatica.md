@@ -79,10 +79,9 @@ COMPLETED ALL Provisioning Tasks                 | Red     |
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
 Application team environment, configuration and build out complete      |  Yellow     | Access to POC environment; duplicate work as a result of access issues
-Change management and comms plan approved (incl. VA training requirements)                |       | 
-All testing cheklists have been completed / met acceptance criteria (security and operations)                |       | 
-ECSSB decisions complete (if applicable               | Red      | Validate with Johnny
-Monitoring tools in place                |       | 
+Change management and comms plan approved (incl. VA training requirements)        |       | 
+ESCCB decisions complete (if applicable               | Yellow      | 
+Monitoring tools in place                |  Red     | Need documenation and process; need access to tools; multiple groups are responsible for this so it's confusing for customers.
 Decommission plan approved                |       | 
 ATO approved                |       | 
 Operations handoff completed (per ATO approval)                |       | 
@@ -90,7 +89,7 @@ EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)  �
 Validate Disaster Recovery (DR) and Backup                |       | 
 CD2 decision                |       | Date:
 Build out and cutover checklist 100% complete                |       | 
-COMPLETED ALL Build Out and Cutover Tasks                   | Red      |  
+COMPLETED ALL Build Out and Cutover Tasks                   | Red     |  
 
 
 ### Cloud Operations
