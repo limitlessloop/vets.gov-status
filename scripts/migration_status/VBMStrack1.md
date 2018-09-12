@@ -2,7 +2,7 @@
 
 Business and Application Owners: Kenneth Wimsatt, Gary Dameron
 
-Migrate to Cloud: Yes
+Migrate to Cloud: Yes 
 
 Cutover Completed: 
 
