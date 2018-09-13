@@ -1,6 +1,6 @@
 # Name: VBMS Track 1 Document Upload Transition (AWS)
 
-Business and Application Owners: Kenneth Wimsatt, Gary Dameron
+Business and Application Owners: Kenneth Wimsatt Gary Dameron
 
 Migrate to Cloud:
 
