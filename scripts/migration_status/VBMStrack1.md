@@ -1,8 +1,8 @@
 # Name: VBMS Track 1 Document Upload Transition (AWS)
 
-Business and Application Owners: Kenneth Wimsatt, Gary Dameron
+Business and Application Owners: Kenneth Wimsatt Gary Dameron
 
-Migrate to Cloud: Yes 
+Migrate to Cloud: Yes
 
 Cutover Completed: 
 
@@ -55,7 +55,7 @@ SLAs for operations defined and approved with ITOPs        |      |
 CSP accounts and sub accounts created                 |Complete     | 
 CD1 decision made                                   |N/A       | Not relevant for this track of work
 Planning checklist 100% completed                 | No      | Checklist in development by CAS
-COMPLETED ALL Migration Planning and Onboarding Tasks     |  Green     | 
+COMPLETED ALL Migration Planning and Onboarding Tasks     |  Green   | 
 
 
 ### Provisioning
@@ -89,7 +89,7 @@ EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)  �
 Validate Disaster Recovery (DR) and Backup                |       | 
 CD2 decision                | N/A      | Not relevant
 Build out and cutover checklist 100% complete                |       | Checklist in development by CAS
-COMPLETED ALL Build Out and Cutover Tasks                   | Yellow | Track 1 (eFolder storage) (track 1 is bulk of storage, but not 100% of all storage); eFolder storage will be migrated out of Terremark by December 2018; but overall VBMS won't be out of IBM/Terremark until March 2019 (not end of calendar year 2018); marking this yellow b/c clarification of status communications need to be clarified.
+COMPLETED ALL Build Out and Cutover Tasks                   | Yellow | Track 1 (eFolder storage is bulk of storage, but not all storage); eFolder storage will be migrated out of Terremark by December 2018; but overall VBMS won't be out of IBM/Terremark until March 2019; marking this yellow b/c clarification of status communications need to be clarified.
 
 
 ### Cloud Operations
