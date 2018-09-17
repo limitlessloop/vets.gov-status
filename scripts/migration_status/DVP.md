@@ -93,7 +93,7 @@ COMPLETED ALL Build Out and Cutover Tasks                   | Complete 
 ### Cloud Operations
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-Go-live / production              |  Complete    | Has been cutover to production, but no users yet
+Go-live / production              |  Complete    | Has been cutover to production, but only a few users planned until Spring/Summer 2019
 Go live operational kickoff with ITOPs              |   No    | is this applicable? Does ITOPS have role on this applicaiton?
 Closeout session with Risk Vision working group              | Green      | ATO just completed 8/16/18
 ECSO ongoing governing / operational processes in place              | Yellow      | Need to define roles and processes for operation
