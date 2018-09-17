@@ -77,7 +77,7 @@ COMPLETED ALL Provisioning Tasks                       | Green    | In progress
 ### BUILD OUT, OPERATIONS HANDOFF, & CUTOVER
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-Application team environment, configuration and build out complete     | Yellow     | in progress; planned Oct. 2018: NCA users will use salesforce in cloud to create new cases; will schedule burials at requested cemetaries, record to BOSS database migration comes later; lower environments in non-VAEC location; production environmnet blocked.
+Application team environment, configuration and build out complete     | Yellow     | in progress; planned Oct. 2018: NCA users will use salesforce in cloud to create new cases; will schedule burials at requested cemetaries, record to BOSS database migration comes later.
 Change management and comms plan approved (incl. VA training requirements)    | Green    | in progress
 All testing cheklists have been completed / met acceptance criteria (security and operations)     |      | 
 ESCCBB decisions / tasks completed if applicable for connections              | Green    |  need to build production then will request for connection
