@@ -103,7 +103,7 @@ Complete any outstanding contract actions (including cancellations, mods, etc.)�
 Implemented operational RACIs with VA staff              |       | 
 Begin decommission plan tasks              |  N/A     | Not applicable
 100% post-cutover checklist completed              | No      | Checklist under development by CAS; not yet available
-COMPLETED ALL Operations Tasks              | Yellow     | Unsure about funding for FY19; application SLA's need to be developed.
+COMPLETED ALL Operations Tasks              | Yellow     | Unsure about funding for FY19; application SLA's need to be developed; unclear about role of ITOPs and ECSO vendors in operations.
 
 ### Retire / Decommission Legacy System
 Task                                                    | Status    | Comments (only if yellow or red)
