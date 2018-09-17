@@ -93,7 +93,7 @@ COMPLETED ALL Build Out and Cutover Tasks                   | Complete 
 ### Cloud Operations
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-Go-live / production              |  Complete    | Has been cutover to production, but no users yet
+Go-live / production              |  Complete    | Has been cutover to production, but only a few users planned until Spring/Summer 2019
 Go live operational kickoff with ITOPs              |   No    | is this applicable? Does ITOPS have role on this applicaiton?
 Closeout session with Risk Vision working group              | Green      | ATO just completed 8/16/18
 ECSO ongoing governing / operational processes in place              | Yellow      | Need to define roles and processes for operation
@@ -103,7 +103,7 @@ Complete any outstanding contract actions (including cancellations, mods, etc.)�
 Implemented operational RACIs with VA staff              |       | 
 Begin decommission plan tasks              |  N/A     | Not applicable
 100% post-cutover checklist completed              | No      | Checklist under development by CAS; not yet available
-COMPLETED ALL Operations Tasks              | Yellow     | Unsure about funding for FY19; application SLA's need to be developed.
+COMPLETED ALL Operations Tasks              | Yellow     | Unsure about funding for FY19; application SLA's need to be developed; unclear about role of ITOPs and ECSO vendors in operations.
 
 ### Retire / Decommission Legacy System
 Task                                                    | Status    | Comments (only if yellow or red)

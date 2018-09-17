@@ -26,7 +26,7 @@ COMPLETED ALL (PRE Intake) Tasks                  | Complete | This track 1 is s
 ### OIT Unified Intake (VIPR)
 Task                                          | Status   | Comments (only if yellow or red)
 ------------                                 | -------- | -------------
-VIPR ID created                               | Yellow     | No VIPR ID found
+VIPR ID created                               | Yellow     | No VIPR ID found; unsure how migration is being tracked and reported
 VIPR workbook (tab for cloud) 100% completed   |  No    | Early migration; not deployed yet.
 EPMO IA analysis completed              | Yellow     | Unsure what this is
 ECSO wave migration designated              |Complete      | Wave 2
@@ -36,7 +36,7 @@ Decision finalized: migrate to cloud, decommission obsolete / duplicate system, 
 Architecture review completed (proposed plan to refactor, rearchitect, etc.)          | Green     | in progress; Checking if TIC can handle bandwidth; architecture adjustments are small.
 Approved architecture by ITOPs              | N/A   | ITOPS not involved in architecture
 Intake checklist 100% completed               | No    | Checklist in development by CAS                                       
-COMPLETED ALL OIT Intake Tasks                 | Complete   | No VIPR ID referenced in ECSO tracker
+COMPLETED ALL OIT Intake Tasks                 | Yellow   | No VIPR ID referenced in ECSO tracker
 
 ### ECSO / VAEC Detailed Migration Planning 
 Task                                              | Status    | Comments (only if yellow or red)

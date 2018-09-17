@@ -77,7 +77,7 @@ COMPLETED ALL Provisioning Tasks                       | Green    | In progress
 ### BUILD OUT, OPERATIONS HANDOFF, & CUTOVER
 Task                                                    | Status    | Comments (only if yellow or red)
 ------------                                            | --------- | ------------- 
-Application team environment, configuration and build out complete     | Green     | in progress; planned Oct. 2018: NCA users will use salesforce in cloud to create new cases; will schedule burials at requested cemetaries, record to BOSS database migration comes later
+Application team environment, configuration and build out complete     | Yellow     | in progress; planned Oct. 2018: NCA users will use salesforce in cloud to create new cases; will schedule burials at requested cemetaries, record to BOSS database migration comes later.
 Change management and comms plan approved (incl. VA training requirements)    | Green    | in progress
 All testing cheklists have been completed / met acceptance criteria (security and operations)     |      | 
 ESCCBB decisions / tasks completed if applicable for connections              | Green    |  need to build production then will request for connection
@@ -89,7 +89,7 @@ EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)  �
 Validate Disaster Recovery (DR) and Backup                |       | 
 CD2 decision                                 |       | Date: will happen after ATO prior to go live in Oct.
 Build out and cutover checklist 100% complete                | No      | ECSO CAS team to develop
-COMPLETED ALL Build Out and Cutover Tasks                   | Red    |  lower environments green; production blocked
+COMPLETED ALL Build Out and Cutover Tasks                   | Red   |  lower environments green; production blocked; planned go-live dates in Oct. 2018
 
 
 ### Cloud Operations
