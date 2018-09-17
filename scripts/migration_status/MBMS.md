@@ -89,7 +89,7 @@ EPMO / Application PM role handoff completed (e.g, CSP account set up, etc.)  �
 Validate Disaster Recovery (DR) and Backup                |       | 
 CD2 decision                                 |       | Date: will happen after ATO prior to go live in Oct.
 Build out and cutover checklist 100% complete                | No      | ECSO CAS team to develop
-COMPLETED ALL Build Out and Cutover Tasks                   | Yellow    |  lower environments green; production blocked
+COMPLETED ALL Build Out and Cutover Tasks                   | Red   |  lower environments green; production blocked; planned go-live dates in Oct. 2018
 
 
 ### Cloud Operations
