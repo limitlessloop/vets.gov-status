@@ -5,3 +5,4 @@ _vendor/
 *.p12
 .env
 .jekyll-cache
+ENV

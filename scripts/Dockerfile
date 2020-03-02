@@ -7,7 +7,7 @@ ENV DATA_DIR="/data" \
     GA_SERVICEACCOUNT="/application/serviceaccount.json"
 
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN python3 -m pip install --no-cache-dir --require-hashes --no-deps -r requirements.txt
 
 COPY . .
 
