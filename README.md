@@ -45,7 +45,7 @@ Once deployed the data is static until the next deploy. Because the executive sc
 
 ## Getting started
 
-1. Install Ruby if needed (MacOS has by default)
+1. Install Ruby if needed (we are using the version in `.ruby_version`, 2.6.3)
 1. Install [Jekyll](https://jekyllrb.com/docs/installation/)
 2. Clone this repository to your local computer
 3. Run `bundle` to install gems
