@@ -1,7 +1,7 @@
 _site/
 _vendor/
 .sass-cache
-*.lock
 .DS_Store
 *.p12
 .env
+.jekyll-cache
