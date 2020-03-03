@@ -2,7 +2,7 @@ import datetime
 import os
 
 from googleapiclient import discovery
-from oauth2client.service_account import ServiceAccountCredentials
+from google.oauth2.service_account import Credentials
 
 import httplib2
 
@@ -20,8 +20,7 @@ def fetch_sheet_data():
     analytics an authorized analyticsreporting service object.
     """
 
-    credentials = ServiceAccountCredentials.from_json_keyfile_name(
-      KEY_FILE_LOCATION, SCOPES)
+    credentials = Credentials.from_service_account_file(KEY_FILE_LOCATION, scopes=SCOPES)
 
     # Build the service object.
     service = discovery.build('sheets', 'v4', credentials=credentials)
