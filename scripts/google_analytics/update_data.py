@@ -7,6 +7,8 @@ import os
 from apiclient.discovery import build
 from google.oauth2.service_account import Credentials
 
+from analytics_helpers import make_df
+
 import numpy as np
 import pandas as pd
 
@@ -164,31 +166,7 @@ def get_click_reports(analytics, view_id):
     ).execute()
 
 
-def make_df(report):
-    """Turn a single report from a Google Analytics response into dataframe"""
-
-    dimLabels = report['columnHeader']['dimensions']
-    metricLabels = [entry['name']
-                    for entry
-                    in report['columnHeader']['metricHeader']['metricHeaderEntries']]
-
-    output = []
-    rows = report['data'].get('rows', [])
-    for row in rows:
-        current_data = {}
-
-        for k, v in zip(dimLabels, row['dimensions']):
-            current_data[k] = v
-
-        metricValues = [d['values'] for d in row['metrics']]
-        metricValues = [item for sublist in metricValues for item in sublist]
-        for k, v in zip(metricLabels, metricValues):
-            current_data[k] = int(v)
-
-        output.append(current_data)
-
-    raw_df = pd.DataFrame(output)
-
+def add_day_column(raw_df):
     if 'ga:isoYearIsoWeek' in raw_df.columns:
         # Set the day equal to the Sunday that ends that week
         raw_df['day'] = raw_df['ga:isoYearIsoWeek'].apply(
@@ -196,7 +174,6 @@ def make_df(report):
         raw_df['day'] = pd.to_datetime(raw_df['day'])
         raw_df = raw_df.set_index('day')
         del raw_df['ga:isoYearIsoWeek']
-
     return raw_df
 
 
@@ -245,17 +222,17 @@ def output_pageviews(df, board):
 
 def run_reports(analytics, board, view_id, page_filter=""):
     response = get_reports(analytics, view_id, page_filter)
-    user_df = make_df(response['reports'][0])
+    user_df = add_day_column(make_df(response['reports'][0]))
     output_users(user_df, board)
-    device_df = make_df(response['reports'][1])
+    device_df = add_day_column(make_df(response['reports'][1]))
     output_device(device_df, board)
-    pageviews_df = make_df(response['reports'][2])
+    pageviews_df = add_day_column(make_df(response['reports'][2]))
     output_pageviews(pageviews_df, board)
 
 
 def run_click_reports(analytics, board, view_id):
     response = get_click_reports(analytics, view_id)
-    vcl_df = make_df(response['reports'][0])
+    vcl_df = add_day_column(make_df(response['reports'][0]))
     output_clicks(vcl_df, board)
 
 
