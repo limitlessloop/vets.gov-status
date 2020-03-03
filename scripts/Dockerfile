@@ -10,8 +10,6 @@ ENV DATA_DIR="/application/data" \
 COPY requirements.txt .
 RUN python3 -m pip install --no-cache-dir --require-hashes --no-deps -r requirements.txt
 
-RUN mkdir data
-
 COPY . .
 
 CMD ["/application/updates.sh"]
