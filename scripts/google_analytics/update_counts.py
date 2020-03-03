@@ -91,7 +91,7 @@ def make_df(report):
     return raw_df
 
 
-def run_report(analytics, count, details):
+def run_report(analytics, details):
     response = get_count_report(analytics, details['view'], details['event_name'])
     df = make_df(response['reports'][0])
     return df.at[0, 'ga:totalEvents'] + details['adjustment']
@@ -111,7 +111,7 @@ def main():
     output_dict = {}
 
     for count in counts:
-        total = run_report(analytics, count, counts[count])
+        total = run_report(analytics, counts[count])
         output_dict[count] = "{:,}".format(total)
 
     with open(output_file, 'w') as output:
