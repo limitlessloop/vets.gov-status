@@ -111,12 +111,14 @@ def main():
 
 
     output_file = os.path.join(os.environ['DATA_DIR'],'counts.yml')
-    with open(output_file, 'r') as output:
-        output_dict = yaml.load(output, yaml.RoundTripLoader)
+    # with open(output_file, 'r') as output:
+    #     output_dict = yaml.load(output, yaml.RoundTripLoader)
 
-        for count in counts:
-            total = run_report(analytics, count, counts[count])
-            output_dict[count] = "{:,}".format(total)
+    output_dict = {}
+
+    for count in counts:
+        total = run_report(analytics, count, counts[count])
+        output_dict[count] = "{:,}".format(total)
 
     with open(output_file, 'w') as output:
         yaml.dump(output_dict, output, Dumper=yaml.RoundTripDumper, default_style='"')

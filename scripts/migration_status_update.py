@@ -1,7 +1,7 @@
 import os
 import re
 
-MARKDOWN_DIR = "scripts/migration_status"
+MARKDOWN_DIR = os.environ["MARKDOWN_DIR"]
 IGNORE_LIST = [item.casefold() for item in
                [
                    "readme.md",

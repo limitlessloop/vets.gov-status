@@ -176,7 +176,8 @@ def make_df(report):
                     in report['columnHeader']['metricHeader']['metricHeaderEntries']]
 
     output = []
-    for row in report['data']['rows']:
+    rows = report['data'].get('rows', [])
+    for row in rows:
         current_data = {}
 
         for k, v in zip(dimLabels, row['dimensions']):
@@ -191,12 +192,13 @@ def make_df(report):
 
     raw_df = pd.DataFrame(output)
 
-    # Set the day equal to the Sunday that ends that week
-    raw_df['day'] = raw_df['ga:isoYearIsoWeek'].apply(
-                    lambda d: datetime.datetime.strptime(d + '-0', "%Y%W-%w"))
-    raw_df['day'] = pd.to_datetime(raw_df['day'])
-    raw_df = raw_df.set_index('day')
-    del raw_df['ga:isoYearIsoWeek']
+    if 'ga:isoYearIsoWeek' in raw_df.columns:
+        # Set the day equal to the Sunday that ends that week
+        raw_df['day'] = raw_df['ga:isoYearIsoWeek'].apply(
+                        lambda d: datetime.datetime.strptime(d + '-0', "%Y%W-%w"))
+        raw_df['day'] = pd.to_datetime(raw_df['day'])
+        raw_df = raw_df.set_index('day')
+        del raw_df['ga:isoYearIsoWeek']
 
     return raw_df
 
@@ -204,8 +206,10 @@ def make_df(report):
 def output_users(df, board):
     """Output a csv from dataframe contents."""
 
-    df.columns = ['new', 'all']
-    del df['new']
+    if not df.empty:
+        df.columns = ['new', 'all']
+        del df['new']
+
     filename = os.path.join(os.environ['DATA_DIR'],
                             "{}_users.csv".format(board))
     df.to_csv(filename, date_format="%m/%d/%y")
@@ -214,18 +218,17 @@ def output_device(df, board):
 
     df = df.reset_index()
 
-    mobile = df[df['ga:deviceCategory'] != 'desktop'].groupby('day').agg(np.sum)
-    mobile.columns = ['mobile']
-    #print(mobile)
+    if 'ga:deviceCategory' in df.columns:
+        mobile = df[df['ga:deviceCategory'] != 'desktop'].groupby('day').agg(np.sum)
+        mobile.columns = ['mobile']
 
-    df = df[df['ga:deviceCategory'] == 'desktop'].groupby('day').agg(np.sum)
-    df.columns = ['desktop']
-    #print(desktop)
+        df = df[df['ga:deviceCategory'] == 'desktop'].groupby('day').agg(np.sum)
+        df.columns = ['desktop']
 
-    df['mobile'] = mobile['mobile']
-    df['all'] = df['desktop'] + df['mobile']
-    df['mobile'] = (df['mobile'] / df['all']) * 100
-    df['desktop'] = (df['desktop'] / df['all']) * 100
+        df['mobile'] = mobile['mobile']
+        df['all'] = df['desktop'] + df['mobile']
+        df['mobile'] = (df['mobile'] / df['all']) * 100
+        df['desktop'] = (df['desktop'] / df['all']) * 100
 
     filename = os.path.join(os.environ['DATA_DIR'],
                             "{}_mobile.csv".format(board))
@@ -234,7 +237,9 @@ def output_device(df, board):
 def output_pageviews(df, board):
     """Output a csv from dataframe contents."""
 
-    df.columns = ['views']
+    if not df.empty:
+        df.columns = ['views']
+
     filename = os.path.join(os.environ['DATA_DIR'],
                             "{}_views.csv".format(board))
     df.to_csv(filename, date_format="%m/%d/%y")
