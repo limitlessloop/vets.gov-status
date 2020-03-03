@@ -7,14 +7,10 @@ import os
 from apiclient.discovery import build
 from google.oauth2.service_account import Credentials
 
-import httplib2
-
 import numpy as np
 import pandas as pd
 
-
 SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
-DISCOVERY_URI = ('https://analyticsreporting.googleapis.com/$discovery/rest')
 KEY_FILE_LOCATION = os.environ['GA_SERVICEACCOUNT']
 SERVICE_ACCOUNT_EMAIL = 'analytics@inductive-voice-142915.iam.gserviceaccount.com'
 
@@ -67,11 +63,11 @@ def get_reports(analytics, view_id, page_filter):
                     "dimensionFilterClauses": [{
                         "filters": [
                             {
-                              "dimensionName": "ga:pagePath",
-                              "operator": "REGEXP",
-                              "expressions": page_filter
+                                "dimensionName": "ga:pagePath",
+                                "operator": "REGEXP",
+                                "expressions": page_filter
                             }
-                            ]}],
+                        ]}],
                 },
                 {
                     'viewId': view_id,
@@ -81,13 +77,13 @@ def get_reports(analytics, view_id, page_filter):
                     'dimensions': [{'name': 'ga:isoYearIsoWeek'},
                                    {'name': 'ga:deviceCategory'}],
                     "dimensionFilterClauses": [{
-                       "filters": [
-                           {
-                             "dimensionName": "ga:pagePath",
-                             "operator": "REGEXP",
-                             "expressions": page_filter
-                           }
-                           ]}],
+                        "filters": [
+                            {
+                                "dimensionName": "ga:pagePath",
+                                "operator": "REGEXP",
+                                "expressions": page_filter
+                            }
+                        ]}],
                 },
                 {
                     'viewId': view_id,
@@ -96,18 +92,19 @@ def get_reports(analytics, view_id, page_filter):
                     'metrics': [{'expression': 'ga:pageviews'}],
                     'dimensions': [{'name': 'ga:isoYearIsoWeek'}],
                     "dimensionFilterClauses": [{
-                       "filters": [
-                           {
-                             "dimensionName": "ga:pagePath",
-                             "operator": "REGEXP",
-                             "expressions": page_filter
-                           }
-                           ]}],
+                        "filters": [
+                            {
+                                "dimensionName": "ga:pagePath",
+                                "operator": "REGEXP",
+                                "expressions": page_filter
+                            }
+                        ]}],
                 }
             ],
             "useResourceQuotas": True
         }
     ).execute()
+
 
 def get_click_reports(analytics, view_id):
     """Use the Analytics Service Object to query Analytics Reporting API.
@@ -120,51 +117,52 @@ def get_click_reports(analytics, view_id):
     return analytics.reports().batchGet(
         body={
             'reportRequests': [{
-                    'viewId': view_id,
-                    'dateRanges': [{'startDate': startDate,
-                                    'endDate': endDate}],
-                    'metrics': [{'expression': 'ga:totalEvents'}],
-                    'dimensions': [{'name': 'ga:isoYearIsoWeek'}],
-                    "dimensionFilterClauses": [{
-                        "operator": "OR",
-                        "filters": [
-                            {
-                              "dimensionName": "ga:eventLabel",
-                              "operator": "PARTIAL",
-                              "expressions": "veteranscrisisline"
-                            },
-                            {
-                              "dimensionName": "ga:eventLabel",
-                              "operator": "PARTIAL",
-                              "expressions": "sms:838255"
-                            },
-                            {
-                              "dimensionName": "ga:eventLabel",
-                              "operator": "PARTIAL",
-                              "expressions": "tel:18002738255"
-                            },
-                            {
-                              "dimensionName": "ga:eventAction",
-                              "operator": "PARTIAL",
-                              "expressions": "veteranscrisisline"
-                            },
-                            {
-                              "dimensionName": "ga:eventAction",
-                              "operator": "PARTIAL",
-                              "expressions": "sms:838255"
-                            },
-                            {
-                              "dimensionName": "ga:eventAction",
-                              "operator": "PARTIAL",
-                              "expressions": "tel:18002738255"
-                            },
-                            ]}],
-                    "includeEmptyRows": "true",
-                }
+                'viewId': view_id,
+                'dateRanges': [{'startDate': startDate,
+                                'endDate': endDate}],
+                'metrics': [{'expression': 'ga:totalEvents'}],
+                'dimensions': [{'name': 'ga:isoYearIsoWeek'}],
+                "dimensionFilterClauses": [{
+                    "operator": "OR",
+                    "filters": [
+                        {
+                            "dimensionName": "ga:eventLabel",
+                            "operator": "PARTIAL",
+                            "expressions": "veteranscrisisline"
+                        },
+                        {
+                            "dimensionName": "ga:eventLabel",
+                            "operator": "PARTIAL",
+                            "expressions": "sms:838255"
+                        },
+                        {
+                            "dimensionName": "ga:eventLabel",
+                            "operator": "PARTIAL",
+                            "expressions": "tel:18002738255"
+                        },
+                        {
+                            "dimensionName": "ga:eventAction",
+                            "operator": "PARTIAL",
+                            "expressions": "veteranscrisisline"
+                        },
+                        {
+                            "dimensionName": "ga:eventAction",
+                            "operator": "PARTIAL",
+                            "expressions": "sms:838255"
+                        },
+                        {
+                            "dimensionName": "ga:eventAction",
+                            "operator": "PARTIAL",
+                            "expressions": "tel:18002738255"
+                        },
+                    ]}],
+                "includeEmptyRows": "true",
+            }
             ],
             "useResourceQuotas": True
         }
     ).execute()
+
 
 def make_df(report):
     """Turn a single report from a Google Analytics response into dataframe"""
@@ -194,7 +192,7 @@ def make_df(report):
     if 'ga:isoYearIsoWeek' in raw_df.columns:
         # Set the day equal to the Sunday that ends that week
         raw_df['day'] = raw_df['ga:isoYearIsoWeek'].apply(
-                        lambda d: datetime.datetime.strptime(d + '-0', "%Y%W-%w"))
+            lambda d: datetime.datetime.strptime(d + '-0', "%Y%W-%w"))
         raw_df['day'] = pd.to_datetime(raw_df['day'])
         raw_df = raw_df.set_index('day')
         del raw_df['ga:isoYearIsoWeek']
@@ -213,8 +211,8 @@ def output_users(df, board):
                             "{}_users.csv".format(board))
     df.to_csv(filename, date_format="%m/%d/%y")
 
-def output_device(df, board):
 
+def output_device(df, board):
     df = df.reset_index()
 
     if 'ga:deviceCategory' in df.columns:
@@ -233,6 +231,7 @@ def output_device(df, board):
                             "{}_mobile.csv".format(board))
     df.to_csv(filename, date_format="%m/%d/%y")
 
+
 def output_pageviews(df, board):
     """Output a csv from dataframe contents."""
 
@@ -244,7 +243,6 @@ def output_pageviews(df, board):
     df.to_csv(filename, date_format="%m/%d/%y")
 
 
-
 def run_reports(analytics, board, view_id, page_filter=""):
     response = get_reports(analytics, view_id, page_filter)
     user_df = make_df(response['reports'][0])
@@ -254,10 +252,12 @@ def run_reports(analytics, board, view_id, page_filter=""):
     pageviews_df = make_df(response['reports'][2])
     output_pageviews(pageviews_df, board)
 
+
 def run_click_reports(analytics, board, view_id):
     response = get_click_reports(analytics, view_id)
     vcl_df = make_df(response['reports'][0])
     output_clicks(vcl_df, board)
+
 
 def output_clicks(df, board):
     """Output a csv from dataframe contents."""
@@ -266,6 +266,7 @@ def output_clicks(df, board):
     filename = os.path.join(os.environ['DATA_DIR'],
                             "{}_clicks.csv".format(board))
     df.to_csv(filename, date_format="%m/%d/%y")
+
 
 def main():
     analytics = initialize_analyticsreporting()
