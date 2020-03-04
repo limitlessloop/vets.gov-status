@@ -45,14 +45,34 @@ Once deployed the data is static until the next deploy. Because the executive sc
 
 ## Getting started
 
-1. Install Ruby if needed (we are using the version in `.ruby_version`, 2.6.3)
-1. Install [Jekyll](https://jekyllrb.com/docs/installation/)
-2. Clone this repository to your local computer
-3. Run `bundle` to install gems
-3. Serve the project locally
+1. Install Ruby if needed (we are using the version in `.ruby_version`). We are using rbenv to manage ruby versions. Instructions for MacOS:
+    1. `brew install rbenv`
+    2. `rbenv install 2.6.5` Use the version in `.ruby_version`
+    3. Add the following to your bash/zsh profile:
+       ```
+       eval "$(rbenv init -)"
+       export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
+       ```
+    4. Restart your shell
+    5. Verify ruby version is correct: while in the repo, run `rbenv versions`. There should be a `*` in front of the version being used
+3. Install bundler: `gem install bundler:2.1.4`
+4. Run `bundle` to install gems from the Gemfile
+4. Serve the project locally
   ```
   bundle exec jekyll serve
   ```
+
+## Run Python Scripts
+
+Run `./python-install.sh` to install a virtual environment
+
+Activate the virtual environment with `source ENV/bin/activate`
+
+Go into the scripts directory and run the scripts with `./updates.sh`
+
+### Adding new packages to python scripts
+
+Add the package names to `requirements.in` then run `./upgrade-requirements.sh`
 
 ## Deploying
 
