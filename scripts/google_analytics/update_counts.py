@@ -7,6 +7,8 @@ import os
 from googleapiclient.discovery import build
 from google.oauth2.service_account import Credentials
 
+from credstash import getSecret
+
 from analytics_helpers import make_df
 
 import ruamel.yaml as yaml
@@ -22,7 +24,8 @@ def initialize_analyticsreporting():
     analytics an authorized analyticsreporting service object.
     """
 
-    credentials = Credentials.from_service_account_file(KEY_FILE_LOCATION, scopes=SCOPES)
+    secret_json = getSecret("serviceaccount", region="us-east-2")
+    credentials = Credentials.from_service_account_info(json.loads(secret_json), scopes=SCOPES)
 
     # Build the service object.
     analytics_service = build('analyticsreporting', 'v4', credentials=credentials)

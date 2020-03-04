@@ -70,7 +70,25 @@ Run `./python-install.sh` to install a virtual environment
 
 Activate the virtual environment with `source ENV/bin/activate`
 
-Go into the scripts directory and run the scripts with `./updates.sh`
+Go into the scripts directory and run the scripts with `./fetch-data-local.sh`
+
+### Connecting to AWS
+
+The scripts get secrets out of [credstash](https://github.com/fugue/credstash), which connects to a running
+AWS instance using your local credentials.
+
+For interim ThoughtWorks development, your `~/.aws/config` must contain an entry like:
+
+```
+[profile va-pension-automation-admin]
+role_arn=<arn of the admin role>
+source_profile=va-pension-automation-readonly
+region=us-east-2
+```
+
+1. `saml2aws login`
+
+2. `saml2aws exec --exec-profile va-pension-automation-admin $SHELL` (you may need to reactivate your virtualenv)
 
 ### Adding new packages to python scripts
 
