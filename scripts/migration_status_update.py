@@ -13,13 +13,15 @@ IGNORE_LIST = [item.casefold() for item in
                    "OLD Vocational Rehabilitation and Employment.md"
                    "TEMPLATE.md"
                ]
-              ]
+               ]
 
 
 def createDashboardCSV(repo, markdown_files):
     output_file = os.path.join(os.environ['DATA_DIR'], 'migration_status.csv')
     with open(output_file, 'w') as migration_status:
-        migration_status.write('name,link,lead,pre_intake,oit_intake,migrate_to_cloud,migration_planning,provisioning_tasks,migration_cutover,operations_tasks,cutover_complete,decom\n')
+        migration_status.write(
+            'name,link,lead,pre_intake,oit_intake,migrate_to_cloud,migration_planning,provisioning_tasks,'
+            'migration_cutover,operations_tasks,cutover_complete,decom\n')
         product_rows = []
         for md in markdown_files:
             if md.casefold() not in IGNORE_LIST:
@@ -71,7 +73,6 @@ def get_status(string):
 
 
 def main():
-
     repo = 'https://github.com/department-of-veterans-affairs/vets.gov-status'
     markdown_files = os.listdir(MARKDOWN_DIR)
 

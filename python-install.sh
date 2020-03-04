@@ -3,7 +3,7 @@
 
 set -e
 
-pip install virtualenv pip-tools
+pip install virtualenv
 
 virtualenv -p ~/.pyenv/shims/python ENV
 source ENV/bin/activate

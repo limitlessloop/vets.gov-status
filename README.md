@@ -74,7 +74,13 @@ Go into the scripts directory and run the scripts with `./updates.sh`
 
 ### Adding new packages to python scripts
 
-Add the package names to `requirements.in` then run `./upgrade-requirements.sh`
+Add the package names to `requirements.in` then run `./upgrade-requirements.sh` to get them synced to `requirements.txt`. 
+
+Then run `./python-install.sh` to update your virtual environment with the new packages.
+
+### Running Tests
+
+Run tests with pytest and generate a coverage report with  `./run-tests.sh`.
 
 ## Deploying
 

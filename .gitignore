@@ -8,3 +8,10 @@ _vendor/
 .jekyll-cache
 ENV
 venv/
+cov_html/
+pytest_unit.xml
+__pycache__/
+
+# test results
+results/
+.coverage
