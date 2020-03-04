@@ -4,7 +4,7 @@ import datetime
 import json
 import os
 
-from apiclient.discovery import build
+from googleapiclient.discovery import build
 from google.oauth2.service_account import Credentials
 
 from analytics_helpers import make_df
