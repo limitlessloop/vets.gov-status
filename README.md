@@ -64,6 +64,8 @@ Once deployed the data is static until the next deploy. Because the executive sc
 
 ## Run Python Scripts
 
+Make sure you have the correct version of python: `pyenv install 3.6.8` (use version in `.python-version`)
+
 Run `./python-install.sh` to install a virtual environment
 
 Activate the virtual environment with `source ENV/bin/activate`

@@ -1,5 +1,6 @@
 _site/
 _vendor/
+.idea/
 .sass-cache
 .DS_Store
 *.p12
