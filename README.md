@@ -105,6 +105,18 @@ Then run `./python-install.sh` to update your virtual environment with the new p
 
 Run tests with pytest and generate a coverage report with  `./run-tests.sh`.
 
+### Running with Docker
+
+You can run the scripts in a Docker image using the following commands:
+
+1. `cd scripts`
+
+2. `docker build -t scorecard-fetch .`
+
+3. `docker run --env AWS_SECRET_ACCESS_KEY --env AWS_SESSION_TOKEN --env AWS_ACCESS_KEY_ID scorecard-fetch`
+
+Note that we pass in the host machine's AWS credentials.
+
 ## Deploying
 
 Our deployments are handled by Jenkins using the `Jenkinsfile`. We deploy by committing to the `production` branch. We use the `demo` branch to deploy to our development server to internally demo new boards or tile updates without blocking the data update path from `master` to `production`.
