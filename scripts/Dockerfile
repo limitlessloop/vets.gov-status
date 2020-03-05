@@ -12,4 +12,4 @@ RUN python3 -m pip install --no-cache-dir --require-hashes --no-deps -r requirem
 
 COPY . .
 
-CMD ["/application/updates.sh"]
+CMD ["/application/fetch-data.sh"]
