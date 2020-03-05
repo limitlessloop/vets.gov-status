@@ -67,7 +67,7 @@ Once deployed the data is static until the next deploy. Because the executive sc
   bundle exec jekyll serve
   ```
 
-## Run Python Scripts
+### Run Python Scripts
 
 Make sure you have the correct version of python: `pyenv install 3.6.8` (use version in `.python-version`)
 
