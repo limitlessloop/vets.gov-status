@@ -17,3 +17,6 @@ results/
 .coverage
 
 credstash.log
+
+test/logs/
+test/node_modules/
