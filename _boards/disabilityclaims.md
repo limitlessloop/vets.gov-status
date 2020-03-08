@@ -1,7 +1,7 @@
 ---
 title: Claims Status Tracker
 date_added: 2016-12-05 00:00:00 -0500
-vetsdotgov_url: https://www.vets.gov/track-claims
+vetsdotgov_url: https://www.va.gov/claim-or-appeal-status/
 status: normal
 category: Track
 description: Veterans can track and update claims in one place

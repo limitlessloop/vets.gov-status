@@ -1,7 +1,7 @@
 ---
 title: Dependent's Education Application
 date_added:
-vetsdotgov_url: https://www.vets.gov/education/apply-for-education-benefits/
+vetsdotgov_url: https://www.va.gov/education/how-to-apply/
 status: normal
 category: Apply
 description: Dependents can apply for education benefits online using any mobile device

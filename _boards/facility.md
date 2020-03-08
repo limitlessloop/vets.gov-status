@@ -1,7 +1,7 @@
 ---
 title: Facility Locator
 date_added:
-vetsdotgov_url: https://www.vets.gov/facility-locator/
+vetsdotgov_url: https://www.va.gov/find-locations/
 status: normal
 category: Discover
 description: Veterans can search facilities and VA services

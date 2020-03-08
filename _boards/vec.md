@@ -1,7 +1,7 @@
 ---
 title: Veterans Employment Center
 date_added: 2015-11-01 00:00:00 -0500
-vetsdotgov_url: https://www.vets.gov/employment/
+vetsdotgov_url: https://www.va.gov/careers-employment/
 status: normal
 category: Manage
 description: Saved $14M+ in vendor costs by merging 40 Veteran employment sites for $9K in 2 weeks

@@ -1,7 +1,7 @@
 ---
 title: Prescription Refills
 date_added: 2016-12-05 00:00:00 -0500
-vetsdotgov_url: https://www.vets.gov/healthcare/prescriptions
+vetsdotgov_url: https://www.va.gov/health-care/refill-track-prescriptions/
 status: normal
 category: Manage
 description: Veterans can refill their VA prescriptions from any device

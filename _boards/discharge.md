@@ -1,7 +1,7 @@
 ---
 title: Discharge Tool
 date_added:
-vetsdotgov_url: https://www.vets.gov/discharge-upgrade-instructions/
+vetsdotgov_url: https://www.va.gov/discharge-upgrade-instructions/
 status: normal
 category: Discover
 description: Veterans can learn how to apply for a discharge upgrade

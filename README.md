@@ -1,8 +1,8 @@
-# Vets.gov Executive Scorecard
+# VA.gov Executive Scorecard
 
-> A scorecard for vets.gov projects
+> A scorecard for va.gov projects
 
-The executive scorecard is meant to provide a simple overview of the vets.gov project to external audiences. It is often used in briefings but should be able to stand-alone with enough context offered for a visitor unfamiliar with vets.gov to navigate it and understand it.
+The executive scorecard is meant to provide a simple overview of the va.gov project to external audiences. It is often used in briefings but should be able to stand-alone with enough context offered for a visitor unfamiliar with va.gov to navigate it and understand it.
 
 ## Jekyll Structure
 
@@ -18,13 +18,13 @@ Datapoints for tiles are hard-coded in the YAML front matter under 'tiles' in ea
 
 ## Design Context and Details
 
-The executive scorecard has a main landing page `index.html` that provides the vets.gov vision statement as context for the project.
+The executive scorecard has a main landing page `index.html` that provides the va.gov vision statement as context for the project.
 
-The six most important data points on the impact of vets.gov are presented in a set of "tiles." These are rotated and may be customized for ahead of briefings to key stakeholders.
+The six most important data points on the impact of va.gov are presented in a set of "tiles." These are rotated and may be customized for ahead of briefings to key stakeholders.
 
 A set of summary metrics over time are conveyed in series of charts in a tab group. The metrics are presented as weekly data to smooth out some of the day-to-day variance and provide a long-term trend view. The tabs are used to conserve visual space. The data for the charts is pulled in at build time from csv files in the `_data` directory. Those csv files are updated using Python scripts in `scripts` directory.
 
-Each significant feature or function of vets.gov gets its own "tile" in the project section. They are grouped by which of the parts of vision statement they fulfill. Completed features are links to detailed scorecard boards. "Coming soon" features can also be displayed. This section is constructed at build time from the contents of the `_board` directory.
+Each significant feature or function of va.gov gets its own "tile" in the project section. They are grouped by which of the parts of vision statement they fulfill. Completed features are links to detailed scorecard boards. "Coming soon" features can also be displayed. This section is constructed at build time from the contents of the `_board` directory.
 
 There are special call-out sections for the human-centered design work and progress of migrations.
 
@@ -44,7 +44,7 @@ Required fields below are marked with the asterisk (*) character. Other fields a
 
 ### Chart data
 
-The charts are powered by the vets.gov Google Analytics account. The Python scripts in `scripts` pull data from the Google Analytics account and create a set of updated CSV files in `_data` that are then used by Jekyll to build the actual charts.
+The charts are powered by the va.gov Google Analytics account. The Python scripts in `scripts` pull data from the Google Analytics account and create a set of updated CSV files in `_data` that are then used by Jekyll to build the actual charts.
 
 Once deployed the data is static until the next deploy. Because the executive scorecard is meant for external audiences, this ensures that the data is available and can be quality controlled prior to putting it in front of an audience. Once deployed, we do not have to worry about data abnormalities or failures appearing.
 

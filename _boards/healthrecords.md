@@ -1,7 +1,7 @@
 ---
 title: Health Records
 date_added:
-vetsdotgov_url: https://www.vets.gov/health-care/health-records
+vetsdotgov_url: https://www.va.gov/health-care/get-medical-records/
 status: normal
 category: Manage
 description: Veterans can view and download their electronic health records
