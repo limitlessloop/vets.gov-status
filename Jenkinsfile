@@ -12,7 +12,7 @@ pipeline {
           args = "--volume=${pwd()}:/srv/jekyll"
 
           dockerImage.inside(args) {
-              sh 'jekyll build --trace'
+              sh '/usr/gem/bin/jekyll build --trace'
           }
         }
       }
@@ -52,8 +52,8 @@ pipeline {
     }
     failure {
       slackSend message: "Scorecard Jenkins build *FAILED*!", color: "danger", channel: "scorecard-ci-temp"
-      message = sh(returnStdout: true, script: 'wget ${env.BUILD_URL}/consoleText').toString()
-      slackSend message: "Logs: ${message}", color: "danger", channel: "scorecard-ci-temp"
+      //message = sh(returnStdout: true, script: 'wget ${env.BUILD_URL}/consoleText').toString()
+      //slackSend message: "Logs: ${message}", color: "danger", channel: "scorecard-ci-temp"
     }
   }
 }
