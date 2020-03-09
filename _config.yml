@@ -22,6 +22,7 @@ exclude:
   - python-install.sh
   - README.md
   - run-tests.sh
+  - dev
   - ENV
   - results
   - scripts
