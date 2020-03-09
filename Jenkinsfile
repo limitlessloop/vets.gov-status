@@ -10,10 +10,17 @@ pipeline {
           slackSend message: "Scorecard Jenkins build started", color: "good", channel: "scorecard-ci-temp"
           dockerImage = docker.image('jekyll/jekyll:4.0')
           args = "--volume=${pwd()}:/srv/jekyll"
-          /*dockerImage.inside(args) {
-            sh 'jekyll build --trace'
-          } */
-          echo "This should pass"
+
+          try {
+            dockerImage.inside(args) {
+              sh 'jekyll build --trace'
+            }
+          } catch (Throwable e) {
+            message = sh(returnStdout: true, script: 'docker logs ${dockerImage.id}').toString()
+            slackSend message: "Scorecard Jenkins build error: ${message}", color: "danger", channel: "scorecard-ci-temp"
+            slackSend message: "Error thrown: ${e.getMessage()}", color: "danger", channel: "scorecard-ci-temp"
+            throw e
+          }
         }
       }
     }
