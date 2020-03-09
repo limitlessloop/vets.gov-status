@@ -7,7 +7,8 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          dockerImage = docker.image('jekyll/jekyll')
+          slackSend message: "Scorecard Jenkins build started", color: "good", channel: "va-scorecard-refresh"
+          dockerImage = docker.image('jekyll/jekyll:4.0')
           args = "-v ${pwd()}:/srv/jekyll"
           dockerImage.inside(args) {
             sh '/usr/gem/bin/jekyll build'
@@ -27,6 +28,7 @@ pipeline {
       }
       steps {
         script {
+          slackSend message: "Scorecard Jenkins upload started", color: "good", channel: "va-scorecard-refresh"
           def envs = [
             'demo': ['dev'],
             'master': ['staging'],
@@ -43,6 +45,12 @@ pipeline {
   post {
     always {
       deleteDir() /* clean up our workspace */
+    }
+    success {
+      slackSend message: "Scorecard Jenkins build succeeded", color: "good", channel: "va-scorecard-refresh"
+    }
+    failure {
+      slackSend message: "Scorecard Jenkins build *FAILED*!", color: "danger", channel: "va-scorecard-refresh"
     }
   }
 }
