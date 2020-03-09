@@ -21,3 +21,12 @@
     - id: loa3signups
       label: Total LOA3 signups
       color: rgb(175,175,175)
+
+- name: JSN to CSV accounts
+  icon: minus-sign
+  data: _json_to_csv
+  context: Spike accoungts converted json from foresee to csv
+  cols:
+    - id: question_grade
+      label: satisfaction grade
+      color: rgb(17,46,81)
