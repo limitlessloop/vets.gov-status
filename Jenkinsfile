@@ -7,7 +7,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          slackSend message: "Scorecard Jenkins build started", color: "good", channel: "scorecard-ci-temp"
+          // slackSend message: "Scorecard Jenkins build started", color: "good", channel: "scorecard-ci-temp"
           dockerImage = docker.image('jekyll/jekyll:4.0')
           args = "--volume=${pwd()}:/srv/jekyll"
 
@@ -48,12 +48,12 @@ pipeline {
       deleteDir() /* clean up our workspace */
     }
     success {
-      slackSend message: "Scorecard Jenkins build succeeded", color: "good", channel: "scorecard-ci-temp"
+      echo "Build success"
+      // slackSend message: "Scorecard Jenkins build succeeded", color: "good", channel: "scorecard-ci-temp"
     }
     failure {
-      slackSend message: "Scorecard Jenkins build *FAILED*!", color: "danger", channel: "scorecard-ci-temp"
-      //message = sh(returnStdout: true, script: 'wget ${env.BUILD_URL}/consoleText').toString()
-      //slackSend message: "Logs: ${message}", color: "danger", channel: "scorecard-ci-temp"
+      echo "Build failure"
+      // slackSend message: "Scorecard Jenkins build *FAILED*!", color: "danger", channel: "scorecard-ci-temp"
     }
   }
 }
