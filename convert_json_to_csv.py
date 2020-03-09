@@ -3,19 +3,28 @@
 
 
 import json 
-import csv 
+import csv
+from os import path
 from pandas import json_normalize
 
+INPUT_JSON = "foresee_full_input.json"
+OUTPUT_CSV = "scripts/data/foresee_full_output.csv"
 
 # Opening JSON file and loading the data 
-# into the variable data 
-with open('foresee_full_input.json') as json_file:
+# into the variable data
+if not path.exists(INPUT_JSON):
+	raise SystemExit(INPUT_JSON + " does not exist")
+
+with open(INPUT_JSON) as json_file:
 	data = json.load(json_file) 
 
 json_data = data['items'] 
 
-# now we will open a file for writing 
-data_file = open('foresee_full_output.csv', 'w')
+# now we will open a file for writing
+mode = 'x'
+if path.exists(OUTPUT_CSV):
+	mode = 'w'
+data_file = open(OUTPUT_CSV, mode)
 
 # create the csv writer object 
 csv_writer = csv.writer(data_file) 
@@ -40,7 +49,7 @@ another_count = 0
 for response in all_responses:
 	questions_and_answers.update(response)
 
-for single in questions_and_answers:
+for single in questions_and_answers['responses']:
 	# Writing headers of CSV file
 	if another_count == 0:
 		print(single)
