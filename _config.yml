@@ -10,12 +10,19 @@ defaults:
       layout: board
 
 exclude:
-  - scripts
-  - LICENSE.md
-  - README.md
   - Gemfile
   - Gemfile.lock
   - Jenkinsfile
+  - Jenkinsfile.autodeploy
   - Jenkinsfile.update
+  - LICENSE.md
+  - pytest.ini
+  - python-install.sh
+  - README.md
+  - run-tests.sh
+  - ENV
+  - results
+  - scripts
+  - test
 
 baseurl: "/scorecard"

@@ -9,9 +9,9 @@ pipeline {
         script {
           slackSend message: "Scorecard Jenkins build started", color: "good", channel: "va-scorecard-refresh"
           dockerImage = docker.image('jekyll/jekyll:4.0')
-          args = "-v ${pwd()}:/srv/jekyll"
+          args = "--volume=${pwd()}:/srv/jekyll"
           dockerImage.inside(args) {
-            sh '/usr/gem/bin/jekyll build'
+            sh 'jekyll build --trace'
           }
         }
       }

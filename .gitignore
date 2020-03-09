@@ -1,22 +1,27 @@
-_site/
-_vendor/
-.idea/
+# Jekyll stuff
+.jekyll-cache/
 .sass-cache
+_site/
+
+# Ruby stuff
+.vendor/
+
+# IDE
+.idea/
+
+# Misc
 .DS_Store
 *.p12
+credstash.log
+
+# Python stuff
 .env
-.jekyll-cache
-ENV
+ENV/
 venv/
-cov_html/
-pytest_unit.xml
 __pycache__/
 
 # test results
 results/
 .coverage
-
-credstash.log
-
 test/logs/
 test/node_modules/
