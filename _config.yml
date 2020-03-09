@@ -12,6 +12,8 @@ defaults:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - jekyll-build.sh
+  - jekyll-serve.sh
   - Jenkinsfile
   - Jenkinsfile.autodeploy
   - Jenkinsfile.update
