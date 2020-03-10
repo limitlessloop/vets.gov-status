@@ -4,10 +4,8 @@
 
 export PYTHONWARNINGS="ignore::DeprecationWarning:numpy"
 
-command="python -m pytest \
-  --junitxml results/unit/pytest-unit.xml --cov \
-  --cov-report html:results/coverage/ \
-  --cov-report xml:results/coverage/pytest-coverage.xml"
+command="python -m pytest --cov \
+  --cov-report term --cov-report html"
 
 echo "$command"
 eval "$command"
