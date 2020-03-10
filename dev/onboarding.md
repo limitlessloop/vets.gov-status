@@ -3,12 +3,12 @@ The [va.gov-teams repository](https://github.com/department-of-veterans-affairs/
 # Orientation/onboarding
 * [Engineering onboarding](https://github.com/department-of-veterans-affairs/va.gov-team/blob/master/platform/engineering/backend/engineeringonboarding.md)
 * [how to get access to back-end systems](https://github.com/department-of-veterans-affairs/va.gov-team/blob/master/platform/working-with-vsp/orientation/request-access-to-tools.md#additional-steps-for-developers)
-* [SSH Socks Setup](ssh-socks-setup.md)
+* [SSH Socks Setup Script](https://github.com/department-of-veterans-affairs/va.gov-team/blob/master/scripts/socks/)
 
 # Development
 * [Front-end best practices](https://github.com/department-of-veterans-affairs/va.gov-team/blob/master/platform/engineering/frontend/engineering-best-practices.md)
 * [Lots of Documentation about setting up the platform](https://department-of-veterans-affairs.github.io/veteran-facing-services-tools/)
-* [engineering team meeting notes](https://github.com/department-of-veterans-affairs/va.gov-team/tree/master/platform/engineering/team-meetings)
+* [Engineering team meeting notes](https://github.com/department-of-veterans-affairs/va.gov-team/tree/master/platform/engineering/team-meetings)
 
 # Architecture
 * [Request for comment](https://github.com/department-of-veterans-affairs/va.gov-team/tree/master/platform/engineering/request-for-comment)
