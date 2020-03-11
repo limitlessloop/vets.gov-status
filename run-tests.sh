@@ -1,15 +1,10 @@
 #!/usr/bin/env bash
-
-# Note - not doing a `set -e` because we don't want the script to exit without displaying test failures
+# Make sure we exit on failure b/c this is run in CI
+set -o errexit
 
 export PYTHONWARNINGS="ignore::DeprecationWarning:numpy"
 
-command="python -m pytest --cov \
-  --cov-report term --cov-report html"
+python -m pytest --cov --cov-report term --cov-report xml --cov-report html
 
-echo "$command"
-eval "$command"
-
-echo
-echo Flake8 comments:
+echo "Flake8 comments:"
 flake8 --max-line-length=120 scripts

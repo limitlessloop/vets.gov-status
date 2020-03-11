@@ -18,3 +18,7 @@ def test_find_sunday():
     with freeze_time("2019-11-03"):
         sun = update_data.find_sunday()
         assert sun == datetime.date(2019, 10, 27)
+
+
+def test_fail():
+    assert False

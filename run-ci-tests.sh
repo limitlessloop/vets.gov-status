@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Make sure we exit on failure b/c this is run in CI
+set -o errexit
 
 # Build the image for testing
 docker build -t scorecard-img -f Dockerfile.test .
