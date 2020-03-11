@@ -12,23 +12,4 @@ defaults:
     values:
       layout: board
 
-exclude:
-  - Dockerfile.test
-  - jekyll-build.sh
-  - jekyll-serve.sh
-  - Jenkinsfile
-  - Jenkinsfile.autodeploy
-  - Jenkinsfile.update
-  - LICENSE.md
-  - pytest.ini
-  - python-install.sh
-  - README.md
-  - run-tests.sh
-  - run-ci-tests.sh
-  - dev
-  - ENV
-  - results
-  - scripts
-  - test
-
 baseurl: "/scorecard"
