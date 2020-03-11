@@ -1,3 +1,6 @@
+source: src
+destination: _site
+
 collections:
   boards:
     output: true
