@@ -4,32 +4,10 @@ import datetime
 import json
 import os
 
-from googleapiclient.discovery import build
-from google.oauth2.service_account import Credentials
-
-from analytics_helpers import make_df
+from analytics_helpers import make_df, initialize_analyticsreporting
 
 import numpy as np
 import pandas as pd
-
-SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
-KEY_FILE_LOCATION = os.environ['GA_SERVICEACCOUNT']
-SERVICE_ACCOUNT_EMAIL = 'analytics@inductive-voice-142915.iam.gserviceaccount.com'
-
-
-def initialize_analyticsreporting():
-    """Initializes an analyticsreporting service object.
-
-    Returns:
-    analytics an authorized analyticsreporting service object.
-    """
-
-    credentials = Credentials.from_service_account_file(KEY_FILE_LOCATION, scopes=SCOPES)
-
-    # Build the service object.
-    analytics = build('analyticsreporting', 'v4', credentials=credentials)
-
-    return analytics
 
 
 def find_sunday():

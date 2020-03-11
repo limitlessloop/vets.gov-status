@@ -4,6 +4,22 @@ pipeline {
   }
 
   stages {
+    stage('Unit tests') {
+      steps {
+        script {
+          sh './run-ci-tests.sh'  // this copies results into ./results directory
+        }
+      }
+      post {
+        always {
+          junit testResults: 'results/unit/pytest-unit.xml'
+        }
+        success {
+          archiveArtifacts artifacts: "results/coverage/**"
+          publishHTML(target: [reportDir: 'results/coverage', reportFiles: 'index.html', reportName: 'Coverage', keepAll: true])
+        }
+      }
+    }
     stage('Build') {
       steps {
         script {

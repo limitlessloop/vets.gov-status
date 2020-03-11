@@ -10,6 +10,7 @@ defaults:
       layout: board
 
 exclude:
+  - Dockerfile.test
   - Gemfile
   - Gemfile.lock
   - jekyll-build.sh
@@ -22,6 +23,7 @@ exclude:
   - python-install.sh
   - README.md
   - run-tests.sh
+  - run-ci-tests.sh
   - dev
   - ENV
   - results

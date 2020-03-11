@@ -1,6 +1,6 @@
 # VA.gov Executive Scorecard
 
-> A scorecard for va.gov projects
+## A scorecard for va.gov projects
 
 The executive scorecard is meant to provide a simple overview of the va.gov project to external audiences. It is often used in briefings but should be able to stand-alone with enough context offered for a visitor unfamiliar with va.gov to navigate it and understand it.
 
@@ -54,10 +54,12 @@ In order to mimic the CI environment dependencies, we run Jekyll out of a docker
 build helper scripts as follows:
 
 Build jekyll site
-> ./jekyll-build.sh
+
+`$ ./jekyll-build.sh`
 
 Start jekyll site and serve it on http://localhost:4000/scorecard/
-> ./jekyll-serve.sh
+
+`$ ./jekyll-serve.sh`
 
 ### Run Python Scripts
 
@@ -101,11 +103,11 @@ Run tests with pytest and generate a coverage report with  `./run-tests.sh`.
 
 You can run the scripts in a Docker image using the following commands:
 
-1. `cd scripts`
-
-2. `docker build -t scorecard-fetch .`
-
-3. `docker run --env AWS_SECRET_ACCESS_KEY --env AWS_SESSION_TOKEN --env AWS_ACCESS_KEY_ID scorecard-fetch`
+```
+$ cd scripts
+$ docker build -t scorecard-fetch .
+$ docker run --env AWS_SECRET_ACCESS_KEY --env AWS_SESSION_TOKEN --env AWS_ACCESS_KEY_ID scorecard-fetch
+```
 
 Note that we pass in the host machine's AWS credentials.
 
