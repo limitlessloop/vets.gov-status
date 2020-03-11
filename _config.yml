@@ -14,8 +14,6 @@ defaults:
 
 exclude:
   - Dockerfile.test
-  - Gemfile
-  - Gemfile.lock
   - jekyll-build.sh
   - jekyll-serve.sh
   - Jenkinsfile
