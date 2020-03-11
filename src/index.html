@@ -1,4 +1,11 @@
 ---
+name: Transactions
+context: Successful transactions in the last year
+cols:
+- id: totalEvents
+  label: Transactions
+  color: rgb(17,46,81)
+
 title: Scorecard
 mission_statement:
 access: Improving Veteran access to benefits and services
@@ -115,6 +122,36 @@ cloud:
     {% include research.html %}
   </div>
 </div>
+
+<canvas id="transactionsChart" width="600" height="250"></canvas>
+
+<script>
+var ctx = document.getElementById('transactionsChart').getContext('2d');
+{% capture datafile %}{{ "all_transactions" }}{% endcapture %}
+
+var transactionsChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [{% for line in site.data[datafile] %}'{{ line.isoYearIsoWeek }}',{% endfor %}],
+        datasets: [{
+            label: 'Transactions',
+            data: [{% for line in site.data[datafile] %}{{ line.totalEvents }},{% endfor %}],
+            borderColor: 'rgb(17,46,81)',
+            fill: false
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+</script>
 
 {% include cloud.html %}
 
