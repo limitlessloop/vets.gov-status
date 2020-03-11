@@ -29,7 +29,7 @@ var ctx = document.getElementById('transactionsChart').getContext('2d');
 var transactionsChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: [{% for line in site.data[datafile] %}'{{ line.isoYearIsoWeek }}',{% endfor %}],
+        labels: [{% for line in site.data[datafile] %}'{{ line.date }}',{% endfor %}],
         datasets: [{
             label: 'Transactions',
             data: [{% for line in site.data[datafile] %}{{ line.totalEvents }},{% endfor %}],

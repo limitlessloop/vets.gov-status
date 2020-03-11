@@ -47,3 +47,12 @@ def make_df(report):
         output.append(current_data)
 
     return pd.DataFrame(output)
+
+
+def format_yearMonth(yearMonth):
+    year = yearMonth[:4]
+    month = yearMonth[-2:]
+    if month[0] == '0':
+        month = month[1]
+    formatted_date = month + '/' + year
+    return formatted_date

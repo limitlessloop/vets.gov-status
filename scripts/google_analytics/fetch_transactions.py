@@ -3,7 +3,7 @@ import os
 from googleapiclient.discovery import build
 from google.oauth2.service_account import Credentials
 
-from analytics_helpers import make_df
+from analytics_helpers import make_df, format_yearMonth
 
 SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
 KEY_FILE_LOCATION = os.environ['GA_SERVICEACCOUNT']
@@ -25,7 +25,7 @@ def get_transactions_report(analytics_service, view_id):
             'reportRequests': [
                 {
                     'viewId': view_id,
-                    'dateRanges': [{'startDate': '90daysAgo',
+                    'dateRanges': [{'startDate': '365daysAgo',
                                     'endDate': 'yesterday'}],
                     'metrics': [{'expression': 'ga:totalEvents'}],
                     'segments': [
@@ -33,7 +33,7 @@ def get_transactions_report(analytics_service, view_id):
                     ],
                     'dimensions': [
                         {'name': 'ga:segment'},
-                        {'name': 'ga:isoYearIsoWeek'}
+                        {'name': 'ga:yearMonth'}
                     ],
                     'dimensionFilterClauses': [
                         {
@@ -69,6 +69,14 @@ def run_report(analytics_service):
     return df
 
 
+def add_month_column(raw_df):
+    if 'ga:yearMonth' in raw_df.columns:
+        raw_df['date'] = raw_df['ga:yearMonth'].apply(
+            lambda d: format_yearMonth(d))
+        del raw_df['ga:yearMonth']
+    return raw_df
+
+
 def write_df_to_csv(df):
     filename = os.path.join(os.environ['DATA_DIR'], "all_transactions.csv")
     df.to_csv(filename, date_format="%m/%d/%y")
@@ -79,7 +87,7 @@ def main():
 
     df = run_report(analytics_service)
 
-    write_df_to_csv(df)
+    write_df_to_csv(add_month_column(df))
 
 
 if __name__ == '__main__':

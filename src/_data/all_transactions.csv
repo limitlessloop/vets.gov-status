@@ -1,15 +1,14 @@
-,segment,isoYearIsoWeek,totalEvents
-0,Dynamic Segment,201950,207598
-1,Dynamic Segment,201951,421669
-2,Dynamic Segment,201952,302205
-3,Dynamic Segment,202001,392722
-4,Dynamic Segment,202002,467652
-5,Dynamic Segment,202003,458590
-6,Dynamic Segment,202004,483083
-7,Dynamic Segment,202005,494890
-8,Dynamic Segment,202006,452013
-9,Dynamic Segment,202007,492715
-10,Dynamic Segment,202008,455845
-11,Dynamic Segment,202009,435546
-12,Dynamic Segment,202010,482099
-13,Dynamic Segment,202011,163116
+,ga:segment,totalEvents,date
+0,Dynamic Segment,1298988,3/2019
+1,Dynamic Segment,974295,4/2019
+2,Dynamic Segment,1756345,5/2019
+3,Dynamic Segment,1891152,6/2019
+4,Dynamic Segment,1969164,7/2019
+5,Dynamic Segment,2009456,8/2019
+6,Dynamic Segment,1912798,9/2019
+7,Dynamic Segment,1954591,10/2019
+8,Dynamic Segment,1582533,11/2019
+9,Dynamic Segment,1829857,12/2019
+10,Dynamic Segment,2145549,1/2020
+11,Dynamic Segment,1815069,2/2020
+12,Dynamic Segment,651316,3/2020
