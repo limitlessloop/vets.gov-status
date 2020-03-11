@@ -17,17 +17,32 @@ var myCharts = [];
         {% if page.charts %}
 
           {% for chart in site.data.charts %}
-          <li {% if forloop.first == true %}class="active"{% endif %}><a href="#{{chart.data}}" data-toggle="tab"><span class="glyphicon glyphicon-{{chart.icon}} tab-icon" aria-hidden="true"></span><span>{{chart.name}}</span></a></li>
+          <li {% if forloop.first == true %}class="active"{% endif %}>
+            <a href="#{{chart.data}}" data-toggle="tab">
+              <span class="glyphicon glyphicon-{{chart.icon}} tab-icon" aria-hidden="true"></span>
+              <span>{{chart.name}}</span>
+            </a>
+          </li>
           {% endfor %}
         {% endif %}
         {% if page.accounts %}
           {% for chart in site.data.accounts %}
-          <li><a href="#{{chart.data}}" data-toggle="tab"><span class="glyphicon glyphicon-{{chart.icon}} tab-icon" aria-hidden="true"></span><span>{{chart.name}}</span></a></li>
+          <li>
+            <a href="#{{chart.data}}" data-toggle="tab">
+              <span class="glyphicon glyphicon-{{chart.icon}} tab-icon" aria-hidden="true"></span>
+              <span>{{chart.name}}</span>
+            </a>
+          </li>
           {% endfor %}
         {% endif %}
         {% if page.clicks %}
           {% for chart in site.data.clicks %}
-          <li {% if forloop.first == true %}class="active"{% endif %}><a href="#{{chart.data}}" data-toggle="tab"><span class="glyphicon glyphicon-{{chart.icon}} tab-icon" aria-hidden="true"></span><span>{{chart.name}}</span></a></li>
+          <li {% if forloop.first == true %}class="active"{% endif %}>
+            <a href="#{{chart.data}}" data-toggle="tab">
+              <span class="glyphicon glyphicon-{{chart.icon}} tab-icon" aria-hidden="true"></span>
+              <span>{{chart.name}}</span>
+            </a>
+          </li>
           {% endfor %}
         {% endif %}
       </ul>
