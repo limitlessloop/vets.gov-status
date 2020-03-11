@@ -1,129 +1,26 @@
 ---
+title: VA.gov Performance
+
 name: Transactions
 context: Successful transactions in the last year
 cols:
 - id: totalEvents
   label: Transactions
   color: rgb(17,46,81)
-
-title: Scorecard
-mission_statement:
-access: Improving Veteran access to benefits and services
-tiles:
-
-  - name: Cloud cost savings of 85% versus internal VA hosting
-    layout: compare_100bars
-    id: hosting
-    datapoint: 15
-    after_text: Actual AWS costs
-    before: 100
-    before_text: Estimated VA Hosting
-
-  - name: ID.me accounts
-    layout: basic_count
-    datapoint: loa3accounts
-    context: that have been secured to the highest level of federal certification (LOA3) against fraud, abuse, and cyber threats
-
-  - name: Pages optimized for viewing on mobile devices
-    layout: compare_100bars
-    id: mobile
-    datapoint: 100
-    before: 46
-
-  - name: Accessibility and 508 compliance targets
-    layout: basic
-    datapoint: 100%
-    context: all new VA.gov features to enforce their accessibility to users of assistive technology
-
-  - name: Percent of the approximately 600k annual healthcare applications completed online
-    layout: compare_pie
-    id: applications
-    datapoint: 50
-    before: 10
-    after_text: 2017
-
-  - name: Days in VA release cycle
-    layout: compare
-    datapoint: 1
-    after_text: Now
-    before: 90
-    before_text: Before
-
-charts: core
-accounts: core
-
-feedback:
-
-  - name: Veteran reaction to healthcare application
-    layout: quote
-    text: This is super easy. I have not had this level of ease with a website for the government at all. This is awesome&hellip;the other website&hellip;leads you in back door that’s blocked with spikes and IEDs.”
-
-  - name: Learn more about our human-centered design approach to building VA.gov
-    url: research.html
-    layout: link
-    text:
-
-cloud:
-
-  - name: Availability
-    layout: basic_cloud
-    datapoint: reachability
-    context: based on our continuous reachability monitoring
-
-  - name: Error rate
-    layout: basic_cloud
-    datapoint: error_rate
-    context: of requests that our software does not handle successfully
 ---
 
-{% include header.html %}
+<html>
+<head>
+  <title>{{page.title}}</title>
+  <link rel="shortcut icon" href="{{site.baseurl}}/assets/img/design/icons/favicon.ico" />
+  <script src="{{site.baseurl}}/assets/js/Chart.bundle.min.js"></script>
+</head>
 
-{% include tile_section.html %}
+<body>
 
-<div class="container">
-  <div class="row subtitle">
-    <div class="col-md-12">
-      <p>Enabling Veterans to:</p>
-    </div>
-  </div>
+<div style="width:600; height:250">
+  <canvas id="transactionsChart" width="600px" height="250px"></canvas>
 </div>
-
-<div class="category-grid">
-  {% assign categories = "Discover, Apply, Track, Manage" | split: ", " %}
-  {% for category in categories %}
-  {% assign shaded = forloop.index | modulo: 2 %}
-  <div class="band{% if shaded == 0 %} shaded{% endif %}">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 category-header">
-          <p>{{category}}</p>
-        </div>
-      </div>
-    <div class="row">
-      {% assign projects = site.boards | where: "category", category | sort: "status" %}
-      {% for project in projects %}
-      <div class="col-sm-6 col-md-3">
-        {% include tiles/project.html %}
-      </div>
-      {% endfor %}
-      </div>
-    </div>
-  </div>
-  {% endfor %}
-</div>
-
-<div class="quote-band">
-  <div class="container">
-    <div class="row subtitle">
-      <div class="col-md-12">
-        <h3>Veteran-Centered Design</h3>
-      </div>
-    </div>
-    {% include research.html %}
-  </div>
-</div>
-
-<canvas id="transactionsChart" width="600" height="250"></canvas>
 
 <script>
 var ctx = document.getElementById('transactionsChart').getContext('2d');
@@ -141,6 +38,9 @@ var transactionsChart = new Chart(ctx, {
         }]
     },
     options: {
+        legend: {
+            display: false
+        },
         scales: {
             yAxes: [{
                 ticks: {
@@ -153,6 +53,9 @@ var transactionsChart = new Chart(ctx, {
 
 </script>
 
-{% include cloud.html %}
 
-{% include footer.html %}
+</body>
+
+</html>
+
+
