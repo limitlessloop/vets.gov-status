@@ -5,6 +5,7 @@ _site/
 
 # Ruby stuff
 .vendor/
+_vendor
 # Ignoring Gemfile and Gemfile.lock to work around Jenkins/Docker/Jekyll issue documented in
 # https://github.com/department-of-veterans-affairs/vets.gov-status/issues/3193
 Gemfile
