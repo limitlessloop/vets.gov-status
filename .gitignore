@@ -14,10 +14,9 @@ Gemfile.lock
 # IDE
 .idea/
 
-# Misc
-.DS_Store
-*.p12
-credstash.log
+# yarn / node / etc
+node_modules
+yarn-error.log
 
 # Python stuff
 .env
@@ -30,3 +29,8 @@ results/
 .coverage
 test/logs/
 test/node_modules/
+
+# Misc
+.DS_Store
+*.p12
+credstash.log
