@@ -1,21 +1,10 @@
-import unittest
-
 from scripts.google_analytics.analytics_helpers import format_yearMonth
 
 
-class FetchTransactionsTest(unittest.TestCase):
-    def test_yearMonth_formatting(self):
-        yearMonth = "201910"
-        expected = "10/2019"
-        actual = format_yearMonth(yearMonth)
-        self.assertEqual(actual, expected)
+def test_yearMonth_formatting():
+    formatted_date = format_yearMonth("201910")
+    assert formatted_date == "10/2019"
 
-    def test_yearMonth_formatting_removes_zero(self):
-        yearMonth = "202001"
-        expected = "1/2020"
-        actual = format_yearMonth(yearMonth)
-        self.assertEqual(actual, expected)
+    formatted_date = format_yearMonth("202001")
+    assert formatted_date == "1/2020"
 
-
-if __name__ == '__main__':
-    unittest.main()
