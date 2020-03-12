@@ -135,3 +135,7 @@ More useful developer onboarding documentation can be [found here](dev/onboardin
 ## Previous repo
 
 This repo previously held a now defunct dashboard. The prior work is archived as a release on this repo in case that work needs to be revisited.
+
+## Browsers supported
+
+The current list of supported browsers for scorecard redesign include Chrome 61, Firefox 60, iOS 11, Edge 16, ChromeAndroid 67, Safari 11. This list aligns with the [vets-website list](https://github.com/department-of-veterans-affairs/vets-website/blob/master/.babelrc#L16).
