@@ -3,7 +3,9 @@ import os
 from googleapiclient.discovery import build
 from google.oauth2.service_account import Credentials
 
-from analytics_helpers import make_df, format_yearMonth
+from analytics_helpers import make_df
+from datetime_utils import find_last_full_twelve_months, reformat_date
+
 
 SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
 KEY_FILE_LOCATION = os.environ['GA_SERVICEACCOUNT']
@@ -20,13 +22,15 @@ def initialize_analytics_service():
 
 
 def get_transactions_report(analytics_service):
+    start_date, end_date = find_last_full_twelve_months()
+
     return analytics_service.reports().batchGet(
         body={
             'reportRequests': [
                 {
                     'viewId': '176188361',
-                    'dateRanges': [{'startDate': '366daysAgo',
-                                    'endDate': 'yesterday'}],
+                    'dateRanges': [{'startDate': start_date,
+                                    'endDate': end_date}],
                     'metrics': [{'expression': 'ga:totalEvents'}],
                     'dimensions': [
                         {'name': 'ga:yearMonth'}
@@ -65,7 +69,7 @@ def run_report(analytics_service):
 def add_month_column(raw_df):
     if 'yearMonth' in raw_df.columns:
         raw_df['date'] = raw_df['yearMonth'].apply(
-            lambda d: format_yearMonth(d))
+            lambda d: reformat_date(d))
         del raw_df['yearMonth']
     return raw_df
 
