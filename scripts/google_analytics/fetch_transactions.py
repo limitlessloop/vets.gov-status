@@ -28,11 +28,7 @@ def get_transactions_report(analytics_service):
                     'dateRanges': [{'startDate': '366daysAgo',
                                     'endDate': 'yesterday'}],
                     'metrics': [{'expression': 'ga:totalEvents'}],
-                    'segments': [
-                        {'segmentId': 'sessions::condition::ga:dimension22=@1,ga:dimension22=@3'}
-                    ],
                     'dimensions': [
-                        {'name': 'ga:segment'},
                         {'name': 'ga:yearMonth'}
                     ],
                     'dimensionFilterClauses': [
@@ -67,10 +63,10 @@ def run_report(analytics_service):
 
 
 def add_month_column(raw_df):
-    if 'ga:yearMonth' in raw_df.columns:
-        raw_df['date'] = raw_df['ga:yearMonth'].apply(
+    if 'yearMonth' in raw_df.columns:
+        raw_df['date'] = raw_df['yearMonth'].apply(
             lambda d: format_yearMonth(d))
-        del raw_df['ga:yearMonth']
+        del raw_df['yearMonth']
     return raw_df
 
 

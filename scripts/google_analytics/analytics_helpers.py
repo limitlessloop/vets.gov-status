@@ -26,8 +26,10 @@ def initialize_analyticsreporting():
 def make_df(report):
     """Turn a single report from a Google Analytics response into dataframe"""
 
-    dim_labels = report['columnHeader']['dimensions']
-    metric_labels = [entry['name']
+    dim_labels = [dim_label.split(':')[-1]
+                  for dim_label
+                  in report['columnHeader']['dimensions']]
+    metric_labels = [entry['name'].split(':')[-1]
                      for entry
                      in report['columnHeader']['metricHeader']['metricHeaderEntries']]
 
