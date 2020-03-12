@@ -19,12 +19,12 @@ def initialize_analytics_service():
     return analytics_service
 
 
-def get_transactions_report(analytics_service, view_id):
+def get_transactions_report(analytics_service):
     return analytics_service.reports().batchGet(
         body={
             'reportRequests': [
                 {
-                    'viewId': view_id,
+                    'viewId': '176188361',
                     'dateRanges': [{'startDate': '366daysAgo',
                                     'endDate': 'yesterday'}],
                     'metrics': [{'expression': 'ga:totalEvents'}],
@@ -60,11 +60,8 @@ def get_transactions_report(analytics_service, view_id):
 
 
 def run_report(analytics_service):
-    view_id_vadotgov = "176188361"
-    response = get_transactions_report(analytics_service, view_id_vadotgov)
+    response = get_transactions_report(analytics_service)
     report = response['reports'][0]
-    print(report['data']['rowCount'])
-    print('total', report['data']['totals'][0]['values'])
     df = make_df(report)
     return df
 
@@ -86,8 +83,9 @@ def main():
     analytics_service = initialize_analytics_service()
 
     df = run_report(analytics_service)
+    df = add_month_column(df)
 
-    write_df_to_csv(add_month_column(df))
+    write_df_to_csv(df)
 
 
 if __name__ == '__main__':
