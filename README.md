@@ -61,3 +61,7 @@ Our deployments are handled by Jenkins using the `Jenkinsfile`. We deploy by com
 ## Previous repo
 
 This repo previously held a now defunct dashboard. The prior work is archived as a release on this repo in case that work needs to be revisited.
+
+## Browsers supported
+
+The current list of supported browsers for scorecard redesign include Chrome 61, Firefox 60, iOS 11, Edge 16, ChromeAndroid 67, Safari 11
