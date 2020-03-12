@@ -14,9 +14,7 @@
 @import "migration";
 
 // External imports
-@import "bootstrap/dist/css/bootstrap.min";
-// should we include this too?
-// @import "chart.js/dist/Chart.min.css";
+@import "../vendor/formation/formation.min.css";
 
 body.application {
   background: white;

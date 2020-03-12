@@ -17,7 +17,6 @@ sass:
     - _sass
     - node_modules
 
-include: ["node_modules"]
-exclude: []
+exclude: ["webpack"]
 
 baseurl: "/scorecard"

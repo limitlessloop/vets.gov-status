@@ -20,6 +20,7 @@ Gemfile.lock
 # yarn / node / etc
 node_modules
 yarn-error.log
+src/assets/vendor/
 
 # Python stuff
 .env
@@ -31,7 +32,6 @@ __pycache__/
 results/
 .coverage
 test/logs/
-test/node_modules/
 
 # Misc
 .DS_Store

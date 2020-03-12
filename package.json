@@ -11,12 +11,19 @@
   "license": "PUBLIC DOMAIN",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no tests specified\" && exit 1"
+    "test": "echo \"Error: no tests specified\" && exit 1",
+    "postinstall": "./copy-node-dependencies.sh",
+    "build": "./jekyll-build.sh",
+    "serve": "./jekyll-serve.sh"
   },
   "dependencies": {
+    "@department-of-veterans-affairs/formation": "^6.9.1",
+    "@fortawesome/fontawesome-free": "^5.12.1",
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",
-    "jquery": "^3.4.1"
+    "foundation-sites": "5",
+    "jquery": "^3.4.1",
+    "uswds": "^1.6.10"
   },
   "engines": {
     "node": "^12",
