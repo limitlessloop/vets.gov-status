@@ -25,7 +25,7 @@ def get_transactions_report(analytics_service, view_id):
             'reportRequests': [
                 {
                     'viewId': view_id,
-                    'dateRanges': [{'startDate': '365daysAgo',
+                    'dateRanges': [{'startDate': '366daysAgo',
                                     'endDate': 'yesterday'}],
                     'metrics': [{'expression': 'ga:totalEvents'}],
                     'segments': [
