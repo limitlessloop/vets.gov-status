@@ -32,7 +32,6 @@ __pycache__/
 results/
 .coverage
 test/logs/
-test/node_modules/
 
 # Misc
 .DS_Store
