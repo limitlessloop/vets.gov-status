@@ -31,8 +31,11 @@ def make_df(report):
                      for entry
                      in report['columnHeader']['metricHeader']['metricHeaderEntries']]
 
-    output = []
     rows = report['data'].get('rows', [])
+    if not rows:
+        raise RuntimeError('Error in Google Analytics response.')
+
+    output = []
     for row in rows:
         current_data = {}
 
