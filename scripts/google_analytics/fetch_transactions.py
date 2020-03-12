@@ -6,10 +6,11 @@ from google.oauth2.service_account import Credentials
 from analytics_helpers import make_df
 from datetime_utils import find_last_full_twelve_months, reformat_date
 
-
 SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
 KEY_FILE_LOCATION = os.environ['GA_SERVICEACCOUNT']
 SERVICE_ACCOUNT_EMAIL = 'analytics@inductive-voice-142915.iam.gserviceaccount.com'
+
+VADOTGOV_VIEWID = '176188361'
 
 
 def initialize_analytics_service():
@@ -28,7 +29,7 @@ def get_transactions_report(analytics_service):
         body={
             'reportRequests': [
                 {
-                    'viewId': '176188361',
+                    'viewId': VADOTGOV_VIEWID,
                     'dateRanges': [{'startDate': start_date,
                                     'endDate': end_date}],
                     'metrics': [{'expression': 'ga:totalEvents'}],
