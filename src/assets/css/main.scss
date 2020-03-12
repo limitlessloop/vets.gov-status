@@ -13,8 +13,12 @@
 @import "footer";
 @import "migration";
 
+$formation-asset-path: '../assets';
+$formation-image-path: "#{$formation-asset-path}/img";
+$formation-font-path: "#{$formation-asset-path}/fonts";
+
 // External imports
-@import "bootstrap/dist/css/bootstrap.min";
+//@import "~@department-of-veterans-affairs/formation/dist/formation.min.css";
 // should we include this too?
 // @import "chart.js/dist/Chart.min.css";
 

@@ -20,6 +20,7 @@ Gemfile.lock
 # yarn / node / etc
 node_modules
 yarn-error.log
+src/assets/vendor/
 
 # Python stuff
 .env
