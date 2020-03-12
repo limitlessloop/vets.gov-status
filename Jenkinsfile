@@ -24,7 +24,7 @@ pipeline {
       steps {
         script {
           // slackSend message: "Scorecard Jenkins build started", color: "good", channel: "scorecard-ci-temp"
-          sh 'cd src && yarn install --frozen-lockfile --production=true'
+          sh 'yarn install --frozen-lockfile --production=true'
           dockerImage = docker.image('jekyll/jekyll:4.0')
           args = "--volume=${pwd()}:/srv/jekyll"
 

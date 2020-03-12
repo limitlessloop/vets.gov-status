@@ -18,8 +18,6 @@ sass:
     - node_modules
 
 include: ["node_modules"]
-exclude:
-  - package.json
-  - yarn.lock
+exclude: []
 
 baseurl: "/scorecard"
