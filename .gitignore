@@ -11,6 +11,9 @@ _vendor
 Gemfile
 Gemfile.lock
 
+# mvn/sonarqube
+/target
+
 # IDE
 .idea/
 
