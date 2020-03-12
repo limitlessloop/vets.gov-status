@@ -8,8 +8,9 @@ var transactionsChart = new Chart(ctx, {
         datasets: [{
             label: '{{ page.dataLabel }}',
             data: [{% for line in site.data[datafile] %}{{ line.totalEvents }},{% endfor %}],
-            borderColor: '{{ page.lineColor }}',
-            fill: false
+            borderColor: '{{ page.color }}',
+            fill: false,
+            pointBackgroundColor: '{{ page.color }}'
         }]
     },
     options: {
