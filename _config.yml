@@ -12,4 +12,12 @@ defaults:
     values:
       layout: board
 
+sass:
+  load_paths:
+    - _sass
+    - node_modules
+
+include: ["node_modules"]
+exclude: []
+
 baseurl: "/scorecard"
