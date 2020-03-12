@@ -3,10 +3,10 @@ title: VA.gov Performance
 
 name: Transactions
 context: Successful transactions in the last year
-cols:
-- id: totalEvents
-  label: Transactions
-  color: rgb(17,46,81)
+axisLabel: Successful Transactions (Millions)
+id: transactionsChart
+dataLabel: Transactions
+lineColor: rgb(15,101,176)
 ---
 
 <html>
@@ -23,60 +23,7 @@ cols:
 </div>
 
 <script>
-var ctx = document.getElementById('transactionsChart').getContext('2d');
-{% capture datafile %}{{ "all_transactions" }}{% endcapture %}
-
-var transactionsChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: [{% for line in site.data[datafile] %}'{{ line.date }}',{% endfor %}],
-        datasets: [{
-            label: 'Transactions',
-            data: [{% for line in site.data[datafile] %}{{ line.totalEvents }},{% endfor %}],
-            borderColor: 'rgb(15,101,176)',
-            fill: false
-        }]
-    },
-    options: {
-        legend: {
-            display: false
-        },
-        scales: {
-            yAxes: [{
-                gridLines: {
-                    tickMarkLength: 0,
-                    zeroLineWidth: 1,
-                    zeroLineColor: 'rgb(0,0,0)'
-                },
-                ticks: {
-                    beginAtZero: true,
-                    padding: 10,
-                    callback: function(value, index, values) {
-                        return (value / 1000000);
-                    }
-                },
-                scaleLabel: {
-                    display: true,
-                    labelString: 'Successful Transactions (Millions)'
-                }
-            }],
-            xAxes: [{
-                gridLines: {
-                    display: false,
-                },
-                ticks: {
-                    maxRotation: 0,
-                    minRotation: 0,
-                    callback: function(value, index, values) {
-                        if (index % 2 == 0) return "";
-                        else return value;
-                    }
-                }
-            }]
-        }
-    }
-});
-
+{% include charts/transactions.js %}
 </script>
 
 
