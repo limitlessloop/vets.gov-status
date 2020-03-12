@@ -14,15 +14,7 @@
 @import "migration";
 
 // External imports
-// @import "~department-of-veterans-affairs/formation/dist/formation.min.css";
-
-$formation-asset-path: '../vendor';
-$formation-image-path: "#{$formation-asset-path}/img";
-$formation-font-path: "#{$formation-asset-path}/fonts";
-
-//@import "~@department-of-veterans-affairs/formation/dist/formation.min.css";
-// should we include this too?
-// @import "chart.js/dist/Chart.min.css";
+@import "../vendor/formation/formation.min.css";
 
 body.application {
   background: white;
