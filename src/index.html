@@ -33,7 +33,7 @@ var transactionsChart = new Chart(ctx, {
         datasets: [{
             label: 'Transactions',
             data: [{% for line in site.data[datafile] %}{{ line.totalEvents }},{% endfor %}],
-            borderColor: 'rgb(17,46,81)',
+            borderColor: 'rgb(15,101,176)',
             fill: false
         }]
     },
@@ -43,8 +43,34 @@ var transactionsChart = new Chart(ctx, {
         },
         scales: {
             yAxes: [{
+                gridLines: {
+                    tickMarkLength: 0,
+                    zeroLineWidth: 1,
+                    zeroLineColor: 'rgb(0,0,0)'
+                },
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    padding: 10,
+                    callback: function(value, index, values) {
+                        return (value / 1000000);
+                    }
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Successful Transactions (Millions)'
+                }
+            }],
+            xAxes: [{
+                gridLines: {
+                    display: false,
+                },
+                ticks: {
+                    maxRotation: 0,
+                    minRotation: 0,
+                    callback: function(value, index, values) {
+                        if (index % 2 == 0) return "";
+                        else return value;
+                    }
                 }
             }]
         }
