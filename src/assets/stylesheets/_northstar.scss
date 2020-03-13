@@ -1,5 +1,5 @@
 .north-star {
-  color: #fff;
+  color: $color-white;
   background-color: $color-primary;
 }
 
@@ -10,13 +10,13 @@
 
 .north-star__logo-text {
   display: block;
-  line-height: 3.0rem;
+  line-height: units(3);
   font-weight: bold;
   font-style: normal;
-  margin: units(3) 0;
+  margin: units(0);
 
   @include media($nav-width) {
-    font-size: 3.0rem;
+    font-size: units(3);
   }
 }
 
