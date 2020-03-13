@@ -23,33 +23,31 @@ pipeline {
         }
       }
     }
-    stage('Build') {
+
+    // Temporary - this stage should be moved to Jenkinsfile.update
+    stage('Update Data') {
+      steps{
+        script {
+          dir('scripts') {
+            sh './run-ci-fetch-data.sh'
+          }
+        }
+      }
+    }
+
+    stage('Build website') {
       steps {
         script {
           // slackSend message: "Scorecard Jenkins build started", color: "good", channel: "scorecard-ci-temp"
           nodeImg = docker.image('node:12.16.1')
-
           nodeImg.inside() {
             sh 'yarn install --frozen-lockfile --production=true'
           }
 
           jekyllImg = docker.image('jekyll/jekyll:4.0')
           args = "--volume=${pwd()}:/srv/jekyll"
-
           jekyllImg.inside(args) {
-              sh '/usr/gem/bin/jekyll build --trace'
-          }
-        }
-      }
-    }
-
-    stage('Update Data') {
-      steps{
-        script {
-          dockerImage = docker.build('scorecard-updater', 'scripts')
-          args = "-v ${pwd()}/src/_data:/data"
-          dockerImage.inside(args) {
-            sh '/application/fetch-data.sh'
+            sh '/usr/gem/bin/jekyll build --trace'
           }
         }
       }
