@@ -13,9 +13,7 @@ defaults:
       layout: board
 
 sass:
-  load_paths:
-    - _sass
-    - node_modules
+  sass_dir: assets/stylesheets
 
 exclude: ["webpack"]
 
