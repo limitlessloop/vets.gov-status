@@ -1,13 +1,13 @@
-var ctx = document.getElementById('transactionsChart').getContext('2d');
-{% capture datafile %}{{ "all_transactions" }}{% endcapture %}
+var ctx = document.getElementById('{{ chart.id }}Chart').getContext('2d');
+{% capture datafile %}{{ chart.csvFilename }}{% endcapture %}
 
-var transactionsChart = new Chart(ctx, {
+var chart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: [{% for line in site.data[datafile] %}'{{ line.date }}',{% endfor %}],
         datasets: [{
-            label: 'Transactions',
-            data: [{% for line in site.data[datafile] %}{{ line.totalEvents }},{% endfor %}],
+            label: '{{ chart.dataLabel }}',
+            data: [{% for line in site.data[datafile] %}{{ line[chart.colName] }},{% endfor %}],
             borderColor: '{{ page.color }}',
             fill: false,
             pointBackgroundColor: '{{ page.color }}'
@@ -25,7 +25,7 @@ var transactionsChart = new Chart(ctx, {
                     zeroLineColor: 'rgb(0,0,0)'
                 },
                 ticks: {
-                    beginAtZero: false,
+                    beginAtZero: true,
                     padding: 10,
                     callback: function(value, index, values) {
                         return (value / 1000000);
@@ -33,7 +33,7 @@ var transactionsChart = new Chart(ctx, {
                 },
                 scaleLabel: {
                     display: true,
-                    labelString: 'Successful Transactions (Millions)'
+                    labelString: '{{ chart.yAxisLabel }}'
                 }
             }],
             xAxes: [{

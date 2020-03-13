@@ -1,4 +1,4 @@
-function openTab(event, chartName) {
+function showChart(event, chartName) {
     var charts, links;
 
     charts = document.getElementsByClassName("chart");

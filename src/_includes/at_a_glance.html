@@ -10,36 +10,31 @@
 
 
 <div class="vads-l-row">
-    <div class="vads-l-col--3">
+    <div class="vads-l-col--3" role="navigation">
         <ul class="usa-sidenav-list">
-            <li class="chart-nav" onclick="openTab(event, 'users')">
-                <a class="usa-current">Logged in Users</a>
+            {% for chart in site.data.at_a_glance %}
+            <li class="chart-nav{% if chart.id == 'users' %} active-level{% endif %}"
+                onclick="showChart(event, '{{ chart.id }}')">
+                <a {% if chart.id == 'users' %}class="usa-current"{% endif %}>
+                    {{ chart.title }}
+                </a>
             </li>
-            <li class="chart-nav active-level" onclick="openTab(event, 'transactions')">
-                <a>Successful Transactions</a>
-            </li>
+            {% endfor %}
         </ul>
     </div>
 
     <div class="vads-l-col--9">
-        <div class="chart" id="users" style="display:block">
+        {% for chart in site.data.at_a_glance %}
+        <div class="chart" id="{{ chart.id }}"
+             style="display:{% if chart.id == 'users' %}block{% else %}none{% endif %}">
             <div>
-                <canvas id="usersChart"></canvas>
+                <canvas id="{{ chart.id }}Chart"></canvas>
             </div>
             <script nonce="**CSP_NONCE**">
-                {% include charts/logged_in_users.js %}
+                {% include charts/draw_chart.js %}
             </script>
         </div>
-
-        <div class="chart" id="transactions" style="display:none">
-            <div>
-                <canvas id="transactionsChart"></canvas>
-            </div>
-            <script nonce="**CSP_NONCE**">
-                {% include charts/transactions.js %}
-            </script>
-        </div>
-
+        {% endfor %}
     </div>
 </div>
 
