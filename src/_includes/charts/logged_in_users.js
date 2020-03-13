@@ -1,13 +1,13 @@
-var ctx = document.getElementById('transactionsChart').getContext('2d');
-{% capture datafile %}{{ "all_transactions" }}{% endcapture %}
+var ctx = document.getElementById('usersChart').getContext('2d');
+{% capture datafile %}{{ "all_logged_in_users" }}{% endcapture %}
 
-var transactionsChart = new Chart(ctx, {
+var loggedInUsersChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: [{% for line in site.data[datafile] %}'{{ line.date }}',{% endfor %}],
         datasets: [{
-            label: 'Transactions',
-            data: [{% for line in site.data[datafile] %}{{ line.totalEvents }},{% endfor %}],
+            label: 'Users',
+            data: [{% for line in site.data[datafile] %}{{ line.users }},{% endfor %}],
             borderColor: '{{ page.color }}',
             fill: false,
             pointBackgroundColor: '{{ page.color }}'
@@ -33,7 +33,7 @@ var transactionsChart = new Chart(ctx, {
                 },
                 scaleLabel: {
                     display: true,
-                    labelString: 'Successful Transactions (Millions)'
+                    labelString: 'Logged In Users (Millions)'
                 }
             }],
             xAxes: [{

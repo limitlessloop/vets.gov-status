@@ -8,16 +8,42 @@
     </div>
 </div>
 
-<div class="vads-l-row">
-    <div class="vads-l-col">
 
-        <div>
-            <canvas id="transactionsChart"></canvas>
+<div class="vads-l-row">
+    <div class="vads-l-col--3">
+        <ul class="usa-sidenav-list">
+            <li class="chart-nav" onclick="openTab(event, 'users')">
+                <a class="usa-current">Logged in Users</a>
+            </li>
+            <li class="chart-nav active-level" onclick="openTab(event, 'transactions')">
+                <a>Successful Transactions</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="vads-l-col--9">
+        <div class="chart" id="users" style="display:block">
+            <div>
+                <canvas id="usersChart"></canvas>
+            </div>
+            <script nonce="**CSP_NONCE**">
+                {% include charts/logged_in_users.js %}
+            </script>
         </div>
 
-        <script nonce="**CSP_NONCE**">
-        {% include charts/transactions.js %}
-        </script>
+        <div class="chart" id="transactions" style="display:none">
+            <div>
+                <canvas id="transactionsChart"></canvas>
+            </div>
+            <script nonce="**CSP_NONCE**">
+                {% include charts/transactions.js %}
+            </script>
+        </div>
 
     </div>
 </div>
+
+<script>
+    {% include charts/chart_nav.js %}
+</script>
+
