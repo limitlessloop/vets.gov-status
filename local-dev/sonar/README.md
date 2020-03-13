@@ -1,8 +1,9 @@
-# Sonar
+# SonarQube
+[SonarQube](https://www.sonarqube.org/) is a static analysis tool for source code. THis directory contains a docker-compose file which can be used to bring up a local instance of SonarQube.
 
 ## Setup
 
-#### To Start...
+### To Start...
 To fire up your sonar environment, navigate to the `local-dev/sonar` directory and execute one of the following:
 
 ```
@@ -18,7 +19,7 @@ docker-compose up -d
 docker-compose up -d --build 
 ```
 
-#### To Bring Down...
+### To Bring Down...
 There are different methods to bring down your sonarqube environment, but which one you execute depends on what you want to do. Choose one of the following based on your goals...
 
 ```
@@ -34,3 +35,10 @@ docker-compose down -v
 # Note that you can get clean out the volumes and the associated images with the following...
 docker-compose down --rmi all -v
 ```
+
+## Reporting on your code
+To use SonarQube, make sure it is running (per instructions above), then invoke
+$ ./run-tests.sh && mvn sonar:sonar
+
+From the base directory of the repo. This will make sure the latest test case results are imported and kick off the analysis. You can then log into Sonar, using admin credentials admin/admin. The results will be persisted so you can compare over time. Sonar is useful for detecting code smells and duplicated code that you may want to address.
+
