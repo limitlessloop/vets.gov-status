@@ -1,0 +1,61 @@
+---
+title: Tile Showcase
+tiles:
+
+  - name: Basic
+    layout: basic
+    datapoint: 10
+    context: on average
+
+  - name: Icon
+    layout: icon
+    icon: phone
+    text: VA.gov is designed to work equally well on mobile devices
+
+  - name: Compare
+    layout: compare
+    datapoint: 100
+    before: 60
+
+  - name: Compare Donuts
+    layout: compare_donuts
+    id: demo
+    datapoint: 75
+    before: 50
+    context: percentage of stuff
+
+  - name: Donut
+    layout: donut
+    id: fiveoheight
+    datapoint: 75
+    context: Percentage of stuff
+
+  - name: Compare Bars
+    layout: compare_bars
+    id: demo-bars
+    datapoint: 75
+    before: 50
+    context: percentage of stuff
+
+  - name: Bar
+    layout: bar
+    id: things
+    datapoint: 75
+    context: Percentage of stuff
+
+  - name: Quote
+    layout: quote
+    text: The other website takes you around the corner, over the meadow, and...in a back door blocked with spikes and IEDs
+---
+
+{% include header.html %}
+
+<div class="row row-tile">
+  {% for tile in page.tiles %}
+    {% include tiles/{{tile.layout}}.html %}
+  {% endfor %}
+</div>
+
+
+
+{% include footer.html %}

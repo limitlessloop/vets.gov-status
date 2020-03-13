@@ -1,0 +1,44 @@
+<div class="vads-l-row">
+    <div class="vads-l-col">
+
+        <h2 class="vads-u-font-family--serif">
+            VA.gov at a glance
+        </h2>
+
+    </div>
+</div>
+
+
+<div class="vads-l-row">
+    <div class="vads-l-col--3" role="navigation">
+        <ul class="usa-sidenav-list">
+            {% for chart in site.data.at_a_glance %}
+            <li class="chart-nav{% if chart.id == 'users' %} active-level{% endif %}"
+                onclick="showChart(event, '{{ chart.id }}')">
+                <a {% if chart.id == 'users' %}class="usa-current"{% endif %}>
+                    {{ chart.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="vads-l-col--9">
+        {% for chart in site.data.at_a_glance %}
+        <div class="chart" id="{{ chart.id }}"
+             style="display:{% if chart.id == 'users' %}block{% else %}none{% endif %}">
+            <div>
+                <canvas id="{{ chart.id }}Chart"></canvas>
+            </div>
+            <script nonce="**CSP_NONCE**">
+                {% include charts/draw_chart.js %}
+            </script>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    {% include charts/chart_nav.js %}
+</script>
+

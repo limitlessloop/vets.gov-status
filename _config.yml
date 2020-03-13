@@ -1,3 +1,6 @@
+source: src
+destination: _site
+
 collections:
   boards:
     output: true
@@ -9,13 +12,9 @@ defaults:
     values:
       layout: board
 
-exclude:
-  - scripts
-  - LICENSE.md
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-  - Jenkinsfile
-  - Jenkinsfile.update
+sass:
+  sass_dir: assets/stylesheets
+
+exclude: ["webpack"]
 
 baseurl: "/scorecard"

@@ -1,7 +1,42 @@
-_site/
-_vendor/
+# Jekyll stuff
+.jekyll-cache/
 .sass-cache
-*.lock
+_site/
+
+# Ruby stuff
+.vendor/
+_vendor
+# Ignoring Gemfile and Gemfile.lock to work around Jenkins/Docker/Jekyll issue documented in
+# https://github.com/department-of-veterans-affairs/vets.gov-status/issues/3193
+Gemfile
+Gemfile.lock
+
+# google creds
+serviceaccount.json
+
+# mvn/sonarqube
+/target
+
+# IDE
+.idea/
+
+# yarn / node / etc
+node_modules
+yarn-error.log
+src/assets/vendor/
+
+# Python stuff
+.env
+ENV/
+venv/
+__pycache__/
+
+# test results
+results/
+.coverage
+test/logs/
+
+# Misc
 .DS_Store
 *.p12
-.env
+credstash.log

@@ -1,38 +1,10 @@
 """Pulls in data to update dashboards"""
-
+from analytics_helpers import make_df, initialize_analyticsreporting
 import datetime
 import json
-import os
-
-from apiclient.discovery import build
-from oauth2client.service_account import ServiceAccountCredentials
-
-import httplib2
-
 import numpy as np
+import os
 import pandas as pd
-
-
-SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
-DISCOVERY_URI = ('https://analyticsreporting.googleapis.com/$discovery/rest')
-KEY_FILE_LOCATION = os.environ['GA_SERVICEACCOUNT']
-SERVICE_ACCOUNT_EMAIL = 'analytics@inductive-voice-142915.iam.gserviceaccount.com'
-
-
-def initialize_analyticsreporting():
-    """Initializes an analyticsreporting service object.
-
-    Returns:
-    analytics an authorized analyticsreporting service object.
-    """
-
-    credentials = ServiceAccountCredentials.from_json_keyfile_name(
-      KEY_FILE_LOCATION, SCOPES)
-
-    # Build the service object.
-    analytics = build('analyticsreporting', 'v4', credentials=credentials)
-
-    return analytics
 
 
 def find_sunday():
@@ -68,11 +40,11 @@ def get_reports(analytics, view_id, page_filter):
                     "dimensionFilterClauses": [{
                         "filters": [
                             {
-                              "dimensionName": "ga:pagePath",
-                              "operator": "REGEXP",
-                              "expressions": page_filter
+                                "dimensionName": "ga:pagePath",
+                                "operator": "REGEXP",
+                                "expressions": page_filter
                             }
-                            ]}],
+                        ]}],
                 },
                 {
                     'viewId': view_id,
@@ -82,13 +54,13 @@ def get_reports(analytics, view_id, page_filter):
                     'dimensions': [{'name': 'ga:isoYearIsoWeek'},
                                    {'name': 'ga:deviceCategory'}],
                     "dimensionFilterClauses": [{
-                       "filters": [
-                           {
-                             "dimensionName": "ga:pagePath",
-                             "operator": "REGEXP",
-                             "expressions": page_filter
-                           }
-                           ]}],
+                        "filters": [
+                            {
+                                "dimensionName": "ga:pagePath",
+                                "operator": "REGEXP",
+                                "expressions": page_filter
+                            }
+                        ]}],
                 },
                 {
                     'viewId': view_id,
@@ -97,18 +69,19 @@ def get_reports(analytics, view_id, page_filter):
                     'metrics': [{'expression': 'ga:pageviews'}],
                     'dimensions': [{'name': 'ga:isoYearIsoWeek'}],
                     "dimensionFilterClauses": [{
-                       "filters": [
-                           {
-                             "dimensionName": "ga:pagePath",
-                             "operator": "REGEXP",
-                             "expressions": page_filter
-                           }
-                           ]}],
+                        "filters": [
+                            {
+                                "dimensionName": "ga:pagePath",
+                                "operator": "REGEXP",
+                                "expressions": page_filter
+                            }
+                        ]}],
                 }
             ],
             "useResourceQuotas": True
         }
     ).execute()
+
 
 def get_click_reports(analytics, view_id):
     """Use the Analytics Service Object to query Analytics Reporting API.
@@ -121,139 +94,122 @@ def get_click_reports(analytics, view_id):
     return analytics.reports().batchGet(
         body={
             'reportRequests': [{
-                    'viewId': view_id,
-                    'dateRanges': [{'startDate': startDate,
-                                    'endDate': endDate}],
-                    'metrics': [{'expression': 'ga:totalEvents'}],
-                    'dimensions': [{'name': 'ga:isoYearIsoWeek'}],
-                    "dimensionFilterClauses": [{
-                        "operator": "OR",
-                        "filters": [
-                            {
-                              "dimensionName": "ga:eventLabel",
-                              "operator": "PARTIAL",
-                              "expressions": "veteranscrisisline"
-                            },
-                            {
-                              "dimensionName": "ga:eventLabel",
-                              "operator": "PARTIAL",
-                              "expressions": "sms:838255"
-                            },
-                            {
-                              "dimensionName": "ga:eventLabel",
-                              "operator": "PARTIAL",
-                              "expressions": "tel:18002738255"
-                            },
-                            {
-                              "dimensionName": "ga:eventAction",
-                              "operator": "PARTIAL",
-                              "expressions": "veteranscrisisline"
-                            },
-                            {
-                              "dimensionName": "ga:eventAction",
-                              "operator": "PARTIAL",
-                              "expressions": "sms:838255"
-                            },
-                            {
-                              "dimensionName": "ga:eventAction",
-                              "operator": "PARTIAL",
-                              "expressions": "tel:18002738255"
-                            },
-                            ]}],
-                    "includeEmptyRows": "true",
-                }
+                'viewId': view_id,
+                'dateRanges': [{'startDate': startDate,
+                                'endDate': endDate}],
+                'metrics': [{'expression': 'ga:totalEvents'}],
+                'dimensions': [{'name': 'ga:isoYearIsoWeek'}],
+                "dimensionFilterClauses": [{
+                    "operator": "OR",
+                    "filters": [
+                        {
+                            "dimensionName": "ga:eventLabel",
+                            "operator": "PARTIAL",
+                            "expressions": "veteranscrisisline"
+                        },
+                        {
+                            "dimensionName": "ga:eventLabel",
+                            "operator": "PARTIAL",
+                            "expressions": "sms:838255"
+                        },
+                        {
+                            "dimensionName": "ga:eventLabel",
+                            "operator": "PARTIAL",
+                            "expressions": "tel:18002738255"
+                        },
+                        {
+                            "dimensionName": "ga:eventAction",
+                            "operator": "PARTIAL",
+                            "expressions": "veteranscrisisline"
+                        },
+                        {
+                            "dimensionName": "ga:eventAction",
+                            "operator": "PARTIAL",
+                            "expressions": "sms:838255"
+                        },
+                        {
+                            "dimensionName": "ga:eventAction",
+                            "operator": "PARTIAL",
+                            "expressions": "tel:18002738255"
+                        },
+                    ]}],
+                "includeEmptyRows": "true",
+            }
             ],
             "useResourceQuotas": True
         }
     ).execute()
 
-def make_df(report):
-    """Turn a single report from a Google Analytics response into dataframe"""
 
-    dimLabels = report['columnHeader']['dimensions']
-    metricLabels = [entry['name']
-                    for entry
-                    in report['columnHeader']['metricHeader']['metricHeaderEntries']]
-
-    output = []
-    for row in report['data']['rows']:
-        current_data = {}
-
-        for k, v in zip(dimLabels, row['dimensions']):
-            current_data[k] = v
-
-        metricValues = [d['values'] for d in row['metrics']]
-        metricValues = [item for sublist in metricValues for item in sublist]
-        for k, v in zip(metricLabels, metricValues):
-            current_data[k] = int(v)
-
-        output.append(current_data)
-
-    raw_df = pd.DataFrame(output)
-
-    # Set the day equal to the Sunday that ends that week
-    raw_df['day'] = raw_df['ga:isoYearIsoWeek'].apply(
-                    lambda d: datetime.datetime.strptime(d + '-0', "%Y%W-%w"))
-    raw_df['day'] = pd.to_datetime(raw_df['day'])
-    raw_df = raw_df.set_index('day')
-    del raw_df['ga:isoYearIsoWeek']
-
+def add_day_column(raw_df):
+    if 'ga:isoYearIsoWeek' in raw_df.columns:
+        # Set the day equal to the Sunday that ends that week
+        raw_df['day'] = raw_df['ga:isoYearIsoWeek'].apply(
+            lambda d: datetime.datetime.strptime(d + '-0', "%Y%W-%w"))
+        raw_df['day'] = pd.to_datetime(raw_df['day'])
+        raw_df = raw_df.set_index('day')
+        del raw_df['ga:isoYearIsoWeek']
     return raw_df
 
 
 def output_users(df, board):
     """Output a csv from dataframe contents."""
 
-    df.columns = ['new', 'all']
-    del df['new']
+    if not df.empty:
+        df.columns = ['new', 'all']
+        del df['new']
+
     filename = os.path.join(os.environ['DATA_DIR'],
                             "{}_users.csv".format(board))
     df.to_csv(filename, date_format="%m/%d/%y")
 
-def output_device(df, board):
 
+def output_device(df, board):
     df = df.reset_index()
 
-    mobile = df[df['ga:deviceCategory'] != 'desktop'].groupby('day').agg(np.sum)
-    mobile.columns = ['mobile']
-    #print(mobile)
+    if 'ga:deviceCategory' in df.columns:
+        mobile = df[df['ga:deviceCategory'] != 'desktop'].groupby('day').agg(np.sum)
+        mobile.columns = ['mobile']
 
-    df = df[df['ga:deviceCategory'] == 'desktop'].groupby('day').agg(np.sum)
-    df.columns = ['desktop']
-    #print(desktop)
+        df = df[df['ga:deviceCategory'] == 'desktop'].groupby('day').agg(np.sum)
+        df.columns = ['desktop']
 
-    df['mobile'] = mobile['mobile']
-    df['all'] = df['desktop'] + df['mobile']
-    df['mobile'] = (df['mobile'] / df['all']) * 100
-    df['desktop'] = (df['desktop'] / df['all']) * 100
+        df['mobile'] = mobile['mobile']
+        df['all'] = df['desktop'] + df['mobile']
+        df['mobile'] = (df['mobile'] / df['all']) * 100
+        df['desktop'] = (df['desktop'] / df['all']) * 100
 
     filename = os.path.join(os.environ['DATA_DIR'],
                             "{}_mobile.csv".format(board))
     df.to_csv(filename, date_format="%m/%d/%y")
 
+
 def output_pageviews(df, board):
     """Output a csv from dataframe contents."""
 
-    df.columns = ['views']
+    if not df.empty:
+        df.columns = ['views']
+
     filename = os.path.join(os.environ['DATA_DIR'],
                             "{}_views.csv".format(board))
     df.to_csv(filename, date_format="%m/%d/%y")
 
 
-
 def run_reports(analytics, board, view_id, page_filter=""):
     response = get_reports(analytics, view_id, page_filter)
-    user_df = make_df(response['reports'][0])
+    user_df = add_day_column(make_df(response['reports'][0]))
     output_users(user_df, board)
-    device_df = make_df(response['reports'][1])
+    device_df = add_day_column(make_df(response['reports'][1]))
     output_device(device_df, board)
-    pageviews_df = make_df(response['reports'][2])
+    pageviews_df = add_day_column(make_df(response['reports'][2]))
     output_pageviews(pageviews_df, board)
+
 
 def run_click_reports(analytics, board, view_id):
     response = get_click_reports(analytics, view_id)
-    vcl_df = make_df(response['reports'][0])
+    vcl_df = add_day_column(make_df(response['reports'][0]))
     output_clicks(vcl_df, board)
+
 
 def output_clicks(df, board):
     """Output a csv from dataframe contents."""
@@ -262,6 +218,7 @@ def output_clicks(df, board):
     filename = os.path.join(os.environ['DATA_DIR'],
                             "{}_clicks.csv".format(board))
     df.to_csv(filename, date_format="%m/%d/%y")
+
 
 def main():
     analytics = initialize_analyticsreporting()

@@ -1,0 +1,11 @@
+# ignore some directories
+.jekyll-cache/
+.pytest_cache
+.sass-cache
+ENV
+_site/
+node_modules
+results
+target
+test/logs/
+test/node_modules/

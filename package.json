@@ -1,0 +1,32 @@
+{
+  "name": "va-performance-dashboard",
+  "version": "2.0.0",
+  "description": "performance dashboard for va.gov",
+  "repository": "https://github.com/department-of-veterans-affairs/vets.gov-status.git",
+  "author": "VA",
+  "bugs": {
+    "url": "https://github.com/department-of-veterans-affairs/vets.gov-status/issues"
+  },
+  "homepage": "https://www.va.gov/scorecard",
+  "license": "PUBLIC DOMAIN",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no tests specified\" && exit 1",
+    "postinstall": "./copy-node-dependencies.sh",
+    "build": "./jekyll-build.sh",
+    "serve": "./jekyll-serve.sh"
+  },
+  "dependencies": {
+    "@department-of-veterans-affairs/formation": "^6.9.1",
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "bootstrap": "^4.4.1",
+    "chart.js": "^2.9.3",
+    "foundation-sites": "5",
+    "jquery": "^3.4.1",
+    "uswds": "^1.6.10"
+  },
+  "engines": {
+    "node": "^12",
+    "yarn": "^1.22"
+  }
+}

@@ -1,0 +1,140 @@
+.site-header {
+  color: #fff;
+  background-color: $color-primary-darkest;
+}
+
+.site-header .site-l-wrapper {
+  padding-right: 0;
+
+  @include media($nav-width) {
+    padding-right: units(5);
+  }
+
+  @include media($large-screen) {
+    padding-right: units(10);
+  }
+}
+
+.site-header__masthead {
+  display: flex;
+  justify-content: space-between;
+}
+
+.usa-button.site-button-inverse {
+  background-color: #ffffff;
+  color: $color-primary-darker;
+
+  &:active,
+  &:hover {
+    background-color: rgba(255,255,255,.8);
+    color: $color-primary-darker;
+  }
+}
+
+.site-header__open-mobile-nav-button {
+  border-radius: 0;
+  margin: 0;
+  width: auto;
+
+  @include media($nav-width) {
+    display: none;
+  }
+}
+
+.site-header__logo-text {
+  display: block;
+  font-size: 2.1rem;
+  font-weight: 300;
+  font-style: normal;
+  margin: units(3) 0;
+
+  @include media($nav-width) {
+    font-size: 3.2rem;
+  }
+}
+
+.site-header__logo-link,
+.site-header__logo-link:visited {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-header__logo-link:hover,
+.site-header__logo-link:focus {
+  text-decoration: none;
+}
+
+.site-header__utility-links {
+  align-items: center;
+  display: flex;
+
+  .usa-button {
+    display: none;
+    @include media($large-screen) {
+      display: block;
+    }
+  }
+}
+
+.site-top-nav-wrapper {
+  display: none;
+  background-color: $color-primary-darkest;
+
+  @include media($nav-width) {
+    display: block;
+  }
+
+  &.sticky {
+    @include media($nav-width) {
+      position: -webkit-sticky;
+      position: sticky;
+      top: -1px;
+      z-index: 800;
+    }
+  }
+}
+
+.site-header__nav {
+  border-top: 1px solid white;
+  display: none;
+
+  @include media($nav-width) {
+    display: block;
+  }
+}
+
+.site-header__nav-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-header__nav-item {
+  font-weight: bold;
+  margin: 0;
+}
+
+.site-header__nav-item:first-child {
+  margin-left: units(-3)
+}
+
+.site-header__nav-item__link,
+.site-header__nav-item__link:visited {
+  color: #fff;
+  display: block;
+  padding: units(2) units(3);
+  text-decoration: none;
+  transition: none;
+}
+
+.site-header__nav-item__link:hover,
+.site-header__nav-item__link:focus {
+  color: $color-gold;
+  text-decoration: none;
+}
+
+.site-header__nav-item__link.current {
+  border-bottom: 3px solid $color-gold;
+}

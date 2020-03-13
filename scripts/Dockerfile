@@ -1,14 +1,15 @@
-FROM python:3.6
+FROM python:3.6.8
 
-WORKDIR /application
+WORKDIR application
 
-ENV DATA_DIR="/data" \
-    CONFIG_DIR="/application" \
-    GA_SERVICEACCOUNT="/application/serviceaccount.json"
+ENV DATA_DIR="/application/data"
+ENV CONFIG_DIR="/application"
+# Store credentials in /tmp to avoid possibility of them being checked in
+ENV GA_SERVICEACCOUNT="/tmp/serviceaccount.json"
 
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.txt .
+RUN python3 -m pip install --no-cache-dir --require-hashes --no-deps -r requirements.txt
 
 COPY . .
 
-CMD ["/application/updates.sh"]
+CMD ["/application/fetch-data.sh"]

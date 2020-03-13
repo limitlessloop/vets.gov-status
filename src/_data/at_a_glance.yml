@@ -1,0 +1,13 @@
+- title: Logged in Users
+  id: users
+  csvFilename: all_logged_in_users
+  colName: users
+  dataLabel: Users
+  yAxisLabel: Logged in Users (Millions)
+
+- title: Successful Transactions
+  id: transactions
+  csvFilename: all_transactions
+  colName: totalEvents
+  dataLabel: Transactions
+  yAxisLabel: Successful Transactions (Millions)
