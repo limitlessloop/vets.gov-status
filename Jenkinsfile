@@ -24,7 +24,7 @@ pipeline {
       }
     }
 
-    // Temporary - this stage should be moved to Jenkinsfile.update
+    // Temporary - this stage should be removed and only run in Jenkinsfile.update
     stage('Update Data') {
       steps{
         script {
@@ -64,15 +64,16 @@ pipeline {
       }
       steps {
         script {
-          slackSend message: "Scorecard Jenkins upload started", color: "good", channel: "scorecard-ci-temp"
+          // slackSend message: "Scorecard Jenkins upload started", color: "good", channel: "scorecard-ci-temp"
           def envs = [
             'demo': ['dev'],
             'master': ['staging'],
-            'production': ['prod'],
+            'production': ['staging'],  // todo: point this back to production once we are ready to golive
           ]
 
           for (e in envs.get(env.BRANCH_NAME, [])) {
             sh "bash --login -c 'aws s3 sync --acl public-read --delete --region us-gov-west-1 _site s3://dsva-vetsgov-scorecard-${e}/'"
+            slackSend message: "Dashboard deployed to ${e} environment", color: "good", channel: "scorecard-ci-temp"
           }
         }
       }

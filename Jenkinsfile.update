@@ -49,7 +49,9 @@ pipeline {
     label 'vetsgov-general-purpose'
   }
   environment {
-    GA_SERVICE_BASE64 = credentials('vetsdotgovanalytics-json-b64')
+    // Needed for credstash
+    AWS_DEFAULT_REGION = 'us-gov-west-1'
+
     GH = credentials('va-bot')
   }
 
@@ -63,19 +65,11 @@ pipeline {
       }
     }
 
-    stage('Get Credentials') {
-      steps {
-         // sh 'echo ${GA_SERVICE_BASE64} | base64 -d > scripts/serviceaccount.json'
-      }
-    }
-
     stage('Update Data') {
       steps{
         script {
-          dockerImage = docker.build('scorecard-updater', 'scripts')
-          args = "-v ${pwd()}/src/_data:/data -e GH_USER=${GH_USR} -e GH_TOKEN=${GH_PSW}"
-          dockerImage.inside(args) {
-            sh '/application/fetch-data.sh'
+          dir('scripts') {
+            sh './run-ci-fetch-data.sh'
           }
         }
       }
@@ -83,7 +77,6 @@ pipeline {
 
     stage('Push Update Branch to Github') {
       steps {
-        sh 'sed -i "s/^Last Update:.*/Last Update: $(date)/" migration.html'
         sh 'git add .'
         sh "git commit -m 'Updated Data'"
         sh 'git push https://${GH_USR}:${GH_PSW}@github.com/department-of-veterans-affairs/vets.gov-status.git HEAD'
@@ -124,10 +117,10 @@ pipeline {
       deleteDir()
     }
     success {
-      slackSend message: "Scorecard data update succeeded", color: "good", channel: "analytics-deploys"
+      slackSend message: "Performance dashboard data update succeeded", color: "good", channel: "scorecard-ci-temp"
     }
     failure {
-      slackSend message: "<!here> Scorecard data update *FAILED*!", color: "danger", channel: "analytics-deploys"
+      slackSend message: "<!here> Performance dashboard data update *FAILED*!", color: "danger", channel: "scorecard-ci-temp"
     }
   }
 }
