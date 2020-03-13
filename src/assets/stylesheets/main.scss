@@ -3,6 +3,9 @@
 
 // Files that allow us to use Formation’s Sass functions, variables, and mixins
 @import '../../../node_modules/@department-of-veterans-affairs/formation/sass/base/b-variables';
+@import '../../../node_modules/@department-of-veterans-affairs/formation/sass/base/_b-breakpoints';
+@import '../../../node_modules/@department-of-veterans-affairs/formation/sass/base/b-functions';
+@import '../../../node_modules/@department-of-veterans-affairs/formation/sass/base/_b-mixins';
 
 @import "variables";
 @import "media";
@@ -19,5 +22,3 @@
 @import "northstar";
 @import "accordion";
 
-// External imports
-@import "../vendor/formation/formation.min.css";
