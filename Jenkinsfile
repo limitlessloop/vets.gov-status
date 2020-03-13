@@ -2,7 +2,10 @@ pipeline {
   agent {
     label 'vetsgov-general-purpose'
   }
-
+  environment {
+    // Needed for credstash
+    AWS_DEFAULT_REGION = 'us-gov-west-1'
+  }
   stages {
     stage('Unit tests') {
       steps {
@@ -35,6 +38,18 @@ pipeline {
 
           jekyllImg.inside(args) {
               sh '/usr/gem/bin/jekyll build --trace'
+          }
+        }
+      }
+    }
+
+    stage('Update Data') {
+      steps{
+        script {
+          dockerImage = docker.build('scorecard-updater', 'scripts')
+          args = "-v ${pwd()}/src/_data:/data -e GH_USER=${GH_USR} -e GH_TOKEN=${GH_PSW}"
+          dockerImage.inside(args) {
+            sh '/application/fetch-data.sh'
           }
         }
       }

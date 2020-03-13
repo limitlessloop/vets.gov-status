@@ -1,25 +1,8 @@
+from analytics_helpers import make_df, initialize_analyticsreporting
+from datetime_utils import find_last_full_twelve_months, reformat_date
 import os
 
-from googleapiclient.discovery import build
-from google.oauth2.service_account import Credentials
-
-from analytics_helpers import make_df
-from datetime_utils import find_last_full_twelve_months, reformat_date
-
-SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
-KEY_FILE_LOCATION = os.environ['GA_SERVICEACCOUNT']
-SERVICE_ACCOUNT_EMAIL = 'analytics@inductive-voice-142915.iam.gserviceaccount.com'
-
 VADOTGOV_VIEWID = '176188361'
-
-
-def initialize_analytics_service():
-    credentials = Credentials.from_service_account_file(KEY_FILE_LOCATION, scopes=SCOPES)
-
-    # Build the service object.
-    analytics_service = build('analyticsreporting', 'v4', credentials=credentials)
-
-    return analytics_service
 
 
 def get_transactions_report(analytics_service):
@@ -81,7 +64,7 @@ def write_df_to_csv(df):
 
 
 def main():
-    analytics_service = initialize_analytics_service()
+    analytics_service = initialize_analyticsreporting()
 
     df = run_report(analytics_service)
     df = add_month_column(df)
