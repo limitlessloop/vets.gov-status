@@ -1,0 +1,8 @@
+<li class="vads-u-margin-bottom--2">
+    <button class="usa-accordion-button" aria-expanded="true" aria-controls="accordion-{{ include.title | slugify }}">
+        {{ include.title }}
+    </button>
+    <div id="accordion-{{ include.title | slugify }}" class="usa-accordion-content">
+        {{ include.content }}
+    </div>
+</li>
