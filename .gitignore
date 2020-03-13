@@ -11,6 +11,9 @@ _vendor
 Gemfile
 Gemfile.lock
 
+# google creds
+serviceaccount.json
+
 # mvn/sonarqube
 /target
 
