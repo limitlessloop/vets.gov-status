@@ -2,7 +2,7 @@
 ---
 
 @import "variables";
-@import "variables_from_formation";
+@import "variables_from_formation"; // TODO: import from dependencies instead of copying entire file
 @import "media";
 @import "va-notice";
 @import "header";

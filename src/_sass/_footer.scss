@@ -1,10 +1,17 @@
-.row-footer {
-  // display: none;
-  padding: 1em 0;
-  background:$dark-blue;
-  margin-top: 100px;
+.site-footer {
+  background: $color-primary-darkest;
+  color: white;
+
+  a {
+    color: white;
+  }
 }
 
-.row-footer a {
-  color: white;
+.site-footer__logo {
+  max-width: 280px;
+  display: block;
+
+  img {
+    width: 100%;
+  }
 }
