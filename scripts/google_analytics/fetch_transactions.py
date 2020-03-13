@@ -1,50 +1,26 @@
 from analytics_helpers import make_df, initialize_analyticsreporting
 from datetime_utils import find_last_full_twelve_months, reformat_date
+from requests import get_logged_in_users_request, get_all_transactions_request
 import os
 
 VADOTGOV_VIEWID = '176188361'
 
 
-def get_transactions_report(analytics_service):
+def get_transactions_report(analytics_service, get_request):
     start_date, end_date = find_last_full_twelve_months()
 
     return analytics_service.reports().batchGet(
         body={
             'reportRequests': [
-                {
-                    'viewId': VADOTGOV_VIEWID,
-                    'dateRanges': [{'startDate': start_date,
-                                    'endDate': end_date}],
-                    'metrics': [{'expression': 'ga:totalEvents'}],
-                    'dimensions': [
-                        {'name': 'ga:yearMonth'}
-                    ],
-                    'dimensionFilterClauses': [
-                        {
-                            'operator': 'AND',
-                            'filters': [
-                                {
-                                    'dimensionName': 'ga:eventCategory',
-                                    'operator': 'EXACT',
-                                    'expressions': ['Transactions']
-                                },
-                                {
-                                    'dimensionName': 'ga:pagePath',
-                                    'operator': 'REGEXP',
-                                    'expressions': ['www.va.gov/']
-                                }
-                            ]
-                        }
-                    ],
-                }
+                get_request(VADOTGOV_VIEWID, start_date, end_date)
             ],
             "useResourceQuotas": False
         }
     ).execute()
 
 
-def run_report(analytics_service):
-    response = get_transactions_report(analytics_service)
+def run_report(analytics_service, get_request):
+    response = get_transactions_report(analytics_service, get_request)
     report = response['reports'][0]
     df = make_df(report)
     return df
@@ -58,18 +34,21 @@ def add_month_column(raw_df):
     return raw_df
 
 
-def write_df_to_csv(df):
-    filename = os.path.join(os.environ['DATA_DIR'], "all_transactions.csv")
-    df.to_csv(filename, date_format="%m/%d/%y")
+def write_df_to_csv(df, filename):
+    full_filename = os.path.join(os.environ['DATA_DIR'], filename)
+    df.to_csv(full_filename, date_format="%m/%d/%y")
 
 
 def main():
     analytics_service = initialize_analyticsreporting()
 
-    df = run_report(analytics_service)
+    df = run_report(analytics_service, get_all_transactions_request)
     df = add_month_column(df)
+    write_df_to_csv(df, "all_transactions.csv")
 
-    write_df_to_csv(df)
+    df = run_report(analytics_service, get_logged_in_users_request)
+    df = add_month_column(df)
+    write_df_to_csv(df, "all_logged_in_users.csv")
 
 
 if __name__ == '__main__':

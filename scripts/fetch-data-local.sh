@@ -10,3 +10,4 @@ python google_analytics/fetch_transactions.py
 # python google_analytics/update_counts.py
 
 mv data/all_transactions.csv ../src/_data/
+mv data/all_logged_in_users.csv ../src/_data/
