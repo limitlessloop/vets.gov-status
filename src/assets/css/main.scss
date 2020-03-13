@@ -66,3 +66,24 @@ iframe {
 .accordion-icon-appointment {
   color: $color-hub-health-care;
 }
+
+.accordion-metric__item {
+  margin-bottom: 16px;
+}
+
+.accordion-metric__title {
+  font-weight: bold;
+}
+
+.accordion-metric__headline {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.accordion-metric__30-days {
+  font-size: 14px;
+}
+
+.accordion-metric__12-months {
+  font-size: 14px;
+}

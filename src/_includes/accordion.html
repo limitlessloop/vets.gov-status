@@ -7,6 +7,26 @@
         {{ include.title }}
     </button>
     <div id="accordion-{{ include.title | slugify }}" class="usa-accordion-content">
-        {{ include.content }}
+        <div class="vads-l-row">
+            <div class="vads-l-col">
+                {% include accordion_metric_item.html
+                    title="Logged in Users"
+                %}
+            </div>
+            <div class="vads-l-col">
+                {% include accordion_metric_item.html
+                    title="Successful Transactions"
+                %}
+            </div>
+        </div>
+        <div class="vads-l-row">
+            <div class="vads-l-col">
+                {% include accordion_metric_item.html
+                    title="Customer Satisfaction"
+                %}
+            </div>
+            <div class="vads-l-col"></div>
+        </div>
+
     </div>
 </li>
