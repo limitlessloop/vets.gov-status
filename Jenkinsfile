@@ -47,7 +47,7 @@ pipeline {
       steps{
         script {
           dockerImage = docker.build('scorecard-updater', 'scripts')
-          args = "-v ${pwd()}/src/_data:/data -e GH_USER=${GH_USR} -e GH_TOKEN=${GH_PSW}"
+          args = "-v ${pwd()}/src/_data:/data"
           dockerImage.inside(args) {
             sh '/application/fetch-data.sh'
           }
