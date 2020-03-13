@@ -13,8 +13,7 @@ def convert_to_json(text):
     return json.loads(text)
 
 
-def parse_json(text):
-    data_dict = convert_to_json(text)
+def parse_json(data_dict):
     graph_data = {}
     for item in data_dict['items']:
         parse_one_item(item, graph_data)
@@ -36,7 +35,7 @@ def add_to_dict(key, value, graph_data):
 def write_all_to_csv(csv_file_path, dict_data):
     mode = 'x'
     if path.exists(csv_file_path):
-        mode = 'w'
+        mode = 'a'
 
     with open(csv_file_path, mode) as csv_file:
         csv_columns = dict_data.keys()
@@ -81,7 +80,7 @@ def foresee_authenticate():
     headers = {
         'accept': APPLICATION_JSON,
         'content-type': APPLICATION_JSON,
-        'authorization': "Basic akhGY0VGN3h4UzRnU1pTNjZ0aldCcTFzblh6UzA4dDg6aGsyQmF2YmJZQ0xpMTNscE5hUXk"
+        'authorization': "Basic M0QwS2IzS2Q3RGlXM1A5WUdVVHhzWW5QY1YwZVN1bWI6SWQwZ2NCTFhIazk5NkNGNlRQbkY="
     }
 
     response = requests.request("POST", url, headers=headers, params=querystring)
@@ -104,7 +103,7 @@ def get_measures():
     print(response.text)
 
 
-def get_measure_definition(measure):
+def get_measure_definition(measure, file_path):
     url = "https://api.foresee.com/v1/measures/" + measure + "/definition"
 
     querystring = {"excludeQuestions": "false", "excludeAnswers": "true"}
@@ -116,14 +115,24 @@ def get_measure_definition(measure):
 
     response = requests.request("GET", url, headers=headers, params=querystring)
 
+    mode = 'x'
+    if path.exists(file_path):
+        mode = 'w'
+
+    with open(file_path, mode) as outfile:
+        outfile.write(response.text)
     print(response.text)
 
 
-def get_measure_data(measure, from_date, to_date):
+def get_measure_data(measure: str):
+    get_measure_data_by_page(measure, 0)
+
+
+def get_measure_data_by_page(measure: str, offset: int):
     url = "https://api.foresee.com/v1/measures/" + measure + "/data"
 
     querystring = {"from": from_date, "to": to_date, "excludeResponseDetails": "true", "excludeMQ": "false",
-                   "excludeCQ": "false", "excludePassedParams": "false", "excludeLatentScores": "false", "offset": "0",
+                   "excludeCQ": "true", "excludePassedParams": "true", "excludeLatentScores": "false", "offset": str(offset),
                    "limit": "100"}
 
     headers = {
@@ -133,7 +142,37 @@ def get_measure_data(measure, from_date, to_date):
 
     response = requests.request("GET", url, headers=headers, params=querystring)
 
-    return parse_json(response.text)
+    data_dict = convert_to_json(response.text)
+    page_data = parse_json(data_dict)
+    write_all_to_csv(all_csv_path, page_data)
+    if data_dict['hasMore'] is True:
+        get_measure_data_by_page(measure, offset+1)
+
+
+def get_measure_data2(measure: str):
+    offset = 0;
+    url = "https://api.foresee.com/v1/measures/" + measure + "/data"
+
+    headers = {
+        'accept': 'application/json',
+        'authorization': BEARER_ + token
+    }
+
+    querystring = {"from": from_date, "to": to_date, "excludeResponseDetails": "true", "excludeMQ": "false",
+                   "excludeCQ": "true", "excludePassedParams": "false", "excludeLatentScores": "false",
+                   "offset": str(offset),
+                   "filter": "url co healthcare",
+                   "limit": "100"}
+
+    while True:
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        data_dict = convert_to_json(response.text)
+        page_data = parse_json(data_dict)
+        write_all_to_csv(all_csv_path, page_data)
+        if data_dict['hasMore'] is not True:
+            break
+        offset += 1
+        querystring['offset'] = str(offset)
 
 
 def get_projects():
@@ -151,11 +190,16 @@ def get_projects():
 
 token = foresee_authenticate()
 # get_measures()
-measure_id = "8843006"
-# get_measure_definition(measure_id)
-measure_dict = get_measure_data(measure_id, "2014-01-02", "2015-01-01")
-write_average_to_csv("/Users/samanmoshafi/Documents/foresee_measure_8843006_average.csv", measure_dict)
-write_all_to_csv("/Users/samanmoshafi/Documents/foresee_measure_8843006_all.csv", measure_dict)
+measure_id = "8847572"
+all_csv_path = "/Users/samanmoshafi/Documents/va_foresee_measure_" + measure_id + "_all.csv"
+# average_csv_path = "/Users/samanmoshafi/Documents/va_foresee_measure_" + measure_id + "_average.csv"
+# get_measure_definition(measure_id,
+#                        "/Users/samanmoshafi/Documents/va_foresee_measure_" + measure_id + "_definition.json")
+from_date = "2020-01-01"
+to_date = "2020-03-11"
+get_measure_data2(measure_id)
+# write_average_to_csv(average_csv_path, measure_dict)
+# write_all_to_csv(all_csv_path, measure_dict)
 # get_measure_data(measure_id, "2015-01-02", "2016-01-01")
 # get_measure_data(measure_id, "2016-01-02", "2017-01-01")
 # get_measure_data(measure_id, "2017-01-02", "2018-01-01")
