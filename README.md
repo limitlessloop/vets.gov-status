@@ -74,6 +74,10 @@ Start jekyll site and serve it on http://localhost:4000/scorecard/:
 
 `$ ./jekyll-serve.sh`
 
+Alternatively, you can run
+
+`yarn serve`
+
 ### Run Python Scripts
 
 Make sure you have the correct version of python: `pyenv install 3.6.8` (use version in `.python-version`)
