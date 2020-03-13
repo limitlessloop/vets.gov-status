@@ -1,10 +1,7 @@
-import pandas as pd
-from credstash import getSecret
-import json
-from googleapiclient.discovery import build
 from google.oauth2.service_account import Credentials
-
-SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
+from googleapiclient.discovery import build
+import os
+import pandas as pd
 
 
 def initialize_analyticsreporting():
@@ -13,9 +10,9 @@ def initialize_analyticsreporting():
     Returns:
     analytics an authorized analyticsreporting service object.
     """
+    SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
 
-    secret_json = getSecret("serviceaccount", region="us-east-2")
-    credentials = Credentials.from_service_account_info(json.loads(secret_json), scopes=SCOPES)
+    credentials = Credentials.from_service_account_file(os.environ['GA_SERVICEACCOUNT'], scopes=SCOPES)
 
     # Build the service object.
     analytics_service = build('analyticsreporting', 'v4', credentials=credentials)

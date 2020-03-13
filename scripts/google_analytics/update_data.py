@@ -1,12 +1,9 @@
 """Pulls in data to update dashboards"""
-
+from analytics_helpers import make_df, initialize_analyticsreporting
 import datetime
 import json
-import os
-
-from analytics_helpers import make_df, initialize_analyticsreporting
-
 import numpy as np
+import os
 import pandas as pd
 
 

@@ -65,7 +65,7 @@ pipeline {
 
     stage('Get Credentials') {
       steps {
-          sh 'echo ${GA_SERVICE_BASE64} | base64 -d > scripts/serviceaccount.json'
+         // sh 'echo ${GA_SERVICE_BASE64} | base64 -d > scripts/serviceaccount.json'
       }
     }
 

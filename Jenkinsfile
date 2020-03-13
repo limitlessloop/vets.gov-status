@@ -2,7 +2,10 @@ pipeline {
   agent {
     label 'vetsgov-general-purpose'
   }
-
+  environment {
+    // Needed for credstash
+    AWS_DEFAULT_REGION = 'us-gov-west-1'
+  }
   stages {
     stage('Unit tests') {
       steps {
@@ -20,21 +23,31 @@ pipeline {
         }
       }
     }
-    stage('Build') {
+
+    // Temporary - this stage should be moved to Jenkinsfile.update
+    stage('Update Data') {
+      steps{
+        script {
+          dir('scripts') {
+            sh './run-ci-fetch-data.sh'
+          }
+        }
+      }
+    }
+
+    stage('Build website') {
       steps {
         script {
           // slackSend message: "Scorecard Jenkins build started", color: "good", channel: "scorecard-ci-temp"
           nodeImg = docker.image('node:12.16.1')
-
           nodeImg.inside() {
             sh 'yarn install --frozen-lockfile --production=true'
           }
 
           jekyllImg = docker.image('jekyll/jekyll:4.0')
           args = "--volume=${pwd()}:/srv/jekyll"
-
           jekyllImg.inside(args) {
-              sh '/usr/gem/bin/jekyll build --trace'
+            sh '/usr/gem/bin/jekyll build --trace'
           }
         }
       }
