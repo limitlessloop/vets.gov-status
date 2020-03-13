@@ -1,5 +1,9 @@
 <li class="vads-u-margin-bottom--2">
     <button class="usa-accordion-button" aria-expanded="true" aria-controls="accordion-{{ include.title | slugify }}">
+        <span class="fa-stack">
+            <i class="fas fa-circle fa-stack-2x {{ include.icon-style }}"></i>
+            <i class="fas fa-inverse fa-stack-1x {{ include.icon-name }}"></i>
+        </span>
         {{ include.title }}
     </button>
     <div id="accordion-{{ include.title | slugify }}" class="usa-accordion-content">

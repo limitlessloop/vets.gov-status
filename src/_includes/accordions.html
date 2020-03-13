@@ -2,9 +2,19 @@
     <div class="vads-l-col vads-u-margin-right--3">
 
         <ul class="usa-accordion-bordered" data-multiselectable="true">
-            {% include accordion.html title="Example metric 1" content="Example content 1" %}
+            {% include accordion.html
+                title="Make an Appointment Online"
+                content="Example content 1"
+                icon-name="fa-medkit"
+                icon-style="accordion-icon-appointment"
+            %}
 
-            {% include accordion.html title="Example metric 2" content="Example content 2" %}
+            {% include accordion.html
+                title="Apply for Pension Benefits"
+                content="Example content 2"
+                icon-name="fa-handshake"
+                icon-style="accordion-icon-pension"
+            %}
         </ul>
 
     </div>
@@ -12,7 +22,12 @@
     <div class="vads-l-col">
 
         <ul class="usa-accordion-bordered" data-multiselectable="true">
-            {% include accordion.html title="Example metric 3" content="Example content 3" %}
+            {% include accordion.html
+                title="Apply for Disability Benefits"
+                content="Example content 3"
+                icon-name="fa-file-alt"
+                icon-style="accordion-icon-disability"
+            %}
         </ul>
 
     </div>
