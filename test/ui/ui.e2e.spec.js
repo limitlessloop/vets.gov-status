@@ -5,7 +5,7 @@ module.exports = {
 
         client
             .url('http://localhost:4000/scorecard/')
-            .waitForElementVisible('body', 2000)
+            .waitForElementVisible('body', 20000)
             .assert.title('VA.gov Performance');
 
         client.click("#chart-nav-users");
