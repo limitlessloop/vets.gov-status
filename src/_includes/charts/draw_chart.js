@@ -1,6 +1,9 @@
 var ctx = document.getElementById('{{ chart.id }}Chart').getContext('2d');
 {% capture datafile %}{{ chart.csvFilename }}{% endcapture %}
 
+Chart.defaults.global.defaultFontFamily = 'Source Sans Pro';
+Chart.defaults.global.defaultFontSize = 16;
+
 var chart = new Chart(ctx, {
     type: 'line',
     data: {
