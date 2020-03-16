@@ -8,11 +8,11 @@ function showChart(event, chartName) {
 
     links = document.getElementsByClassName("chart-nav");
     for (var i = 0; i < links.length; i++) {
-        links[i].className = links[i].className.replace(" active-level","");
+        links[i].className = links[i].className.replace(" usa-current","");
     }
 
     document.getElementById(chartName).style.display = "block";
-    event.currentTarget.className += " active-level";
+    event.currentTarget.className += " usa-current";
 }
 
 //// for VADS sidenav

@@ -13,9 +13,9 @@
     <div class="vads-l-col--3" role="navigation">
         <ul class="usa-sidenav-list">
             {% for chart in site.data.at_a_glance %}
-            <li class="chart-nav{% if chart.id == 'users' %} active-level{% endif %}"
-                onclick="showChart(event, '{{ chart.id }}')">
-                <a {% if chart.id == 'users' %}class="usa-current"{% endif %}>
+            <li>
+                <a class="chart-nav{% if chart.id == 'users' %} usa-current{% endif %}"
+                   onclick="showChart(event, '{{ chart.id }}')">
                     {{ chart.title }}
                 </a>
             </li>
