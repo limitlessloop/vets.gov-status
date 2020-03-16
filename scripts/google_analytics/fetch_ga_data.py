@@ -1,4 +1,6 @@
-from analytics_helpers import make_df, initialize_analyticsreporting
+from ruamel import yaml
+
+from analytics_helpers import make_df, initialize_analyticsreporting, get_total_from_report
 from datetime_utils import find_last_full_twelve_months, reformat_date
 from requests import get_logged_in_users_request, get_all_transactions_request
 import os
@@ -21,7 +23,8 @@ def run_report(analytics_service, get_request):
     response = get_ga_report(analytics_service, get_request)
     report = response['reports'][0]
     df = make_df(report)
-    return df
+    total = get_total_from_report(report)
+    return df, total
 
 
 def add_month_column(raw_df):
@@ -40,13 +43,22 @@ def write_df_to_csv(df, filename):
 def main():
     analytics_service = initialize_analyticsreporting()
 
-    df = run_report(analytics_service, get_all_transactions_request)
+    df, transactions_total = run_report(analytics_service, get_all_transactions_request)
     df = add_month_column(df)
     write_df_to_csv(df, "all_transactions.csv")
 
-    df = run_report(analytics_service, get_logged_in_users_request)
+    df, users_total = run_report(analytics_service, get_logged_in_users_request)
     df = add_month_column(df)
     write_df_to_csv(df, "all_logged_in_users.csv")
+
+    totals = {
+        "transactions_total": transactions_total,
+        "users_total": users_total
+    }
+
+    output_file = os.path.join(os.environ['DATA_DIR'], 'counts.yml')
+    with open(output_file, 'w') as output:
+        yaml.dump(totals, output, default_flow_style=False)
 
 
 if __name__ == '__main__':

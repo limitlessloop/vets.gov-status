@@ -39,6 +39,10 @@ def make_df(report):
     return pd.DataFrame(table)
 
 
+def get_total_from_report(report):
+    return int(report['data']['totals'][0]['values'][0])
+
+
 def make_table(rows, dim_labels, metric_labels):
     output = []
 

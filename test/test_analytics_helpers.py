@@ -1,4 +1,4 @@
-from scripts.google_analytics.analytics_helpers import make_df, make_table
+from scripts.google_analytics.analytics_helpers import make_df, make_table, get_total_from_report
 import pytest
 
 
@@ -67,3 +67,15 @@ def test_make_table():
     actual_table = make_table(rows, dim_labels, metric_labels)
 
     assert expected_table == actual_table
+
+
+def test_get_total_from_report():
+    report = {
+        'data': {
+            'totals': [{
+                'values': ['1234']
+            }]
+        }
+    }
+
+    assert get_total_from_report(report) == 1234
