@@ -4,7 +4,7 @@ from requests import get_logged_in_users_request, get_all_transactions_request
 import os
 
 
-def get_transactions_report(analytics_service, get_request):
+def get_ga_report(analytics_service, get_request):
     start_date, end_date = find_last_full_twelve_months()
 
     return analytics_service.reports().batchGet(
@@ -18,7 +18,7 @@ def get_transactions_report(analytics_service, get_request):
 
 
 def run_report(analytics_service, get_request):
-    response = get_transactions_report(analytics_service, get_request)
+    response = get_ga_report(analytics_service, get_request)
     report = response['reports'][0]
     df = make_df(report)
     return df
