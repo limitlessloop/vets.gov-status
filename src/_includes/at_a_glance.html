@@ -16,6 +16,7 @@
             <li class="vads-l-col--6 medium-screen:vads-l-col--12">
                 <a tabindex="0"
                    role="button"
+                   aria-controls="{{ chart.id }}Chart"
                    id="chart-nav-{{ chart.id }}"
                    class="chart-nav{% if chart.id == 'users' %} usa-current{% endif %}"
                    onclick="showChart(event, '{{ chart.id }}')"
