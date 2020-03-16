@@ -22,3 +22,16 @@
 @import "northstar";
 @import "accordion";
 
+.usa-sidenav-list a {
+  text-align: right;
+  color: $color-gray-dark;
+
+  &.usa-current {
+    color: $color-gray-dark;
+  }
+}
+
+.chart-nav__total {
+  display: block;
+  font-size: 34px;
+}

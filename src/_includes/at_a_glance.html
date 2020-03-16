@@ -16,7 +16,11 @@
             <li>
                 <a class="chart-nav{% if chart.id == 'users' %} usa-current{% endif %}"
                    onclick="showChart(event, '{{ chart.id }}')">
-                    {{ chart.title }}
+
+                    {% capture chart_total_key %}{{ chart.id | append:"_total" }}{% endcapture %}
+                    <span class="chart-nav__total">{{ site.data.counts[chart_total_key] }}</span>
+                    <span>{{ chart.title }}</span>
+
                 </a>
             </li>
             {% endfor %}
