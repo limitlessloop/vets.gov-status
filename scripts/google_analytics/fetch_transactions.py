@@ -3,8 +3,6 @@ from datetime_utils import find_last_full_twelve_months, reformat_date
 from requests import get_logged_in_users_request, get_all_transactions_request
 import os
 
-VADOTGOV_VIEWID = '176188361'
-
 
 def get_transactions_report(analytics_service, get_request):
     start_date, end_date = find_last_full_twelve_months()
@@ -12,7 +10,7 @@ def get_transactions_report(analytics_service, get_request):
     return analytics_service.reports().batchGet(
         body={
             'reportRequests': [
-                get_request(VADOTGOV_VIEWID, start_date, end_date)
+                get_request(start_date, end_date)
             ],
             "useResourceQuotas": False
         }
