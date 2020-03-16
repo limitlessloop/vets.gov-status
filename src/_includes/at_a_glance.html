@@ -10,17 +10,19 @@
 
 
 <div class="vads-l-row">
-    <div class="vads-l-col--12 medium-screen:vads-l-col--3" role="navigation">
+    <div class="vads-l-col--12 medium-screen:vads-l-col--3"
+         role="tablist"
+         aria-label="Select a dataset">
         <ul class="vads-l-row usa-sidenav-list">
             {% for chart in site.data.at_a_glance %}
-            <li class="vads-l-col--6 medium-screen:vads-l-col--12">
-                <a tabindex="0"
-                   role="button"
+            <li class="vads-l-col--6 medium-screen:vads-l-col--12"
+                role="presentation">
+                <a tabindex="{% if chart.id == 'users' %}0{% else %}-1{% endif %}"
+                   role="tab"
                    aria-controls="{{ chart.id }}Chart"
+                   aria-selected="{% if chart.id == 'users' %}true{% else %}false{% endif %}"
                    id="chart-nav-{{ chart.id }}"
-                   class="chart-nav{% if chart.id == 'users' %} usa-current{% endif %}"
-                   onclick="showChart(event, '{{ chart.id }}')"
-                   onkeypress="keyHandler(event, '{{ chart.id }}')">
+                   class="chart-nav{% if chart.id == 'users' %} usa-current{% endif %}">
 
                     {% capture chart_total_key %}{{ chart.id | append:"_total" }}{% endcapture %}
                     <span class="chart-nav__total">{{ site.data.counts[chart_total_key] | intword }}</span>
@@ -34,14 +36,13 @@
 
     <div class="vads-l-col--12 medium-screen:vads-l-col--9">
         {% for chart in site.data.at_a_glance %}
-        <div class="chart" id="{{ chart.id }}"
-             style="display:{% if chart.id == 'users' %}block{% else %}none{% endif %}">
-            <div>
+        <div class="chart" id="{{ chart.id }}">
                 <canvas id="{{ chart.id }}Chart"
-                        role="img"
-                        aria-label="">
+                        role="tabpanel"
+                        aria-labelledby="chart-nav-{{ chart.id }}"
+                        aria-label=""
+                        {% if chart.id != "users" %}hidden{% endif %}>
                 </canvas>
-            </div>
             <script nonce="**CSP_NONCE**">
                 {% include charts/draw_chart.js %}
                 {% include charts/add_aria_label.js %}
