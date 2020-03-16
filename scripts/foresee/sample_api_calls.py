@@ -80,7 +80,7 @@ def foresee_authenticate():
     headers = {
         'accept': APPLICATION_JSON,
         'content-type': APPLICATION_JSON,
-        'authorization': "Basic M0QwS2IzS2Q3RGlXM1A5WUdVVHhzWW5QY1YwZVN1bWI6SWQwZ2NCTFhIazk5NkNGNlRQbkY="
+        'authorization': "Basic <basic token>"
     }
 
     response = requests.request("POST", url, headers=headers, params=querystring)
