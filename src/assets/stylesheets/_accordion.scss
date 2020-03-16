@@ -14,8 +14,11 @@
   margin-bottom: 16px;
 }
 
-.accordion-metric__title {
-  font-weight: bold;
+h3 {
+    font-size: units(2);
+    display: inline;
+    font-family: inherit;
+    font-weight: bold;
 }
 
 .accordion-metric__headline {
