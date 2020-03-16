@@ -1,4 +1,5 @@
 # From https://github.com/23maverick23/jekyll-humanize
+# ...with a few modifications
 
 module Jekyll
 
@@ -99,7 +100,7 @@ module Jekyll
       end
 
       if value < 1000000
-        return value
+        return intcomma(value)
       end
 
       for exponent, text in INTWORD_HELPERS
