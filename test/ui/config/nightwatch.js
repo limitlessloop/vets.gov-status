@@ -1,17 +1,17 @@
 /* eslint-disable camelcase, strict */
 'use strict';
 
-const fs = require('fs-extra');
-const chromedriver = require('chromedriver');
-const seleniumServer = require('selenium-server');
+// const fs = require('fs-extra');
+// const seleniumServer = require('selenium-server');
 
 require('@babel/register');
 require('@babel/polyfill');
 
-const selenium_logs = './logs/selenium';
-const selenium_server_port = process.env.SELENIUM_PORT || 4444;
+// const selenium_logs = './logs/selenium';
+const selenium_server_port = 4444;
+const selenium_host = 'selenium';
 
-fs.ensureDirSync(selenium_logs);
+// fs.ensureDirSync(selenium_logs);
 
 module.exports = {
   output_folder: './logs/nightwatch',
@@ -23,9 +23,9 @@ module.exports = {
   test_workers: false,
   test_settings: {
     default: {
-      launch_url: `localhost:4000`,
+      launch_url: `jekyll:4000`,
       filter: '**/*.e2e.spec.js',
-      selenium_host: 'localhost',
+      selenium_host: selenium_host,
       selenium_port: selenium_server_port,
       use_ssl: false,
       silent: true,
@@ -46,13 +46,9 @@ module.exports = {
         },
       },
       selenium: {
-        cli_args: {
-          'webdriver.chrome.driver': chromedriver.path,
-        },
-        start_process: true,
-        server_path: seleniumServer.path,
-        log_path: selenium_logs,
-        host: '127.0.0.1',
+        start_process: false,
+        // log_path: selenium_logs,
+        host: selenium_host,
         port: selenium_server_port,
       },
       test_workers: {

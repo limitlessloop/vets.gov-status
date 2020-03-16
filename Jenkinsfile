@@ -56,12 +56,17 @@ pipeline {
 
     stage('UI tests') {
       steps {
-        scripts {
-          docker.image('jekyll/jekyll:4.0').withRun('--arg1 --publish=4000:4000 --arg2 --volume=${pwd()}:/srv/jekyll /usr/gem/bin/jekyll serve --no-watch') { c ->
+        script {
+          def user_id
+          def group_id
+          user_id = sh(returnStdout: true, script: 'id -u').trim()
+          group_id = sh(returnStdout: true, script: 'id -g').trim()
+
+          docker.image('jekyll/jekyll:4.0').withRun("--publish=4000:4000 --volume=${pwd()}:/srv/jekyll --user=${user_id}:${group_id}", "/usr/gem/bin/jekyll serve --no-watch") {
             dir('test/ui') {
               echo "Starting UI tests"
               sh 'curl http://localhost:4000/scorecard/'
-              
+
               nodeImg = docker.image('node:12.16.1')
               nodeImg.inside() {
                 sh 'yarn install --frozen-lockfile'
