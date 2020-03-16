@@ -2,7 +2,7 @@ import requests
 import json
 import csv
 import logging
-from os import path
+from os import path, environ
 from scripts.foresee.items import ScoreHolder
 
 TO_DATE = "to_date"
@@ -22,7 +22,7 @@ def foresee_authenticate():
     headers = {
         'accept': APPLICATION_JSON,
         'content-type': APPLICATION_JSON,
-        'authorization': "Basic M0QwS2IzS2Q3RGlXM1A5WUdVVHhzWW5QY1YwZVN1bWI6SWQwZ2NCTFhIazk5NkNGNlRQbkY="
+        'authorization': "Basic " + environ.get('BASIC_AUTH')
     }
 
     response = requests.request("POST", url, headers=headers, params=querystring)
