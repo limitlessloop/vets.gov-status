@@ -51,6 +51,7 @@
   font-size: 2.1rem;
   font-weight: 300;
   font-style: normal;
+  font-family: inherit;
   margin: units(3) 0;
   width: 60rem;
 
@@ -71,6 +72,10 @@
   text-decoration: none;
 }
 
+.site-header__logo-link span:first-child {
+    font-weight: bold;
+}
+
 .site-header__utility-links {
   width: 20rem;
   flex: 0 1 auto;
@@ -83,7 +88,6 @@
     }
   }
 }
-
 .site-top-nav-wrapper {
   display: none;
   background-color: $color-primary-darkest;
