@@ -114,7 +114,13 @@ Then run `./python-install.sh` to update your virtual environment with the new p
 
 ### Running Tests
 
-Run tests with pytest and generate a coverage report with  `./run-tests.sh`.
+Run unit tests with pytest and generate a coverage report with  `./run-tests.sh`.
+
+Run UI tests by going into the `test/ui` directory and doing:
+```
+$ yarn install
+$ yarn run test-headless
+```
 
 To run smoke tests, change into the `test` directory and run `npm run test-headless`. You might need to run `npm install` first.
 
