@@ -34,7 +34,14 @@ def make_df(report):
     if not rows:
         raise RuntimeError('Error in Google Analytics response.')
 
+    table = make_table(rows, dim_labels, metric_labels)
+
+    return pd.DataFrame(table)
+
+
+def make_table(rows, dim_labels, metric_labels):
     output = []
+
     for row in rows:
         current_data = {}
 
@@ -48,4 +55,4 @@ def make_df(report):
 
         output.append(current_data)
 
-    return pd.DataFrame(output)
+    return output
