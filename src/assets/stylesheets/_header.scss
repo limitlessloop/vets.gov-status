@@ -18,6 +18,11 @@
 .site-header__masthead {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include media($nav-width) {
+     flex-wrap: nowrap;
+  }
 }
 
 .usa-button.site-button-inverse {
@@ -47,6 +52,7 @@
   font-weight: 300;
   font-style: normal;
   margin: units(3) 0;
+  width: 60rem;
 
   @include media($nav-width) {
     font-size: 3.2rem;
@@ -66,8 +72,9 @@
 }
 
 .site-header__utility-links {
-  align-items: center;
-  display: flex;
+  width: 20rem;
+  flex: 0 1 auto;
+  align-self: center;
 
   .usa-button {
     display: none;
