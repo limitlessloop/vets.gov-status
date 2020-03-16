@@ -36,10 +36,14 @@
         <div class="chart" id="{{ chart.id }}"
              style="display:{% if chart.id == 'users' %}block{% else %}none{% endif %}">
             <div>
-                <canvas id="{{ chart.id }}Chart"></canvas>
+                <canvas id="{{ chart.id }}Chart"
+                        role="img"
+                        aria-label="">
+                </canvas>
             </div>
             <script nonce="**CSP_NONCE**">
                 {% include charts/draw_chart.js %}
+                {% include charts/add_aria_label.js %}
             </script>
         </div>
         {% endfor %}
