@@ -1,8 +1,8 @@
 from re import search, RegexFlag
 
 
-def extract_satisfaction(scores_dict):
-    for latent_scores in scores_dict:
+def extract_satisfaction(scores_list):
+    for latent_scores in scores_list:
         if latent_scores['name'] == 'Satisfaction':
             return latent_scores['score']
     return None

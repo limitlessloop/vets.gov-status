@@ -1,6 +1,7 @@
 import requests
 import json
 import csv
+import logging
 from os import path
 from scripts.foresee.items import ScoreHolder
 
@@ -62,8 +63,12 @@ def get_measure_data(bearer_token, measure, from_date, to_date):
     while True:
         response = requests.request("GET", url, headers=headers, params=querystring)
         if response.status_code == 200:
-            measure_data = json.loads(response.text)
+            logging.info("Converting " + str(offset+1))
+            measure_data = response.json()
             extract_measure_items(score_holder, measure_data)
+            logging.info(
+                "Converted page " + str(offset+1) + " of "
+                + str(int(measure_data['total']/100)))
 
         if measure_data['hasMore'] is not True:
             break
@@ -103,6 +108,7 @@ def write_scores_to_csv(csv_file_path, dict_data):
 
 
 def main():
+    logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', level=logging.INFO)
     measure_id = "8847572"
     bearer_token = foresee_authenticate()
     measure_dates = get_dates()
