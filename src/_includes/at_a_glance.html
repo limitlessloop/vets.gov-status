@@ -18,7 +18,7 @@
                    onclick="showChart(event, '{{ chart.id }}')">
 
                     {% capture chart_total_key %}{{ chart.id | append:"_total" }}{% endcapture %}
-                    <span class="chart-nav__total">{{ site.data.counts[chart_total_key] }}</span>
+                    <span class="chart-nav__total">{{ site.data.counts[chart_total_key] | intword }}</span>
                     <span>{{ chart.title }}</span>
 
                 </a>

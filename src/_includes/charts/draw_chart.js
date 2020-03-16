@@ -14,6 +14,20 @@ var chart = new Chart(ctx, {
         }]
     },
     options: {
+        tooltips: {
+            callbacks: {
+                label: function(tooltipItem, data) {
+                    var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                    if (label) {
+                        label += ': ';
+                    }
+                    // regex taken from https://stackoverflow.com/a/2901298
+                    label += tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    return label;
+                }
+            }
+        },
         legend: {
             display: false
         },
