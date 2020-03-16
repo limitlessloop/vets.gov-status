@@ -49,7 +49,7 @@ class ScoreHolder:
         return len(self.measure_item_list)
 
     def get_satisfaction_score(self):
-        return self.satisfaction_score / len(self.measure_item_list)
+        return round(self.satisfaction_score / len(self.measure_item_list), 1)
 
     def geturl_satisfaction_score(self, pattern):
         url_filter_satisfaction_score = 0.0
@@ -58,4 +58,4 @@ class ScoreHolder:
             if measure_item.does_url_contain_pattern(pattern):
                 url_filter_counter += 1
                 url_filter_satisfaction_score += measure_item.get_satisfaction_score()
-        return url_filter_satisfaction_score / url_filter_counter
+        return round(url_filter_satisfaction_score / url_filter_counter, 1)
