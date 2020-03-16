@@ -1,25 +1,31 @@
 module.exports = {
     'Smoke Test': client => {
         client
-            .url('http://localhost:4000/scorecard/')
+            //.url('http://localhost:4000/scorecard/')
+            .url(' https://dev.va.gov/scorecard/')
+
             .waitForElementVisible('body', 2000)
 
-            .assert.title('Scorecard')
+            .assert.title('VA.gov Performance');
 
-            client.expect.element("ul.nav.nav-tabs.tabs-chart > li:nth-child(1)").text.to.equal("Users")
-            client.expect.element("ul.nav.nav-tabs.tabs-chart > li:nth-child(2)").text.to.equal("Mobile Use")
-            client.expect.element("ul.nav.nav-tabs.tabs-chart > li:nth-child(3)").text.to.equal("Views")
-            client.expect.element("ul.nav.nav-tabs.tabs-chart > li:nth-child(4)").text.to.equal("New accounts")
-            client.expect.element("ul.nav.nav-tabs.tabs-chart > li:nth-child(5)").text.to.equal("Total accounts")
+            client.click("#chart-nav-users")
+            client.expect.element("#usersChart").to.be.visible
+            client.expect.element("#transactionsChart").not.to.be.visible
 
 
-            client.expect.element('a[href="/scorecard/boards/content.html"]').to.be.present
-            client.expect.element('a[href="/scorecard/boards/discharge.html"]').to.be.present
-            client.expect.element('a[href="/scorecard/boards/facility.html"]').to.be.present
-            client.expect.element('a[href="/scorecard/boards/gibct.html"]').to.be.present
-            client.expect.element('a[href="/scorecard/boards/search.html"]').to.be.present
+            client.click("#chart-nav-transactions")
+            client.expect.element("#transactionsChart").to.be.visible
+            client.expect.element("#usersChart").not.to.be.visible
 
 
+            //Verify keyboard navigability, press TAB to reach the intended element
+            client.keys(client.Keys.TAB)
+            client.keys(client.Keys.TAB)
+            client.keys(client.Keys.TAB)
+
+            client.expect.element("#accordion-apply-for-disability-benefits").to.be.visible
+            client.keys(client.Keys.ENTER)
+            client.expect.element("#accordion-apply-for-disability-benefits").to.not.be.visible
 
     }
 }

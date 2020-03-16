@@ -16,6 +16,7 @@ fs.ensureDirSync(selenium_logs);
 module.exports = {
   output_folder: './logs/nightwatch',
   src_folders: './',
+  custom_commands_path: './nightwatch-commands/',
   live_output: true,
   parallel_process_delay: 10,
   disable_colors: process.env.BUILDTYPE === 'production',
