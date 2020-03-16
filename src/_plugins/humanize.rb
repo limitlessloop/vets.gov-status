@@ -77,17 +77,8 @@ module Jekyll
     end
 
     INTWORD_HELPERS = [
-      [6, "million"],
-      [9, "billion"],
-      [12, "trillion"],
-      [15, "quadrillion"],
-      [18, "quintillion"],
-      [21, "sextillion"],
-      [24, "septillion"],
-      [27, "octillion"],
-      [30, "nonillion"],
-      [33, "decillion"],
-      [100, "googol"],
+      [6, "M"],
+      [9, "B"]
     ]
 
     def intword(value)
@@ -115,7 +106,7 @@ module Jekyll
         large_number = 10 ** exponent
 
         if value < large_number * 1000
-          return "%.1f #{text}" % (value / large_number.to_f)
+          return "%.1f#{text}" % (value / large_number.to_f)
         end
 
       end
