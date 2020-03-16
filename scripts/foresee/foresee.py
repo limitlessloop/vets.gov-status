@@ -30,7 +30,7 @@ def get_measure_data(bearer_token, measure, from_date, to_date):
     querystring = {
         "from": from_date,
         "to": to_date,
-        "excludeResponseDetails": "true",
+        "excludeResponseDetails": "false",
         "excludeMQ": "true",
         "excludeCQ": "true",
         "excludePassedParams": "false",
@@ -52,6 +52,7 @@ def get_measure_data(bearer_token, measure, from_date, to_date):
         querystring['offset'] = str(offset)
         measure_data.extend(response_json['items'])
     
+    print(measure_data)
     return measure_data
 
 def calculate_average_satisfaction(items):
@@ -63,7 +64,7 @@ def main():
     logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', level=logging.INFO)
     measure_id = "8847572"
     bearer_token = authenticate()
-    data = get_measure_data(bearer_token, measure_id, "2020-03-01", "2020-03-15")
+    data = get_measure_data(bearer_token, measure_id, "2020-03-15", "2020-03-15")
     avg = calculate_average_satisfaction(data)
     logging.info("Calculated average: {}".format(avg))
 
