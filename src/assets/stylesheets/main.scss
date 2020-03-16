@@ -1,0 +1,37 @@
+---
+---
+
+// Files that allow us to use Formation’s Sass functions, variables, and mixins
+@import '../../../node_modules/@department-of-veterans-affairs/formation/sass/base/b-variables';
+@import '../../../node_modules/@department-of-veterans-affairs/formation/sass/base/_b-breakpoints';
+@import '../../../node_modules/@department-of-veterans-affairs/formation/sass/base/b-functions';
+@import '../../../node_modules/@department-of-veterans-affairs/formation/sass/base/_b-mixins';
+
+@import "variables";
+@import "media";
+@import "va-notice";
+@import "header";
+@import "subhead";
+@import "tabs";
+@import "research-quotes";
+@import "tiles";
+@import "projects";
+@import "screenshots";
+@import "footer";
+@import "migration";
+@import "northstar";
+@import "accordion";
+
+.usa-sidenav-list a {
+  text-align: right;
+  color: $color-gray-dark;
+
+  &.usa-current {
+    color: $color-gray-dark;
+  }
+}
+
+.chart-nav__total {
+  display: block;
+  font-size: 3.4rem;
+}

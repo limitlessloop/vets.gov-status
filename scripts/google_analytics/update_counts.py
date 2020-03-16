@@ -1,36 +1,9 @@
 """Pulls in data to update dashboards"""
-
+from analytics_helpers import make_df, initialize_analyticsreporting
 import datetime
 import json
 import os
-
-from googleapiclient.discovery import build
-from google.oauth2.service_account import Credentials
-
-from credstash import getSecret
-
-from analytics_helpers import make_df
-
 import ruamel.yaml as yaml
-
-SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
-KEY_FILE_LOCATION = os.environ['GA_SERVICEACCOUNT']
-
-
-def initialize_analyticsreporting():
-    """Initializes an analyticsreporting service object.
-
-    Returns:
-    analytics an authorized analyticsreporting service object.
-    """
-
-    secret_json = getSecret("serviceaccount", region="us-east-2")
-    credentials = Credentials.from_service_account_info(json.loads(secret_json), scopes=SCOPES)
-
-    # Build the service object.
-    analytics_service = build('analyticsreporting', 'v4', credentials=credentials)
-
-    return analytics_service
 
 
 def get_count_report(analytics_service, view_id, event_name):

@@ -1,0 +1,52 @@
+---
+title: VA.gov Performance
+
+color: '#0071bb'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{page.title}}</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <link rel="shortcut icon" href="{{site.baseurl}}/assets/img/design/icons/favicon.ico" />
+
+  <script src="{{site.baseurl}}/assets/vendor/chart.js/Chart.bundle.min.js"></script>
+  <script src="{{site.baseurl}}/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="{{site.baseurl}}/assets/vendor/formation/formation.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/vendor/formation/formation.min.css" />
+  <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/stylesheets/main.css" />
+</head>
+
+<body>
+
+{% include govt_site_banner.html %}
+
+{% include header.html %}
+
+{% include northstar.html %}
+
+<div class="vads-l-grid-container">
+
+ {% include at_a_glance.html %}
+
+  <div class="vads-l-row">
+    <div class="vads-l-col">
+
+      <div class="va-h-ruled--stars vads-u-margin-y--4"></div>
+
+    </div>
+  </div>
+
+  {% include accordions.html %}
+
+</div>
+
+{% include footer.html %}
+
+</body>
+</html>
+
+

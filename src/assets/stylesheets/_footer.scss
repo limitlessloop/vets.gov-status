@@ -1,0 +1,17 @@
+.site-footer {
+  background: $color-primary-darkest;
+  color: white;
+
+  a {
+    color: white;
+  }
+}
+
+.site-footer__logo {
+  max-width: 28rem;
+  display: block;
+
+  img {
+    width: 100%;
+  }
+}

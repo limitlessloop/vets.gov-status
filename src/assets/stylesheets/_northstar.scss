@@ -1,0 +1,25 @@
+.north-star {
+  color: $color-white;
+  background-color: $color-primary;
+}
+
+.north-star__masthead {
+  display: flex;
+  justify-content: space-between;
+}
+
+.north-star__logo-text {
+  display: block;
+  line-height: units(3);
+  font-weight: bold;
+  font-style: normal;
+  margin: units(0);
+
+  @include media($nav-width) {
+    font-size: units(3);
+  }
+}
+
+.north-star__text-emphasis {
+    font-weight: bold;
+}

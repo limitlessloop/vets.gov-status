@@ -1,0 +1,32 @@
+<li class="vads-u-margin-bottom--2">
+    <button class="usa-accordion-button" aria-expanded="true" aria-controls="accordion-{{ include.title | slugify }}">
+        <span class="fa-stack">
+            <i class="fas fa-circle fa-stack-2x {{ include.icon-style }}"></i>
+            <i class="fas fa-inverse fa-stack-1x {{ include.icon-name }}"></i>
+        </span>
+        <h3>{{ include.title }}</h3>
+    </button>
+    <div id="accordion-{{ include.title | slugify }}" class="usa-accordion-content">
+        <div class="vads-l-row">
+            <div class="vads-l-col">
+                {% include accordion_metric_item.html
+                    title="Logged in Users"
+                %}
+            </div>
+            <div class="vads-l-col">
+                {% include accordion_metric_item.html
+                    title="Successful Transactions"
+                %}
+            </div>
+        </div>
+        <div class="vads-l-row">
+            <div class="vads-l-col">
+                {% include accordion_metric_item.html
+                    title="Customer Satisfaction"
+                %}
+            </div>
+            <div class="vads-l-col"></div>
+        </div>
+
+    </div>
+</li>

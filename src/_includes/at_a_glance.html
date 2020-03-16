@@ -1,0 +1,48 @@
+<div class="vads-l-row">
+    <div class="vads-l-col">
+
+        <h2 class="vads-u-font-family--serif">
+            VA.gov at a glance
+        </h2>
+
+    </div>
+</div>
+
+
+<div class="vads-l-row">
+    <div class="vads-l-col--12 medium-screen:vads-l-col--3 small-desktop-screen:vads-l-col--3 large-screen:vads-l-col--3" role="navigation">
+        <ul class="usa-sidenav-list">
+            {% for chart in site.data.at_a_glance %}
+            <li>
+                <a id="chart-nav-{{ chart.id }}" class="chart-nav{% if chart.id == 'users' %} usa-current{% endif %}"
+                   onclick="showChart(event, '{{ chart.id }}')">
+
+                    {% capture chart_total_key %}{{ chart.id | append:"_total" }}{% endcapture %}
+                    <span class="chart-nav__total">{{ site.data.counts[chart_total_key] | intword }}</span>
+                    <span>{{ chart.title }}</span>
+
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="vads-l-col--12 medium-screen:vads-l-col--9 small-desktop-screen:vads-l-col--9 large-screen:vads-l-col--9">
+        {% for chart in site.data.at_a_glance %}
+        <div class="chart" id="{{ chart.id }}"
+             style="display:{% if chart.id == 'users' %}block{% else %}none{% endif %}">
+            <div>
+                <canvas id="{{ chart.id }}Chart"></canvas>
+            </div>
+            <script nonce="**CSP_NONCE**">
+                {% include charts/draw_chart.js %}
+            </script>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    {% include charts/chart_nav.js %}
+</script>
+
