@@ -14,8 +14,12 @@
         <ul class="vads-l-row usa-sidenav-list">
             {% for chart in site.data.at_a_glance %}
             <li class="vads-l-col--6 medium-screen:vads-l-col--12">
-                <a id="chart-nav-{{ chart.id }}" class="chart-nav{% if chart.id == 'users' %} usa-current{% endif %}"
-                   onclick="showChart(event, '{{ chart.id }}')">
+                <a tabindex="0"
+                   role="button"
+                   id="chart-nav-{{ chart.id }}"
+                   class="chart-nav{% if chart.id == 'users' %} usa-current{% endif %}"
+                   onclick="showChart(event, '{{ chart.id }}')"
+                   onkeypress="keyHandler(event, '{{ chart.id }}')">
 
                     {% capture chart_total_key %}{{ chart.id | append:"_total" }}{% endcapture %}
                     <span class="chart-nav__total">{{ site.data.counts[chart_total_key] | intword }}</span>

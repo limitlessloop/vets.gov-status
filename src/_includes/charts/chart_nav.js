@@ -15,6 +15,13 @@ function showChart(event, chartName) {
     event.currentTarget.className += " usa-current";
 }
 
+function keyHandler(event, chartName) {
+    if (event.key === "Enter") {
+        event.stopPropagation;
+        return showChart(event, chartName);
+    }
+}
+
 //// for VADS sidenav
 //var mobileMediaQuery = window.matchMedia('(max-width: 767px)');
 //var element = document.getElementsByClassName("va-btn-sidebarnav-trigger")[0];
