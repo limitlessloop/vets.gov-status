@@ -1,11 +1,10 @@
 module.exports = {
-    'Smoke Test': client => {
+    'UI Test': client => {
         const date = new Date();
         const displayDate = date.toLocaleString('default', { month: 'long' }) + ' ' + date.getDate()+ ', ' + date.getFullYear();
 
         client
-            // .url('http://localhost:4000/scorecard/')
-            .url(' https://dev.va.gov/scorecard/')
+            .url('http://localhost:4000/scorecard/')
             .waitForElementVisible('body', 2000)
             .assert.title('VA.gov Performance');
 
