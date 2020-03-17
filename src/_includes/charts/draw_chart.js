@@ -5,15 +5,13 @@ Chart.defaults.global.defaultFontFamily = 'Source Sans Pro';
 Chart.defaults.global.defaultFontSize = 16;
 
 var chart = new Chart(ctx, {
-    type: 'line',
+    type: 'bar',
     data: {
         labels: [{% for line in site.data[datafile] %}'{{ line.date }}',{% endfor %}],
         datasets: [{
             label: '{{ chart.dataLabel }}',
             data: [{% for line in site.data[datafile] %}{{ line[chart.colName] }},{% endfor %}],
-            borderColor: '{{ page.color }}',
-            fill: false,
-            pointBackgroundColor: '{{ page.color }}'
+            backgroundColor: '#0071bb' // blue-primary
         }]
     },
     options: {
