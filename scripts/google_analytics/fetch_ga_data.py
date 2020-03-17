@@ -59,7 +59,9 @@ def main():
             {
                 "title": "Disability",
                 "users": 12345,
+                "users_trend": 12,
                 "csat": 76,
+                "csat_trend": -14,
                 "tools": [
                     {
                         "title": "Apply for Disability",
@@ -74,7 +76,9 @@ def main():
             {
                 "title": "Health Care",
                 "users": 266542,
+                "users_trend": -65,
                 "csat": 54,
+                "csat_trend": 32,
                 "tools": [
                     {
                         "title": "Apply for Health Care",

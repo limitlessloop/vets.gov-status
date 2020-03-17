@@ -1,5 +1,6 @@
 services:
 - csat: 76
+  csat_trend: -14
   title: Disability
   tools:
   - title: Apply for Disability
@@ -7,11 +8,14 @@ services:
   - title: Something else
     transactions: 12345
   users: 12345
+  users_trend: 12
 - csat: 54
+  csat_trend: 65
   title: Health Care
   tools:
   - title: Apply for Health Care
     transactions: 124134
   users: 266542
+  users_trend: -65
 transactions_total: 27153090
 users_total: 7831583

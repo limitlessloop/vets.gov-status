@@ -3,10 +3,10 @@
 
     <div class="service-tile__metric">
         <span class="service-tile__title">LOGGED IN USERS</span>
-        <span class="service-tile__headline vads-u-font-family--serif">{{ service.users }}</span>
+        <span class="service-tile__headline vads-u-font-family--serif">{{ service.users | intcomma }}</span>
         <span class="service-tile__1-month">
             <i class="fas fa-arrow-circle-up service-tile__trend-icon"></i>
-            Up X% Last 30 days
+            Up {{ service.users_trend }}% Last 30 days
         </span>
     </div>
 
@@ -15,7 +15,7 @@
         <span class="service-tile__headline vads-u-font-family--serif">{{ service.csat }}%</span>
         <span class="service-tile__1-month">
             <i class="fas fa-arrow-circle-up service-tile__trend-icon"></i>
-            Up X% Last 30 days
+            Up {{service.csat_trend }}% Last 30 days
         </span>
     </div>
 
