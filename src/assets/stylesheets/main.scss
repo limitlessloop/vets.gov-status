@@ -22,6 +22,10 @@
 @import "northstar";
 @import "accordion";
 
+h2 {
+  margin-top: units(4);
+}
+
 .usa-sidenav-list {
   border-color: $color-gray-light;
 
