@@ -31,6 +31,27 @@
   }
 }
 
+@media screen and (max-width: $medium-screen) {
+  .usa-sidenav-list {
+
+    border-top: 0;
+    margin-bottom: units(2);
+
+    & li {
+      border-top: 0;
+    }
+
+    & a {
+      text-align: center;
+
+      &.usa-current {
+        border-left: 0;
+        border-bottom: .4rem solid $color-blue;
+      }
+    }
+  }
+}
+
 .chart-nav__total {
   display: block;
   font-size: 3.4rem;
