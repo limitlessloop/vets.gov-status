@@ -37,12 +37,12 @@
     <div class="vads-l-col--12 medium-screen:vads-l-col--9">
         {% for chart in site.data.at_a_glance %}
         <div class="chart" id="{{ chart.id }}">
-                <canvas id="{{ chart.id }}Chart"
-                        role="tabpanel"
-                        aria-labelledby="chart-nav-{{ chart.id }}"
-                        aria-label=""
-                        {% if chart.id != "users" %}hidden{% endif %}>
-                </canvas>
+            <canvas id="{{ chart.id }}Chart"
+                    role="img"
+                    aria-labelledby="chart-nav-{{ chart.id }}"
+                    aria-label=""
+                    {% if chart.id != "users" %}hidden{% endif %}>
+            </canvas>
             <script nonce="**CSP_NONCE**">
                 {% include charts/draw_chart.js %}
                 {% include charts/add_aria_label.js %}
