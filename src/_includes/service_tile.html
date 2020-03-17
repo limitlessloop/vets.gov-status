@@ -18,4 +18,21 @@
             Up X% Last 30 days
         </span>
     </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Tool</th>
+                <th>Transactions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tool in service.tools %}
+                <tr>
+                    <td>{{ tool.title }}</td>
+                    <td>{{ tool.transactions | intcomma }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </section>

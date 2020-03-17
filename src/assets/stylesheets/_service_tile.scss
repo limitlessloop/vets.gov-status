@@ -12,6 +12,33 @@
   & span {
     display: block;
   }
+
+  & table {
+
+    & * {
+      background-color: $color-gray-lightest;
+      border-color: $color-gray-light;
+      border-left: none;
+      border-right: none;
+    }
+
+    & th {
+      border-top: none;
+    }
+
+    & tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    & td,th {
+      padding: units(1) 0;
+
+      &:last-child {
+        text-align: right;
+        font-weight: bold;
+      }
+    }
+  }
 }
 
 .service-tile__metric {
