@@ -1,6 +1,6 @@
 import pytest
 import json
-from scripts.foresee.foresee import calculate_average_satisfaction, calculate_average_satisfaction_of_all_data
+from scripts.foresee.foresee import calculate_average_satisfaction, calculate_overall_average_satisfaction
 
 response_str: str = \
     "{\"hasMore\":true,\"total\":5221,\"items\":[{\"id\":\"V185Vop4U5hthwFF5cUdRA4C\"," \
@@ -48,5 +48,5 @@ def test_calculate_average_satisfaction_of_all_data():
             , {'month_data': one_set_of_data['items']}
             , {'month_data': one_set_of_data['items']}
     ]
-    assert 85.0 == calculate_average_satisfaction_of_all_data(multiple_data_items)
+    assert 85.0 == calculate_overall_average_satisfaction(multiple_data_items)
 

@@ -86,7 +86,7 @@ def fetch_last_12_months_data():
     return last_year_data
 
 
-def calculate_average_satisfaction_of_all_data(last_year_data):
+def calculate_overall_average_satisfaction(last_year_data):
     all_data = []
     for one_month_data in last_year_data:
         all_data.extend(one_month_data['month_data'])
