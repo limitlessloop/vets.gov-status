@@ -1,6 +1,9 @@
-def get_logged_in_users_request(viewid, start_date, end_date):
+VADOTGOV_VIEW_ID = '176188361'
+
+
+def get_logged_in_users_request(start_date, end_date):
     return {
-        'viewId': viewid,
+        'viewId': VADOTGOV_VIEW_ID,
         'dateRanges': [{'startDate': start_date,
                         'endDate': end_date}],
         'metrics': [{'expression': 'ga:users'}],
@@ -23,9 +26,9 @@ def get_logged_in_users_request(viewid, start_date, end_date):
     }
 
 
-def get_all_transactions_request(viewid, start_date, end_date):
+def get_all_transactions_request(start_date, end_date):
     return {
-        'viewId': viewid,
+        'viewId': VADOTGOV_VIEW_ID,
         'dateRanges': [{'startDate': start_date,
                         'endDate': end_date}],
         'metrics': [{'expression': 'ga:totalEvents'}],

@@ -1,6 +1,9 @@
 var ctx = document.getElementById('{{ chart.id }}Chart').getContext('2d');
 {% capture datafile %}{{ chart.csvFilename }}{% endcapture %}
 
+Chart.defaults.global.defaultFontFamily = 'Source Sans Pro';
+Chart.defaults.global.defaultFontSize = 16;
+
 var chart = new Chart(ctx, {
     type: 'line',
     data: {
@@ -14,6 +17,20 @@ var chart = new Chart(ctx, {
         }]
     },
     options: {
+        tooltips: {
+            callbacks: {
+                label: function(tooltipItem, data) {
+                    var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                    if (label) {
+                        label += ': ';
+                    }
+                    // regex taken from https://stackoverflow.com/a/2901298
+                    label += tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    return label;
+                }
+            }
+        },
         legend: {
             display: false
         },

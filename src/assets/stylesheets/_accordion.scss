@@ -11,20 +11,23 @@
 }
 
 .accordion-metric__item {
-  margin-bottom: 16px;
+  margin-bottom: units(2);
 }
 
-.accordion-metric__title {
-  font-weight: bold;
+h3 {
+    font-size: units(2);
+    display: inline;
+    font-family: inherit;
+    font-weight: bold;
 }
 
 .accordion-metric__headline {
   font-weight: bold;
-  font-size: 30px;
+  font-size: 3.0rem;
 }
 
 .accordion-metric__30-days {
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 .accordion-metric__trend {
@@ -32,5 +35,5 @@
 }
 
 .accordion-metric__12-months {
-  font-size: 14px;
+  font-size: 1.4rem;
 }

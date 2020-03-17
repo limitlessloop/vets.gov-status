@@ -5,9 +5,6 @@ export CONFIG_DIR="."
 export GA_SERVICEACCOUNT="serviceaccount.json"
 
 echo Running Google Analytics scripts...
-python google_analytics/fetch_transactions.py
-# python google_analytics/update_data.py
-# python google_analytics/update_counts.py
+python google_analytics/fetch_ga_data.py
 
-mv data/all_transactions.csv ../src/_data/
-mv data/all_logged_in_users.csv ../src/_data/
+mv data/* ../src/_data/

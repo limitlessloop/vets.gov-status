@@ -18,6 +18,11 @@
 .site-header__masthead {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include media($nav-width) {
+     flex-wrap: nowrap;
+  }
 }
 
 .usa-button.site-button-inverse {
@@ -46,7 +51,9 @@
   font-size: 2.1rem;
   font-weight: 300;
   font-style: normal;
+  font-family: inherit;
   margin: units(3) 0;
+  width: 60rem;
 
   @include media($nav-width) {
     font-size: 3.2rem;
@@ -65,9 +72,14 @@
   text-decoration: none;
 }
 
+.site-header__logo-link span:first-child {
+    font-weight: bold;
+}
+
 .site-header__utility-links {
-  align-items: center;
-  display: flex;
+  width: 20rem;
+  flex: 0 1 auto;
+  align-self: center;
 
   .usa-button {
     display: none;
@@ -76,7 +88,6 @@
     }
   }
 }
-
 .site-top-nav-wrapper {
   display: none;
   background-color: $color-primary-darkest;
@@ -89,14 +100,14 @@
     @include media($nav-width) {
       position: -webkit-sticky;
       position: sticky;
-      top: -1px;
+      top: -.1rem;
       z-index: 800;
     }
   }
 }
 
 .site-header__nav {
-  border-top: 1px solid white;
+  border-top: .1rem solid white;
   display: none;
 
   @include media($nav-width) {
@@ -136,5 +147,5 @@
 }
 
 .site-header__nav-item__link.current {
-  border-bottom: 3px solid $color-gold;
+  border-bottom: .3rem solid $color-gold;
 }

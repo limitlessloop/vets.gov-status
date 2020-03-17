@@ -1,17 +1,6 @@
 source: src
 destination: _site
 
-collections:
-  boards:
-    output: true
-
-defaults:
-  - scope:
-      path: ""
-      type: boards
-    values:
-      layout: board
-
 sass:
   sass_dir: assets/stylesheets
 
