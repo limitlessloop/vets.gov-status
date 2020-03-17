@@ -1,0 +1,28 @@
+.service-tile {
+  background-color: $color-gray-lightest;
+  margin-bottom: units(2);
+  padding: units(3);
+
+  & h3 {
+    font-size: 3rem;
+    color: $color-gray-dark;
+    margin-top: 0;
+  }
+
+  & span {
+    display: block;
+  }
+}
+
+.service-tile__metric {
+  margin: units(2) 0;
+}
+
+.service-tile__headline {
+  font-weight: bold;
+  font-size: 2.0rem;
+}
+
+.service-tile__trend-icon {
+  color: $color-primary;
+}
