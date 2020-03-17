@@ -9,33 +9,23 @@
     </div>
 
     <div class="vads-l-row">
-        <div class="vads-l-col vads-u-margin-right--3">
+        <div class="vads-l-col--12 medium-screen:vads-l-col--6 medium-screen:vads-u-padding-right--1p5">
 
-            <ul class="usa-accordion-bordered" data-multiselectable="true">
-                {% include accordion.html
-                    title="Make an Appointment Online"
-                    icon-name="fa-medkit"
-                    icon-style="accordion-icon-appointment"
-                %}
+            {% include service_tile.html
+                title="Disability"
+            %}
 
-                {% include accordion.html
-                    title="Apply for Pension Benefits"
-                    icon-name="fa-handshake"
-                    icon-style="accordion-icon-pension"
-                %}
-            </ul>
+            {% include service_tile.html
+                title="Health Care"
+            %}
 
         </div>
 
-        <div class="vads-l-col">
+        <div class="vads-l-col--12 medium-screen:vads-l-col--6 medium-screen:vads-u-padding-left--1p5">
 
-            <ul class="usa-accordion-bordered" data-multiselectable="true">
-                {% include accordion.html
-                    title="Apply for Disability Benefits"
-                    icon-name="fa-file-alt"
-                    icon-style="accordion-icon-disability"
-                %}
-            </ul>
+            {% include service_tile.html
+                title="Disability"
+            %}
 
         </div>
     </div>
