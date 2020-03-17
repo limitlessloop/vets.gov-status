@@ -16,12 +16,20 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+
+  @include media($medium-screen) {
+    flex-wrap: nowrap;
+  }
 }
 
 .site-footer__vagov {
   display: flex;
   align-items: center;
-  margin-right: 10rem;
+  margin-right: 8rem;
+
+  a {
+    min-width: 8.4rem;
+  }
 }
 
 .site-footer__logo {
@@ -36,27 +44,25 @@
 
 .site-footer__links {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  flex-wrap: wrap;
   text-align: left;
-  width: 50rem;
+  margin-top: 2rem;
+
+  a {
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  @include media($small-screen) {
+    a {
+      margin-bottom: 0;
+    }
+  }
 
   @include media($medium-screen) {
     flex-direction: row;
-    flex-wrap: wrap;
     align-content: flex-start;
-  }
-}
-
-.site-footer__list {
-  list-style: none;
-  padding: 0;
-
-  @include media($medium-screen) {
-    li {
-      display: inline-block;
-      padding: 0 0.3rem;
-      margin-bottom: 0;
-    }
+    margin-top: 0;
   }
 }
