@@ -53,7 +53,36 @@ def main():
 
     totals = {
         "transactions_total": transactions_total,
-        "users_total": users_total
+        "users_total": users_total,
+        # TODO: real data please
+        "services": [
+            {
+                "title": "Disability",
+                "users": 12345,
+                "csat": 76,
+                "tools": [
+                    {
+                        "title": "Apply for Disability",
+                        "transactions": 12919
+                    },
+                    {
+                        "title": "Something else",
+                        "transactions": 12345
+                    }
+                ]
+            },
+            {
+                "title": "Health Care",
+                "users": 266542,
+                "csat": 54,
+                "tools": [
+                    {
+                        "title": "Apply for Health Care",
+                        "transactions": 124134
+                    }
+                ]
+            }
+        ]
     }
 
     output_file = os.path.join(os.environ['DATA_DIR'], 'counts.yml')
