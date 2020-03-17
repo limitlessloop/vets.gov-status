@@ -15,8 +15,7 @@
          aria-label="Select a dataset">
         <ul class="vads-l-row usa-sidenav-list">
             {% for chart in site.data.at_a_glance %}
-            <li class="vads-l-col--6 medium-screen:vads-l-col--12"
-                role="presentation">
+            <li class="vads-l-col--6 medium-screen:vads-l-col--12">
                 <a tabindex="{% if chart.id == 'users' %}0{% else %}-1{% endif %}"
                    role="tab"
                    aria-controls="{{ chart.id }}Chart"
