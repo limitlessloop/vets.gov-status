@@ -16,6 +16,11 @@ def test_find_last_day_of_previous_month():
 
 
 def test_find_last_full_twelve_months():
+    with freeze_time("2021-01-01"):
+        start_date, end_date = find_last_full_twelve_months()
+        assert end_date == datetime.date(2020, 12, 31).isoformat()
+        assert start_date == datetime.date(2020, 1, 1).isoformat()
+
     with freeze_time("2020-01-01"):
         start_date, end_date = find_last_full_twelve_months()
         assert end_date == datetime.date(2019, 12, 31).isoformat()
