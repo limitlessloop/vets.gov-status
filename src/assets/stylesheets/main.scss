@@ -22,12 +22,21 @@
 @import "northstar";
 @import "accordion";
 
-.usa-sidenav-list a {
-  text-align: right;
-  color: $color-gray-dark;
+.usa-sidenav-list {
+  border-color: $color-gray-light;
 
-  &.usa-current {
+  & li {
+    border-color: $color-gray-light;
+  }
+
+  & a {
     color: $color-gray-dark;
+    padding: units(2) units(1);
+
+    &.usa-current {
+      padding: units(2) units(1);
+      color: $color-gray-dark;
+    }
   }
 }
 
@@ -54,11 +63,11 @@
 
 .chart-nav__total {
   display: block;
-  font-size: 3.4rem;
+  font-size: 2rem;
 }
 
 .chart-nav__title{
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 .chart-nav__total, .chart-nav__title {
