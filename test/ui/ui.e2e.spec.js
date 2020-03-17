@@ -3,8 +3,9 @@ module.exports = {
         const date = new Date();
         const displayDate = date.toLocaleString('default', { month: 'long' }) + ' ' + date.getDate()+ ', ' + date.getFullYear();
 
+        console.log("**************", client.launch_url);
         client
-            .url('http://localhost:4000/scorecard/')
+            .url(client.launch_url)
             .waitForElementVisible('body', 20000)
             .assert.title('VA.gov Performance');
 

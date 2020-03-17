@@ -1,19 +1,12 @@
 /* eslint-disable camelcase, strict */
 "use strict";
-
-// const fs = require('fs-extra');
-// const seleniumServer = require('selenium-server');
-
 require("@babel/register");
 require("@babel/polyfill");
 
-// const selenium_logs = './logs/selenium';
 const selenium_server_port = 4444;
-const selenium_host = process.env.selenium_host;
+const selenium_host = process.env.selenium_host || "localhost";
 const jekyll_port = 4000;
-const jekyll_host = process.env.jekyll_host;
-
-// fs.ensureDirSync(selenium_logs);
+const jekyll_host = process.env.jekyll_host || "localhost";
 
 module.exports = {
     output_folder: "./logs/nightwatch",
@@ -25,7 +18,7 @@ module.exports = {
     test_workers: false,
     test_settings: {
         default: {
-            launch_url: `${jekyll_host}:${jekyll_port}`,
+            launch_url: `http://${jekyll_host}:${jekyll_port}/scorecard/`,
             filter: "**/*.e2e.spec.js",
             selenium_host: selenium_host,
             selenium_port: selenium_server_port,
@@ -49,7 +42,6 @@ module.exports = {
             },
             selenium: {
                 start_process: false,
-                // log_path: selenium_logs,
                 host: selenium_host,
                 port: selenium_server_port
             },
