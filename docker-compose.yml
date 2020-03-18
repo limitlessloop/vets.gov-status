@@ -33,4 +33,4 @@ services:
       - .:/source-root:ro
     ports:
       - 4000:4000
-    command: bash -c "cp -R /source-root/_config.yml /source-root/src /srv/jekyll/ && jekyll serve --no-watch --trace"
+    command: bash -c "cp -R /source-root/_config.yml /source-root/src /srv/jekyll/ && chown -R jekyll:jekyll /srv/jekyll/src && jekyll serve --no-watch --trace"
