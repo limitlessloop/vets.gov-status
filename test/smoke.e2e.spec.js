@@ -22,9 +22,8 @@ module.exports = {
         client.keys(client.Keys.TAB);
         client.keys(client.Keys.TAB);
 
-        // client.expect.element("#accordion-apply-for-disability-benefits").to.be.visible;
-        // client.keys(client.Keys.ENTER);
-        // client.expect.element("#accordion-apply-for-disability-benefits").to.not.be.visible;
+        client.expect.element("#disability-tile").to.be.visible;
+        client.expect.element("#healthcare-tile").to.be.visible;
 
         client.expect.element("#last-updated-date").text.to.equal(displayDate);
     }
