@@ -61,7 +61,7 @@ pipeline {
             // Clear out jekyll cache directory
             sh 'rm -rf src/.jekyll-cache'
             // pass ID in so we can run some scripts as Jenkins user
-            sh 'CURRENT_UID=$(id -u):$(id -g) docker-compose up --abort-on-container-exit'
+            sh 'CURRENT_UID=$(id -u):$(id -g) docker-compose up --abort-on-container-exit --force-recreate --remove-orphans'
           }
         }
       }
