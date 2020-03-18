@@ -6,7 +6,7 @@ services:
   - title: Apply for Health care benefits
     transactions: 49123
   users: 2926183
-  users_trend: 9
+  users_trend: -9
 - csat: 76
   csat_trend: 12
   title: Education
@@ -14,6 +14,6 @@ services:
   - title: 'GI Bill comparison tool: Transactions'
     transactions: 49123
   users: 2926183
-  users_trend: 9
+  users_trend: -9
 transactions_total: 27153090
 users_total: 7831583

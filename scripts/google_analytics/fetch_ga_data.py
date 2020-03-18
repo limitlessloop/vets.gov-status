@@ -40,6 +40,27 @@ def write_df_to_csv(df, filename):
     df.to_csv(full_filename, date_format="%m/%d/%y")
 
 
+def fetch_data_for_services(services):
+    return [
+        {
+            "title": service["title"],
+            # TODO: get real data for each service
+            "csat": 76,
+            "csat_trend": 12,
+            "users": 2926183,  # make some query using service["page_path_filter"]
+            "users_trend": -9,
+            "tools": [
+                {
+                    "title": tool["title"],
+                    "transactions": 49123
+                }
+                for tool in service["tools"]
+            ]
+        }
+        for service in services
+    ]
+
+
 def main():
     analytics_service = initialize_analyticsreporting()
 
@@ -56,28 +77,10 @@ def main():
         "users_total": users_total
     }
 
-    services_file = os.path.join(os.environ['CONFIG_DIR'], 'services.yml')
-    with open(services_file, 'r') as services_input:
-        services = yaml.load(services_input, yaml.RoundTripLoader)
-
-        counts["services"] = []
-
-        for service in services["services"]:
-            counts["services"].append({
-                "title": service["title"],
-                # TODO: get real data for each service
-                "csat": 76,
-                "csat_trend": 12,
-                "users": 2926183,  # make some query using service["page_path_filter"]
-                "users_trend": -9,
-                "tools": [
-                    {
-                        "title": tool["title"],
-                        "transactions": 49123
-                    }
-                    for tool in service["tools"]
-                ]
-            })
+    services_file_path = os.path.join(os.environ['CONFIG_DIR'], 'services.yml')
+    with open(services_file_path, 'r') as services_file:
+        services_input = yaml.load(services_file, yaml.RoundTripLoader)
+        counts["services"] = fetch_data_for_services(services_input["services"])
 
     output_file = os.path.join(os.environ['DATA_DIR'], 'counts.yml')
     with open(output_file, 'w') as output:
