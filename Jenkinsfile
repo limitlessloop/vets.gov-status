@@ -58,16 +58,8 @@ pipeline {
       steps {
         script {
           ansiColor('xterm') {
-            // Clear out jekyll cache directory
-            sh 'rm -rf src/.jekyll-cache'
-            // pass ID in so we can run some scripts as Jenkins user
-            sh 'CURRENT_UID=$(id -u):$(id -g) docker-compose up --abort-on-container-exit --force-recreate --remove-orphans'
+            sh './run-ui-tests.sh'
           }
-        }
-      }
-      post {
-        always {
-          sh 'docker-compose down'
         }
       }
     }
