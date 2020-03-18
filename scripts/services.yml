@@ -31,7 +31,7 @@ services:
       - title: 'Apply for education benefits as an eligible dependent'
         page_path_filter: '/application/5490/'
         event_category_filter: 'Transactions'
-      - title: 'Apply for education benefits as an eligible dependent'
+      - title: 'Manage education benefits as an eligible dependent'
         page_path_filter: '/application/5495/'
         event_category_filter: 'Transactions'
       - title: 'Apply for education benefits under the NCS program'
