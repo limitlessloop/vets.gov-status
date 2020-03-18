@@ -1,6 +1,6 @@
 from freezegun import freeze_time
 import datetime
-import update_data
+from scripts.google_analytics import update_data
 
 
 def test_find_sunday():
