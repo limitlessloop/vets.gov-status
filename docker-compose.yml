@@ -30,8 +30,7 @@ services:
     image: jekyll/jekyll:4.0
     volumes:
       - ./node_modules:/srv/jekyll/node_modules:ro
-      - ./src:/srv/jekyll/src:ro
       - .:/source-root:ro
     ports:
       - 4000:4000
-    command: bash -c "cp /source-root/_config.yml /srv/jekyll/ && jekyll serve --no-watch --trace"
+    command: bash -c "cp -R /source-root/_config.yml /source-root/src /srv/jekyll/ && jekyll serve --no-watch --trace"
