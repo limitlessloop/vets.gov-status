@@ -24,6 +24,13 @@
 
 h2 {
   margin-top: units(4);
+  margin-bottom: 0;
+}
+
+.additional-info-container:not(.form-expanding-group-open) {
+  & .additional-info-content {
+    display: none;
+  }
 }
 
 .usa-sidenav-list {
