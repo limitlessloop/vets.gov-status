@@ -77,10 +77,6 @@ h2 {
   font-size: 2rem;
 }
 
-.chart-nav__title{
-  font-size: 1.4rem;
-}
-
 .chart-nav__total, .chart-nav__title {
   pointer-events: none; // force mouse clicks to have a "target" of their immediate parent - the chart tabs
 }

@@ -2,7 +2,9 @@
     <h3 class="vads-u-font-family--serif" id="{{ service.title | slugify }}-tile">{{ service.title }}</h3>
 
     <div class="service-tile__metric">
-        <span class="service-tile__title">LOGGED IN USERS</span>
+        <h4 class="vads-u-font-family--sans vads-u-font-weight--normal vads-u-font-size--sm vads-u-margin-bottom--0">
+            LOGGED IN USERS
+        </h4>
         <span class="service-tile__headline vads-u-font-family--serif">{{ service.users | intcomma }}</span>
         <span class="service-tile__1-month">
             {% if service.users_trend > 0 %}
@@ -16,7 +18,9 @@
     </div>
 
     <div class="service-tile__metric">
-        <span class="service-tile__title">CUSTOMER SATISFACTION</span>
+        <h4 class="vads-u-font-family--sans vads-u-font-weight--normal vads-u-font-size--sm vads-u-margin-bottom--0">
+            CUSTOMER SATISFACTION
+        </h4>
         <span class="service-tile__headline vads-u-font-family--serif">{{ service.csat }}%</span>
         <span class="service-tile__1-month">
             {% if service.csat_trend > 0 %}
