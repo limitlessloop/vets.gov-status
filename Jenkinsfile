@@ -13,6 +13,9 @@ pipeline {
     stage('Unit tests') {
       steps {
         script {
+          sh 'make -v'
+          sh 'make -h'
+          sh 'exit 1'
           sh './run-ci-tests.sh'  // this copies results into ./results directory
         }
       }
