@@ -39,6 +39,7 @@ pipeline {
       steps {
         script {
           // slackSend message: "Scorecard Jenkins build started", color: "good", channel: "scorecard-ci-temp"
+
           nodeImg = docker.image('node:12.16.1')
           nodeImg.inside() {
             sh 'yarn install --frozen-lockfile --production=true'
@@ -48,6 +49,16 @@ pipeline {
           args = "--volume=${pwd()}:/srv/jekyll"
           jekyllImg.inside(args) {
             sh '/usr/gem/bin/jekyll build --trace'
+          }
+        }
+      }
+    }
+
+    stage('UI tests') {
+      steps {
+        script {
+          ansiColor('xterm') {
+            sh './run-ui-tests.sh'
           }
         }
       }
