@@ -25,23 +25,27 @@ title: VA.gov Performance
 
 {% include header.html %}
 
-{% include northstar.html %}
+<main>
 
-<div class="vads-l-grid-container" role="main">
+    {% include northstar.html %}
 
- {% include at_a_glance.html %}
+    <div class="vads-l-grid-container">
 
-  <div class="vads-l-row">
-    <div class="vads-l-col">
+     {% include at_a_glance.html %}
 
-      <div class="va-h-ruled--stars"></div>
+      <div class="vads-l-row">
+        <div class="vads-l-col">
+
+          <div class="va-h-ruled--stars"></div>
+
+        </div>
+      </div>
+
+      {% include performance_by_service.html %}
 
     </div>
-  </div>
 
-  {% include performance_by_service.html %}
-
-</div>
+</main>
 
 {% include footer.html %}
 
