@@ -1,22 +1,18 @@
 ## Overview
 
-These scripts automate updating the data that powers the charts for the scorecard. They pull data from Google Analytics, Prometheus, and ID.me to provide updates.
+These scripts automate updating the data that powers the charts for the dashboard. They pull data from Google Analytics and Foresee to provide updates.
 
 ## Running the scripts
 
 The scripts are separated into subdirectories for each data source. Inside each is a simple shell script called
-`update.sh` that will run the script and move the updated data into the `_data` directory.
+`fetch-data.sh` that will run the script and move the updated data into the `data` directory.
 
->The Google Analytics needs a `serviceaccount.p12` file, which is a Google Service Account with access to the Google Analytics account. There are instructions at https://developers.google.com/identity/protocols/OAuth2ServiceAccount on getting that setup.
->
->The Prometheus script expects access to Prometheus (via SOCKS), and the addresses of both the environment-specific and utility prometheus instance API endpoints, defined as `PROMETHEUS_API_SITE` and `PROMETHEUS_API_UTILITY` environment variables. This will change
- when running of the scripts is moved to Jenkins (which has direct access to the Prometheus endpoints).
+> The Google Analytics needs a `serviceaccount.json` file, which is a Google Service Account with access to the Google 
+> Analytics account. There are instructions at https://developers.google.com/identity/protocols/OAuth2ServiceAccount on getting that setup.
 
 ### System requirements
 
-You'll need Python >= 3.5 (tested on Python 3.5.2) and pip.
-
-The update shell scripts create virtual environments that install all other necessary dependencies.
+You'll need Python >= 3.6 (tested on Python 3.6.8) and pip.
 
 ## Configuration
 
@@ -49,6 +45,4 @@ The `clicks` sections has entries that match the following:
 
 ## Automation
 
-We use the shell scripts to automate much of the work each week to update the data and create a PR. These scripts are tailored to our environment and expect a GitHub API token to be configured in the `gitconfig` file. You will need to modify this to meet your own needs if you wish to use them.
-
-We intend to transition from these shell scripts (currently invoked by cron) to a Jenkins-based system in the future.
+We use the shell scripts to automate much of the work each day to update the data and create a PR.
