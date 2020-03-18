@@ -2,7 +2,7 @@ var ctx = document.getElementById('{{ chart.id }}Chart').getContext('2d');
 {% capture datafile %}{{ chart.csvFilename }}{% endcapture %}
 
 Chart.defaults.global.defaultFontFamily = 'Source Sans Pro';
-Chart.defaults.global.defaultFontSize = 16;
+Chart.defaults.global.defaultFontSize = 14;
 
 var chart = new Chart(ctx, {
     type: 'bar',
@@ -58,6 +58,7 @@ var chart = new Chart(ctx, {
                 ticks: {
                     maxRotation: 0,
                     minRotation: 0,
+                    autoSkip: false,
                     callback: function(value, index, values) {
                         if (index % 2 == 0) return "";
                         else return value;

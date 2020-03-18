@@ -22,9 +22,9 @@ module.exports = {
         client.keys(client.Keys.TAB);
         client.keys(client.Keys.TAB);
 
-// Liquid filter slugify used to get dynamic ids with title https://jekyllrb.com/docs/liquid/filters/
-//        client.expect.element("#disability-tile").to.be.visible;
-//        client.expect.element("#healthcare-tile").to.be.visible;
+        // Liquid filter slugify used to get dynamic ids with title https://jekyllrb.com/docs/liquid/filters/
+        client.expect.element("#education-tile").to.be.visible;
+        client.expect.element("#health-care-tile").to.be.visible;
 
         client.expect.element("#last-updated-date").text.to.equal(displayDate);
     }

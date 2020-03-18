@@ -1,11 +1,13 @@
 services:
-  - title: "Health Care"
-#    TODO: can these be combined into one field for each service ("page path regex?") if they're consistently the same?
-    csat_regex: "regex:www.va.gov/health-care"
-    users_regex: "regex:www.va.gov/health-care"
+  - title: Health Care
+    page_path_filter: regex:www.va.gov/health-care
     tools:
-      - title: "Apply for Health care benefits"
-        page_path: "/health-care/apply"
-        event_category: "/health-care/apply"
-#        TODO: find out what the proper name for this is
-        other_thing: "Forms"
+      - title: Apply for Health care benefits
+        page_path_filter: 'regex: /health-care/apply'
+        event_category_filter: 'regex: "Transactions"'
+        event_action_filter: 'regex: "Forms"'
+  - title: Education
+    page_path_filter: regex:www.va.gov/(gi-bill|education)
+    tools:
+      - title: 'GI Bill comparison tool: Transactions'
+        page_path_filter: 'regex:/gi-bill-comparison-tool'

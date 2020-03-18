@@ -22,7 +22,7 @@
         <ul class="vads-l-row usa-sidenav-list">
             {% for chart in site.data.at_a_glance %}
             <li class="vads-l-col--6 medium-screen:vads-l-col--12">
-                <a tabindex="{% if chart.id == 'users' %}0{% else %}-1{% endif %}"
+                <a tabindex="0"
                    role="tab"
                    aria-controls="{{ chart.id }}Chart"
                    aria-selected="{% if chart.id == 'users' %}true{% else %}false{% endif %}"

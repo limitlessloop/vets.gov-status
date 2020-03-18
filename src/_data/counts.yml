@@ -1,21 +1,19 @@
 services:
-  - csat: 76
-    csat_trend: -14
-    title: Disability
-    tools:
-      - title: Apply for Disability
-        transactions: 12919
-      - title: Something else
-        transactions: 12345
-    users: 12345
-    users_trend: 12
-  - csat: 54
-    csat_trend: 65
-    title: Health Care
-    tools:
-      - title: Apply for Health Care
-        transactions: 124134
-    users: 266542
-    users_trend: -65
+- csat: 76
+  csat_trend: 12
+  title: Health Care
+  tools:
+  - title: Apply for Health care benefits
+    transactions: 49123
+  users: 2926183
+  users_trend: -9
+- csat: 76
+  csat_trend: 12
+  title: Education
+  tools:
+  - title: 'GI Bill comparison tool: Transactions'
+    transactions: 49123
+  users: 2926183
+  users_trend: -9
 transactions_total: 27153090
 users_total: 7831583
