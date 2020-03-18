@@ -44,9 +44,17 @@ h2 {
     color: $color-gray-dark;
     padding: units(2) units(1);
 
+    & h3 {
+      font-weight: normal;
+    }
+
     &.usa-current {
       padding: units(2) units(1);
       color: $color-gray-dark;
+
+      & h3 {
+        font-weight: bold;
+      }
     }
   }
 }
@@ -72,11 +80,6 @@ h2 {
   }
 }
 
-.chart-nav__total {
-  display: block;
-  font-size: 2rem;
-}
-
-.chart-nav__total, .chart-nav__title {
+.chart-nav * {
   pointer-events: none; // force mouse clicks to have a "target" of their immediate parent - the chart tabs
 }

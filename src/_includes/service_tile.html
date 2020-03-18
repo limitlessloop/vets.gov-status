@@ -1,33 +1,33 @@
 <section class="service-tile">
     <h3 class="vads-u-font-family--serif" id="{{ service.title | slugify }}-tile">{{ service.title }}</h3>
 
-    <div class="service-tile__metric">
+    <div class="vads-u-margin-y--2">
         <h4 class="vads-u-font-family--sans vads-u-font-weight--normal vads-u-font-size--sm vads-u-margin-bottom--0">
             LOGGED IN USERS
         </h4>
-        <span class="service-tile__headline vads-u-font-family--serif">{{ service.users | intcomma }}</span>
-        <span class="service-tile__1-month">
+        <span class="vads-u-font-weight--bold vads-u-font-size--lg vads-u-font-family--serif">{{ service.users | intcomma }}</span>
+        <span>
             {% if service.users_trend > 0 %}
-                <i class="fas fa-arrow-circle-up service-tile__trend-icon"></i>
+                <i class="fas fa-arrow-circle-up vads-u-color--primary"></i>
                 Up {{ service.users_trend }}% Last 30 days
             {% else %}
-                <i class="fas fa-arrow-circle-down service-tile__trend-icon"></i>
+                <i class="fas fa-arrow-circle-down vads-u-color--primary"></i>
                 Down {{ service.users_trend }}% Last 30 days
             {% endif %}
         </span>
     </div>
 
-    <div class="service-tile__metric">
+    <div class="vads-u-margin-y--2">
         <h4 class="vads-u-font-family--sans vads-u-font-weight--normal vads-u-font-size--sm vads-u-margin-bottom--0">
             CUSTOMER SATISFACTION
         </h4>
-        <span class="service-tile__headline vads-u-font-family--serif">{{ service.csat }}%</span>
-        <span class="service-tile__1-month">
+        <span class="vads-u-font-weight--bold vads-u-font-size--lg vads-u-font-family--serif">{{ service.csat }}%</span>
+        <span>
             {% if service.csat_trend > 0 %}
-                <i class="fas fa-arrow-circle-up service-tile__trend-icon"></i>
+                <i class="fas fa-arrow-circle-up vads-u-color--primary"></i>
                 Up {{ service.csat_trend }}% Last 30 days
             {% else %}
-                <i class="fas fa-arrow-circle-down service-tile__trend-icon"></i>
+                <i class="fas fa-arrow-circle-down vads-u-color--primary"></i>
                 Down {{ service.csat_trend }}% Last 30 days
             {% endif %}
         </span>
