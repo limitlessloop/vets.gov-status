@@ -43,7 +43,6 @@ services:
       - title: 'Check Post 9/11 GI Bill benefits'
         page_path_filter: '/education/gi-bill/'
         event_category_filter: 'Transactions'
-# assuming we want to do a column break right here (so everything after goes to the second column) — how would we indicate that? 
   - title: 'Disability'
     page_path_filter: 'www.va.gov/disability'
     tools:
