@@ -4,14 +4,11 @@
     <artifactId>performancedashboard</artifactId>
     <version>1</version>
     <properties>
-        <sonar.sources>scripts,src</sonar.sources>
-        <sonar.tests>test,scripts/test</sonar.tests>
-        <sonar.exclusions>src/assets/vendor</sonar.exclusions>
+        <sonar.sources>scripts/,src/</sonar.sources>
+        <sonar.tests>test/</sonar.tests>
+        <sonar.exclusions>src/assets/vendor/**/*</sonar.exclusions>
+        <sonar.coverage.exclusions>scripts/test/**/*</sonar.coverage.exclusions>
         <sonar.python.coverage.reportPaths>results/coverage/pytest-coverage.xml</sonar.python.coverage.reportPaths>
-		<!-- to fill out later
-		<sonar.python.coverage.itReportPath>results/coverage/integration-coverage.xml</sonar.python.coverage.itReportPath>
-		<sonar.python.coverage.overallReportPath>results/coverage/overall-coverage.xml</sonar.python.coverage.overallReportPath>
-		-->
         <sonar.python.xunit.reportPath>results/unit/pytest-unit.xml</sonar.python.xunit.reportPath>
     </properties>
 </project>
