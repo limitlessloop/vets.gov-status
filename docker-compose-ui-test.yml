@@ -2,35 +2,7 @@ version: '3'
 services:
   dashboard-ui-test:
     user: ${CURRENT_UID}
-    image: node:12.16.1
+    image: circleci/node:12.16.1-buster-browsers
     volumes:
-      - ./test/ui:/test/ui
-    command: bash -c "cd /test/ui && yarn install && yarn run test-headless"
-    depends_on:
-      - selenium
-      - jekyll
-    environment: 
-      - selenium_host=selenium
-      - jekyll_host=jekyll
-  selenium:
-    image: selenium/standalone-chrome:3.141.59-zirconium
-    shm_size: 2g
-    ports:
-      - 4444:4444
-    environment:
-      GRID_BROWSER_TIMEOUT: 10000
-      GRID_TIMEOUT: 12000
-      DBUS_SESSION_BUS_ADDRESS: /dev/null
-  # Note: A simpler solution of mounting . to /srv/jekyll will not work here, as when running inside
-  # Jenkins, some folders under /srv/jekyll will have their ownership changed, meaning
-  # Jenkins can't afterwards clean up the workspace. Instead, we mount just the folders
-  # we need to build the site, which includes node_modules and src, as read-only, and also copy _config.yml
-  # see https://github.com/docker/compose/issues/5523 for more details on other options
-  jekyll:
-    image: jekyll/jekyll:4.0
-    volumes:
-      - ./node_modules:/srv/jekyll/node_modules:ro
-      - .:/source-root:ro
-    ports:
-      - 4000:4000
-    command: bash -c "cp -R /source-root/_config.yml /source-root/src /srv/jekyll/ && chown -R jekyll:jekyll /srv/jekyll/src && jekyll serve --no-watch --trace"
+      - .:/source-root
+    command: bash -c "cd /source-root/test/ui && yarn install && yarn run test-headless"
