@@ -51,47 +51,37 @@ def main():
     df = add_month_column(df)
     write_df_to_csv(df, "all_logged_in_users.csv")
 
-    totals = {
+    counts = {
         "transactions_total": transactions_total,
-        "users_total": users_total,
-        # TODO: real data please
-        "services": [
-            {
-                "title": "Disability",
-                "users": 12345,
-                "users_trend": 12,
-                "csat": 76,
-                "csat_trend": -14,
-                "tools": [
-                    {
-                        "title": "Apply for Disability",
-                        "transactions": 12919
-                    },
-                    {
-                        "title": "Something else",
-                        "transactions": 12345
-                    }
-                ]
-            },
-            {
-                "title": "Health Care",
-                "users": 266542,
-                "users_trend": -65,
-                "csat": 54,
-                "csat_trend": 32,
-                "tools": [
-                    {
-                        "title": "Apply for Health Care",
-                        "transactions": 124134
-                    }
-                ]
-            }
-        ]
+        "users_total": users_total
     }
+
+    services_file = os.path.join(os.environ['CONFIG_DIR'], 'services.yml')
+    with open(services_file, 'r') as services_input:
+        services = yaml.load(services_input, yaml.RoundTripLoader)
+
+        counts["services"] = []
+
+        for service in services["services"]:
+            counts["services"].append({
+                "title": service["title"],
+                # TODO: get real data for each service
+                "csat": 76,
+                "csat_trend": 12,
+                "users": 2926183,  # make some query using service["page_path_filter"]
+                "users_trend": -9,
+                "tools": [
+                    {
+                        "title": tool["title"],
+                        "transactions": 49123
+                    }
+                    for tool in service["tools"]
+                ]
+            })
 
     output_file = os.path.join(os.environ['DATA_DIR'], 'counts.yml')
     with open(output_file, 'w') as output:
-        yaml.dump(totals, output, default_flow_style=False)
+        yaml.dump(counts, output, default_flow_style=False)
 
 
 if __name__ == '__main__':
