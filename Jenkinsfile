@@ -57,23 +57,13 @@ pipeline {
     stage('UI tests') {
       steps {
         script {
-          def user_id
-          def group_id
-          user_id = sh(returnStdout: true, script: 'id -u').trim()
-          group_id = sh(returnStdout: true, script: 'id -g').trim()
-
-          docker.image('jekyll/jekyll:4.0').withRun("--publish=4000:4000 --volume=${pwd()}:/srv/jekyll --user=${user_id}:${group_id}", "/usr/gem/bin/jekyll serve --no-watch") {
-            dir('test/ui') {
-              echo "Starting UI tests"
-              sh 'curl http://localhost:4000/scorecard/'
-
-              nodeImg = docker.image('node:12.16.1')
-              nodeImg.inside() {
-                sh 'yarn install --frozen-lockfile'
-                sh 'yarn run test-headless'
-              }
-            }
-          }
+          // pass ID in so we can run some scripts as Jenkins user
+          sh 'CURRENT_UID=$(id -u):$(id -g) docker-compose up --abort-on-container-exit'
+        }
+      }
+      post {
+        always {
+          sh 'docker-compose down'
         }
       }
     }
