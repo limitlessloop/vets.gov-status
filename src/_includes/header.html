@@ -1,20 +1,21 @@
-<header class="site-header vads-u-padding-y--4" role="banner">
-  <div class="vads-l-grid-container">
-    <div class="vads-l-row">
-      <div class="vads-l-col">
-        <div class="site-header__masthead">
-          <h2 class="site-header__logo-text">
-            <a class="site-header__logo-link" title="VA.gov Performance Dashboard" href="/">
-              <span>VA.gov</span>
-              <span>|</span>
-              <span>Performance Dashboard</span>
-            </a>
-          </h2>
-          <div class="site-header__utility-links">
-            Last updated March 13, 2020
-          </div>
+<header class="site-header">
+    {% include govt_site_banner.html %}
+    <div class="vads-l-grid-container">
+        <div class="vads-l-row">
+            <div class="vads-l-col">
+                <div class="site-header__masthead vads-u-padding-y--4" aria-label="performance-dashboard-header">
+                    <h2 class="site-header__logo-text vads-u-font-family--sans vads-u-font-style--normal vads-u-display--block">
+                        <a class="site-header__logo-link" title="VA.gov Performance Dashboard" href="/">
+                            <span class="vads-u-font-weight--bold">VA.gov</span>
+                            <span>|</span>
+                            <span>Performance Dashboard</span>
+                        </a>
+                    </h2>
+                    <div class="site-header__utility-links">
+                        Last updated <span id="last-updated-date">{{site.data.last_updated.date}}</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </header>

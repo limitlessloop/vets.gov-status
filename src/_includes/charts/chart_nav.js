@@ -12,7 +12,7 @@
 
     function generateArrays () {
         tabs = document.querySelectorAll('[role="tab"]');
-        panels = document.querySelectorAll('[role="tabpanel"]');
+        panels = document.querySelectorAll('div.chart > canvas');
 
         console.log(tabs);
         console.log(panels);
@@ -152,9 +152,6 @@
         // Deactivate all other tabs
         deactivateTabs();
 
-        // Remove tabindex attribute
-        tab.setAttribute('tabindex', '0');
-
         // Set the tab as selected
         tab.setAttribute('aria-selected', 'true');
 
@@ -175,7 +172,6 @@
     // Deactivate all tabs and tab panels
     function deactivateTabs () {
         for (t = 0; t < tabs.length; t++) {
-            tabs[t].setAttribute('tabindex', '-1');
             tabs[t].setAttribute('aria-selected', 'false');
             tabs[t].className = tabs[t].className.replace(" usa-current","");
         };

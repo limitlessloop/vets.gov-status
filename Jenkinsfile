@@ -6,6 +6,9 @@ pipeline {
     // Needed for credstash
     AWS_DEFAULT_REGION = 'us-gov-west-1'
   }
+  options {
+    ansiColor('xterm')
+  }
   stages {
     stage('Unit tests') {
       steps {
@@ -39,6 +42,7 @@ pipeline {
       steps {
         script {
           // slackSend message: "Scorecard Jenkins build started", color: "good", channel: "scorecard-ci-temp"
+
           nodeImg = docker.image('node:12.16.1')
           nodeImg.inside() {
             sh 'yarn install --frozen-lockfile --production=true'
@@ -49,6 +53,14 @@ pipeline {
           jekyllImg.inside(args) {
             sh '/usr/gem/bin/jekyll build --trace'
           }
+        }
+      }
+    }
+
+    stage('UI tests') {
+      steps {
+        script {
+          sh './run-ui-tests.sh'
         }
       }
     }

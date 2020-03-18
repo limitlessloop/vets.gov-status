@@ -11,7 +11,6 @@ RUN python3 -m pip install --trusted-host pypi.org --trusted-host files.pythonho
 COPY .coveragerc .
 COPY pytest.ini .
 COPY scripts/ scripts
-COPY test/ test
 COPY run-tests.sh .
 
 CMD ["./run-tests.sh"]

@@ -4,7 +4,7 @@ set -o errexit
 
 export PYTHONWARNINGS="ignore::DeprecationWarning:numpy"
 
-python -m pytest --cov --cov-report term --cov-report xml --cov-report html
+python -m pytest -v --cov --cov-report term --cov-report xml --cov-report html
 
 echo "Flake8 comments:"
 flake8 --max-line-length=120 scripts

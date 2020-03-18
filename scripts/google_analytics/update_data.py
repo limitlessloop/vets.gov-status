@@ -1,22 +1,11 @@
 """Pulls in data to update dashboards"""
 from analytics_helpers import make_df, initialize_analyticsreporting
+from datetime_utils import find_sunday
 import datetime
 import json
 import numpy as np
 import os
 import pandas as pd
-
-
-def find_sunday():
-    """Finds the prior Sunday to ensure a full week of data
-
-    returns a datetime representing that Sunday"""
-
-    today = datetime.date.today()
-
-    # Monday is 1 and Sunday is 7 for isoweekday()
-    days_after_sunday = datetime.timedelta(days=today.isoweekday())
-    return today - days_after_sunday
 
 
 def get_reports(analytics, view_id, page_filter):

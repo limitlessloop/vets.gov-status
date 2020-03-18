@@ -8,6 +8,12 @@
     </div>
 </div>
 
+<div class="vads-l-row">
+    <div class="vads-l-col vads-u-margin-y--2 additional-info-container form-expanding-group">
+        <div class="additional-info-title">How is this measured?</div>
+        <div class="additional-info-content">Content</div>
+    </div>
+</div>
 
 <div class="vads-l-row">
     <div class="vads-l-col--12 medium-screen:vads-l-col--3"
@@ -15,9 +21,8 @@
          aria-label="Select a dataset">
         <ul class="vads-l-row usa-sidenav-list">
             {% for chart in site.data.at_a_glance %}
-            <li class="vads-l-col--6 medium-screen:vads-l-col--12"
-                role="presentation">
-                <a tabindex="{% if chart.id == 'users' %}0{% else %}-1{% endif %}"
+            <li class="vads-l-col--6 medium-screen:vads-l-col--12">
+                <a tabindex="0"
                    role="tab"
                    aria-controls="{{ chart.id }}Chart"
                    aria-selected="{% if chart.id == 'users' %}true{% else %}false{% endif %}"
@@ -25,8 +30,12 @@
                    class="chart-nav{% if chart.id == 'users' %} usa-current{% endif %}">
 
                     {% capture chart_total_key %}{{ chart.id | append:"_total" }}{% endcapture %}
-                    <span class="chart-nav__total">{{ site.data.counts[chart_total_key] | intword }}</span>
-                    <span class="chart-nav__title">{{ chart.title }}</span>
+                    <h3 class="vads-u-font-family--sans vads-u-margin-y--0">
+                        {{ chart.title | upcase }}
+                    </h3>
+                    <span class="vads-u-font-weight--bold vads-u-font-size--lg vads-u-font-family--serif">
+                        {{ site.data.counts[chart_total_key] | intcomma }}
+                    </span>
 
                 </a>
             </li>
@@ -37,12 +46,12 @@
     <div class="vads-l-col--12 medium-screen:vads-l-col--9">
         {% for chart in site.data.at_a_glance %}
         <div class="chart" id="{{ chart.id }}">
-                <canvas id="{{ chart.id }}Chart"
-                        role="tabpanel"
-                        aria-labelledby="chart-nav-{{ chart.id }}"
-                        aria-label=""
-                        {% if chart.id != "users" %}hidden{% endif %}>
-                </canvas>
+            <canvas id="{{ chart.id }}Chart"
+                    role="img"
+                    aria-labelledby="chart-nav-{{ chart.id }}"
+                    aria-label=""
+                    {% if chart.id != "users" %}hidden{% endif %}>
+            </canvas>
             <script nonce="**CSP_NONCE**">
                 {% include charts/draw_chart.js %}
                 {% include charts/add_aria_label.js %}

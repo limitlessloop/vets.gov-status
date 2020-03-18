@@ -114,7 +114,12 @@ Then run `./python-install.sh` to update your virtual environment with the new p
 
 ### Running Tests
 
-Run tests with pytest and generate a coverage report with  `./run-tests.sh`.
+Run unit tests with pytest and generate a coverage report with  `./run-tests.sh`.
+
+Run UI tests by:
+```
+$ ./run-ui-tests.sh
+```
 
 ### Running with Docker
 
