@@ -6,6 +6,9 @@ pipeline {
     // Needed for credstash
     AWS_DEFAULT_REGION = 'us-gov-west-1'
   }
+  options {
+    ansiColor('xterm')
+  }
   stages {
     stage('Unit tests') {
       steps {
@@ -57,9 +60,7 @@ pipeline {
     stage('UI tests') {
       steps {
         script {
-          ansiColor('xterm') {
-            sh './run-ui-tests.sh'
-          }
+          sh './run-ui-tests.sh'
         }
       }
     }
