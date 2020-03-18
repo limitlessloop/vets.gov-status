@@ -2,7 +2,6 @@ services:
   - csat: 76
     csat_trend: -14
     title: Disability
-    label: disability
     tools:
       - title: Apply for Disability
         transactions: 12919
@@ -13,7 +12,6 @@ services:
   - csat: 54
     csat_trend: 65
     title: Health Care
-    label: healthcare
     tools:
       - title: Apply for Health Care
         transactions: 124134
