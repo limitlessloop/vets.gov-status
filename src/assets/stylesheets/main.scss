@@ -65,6 +65,14 @@ h4 {
   }
 }
 
+@media screen and (min-width: $medium-screen) {
+  .usa-sidenav-list {
+    & a:not(.usa-current) {
+      border-left: .4rem solid transparent;
+    }
+  }
+}
+
 @media screen and (max-width: $medium-screen) {
   .usa-sidenav-list {
 
