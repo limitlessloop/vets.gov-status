@@ -116,6 +116,8 @@ Then run `./python-install.sh` to update your virtual environment with the new p
 
 Run tests with pytest and generate a coverage report with  `./run-tests.sh`.
 
+To run smoke tests, change into the `test` directory and run `npm run test-headless`. You might need to run `npm install` first.
+
 ### Running with Docker
 
 You can run the scripts in a Docker image using the following commands:
