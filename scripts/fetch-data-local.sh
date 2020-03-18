@@ -9,7 +9,7 @@ python google_analytics/fetch_ga_data.py
 
 echo Modifying Last Updated date...
 current_date=$(date "+%B %d, %Y")
-echo "last_updated: $current_date" > data/last_updated.yml
+echo "date: $current_date" > data/last_updated.yml
 
 echo Moving data to new directory...
 mv data/* ../src/_data/
