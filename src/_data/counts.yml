@@ -8,7 +8,7 @@ services:
   - title: Schedule and view VA appointments online
     transactions: 49123
   users_total: 550909
-  users_trend: 67.62583142149494
+  users_trend: 75.5745358935543
 - csat: 76
   csat_trend: 12
   title: Education
@@ -34,7 +34,7 @@ services:
   - title: Check Post 9/11 GI Bill benefits
     transactions: 49123
   users_total: 387581
-  users_trend: 48.278606051563386
+  users_trend: 54.97784779757525
 - csat: 76
   csat_trend: 12
   title: Disability
@@ -44,7 +44,7 @@ services:
   - title: View VA disability ratings
     transactions: 49123
   users_total: 441801
-  users_trend: 66.94667392191539
+  users_trend: 75.36517790514901
 - csat: 76
   csat_trend: 12
   title: Burials & Memorials
@@ -54,7 +54,7 @@ services:
   - title: Apply for burial benefits
     transactions: 49123
   users_total: 66867
-  users_trend: 62.16865132296947
+  users_trend: 67.80515960650472
 - csat: 76
   csat_trend: 12
   title: Pension & Fiduciary
@@ -62,7 +62,7 @@ services:
   - title: Apply for Veterans Pension benefits
     transactions: 49123
   users_total: 125227
-  users_trend: 101.94971697656791
+  users_trend: 106.97309268808675
 - csat: 76
   csat_trend: 12
   title: Veteran Self Service
@@ -77,5 +77,5 @@ services:
     transactions: 49123
   - title: Apply for a Veteran ID Card
     transactions: 49123
-transactions_total: 27153090
-users_total: 7831583
+transactions_total: 27200509
+users_total: 7844139
