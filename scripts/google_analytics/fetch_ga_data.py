@@ -9,7 +9,7 @@ from requests import get_logged_in_users_request, get_all_transactions_request, 
 
 @retry(wait=wait_fixed(10), stop=stop_after_attempt(5))
 def get_ga_report(analytics_service, request):
-    return analytics_service.reports().batchGet(
+    response = analytics_service.reports().batchGet(
         body={
             'reportRequests': [
                 request
@@ -18,18 +18,18 @@ def get_ga_report(analytics_service, request):
         }
     ).execute()
 
+    return response['reports'][0]
+
 
 def run_report(analytics_service, request):
-    response = get_ga_report(analytics_service, request)
-    report = response['reports'][0]
+    report = get_ga_report(analytics_service, request)
     df = make_df(report)
     total = get_totals_from_report(report)[0]
     return df, total
 
 
 def run_report_and_get_total_with_trend(analytics_service, request):
-    response = get_ga_report(analytics_service, request)
-    report = response['reports'][0]
+    report = get_ga_report(analytics_service, request)
     recent_total, previous_total = get_totals_from_report(report)
 
     trend = calculate_trend(previous_total, recent_total)
