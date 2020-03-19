@@ -3,8 +3,6 @@ from googleapiclient.discovery import build
 import os
 import pandas as pd
 
-from scripts.google_analytics.datetime_utils import reformat_date
-
 
 def initialize_analyticsreporting():
     """Initializes an analyticsreporting service object.
@@ -66,11 +64,3 @@ def make_table(rows, dim_labels, metric_labels):
 
 def calculate_trend(previous_total, recent_total):
     return ((recent_total - previous_total) / previous_total) * 100
-
-
-def add_month_column(raw_df):
-    if 'yearMonth' in raw_df.columns:
-        raw_df['date'] = raw_df['yearMonth'].apply(
-            lambda d: reformat_date(d))
-        del raw_df['yearMonth']
-    return raw_df
