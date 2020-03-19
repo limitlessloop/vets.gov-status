@@ -1,4 +1,4 @@
-from scripts.google_analytics.analytics_helpers import make_df, make_table, get_totals_from_report
+from scripts.google_analytics.analytics_helpers import make_df, make_table, get_totals_from_report, calculate_trend
 import pytest
 
 
@@ -96,3 +96,14 @@ def test_get_totals_from_report_with_two_totals():
     }
 
     assert get_totals_from_report(report) == [1234, 5678]
+
+
+def test_calculate_trend():
+    cases = [
+        (50, 100, 100),
+        (140, 70, -50),
+        (100, 105, 5),
+        (60, 45, -25)
+    ]
+    for (previous, recent, expected_trend) in cases:
+        assert calculate_trend(previous, recent) == expected_trend

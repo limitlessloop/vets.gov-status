@@ -2,7 +2,7 @@ from ruamel import yaml
 from tenacity import retry, wait_fixed, stop_after_attempt
 import os
 
-from analytics_helpers import make_df, initialize_analyticsreporting, get_totals_from_report
+from analytics_helpers import make_df, initialize_analyticsreporting, get_totals_from_report, calculate_trend
 from datetime_utils import reformat_date
 from requests import get_logged_in_users_request, get_all_transactions_request, get_last_month_users_request
 
@@ -32,7 +32,7 @@ def run_report_and_get_total_with_trend(analytics_service, request):
     report = response['reports'][0]
     recent_total, previous_total = get_totals_from_report(report)
 
-    trend = ((recent_total - previous_total) / previous_total) * 100
+    trend = calculate_trend(previous_total, recent_total)
 
     return recent_total, trend
 
