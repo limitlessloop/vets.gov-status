@@ -49,8 +49,12 @@ flake8: 	## Run Flake8 python static style checking and linting
 	flake8 --max-line-length=120 --statistics scripts
 
 .PHONY: ui-test
+
+# This is needed to be able to run the command below as Jenkins in CI -
+# see https://github.com/moby/buildkit/pull/1180 for a potentially more robust addition
+ui-test: export CURRENT_UID := $(shell id -u):$(shell id -g)
 ui-test:   ## Run UI tests using selenium / chrome / nightwatch
-	CURRENT_UID=$(id -u):$(id -g) $(COMPOSE_UI_TEST) up --abort-on-container-exit --force-recreate --remove-orphans
+	$(COMPOSE_UI_TEST) up --abort-on-container-exit --force-recreate --remove-orphans
 
 .PHONY: ci-unit-test
 ci-unit-test:  CONTAINER_NAME := dashboard-test-container-$(shell date "+%Y.%m.%d-%H.%M.%S")
