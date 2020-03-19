@@ -1,17 +1,10 @@
 # Makefile for VA.gov performance dashboard
 # Tested with GNU Make 3.8.1
-SHELL        	:= /usr/bin/env bash
+SHELL        	:= /usr/bin/env bash -e
 COMPOSE_UI_TEST := docker-compose -f docker-compose-ui-test.yml
+CI_ARG      	:= $(CI)
 
 .DEFAULT_GOAL := help
-
-#ENV_ARG      := $(env)
-#COMPOSE_DEV  := docker-compose
-
-#BASH_DEV     := $(COMPOSE_DEV) $(BASH) -c
-#BASH_TEST    := $(COMPOSE_TEST) $(BASH) --login -c
-#LINT    	 := "bin/rails lint"
-#DOWN         := down
 
 # cribbed from https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html and https://news.ycombinator.com/item?id=11195539
 help:  ## Prints out documentation for available commands
@@ -20,38 +13,78 @@ help:  ## Prints out documentation for available commands
 			printf "\033[36m%-30s\033[0m %s\n", $$1, $$NF \
 		}' $(MAKEFILE_LIST)
 
+### Yarn / Node / etc.
+node_modules: yarn.lock package.json
+ifeq ($(CI_ARG), true)
+	yarn install --frozen-lockfile --production=true
+else
+	yarn install --production=false --check-files
+endif
+
+copy-node-dependencies: node_modules
+	mkdir -p src/assets/vendor/jquery
+	cp node_modules/jquery/dist/jquery.min.js src/assets/vendor/jquery/
+	mkdir -p src/assets/vendor/chart.js
+	cp node_modules/chart.js/dist/Chart.bundle.min.js src/assets/vendor/chart.js/
+	mkdir -p src/assets/vendor/formation/sass
+	# The "*" after /dist/ is important here, as BSD vs GNU treats the semantics differently if you don't have the *
+	cp -r node_modules/@department-of-veterans-affairs/formation/dist/* src/assets/vendor/formation/
+	cp -r node_modules/@department-of-veterans-affairs/formation/sass/* src/assets/vendor/formation/sass/
+
+.PHONY: yarn-install
+yarn-install: node_modules copy-node-dependencies ## Install npm dependencies using yarn
+
+### Jekyll
 .PHONY: jekyll-build
-jekyll-build: yarn.lock  ## Build the Jekyll site
+jekyll-build: yarn-install  ## Build the Jekyll site
 	docker run --rm --volume=${PWD}:/srv/jekyll -it jekyll/jekyll:4.0  jekyll build --trace
 
 .PHONY: jekyll-serve
-jekyll-serve: yarn.lock  ## Build the Jekyll site and start the Jekyll webserver on port 4000
+jekyll-serve: yarn-install  ## Build the Jekyll site and start the Jekyll webserver on port 4000
 	docker run --rm -p 4000:4000 --volume=${PWD}:/srv/jekyll -it jekyll/jekyll:4.0  jekyll serve --trace
 
-yarn.lock: node_modules package.json
-	yarn install --production=false --check-files
+## Pip / Python
+.PHONY: python-install
+python-install:  ## Sets up your python environment
+	pip install virtualenv
+	virtualenv -p ~/.pyenv/shims/python ENV
+	source ENV/bin/activate
+	@echo shell ENV activated
+	pip install --require-hashes -r scripts/requirements.txt -r scripts/dev-requirements.txt
+	# Will sync and also remove any dependencies not included in requirements specs
+	pip-sync scripts/requirements.txt scripts/dev-requirements.txt
+	@echo Finished install
+	@echo To activate the shell type:
+	@echo source ENV/bin/activate
 
-#.PHONY: install
-#SITE_PACKAGES := $(shell pip show pip | grep '^Location' | cut -f2 -d':')
-#install: $(SITE_PACKAGES)
+SITE_PACKAGES := $(shell pip show pip | grep '^Location' | cut -f2 -d':')
+.PHONY: pip-install
+pip-install: $(SITE_PACKAGES)
 
-#$(SITE_PACKAGES): requirements.txt
-#    pip install -r requirements.txt
+$(SITE_PACKAGES): scripts/requirements.txt scripts/dev-requirements.txt
+	pip-sync scripts/requirements.txt scripts/dev-requirements.txt
 
+scripts/requirements.txt: scripts/requirements.in
+	pip-compile --upgrade --generate-hashes scripts/requirements.in --output-file scripts/requirements.txt
+
+scripts/dev-requirements.txt: scripts/dev-requirements.in
+	pip-compile --upgrade --generate-hashes scripts/dev-requirements.in --output-file scripts/dev-requirements.txt
+
+## Test targets
 .PHONY: unit-test
-unit-test:   ## Run python unit tests
+unit-test: pip-install  ## Run python unit tests
 	PYTHONWARNINGS='ignore::DeprecationWarning:numpy' \
 	python -m pytest -v --cov --cov-report term --cov-report xml --cov-report html
 
 .PHONY: flake8
-flake8: 	## Run Flake8 python static style checking and linting
+flake8: $(SITE_PACKAGES)	## Run Flake8 python static style checking and linting
 	@echo "Flake8 comments:"
 	flake8 --max-line-length=120 --statistics scripts
 
 .PHONY: ui-test
-
-# This is needed to be able to run the command below as Jenkins in CI -
-# see https://github.com/moby/buildkit/pull/1180 for a potentially more robust addition
+# CURRENT_UID needed to be able to run the command below as Jenkins in CI -
+# see https://github.com/moby/buildkit/pull/1180 for a potentially a future more robust addition to make docker fail if
+# a variable isn't set
 ui-test: export CURRENT_UID := $(shell id -u):$(shell id -g)
 ui-test:   ## Run UI tests using selenium / chrome / nightwatch
 	$(COMPOSE_UI_TEST) up --abort-on-container-exit --force-recreate --remove-orphans
@@ -72,8 +105,10 @@ test: unit-test flake8 ui-test ## Run unit tests, static analysis and ui tests
 # docker-clean:
 # 	$(COMPOSE_UI_TEST) down --rmi all --volumes
 
+
+
 .PHONY: clean
-clean:  ## Delete any directories and files that are auto-generated
+clean:  ## Delete any directories, files or logs that are auto-generated
 	rm -rf node_modules
 	rm -rf target
 	rm -rf results
@@ -84,4 +119,4 @@ clean:  ## Delete any directories and files that are auto-generated
 	rm -rf src/assets/vendor
 	rm -rf test/ui/logs
 	rm -rf test/node_modules
-	@find -depth -type d -name __pycache__ -exec rm -ff {} \;
+	find scripts -name '__pycache__' -type d | xargs rm -rf

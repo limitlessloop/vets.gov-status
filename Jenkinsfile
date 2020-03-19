@@ -5,6 +5,7 @@ pipeline {
   environment {
     // Needed for credstash
     AWS_DEFAULT_REGION = 'us-gov-west-1'
+    CI = "true"
   }
   options {
     ansiColor('xterm')
@@ -45,7 +46,7 @@ pipeline {
 
           nodeImg = docker.image('node:12.16.1')
           nodeImg.inside() {
-            sh 'yarn install --frozen-lockfile --production=true'
+            sh 'make yarn-install'
           }
 
           jekyllImg = docker.image('jekyll/jekyll:4.0')
