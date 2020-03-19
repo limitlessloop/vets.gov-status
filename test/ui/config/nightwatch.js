@@ -3,9 +3,9 @@
 const path = require('path');
 
 module.exports = {
-    output_folder: "./logs/nightwatch",
-    src_folders: "./",
-    custom_commands_path: "./nightwatch-commands/",
+    output_folder: "./test/ui/logs/nightwatch",
+    src_folders: "./test/ui/",
+    custom_commands_path: "./test/ui/nightwatch-commands/",
     live_output: true,
     parallel_process_delay: 10,
     disable_colors: process.env.BUILDTYPE === "production",
@@ -29,7 +29,7 @@ module.exports = {
             screenshots: {
                 enabled: true,
                 on_failure: true,
-                path: "logs/screenshots"
+                path: "./test/ui/logs/screenshots"
             },
             desiredCapabilities: {
                 browserName: "chrome",

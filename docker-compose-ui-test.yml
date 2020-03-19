@@ -1,8 +1,0 @@
-version: '3'
-services:
-  dashboard-ui-test:
-    user: ${CURRENT_UID}
-    image: circleci/node:12.16.1-buster-browsers
-    volumes:
-      - .:/source-root
-    command: bash -c "cd /source-root/test/ui && yarn install && yarn run test-headless"
