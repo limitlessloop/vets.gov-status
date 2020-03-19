@@ -111,7 +111,7 @@ ci-unit-test:  ## Run unit tests and flake8 in a docker container, copy the resu
 	docker rm $(CONTAINER_NAME)
 
 .PHONY: ui-test
-ui-test: jekyll-build   ## Run UI tests nightwatch, chromedriver and chrome
+ui-test: build   ## Run UI tests nightwatch, chromedriver and chrome
 	yarn run ui-test-headless
 
 .PHONY: ci-ui-test
@@ -139,8 +139,7 @@ clean:  ## Delete any directories, files or logs that are auto-generated, except
 	find scripts -name '__pycache__' -type d | xargs rm -rf
 
 .PHONY: deepclean
-deepclean: clean  ## Delete node_modules, python packages (but keeps the virtualenv)
+deepclean: clean  ## Delete node_modules, python packages and virtualenv. You must run 'make python-install' after running this.
 	rm -rf node_modules
-	pip uninstall -q -q -r scripts/requirements.txt -r scripts/dev-requirements.txt -y
-# Hack to force make to re-make the python dependencies after having deleted them
-	touch scripts/requirements.txt scripts/dev-requirements.txt
+	rm -rf ENV
+	@echo virtualenvironment was deleted. Type 'deactivate' to deactivate the shims.
