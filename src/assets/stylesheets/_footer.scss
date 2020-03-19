@@ -1,9 +1,21 @@
 .site-footer {
   min-height: 10rem;
-  padding: 1.5rem 0;
+  padding: 1.5rem 3rem;
 
   a {
     color: $color-white;
+  }
+}
+
+.site-footer .site-l-wrapper {
+  padding: 0;
+
+  @include media($nav-width) {
+    padding: 0 2.4rem;
+  }
+
+  @include media($large-screen) {
+    padding: 0 8rem;
   }
 }
 
@@ -18,8 +30,7 @@
 
 .site-footer__links {
   a {
-    margin-right: 2rem;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem 2rem;
   }
 
   @include media($small-screen) {
