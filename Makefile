@@ -99,12 +99,12 @@ ci-unit-test:  ## Run unit tests and flake in a docker container, copy the resul
 	docker rm $(CONTAINER_NAME)
 
 .PHONY: ui-test
-# CURRENT_UID needed to be able to run the command below as Jenkins in CI -
-# see https://github.com/moby/buildkit/pull/1180 for a potentially a future more robust addition to make docker fail if
-# a variable isn't set
-ui-test: export CURRENT_UID := $(shell id -u):$(shell id -g)
-ui-test:   ## Run UI tests using selenium / chrome / nightwatch
-	$(COMPOSE_UI_TEST) up --abort-on-container-exit --force-recreate --remove-orphans
+ui-test: jekyll-build   ## Run UI tests nightwatch, chromedriver and chrome
+	yarn run ui-test-headless
+
+.PHONY: ci-ui-test
+ci-ui-test:    ## Run UI tests nightwatch, chromedriver and chrome in CI without jekyll-build
+	yarn run ui-test-headless
 
 .PHONY: test
 test: unit-test flake8 ui-test ## Run unit tests, static analysis and ui tests

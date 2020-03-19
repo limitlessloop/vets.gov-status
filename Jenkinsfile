@@ -61,7 +61,9 @@ pipeline {
     stage('UI tests') {
       steps {
         script {
-          sh 'make ui-test'
+          docker.image('circleci/node:12.16.1-buster-browsers').inside() {
+            sh 'make ci-ui-test'
+          }
         }
       }
     }

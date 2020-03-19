@@ -11,7 +11,8 @@
   "license": "PUBLIC DOMAIN",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no tests specified\" && exit 1"
+    "ui-test": "nightwatch -c test/ui/config/nightwatch.js",
+    "ui-test-headless": "nightwatch -c test/ui/config/nightwatch.js --headless"
   },
   "dependencies": {
     "@department-of-veterans-affairs/formation": "^6.9.1",
@@ -21,6 +22,11 @@
     "foundation-sites": "5",
     "jquery": "^3.4.1",
     "uswds": "^1.6.10"
+  },
+  "devDependencies": {
+    "axe-core": "^3.5.2",
+    "chromedriver": "^80.0.1",
+    "nightwatch": "^1.3.4"
   },
   "engines": {
     "node": "^12",
