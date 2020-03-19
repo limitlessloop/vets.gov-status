@@ -4,6 +4,10 @@ import requests
 import logging
 from scripts.datehelpers import find_last_twelve_months
 
+CSAT_SCORE = 'csat_score'
+MONTH_DATA = 'month_data'
+DATE_COLUMN = 'date'
+
 
 def authenticate():
     url = "https://api.foresee.com/v1/token"
@@ -78,19 +82,19 @@ def fetch_last_12_months_data():
                                       start_end_date[1].isoformat())
         month_year_text = str(start_end_date[0].month) + '/' + str(start_end_date[0].year)
         one_month_dict = {
-            'month': month_year_text,
-            'month_data': month_data,
-            'csat_score': calculate_average_satisfaction(month_data)
+            DATE_COLUMN: month_year_text,
+            MONTH_DATA: month_data,
+            CSAT_SCORE: calculate_average_satisfaction(month_data)
         }
         last_year_data.append(one_month_dict)
-        logging.info("Calculated %s average: %.2f", month_year_text, one_month_dict['csat_score'])
+        logging.info("Calculated %s average: %.2f", month_year_text, one_month_dict[CSAT_SCORE])
     return last_year_data
 
 
 def calculate_overall_average_satisfaction(last_year_data):
     all_data = []
     for one_month_data in last_year_data:
-        all_data.extend(one_month_data['month_data'])
+        all_data.extend(one_month_data[MONTH_DATA])
     return calculate_average_satisfaction(all_data)
 
 
@@ -101,7 +105,7 @@ def write_to_csv(twelve_months_scores):
         mode = 'w'
 
     with open(full_filename, mode) as csv_file:
-        csv_columns = ['month', 'csat_score']
+        csv_columns = [DATE_COLUMN, CSAT_SCORE]
         writer = csv.DictWriter(csv_file, fieldnames=csv_columns, extrasaction='ignore')
         writer.writeheader()
         writer.writerows(twelve_months_scores)

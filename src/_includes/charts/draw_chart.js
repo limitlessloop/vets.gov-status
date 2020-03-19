@@ -39,13 +39,13 @@ var chart = new Chart(ctx, {
                     zeroLineWidth: 1,
                     zeroLineColor: 'rgb(0,0,0)'
                 },
-                ticks: {
+                {% if chart.id != 'csat' %} ticks: {
                     beginAtZero: true,
                     padding: 10,
                     callback: function(value, index, values) {
                         return (value / 1000000);
                     }
-                },
+                }, {% endif %}
                 scaleLabel: {
                     display: true,
                     labelString: '{{ chart.yAxisLabel }}'

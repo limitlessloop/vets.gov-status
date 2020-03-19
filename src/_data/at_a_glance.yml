@@ -11,3 +11,10 @@
   colName: totalEvents
   dataLabel: Transactions
   yAxisLabel: Successful Transactions (Millions)
+
+- title: Satisfaction Score
+  id: csat
+  csvFilename: csat_score
+  colName: csat_score
+  dataLabel: csat_score
+  yAxisLabel: Satisfaction Score
