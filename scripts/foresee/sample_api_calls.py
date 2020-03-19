@@ -3,6 +3,7 @@ import re
 import json
 import csv
 from os import path
+from requests.auth import HTTPBasicAuth
 
 APPLICATION_JSON = "application/json"
 
@@ -90,7 +91,7 @@ def foresee_authenticate():
     return re.search(pattern, response.text).group(1)
 
 
-def get_measures():
+def get_measures(token):
     url = "https://api.foresee.com/v1/measures"
 
     headers = {
@@ -103,7 +104,7 @@ def get_measures():
     print(response.text)
 
 
-def get_measure_definition(measure, file_path):
+def get_measure_definition(measure, file_path, token):
     url = "https://api.foresee.com/v1/measures/" + measure + "/definition"
 
     querystring = {"excludeQuestions": "false", "excludeAnswers": "true"}
@@ -124,7 +125,7 @@ def get_measure_definition(measure, file_path):
     print(response.text)
 
 
-def get_measure_data(measure, from_date, to_date):
+def get_measure_data(token, measure, from_date, to_date):
     offset = 0;
     url = "https://api.foresee.com/v1/measures/" + measure + "/data"
 
@@ -155,17 +156,46 @@ def get_measure_data(measure, from_date, to_date):
         querystring['offset'] = str(offset)
 
 
-token = foresee_authenticate()
-# get_measures()
+def get_measure_data_using_odata(measure, from_date, to_date):
+    respondents_scores_url = "https://api.foresee.com/v1/bi/cxmeasure/odata.svc/Measures(" \
+          + measure \
+          + ")/RespondentsScores?$filter=responseTime gt 2020-03-01 and latentName eq 'Satisfaction'"
+
+    headers = {
+        'accept': 'application/json'
+    }
+
+    response = requests.request("GET", respondents_scores_url,
+                                headers=headers,
+                                auth=HTTPBasicAuth('saman.moshafi@va.gov', '1f35d458-69dd-4d2f-a45e-937f8e9c9efd'))
+    mode = 'x'
+    respondents_scores_file = "respondents_scores.json"
+    if path.exists(respondents_scores_file):
+        mode = 'w'
+    with open(respondents_scores_file, mode) as json_file:
+        json_file.write(response.text)
+
+    responses_url = "https://api.foresee.com/v1/bi/cxmeasure/odata.svc/Measures(" \
+                             + measure \
+                             + ")/Responses?$filter=responseTime gt 2020-03-01 and questionName eq 'url'"
+    response = requests.request("GET", responses_url,
+                                headers=headers,
+                                auth=HTTPBasicAuth('saman.moshafi@va.gov', '1f35d458-69dd-4d2f-a45e-937f8e9c9efd'))
+    responses_file = "responses.json"
+    mode = 'x'
+    if path.exists(responses_file):
+        mode = 'w'
+    with open(responses_file, mode) as json_file:
+        json_file.write(response.text)
+
+
 measure_id = "8847572"
 f_date = "2020-01-01"
-t_date = "2020-03-11"
+t_date = "2020-03-17"
 all_csv_path = \
     "/Users/samanmoshafi/Documents/va_foresee_measure_" \
     + measure_id + "_" + f_date + "_to_" + t_date + ".csv"
 average_csv_path = "/Users/samanmoshafi/Documents/va_foresee_measure_" + measure_id + "_average.csv"
-# get_measure_definition(measure_id,
-#                        "/Users/samanmoshafi/Documents/va_foresee_measure_" + measure_id + "_definition.json")
 
-get_measure_data(measure_id, f_date, t_date)
+get_measure_data_using_odata(measure_id, f_date, t_date)
 
