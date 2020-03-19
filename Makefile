@@ -52,18 +52,27 @@ run: yarn-install  ## Build the Jekyll site and start the Jekyll webserver on po
 	docker run --rm -p 4000:4000 --volume=${PWD}:/srv/jekyll -it jekyll/jekyll:4.0  jekyll serve --trace
 
 ## Pip / Python
+
+# python-install recipe all has to run in a single shell
 .PHONY: python-install
 python-install:  ## Sets up your python environment for the first time (only need to run once)
-	pip install virtualenv
-	virtualenv -p ~/.pyenv/shims/python ENV
-	source ENV/bin/activate
-	@echo shell ENV activated
-	pip install --require-hashes -r scripts/requirements.txt -r scripts/dev-requirements.txt
-	# Will sync and also remove any dependencies not included in requirements specs
-	pip-sync scripts/requirements.txt scripts/dev-requirements.txt
-	@echo Finished install
-	@echo To activate the shell type:
-	@echo source ENV/bin/activate
+	pip install virtualenv ;\
+	virtualenv -p ~/.pyenv/shims/python ENV ;\
+	source ENV/bin/activate ;\
+	echo shell ENV activated ;\
+	pip install --require-hashes -r scripts/requirements.txt -r scripts/dev-requirements.txt ;\
+	echo Finished install ;\
+	echo Please activate the virtualenvironment with: ;\
+	echo source ENV/bin/activate
+
+# Errors out if VIRTUAL_ENV is not defined and we aren't in a CI environment.
+.PHONY: check-env
+check-env:
+ifndef VIRTUAL_ENV
+ifneq ($(CI_ARG), true)
+	$(error VIRTUAL_ENV is undefined, meaning you aren't running in a virtual environment. Fix by running: 'source ENV/bin/activate')
+endif
+endif
 
 scripts/requirements.txt: scripts/requirements.in
 	pip-compile --upgrade --generate-hashes scripts/requirements.in --output-file $@
@@ -72,12 +81,11 @@ scripts/dev-requirements.txt: scripts/dev-requirements.in
 	pip-compile --upgrade --generate-hashes scripts/dev-requirements.in --output-file $@
 
 SITE_PACKAGES := $(shell pip show pip | grep '^Location' | cut -f2 -d':')
-$(SITE_PACKAGES): scripts/requirements.txt scripts/dev-requirements.txt
+$(SITE_PACKAGES): scripts/requirements.txt scripts/dev-requirements.txt check-env
 ifeq ($(CI_ARG), true)
 	@echo "Do nothing; assume python dependencies were installed by Dockerfile.test already"
 else
 	pip-sync scripts/requirements.txt scripts/dev-requirements.txt
-	touch $@
 endif
 
 .PHONY: pip-install
@@ -98,8 +106,8 @@ flake8: pip-install 	## Run Flake8 python static style checking and linting
 ci-unit-test:  CONTAINER_NAME := dashboard-test-container-$(shell date "+%Y.%m.%d-%H.%M.%S")
 ci-unit-test:  ## Run unit tests and flake8 in a docker container, copy the results back out
 	docker build -q -t dashboard-test-img -f Dockerfile.test .
-	docker run --name $(CONTAINER_NAME) --env CI=$(CI_ARG) dashboard-test-img && \
-	docker cp $(CONTAINER_NAME):/dashboard/results . && \
+	docker run --name $(CONTAINER_NAME) --env CI=$(CI_ARG) dashboard-test-img
+	docker cp $(CONTAINER_NAME):/dashboard/results .
 	docker rm $(CONTAINER_NAME)
 
 .PHONY: ui-test
@@ -131,6 +139,8 @@ clean:  ## Delete any directories, files or logs that are auto-generated, except
 	find scripts -name '__pycache__' -type d | xargs rm -rf
 
 .PHONY: deepclean
-deepclean: clean  ## Delete node_modules and python packages
+deepclean: clean  ## Delete node_modules, python packages (but keeps the virtualenv)
 	rm -rf node_modules
-	pip uninstall -r requirements.txt -r scripts/dev-requirements.txt -y
+	pip uninstall -q -q -r scripts/requirements.txt -r scripts/dev-requirements.txt -y
+# Hack to force make to re-make the python dependencies after having deleted them
+	touch scripts/requirements.txt scripts/dev-requirements.txt
