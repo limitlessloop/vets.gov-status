@@ -30,7 +30,11 @@
 
 .site-footer__links {
   a {
-    margin: 0 0 1rem 2rem;
+    margin: 0 2rem 1rem 0;
+
+    &:last-child {
+      margin: 0;
+    }
   }
 
   @include media($small-screen) {
