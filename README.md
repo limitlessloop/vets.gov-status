@@ -51,6 +51,13 @@ Once deployed the data is static until the next deploy. Because the executive sc
 
 ## Getting Started
 
+### Makefile
+
+Most of the commands used in development are in the [Makefile](Makefile). You can get a list of possible commands with:
+`$ make`
+or
+`$ make help`
+
 ### Install yarn
 
 [Yarn](https://yarnpkg.com/) is used to manage javascript dependencies. You can install it with:
@@ -59,30 +66,25 @@ Once deployed the data is static until the next deploy. Because the executive sc
 
 Then install dependencies with:
 
-`$ yarn install`
+`$ make yarn-install`
 
 ### Jekyll
 
-In order to mimic the CI environment, we run Jekyll out of a docker container, instead of locally. We have
-built helper scripts as follows:
+In order to mimic the CI environment, we run Jekyll out of a docker container. We have built helper scripts as follows:
 
 Build jekyll site:
 
-`$ ./jekyll-build.sh`
+`$ make jekyll-build`
 
 Start jekyll site and serve it on http://localhost:4000/scorecard/:
 
-`$ ./jekyll-serve.sh`
-
-Alternatively, you can run
-
-`yarn serve`
+`$ make jekyll-serve`
 
 ### Run Python Scripts
 
 Make sure you have the correct version of python: `pyenv install 3.6.8` (use version in `.python-version`)
 
-Run `./python-install.sh` to install a virtual environment and install the dependencies.
+Run `make python-install` to install a virtual environment and install the dependencies.
 
 Activate the virtual environment with `source ENV/bin/activate`
 
@@ -108,18 +110,14 @@ region=us-east-2
 
 ### Adding new packages to python scripts
 
-Add the package names to `requirements.in` then run `./upgrade-requirements.sh` to get them synced to `requirements.txt`. 
-
-Then run `./python-install.sh` to update your virtual environment with the new packages.
+Add the package names to `requirements.in` for run-time dependencies, or `dev-requirements.in` for dependencies used during testing. 
+Then, you can run `make pip-install` to update the `requirements.txt` or `dev-requirements.txt` files and sync your installed packages.
 
 ### Running Tests
 
-Run unit tests with pytest and generate a coverage report with  `./run-tests.sh`.
+Run unit tests with pytest and generate a coverage report with `make unit-test`.
 
-Run UI tests by:
-```
-$ ./run-ui-tests.sh
-```
+Run UI tests with `make ui-test`.
 
 ### Running with Docker
 
@@ -127,8 +125,8 @@ You can run the scripts in a Docker image using the following commands:
 
 ```
 $ cd scripts
-$ docker build -t scorecard-fetch .
-$ docker run --env AWS_SECRET_ACCESS_KEY --env AWS_SESSION_TOKEN --env AWS_ACCESS_KEY_ID scorecard-fetch
+$ docker build -t dashboard-fetch .
+$ docker run --env AWS_SECRET_ACCESS_KEY --env AWS_SESSION_TOKEN --env AWS_ACCESS_KEY_ID dashboard-fetch
 ```
 
 Note that we pass in the host machine's AWS credentials.
@@ -141,10 +139,11 @@ Our deployments are handled by Jenkins using the `Jenkinsfile`. We deploy by com
 
 More useful developer onboarding documentation can be [found here](dev/onboarding.md).
 
-## Previous repo
-
-This repo previously held a now defunct dashboard. The prior work is archived as a release on this repo in case that work needs to be revisited.
-
 ## Browsers supported
 
 The current list of supported browsers for scorecard redesign include Chrome 61, Firefox 60, iOS 11, Edge 16, ChromeAndroid 67, Safari 11. This list aligns with the [vets-website list](https://github.com/department-of-veterans-affairs/vets-website/blob/master/.babelrc#L16).
+
+## Previous repo
+
+This repo previously held a now defunct dashboard. The prior work is archived as a release on this repo in case that 
+work needs to be revisited.
