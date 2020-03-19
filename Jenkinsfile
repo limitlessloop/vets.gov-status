@@ -5,6 +5,7 @@ pipeline {
   environment {
     // Needed for credstash
     AWS_DEFAULT_REGION = 'us-gov-west-1'
+    CI = "true"
   }
   options {
     ansiColor('xterm')
@@ -13,7 +14,7 @@ pipeline {
     stage('Unit tests') {
       steps {
         script {
-          sh './run-ci-tests.sh'  // this copies results into ./results directory
+          sh 'make ci-unit-test'  // this copies results into ./results directory
         }
       }
       post {
@@ -45,7 +46,7 @@ pipeline {
 
           nodeImg = docker.image('node:12.16.1')
           nodeImg.inside() {
-            sh 'yarn install --frozen-lockfile --production=true'
+            sh 'make yarn-install'
           }
 
           jekyllImg = docker.image('jekyll/jekyll:4.0')
@@ -60,7 +61,7 @@ pipeline {
     stage('UI tests') {
       steps {
         script {
-          sh './run-ui-tests.sh'
+          sh 'make ui-test'
         }
       }
     }

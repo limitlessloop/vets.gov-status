@@ -11,10 +11,7 @@
   "license": "PUBLIC DOMAIN",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no tests specified\" && exit 1",
-    "postinstall": "./copy-node-dependencies.sh",
-    "build": "./jekyll-build.sh",
-    "serve": "./jekyll-serve.sh"
+    "test": "echo \"Error: no tests specified\" && exit 1"
   },
   "dependencies": {
     "@department-of-veterans-affairs/formation": "^6.9.1",
