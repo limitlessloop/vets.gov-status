@@ -5,3 +5,4 @@ pandas
 pyOpenSSL
 PySocks
 ruamel.yaml
+tenacity

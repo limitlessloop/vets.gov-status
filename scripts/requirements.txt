@@ -255,7 +255,11 @@ s3transfer==0.3.3 \
 six==1.14.0 \
     --hash=sha256:236bdbdce46e6e6a3d61a337c0f8b763ca1e8717c03b369e87a7ec7ce1319c0a \
     --hash=sha256:8f3cd2e254d8f793e7f3d6d9df77b92252b52637291d0f0da013c76ea2724b6c \
-    # via cryptography, google-api-core, google-api-python-client, google-auth, protobuf, pyopenssl, python-dateutil
+    # via cryptography, google-api-core, google-api-python-client, google-auth, protobuf, pyopenssl, python-dateutil, tenacity
+tenacity==6.1.0 \
+    --hash=sha256:f7bcbf5bb53875cfc38f61f596a88b1c994af32420f120c4409542a683ad613b \
+    --hash=sha256:fb01d8ef2474eed422d8314a566c9e391cccb6e50cf4585022add6cb5cda66c8 \
+    # via -r scripts/requirements.in
 uritemplate==3.0.1 \
     --hash=sha256:07620c3f3f8eed1f12600845892b0e036a2420acf513c53f7de0abd911a5894f \
     --hash=sha256:5af8ad10cec94f215e3f48112de2022e1d5a37ed427fbd88652fa908f2ab7cae \

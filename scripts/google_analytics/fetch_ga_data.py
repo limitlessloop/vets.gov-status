@@ -1,12 +1,13 @@
 from ruamel import yaml
-import socket
+from tenacity import retry, wait_fixed, stop_after_attempt
+import os
 
 from analytics_helpers import make_df, initialize_analyticsreporting, get_totals_from_report
 from datetime_utils import reformat_date
 from requests import get_logged_in_users_request, get_all_transactions_request, get_last_month_users_request
-import os
 
 
+@retry(wait=wait_fixed(10), stop=stop_after_attempt(5))
 def get_ga_report(analytics_service, request):
     return analytics_service.reports().batchGet(
         body={
@@ -67,16 +68,13 @@ def fetch_data_for_service(analytics_service, service):
     }
 
     if "page_path_filter" in service:
-        try:
-            users_total, users_trend = run_report_and_get_total_with_trend(
-                analytics_service,
-                get_last_month_users_request(service["page_path_filter"])
-            )
+        users_total, users_trend = run_report_and_get_total_with_trend(
+            analytics_service,
+            get_last_month_users_request(service["page_path_filter"])
+        )
 
-            service_data["users_total"] = users_total
-            service_data["users_trend"] = users_trend
-        except socket.timeout:
-            print("Timeout")
+        service_data["users_total"] = users_total
+        service_data["users_trend"] = users_trend
 
     return service_data
 
