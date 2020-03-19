@@ -66,7 +66,10 @@ def fetch_data_for_service(analytics_service, service):
     }
 
     if "page_path_filter" in service:
-        users_total, users_trend = run_report_and_get_total_with_trend(analytics_service, get_last_month_users_request(service["page_path_filter"]))
+        users_total, users_trend = run_report_and_get_total_with_trend(
+            analytics_service,
+            get_last_month_users_request(service["page_path_filter"])
+        )
 
         service_data["users_total"] = users_total
         service_data["users_trend"] = users_trend
