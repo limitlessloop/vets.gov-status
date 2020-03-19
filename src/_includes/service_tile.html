@@ -9,10 +9,10 @@
         <span>
             {% if service.users_trend > 0 %}
                 <i class="fas fa-arrow-circle-up vads-u-color--primary"></i>
-                Up {{ service.users_trend }}% Last 30 days
+                Up {{ service.users_trend | round }}% Last 30 days
             {% else %}
                 <i class="fas fa-arrow-circle-down vads-u-color--primary"></i>
-                Down {{ service.users_trend }}% Last 30 days
+                Down {{ service.users_trend | round }}% Last 30 days
             {% endif %}
         </span>
     </div>
