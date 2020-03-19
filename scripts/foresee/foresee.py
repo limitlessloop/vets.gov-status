@@ -1,4 +1,5 @@
-from os import environ
+from os import environ, path
+import csv
 import requests
 import logging
 from scripts.datehelpers import find_last_twelve_months
@@ -48,7 +49,7 @@ def get_measure_data(bearer_token, measure, from_date, to_date):
         logging.info("Downloading page: {:n} ".format(offset))
         response = requests.request("GET", url, headers=headers, params=querystring)
         if response.status_code != 200:
-            raise RuntimeError()
+            raise RuntimeError(str(response.status_code) + " " + response.text)
         response_json = response.json()
         has_more = response_json['hasMore']
         offset += 1
@@ -61,7 +62,7 @@ def get_measure_data(bearer_token, measure, from_date, to_date):
 
 def calculate_average_satisfaction(items):
     extracted_csats = (next(latent_score['score'] for latent_score in item['latentScores'] if latent_score['name'] == 'Satisfaction') for item in items)
-    return sum(extracted_csats) / len(items)
+    return round(sum(extracted_csats) / len(items), 2)
 
 
 def fetch_last_12_months_data():
@@ -82,7 +83,7 @@ def fetch_last_12_months_data():
             'csat_score': calculate_average_satisfaction(month_data)
         }
         last_year_data.append(one_month_dict)
-        logging.info("Calculated %s average: %.2f", month_year_text, one_month_dict['cast_score'])
+        logging.info("Calculated %s average: %.2f", month_year_text, one_month_dict['csat_score'])
     return last_year_data
 
 
@@ -93,12 +94,27 @@ def calculate_overall_average_satisfaction(last_year_data):
     return calculate_average_satisfaction(all_data)
 
 
+def write_to_csv(twelve_months_scores):
+    full_filename = path.join(environ['DATA_DIR'], 'csat_score.csv')
+    mode = 'x'
+    if path.exists(full_filename):
+        mode = 'w'
+
+    with open(full_filename, mode) as csv_file:
+        csv_columns = ['month', 'csat_score']
+        writer = csv.DictWriter(csv_file, fieldnames=csv_columns, extrasaction='ignore')
+        writer.writeheader()
+        writer.writerows(twelve_months_scores)
+
+
 def main():
     logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', level=logging.INFO)
 
     # get dates for last 12 months
-    fetch_last_12_months_data()
+    last_year_data = fetch_last_12_months_data()
     # calculate average for the whole period
+    calculate_overall_average_satisfaction(last_year_data)
+    write_to_csv(last_year_data)
 
 
 if __name__ == '__main__':
