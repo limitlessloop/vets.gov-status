@@ -89,7 +89,7 @@ flake8: $(SITE_PACKAGES)	## Run Flake8 python static style checking and linting
 ci-unit-test:  CONTAINER_NAME := dashboard-test-container-$(shell date "+%Y.%m.%d-%H.%M.%S")
 ci-unit-test:  ## Run unit tests and flake in a docker container, copy the results back out
 	docker build -q -t dashboard-test-img -f Dockerfile.test .
-	docker run --name $(CONTAINER_NAME) --env CI_ARG=$(CI_ARG) dashboard-test-img && \
+	docker run --name $(CONTAINER_NAME) --env CI=$(CI_ARG) dashboard-test-img && \
 	docker cp $(CONTAINER_NAME):/dashboard/results . && \
 	docker rm $(CONTAINER_NAME)
 
