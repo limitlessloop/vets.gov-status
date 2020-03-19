@@ -58,7 +58,7 @@ Most of the commands used in development are in the [Makefile](Makefile). You ca
 or
 `$ make help`
 
-### Install yarn
+#### Install yarn
 
 [Yarn](https://yarnpkg.com/) is used to manage javascript dependencies. You can install it with:
 
@@ -74,11 +74,17 @@ In order to mimic the CI environment, we run Jekyll out of a docker container. W
 
 Build jekyll site:
 
-`$ make jekyll-build`
+`$ make build`
 
 Start jekyll site and serve it on http://localhost:4000/scorecard/:
 
-`$ make jekyll-serve`
+`$ make run`
+
+### Testing
+
+Run all unit tests and ui tests:
+
+`$ make test`
 
 ### Run Python Scripts
 

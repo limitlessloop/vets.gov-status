@@ -39,12 +39,12 @@ copy-node-dependencies: node_modules
 yarn-install: node_modules copy-node-dependencies ## Install npm dependencies using yarn
 
 ### Jekyll
-.PHONY: jekyll-build
-jekyll-build: yarn-install  ## Build the Jekyll site
+.PHONY: build
+build: yarn-install  ## Build the Jekyll site
 	docker run --rm --volume=${PWD}:/srv/jekyll -it jekyll/jekyll:4.0  jekyll build --trace
 
-.PHONY: jekyll-serve
-jekyll-serve: yarn-install  ## Build the Jekyll site and start the Jekyll webserver on port 4000
+.PHONY: run
+run: yarn-install  ## Build the Jekyll site and start the Jekyll webserver on port 4000
 	docker run --rm -p 4000:4000 --volume=${PWD}:/srv/jekyll -it jekyll/jekyll:4.0  jekyll serve --trace
 
 ## Pip / Python
