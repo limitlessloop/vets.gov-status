@@ -39,7 +39,11 @@ var chart = new Chart(ctx, {
                     zeroLineWidth: 1,
                     zeroLineColor: 'rgb(0,0,0)'
                 },
-                {% if chart.id != 'csat' %} ticks: {
+                {% if chart.id == 'csat' %} ticks: {
+                    suggestedMin: 0,
+                    suggestedMax: 100
+                },
+                {% else %} ticks: {
                     beginAtZero: true,
                     padding: 10,
                     callback: function(value, index, values) {
