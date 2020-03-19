@@ -70,6 +70,7 @@ ifeq ($(CI_ARG), true)
 	@echo "Do nothing; assume python dependencies were installed by Dockerfile.test already"
 else
 	pip-sync scripts/requirements.txt scripts/dev-requirements.txt
+	touch $(SITE_PACKAGES)
 endif
 
 scripts/requirements.txt: scripts/requirements.in
