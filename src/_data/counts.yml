@@ -25,7 +25,7 @@ services:
     transactions: 49123
   - title: Apply for education benefits as an eligible dependent
     transactions: 49123
-  - title: Apply for education benefits as an eligible dependent
+  - title: Manage education benefits as an eligible dependent
     transactions: 49123
   - title: Apply for education benefits under the NCS program
     transactions: 49123
