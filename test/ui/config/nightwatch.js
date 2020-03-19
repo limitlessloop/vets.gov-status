@@ -17,7 +17,7 @@ module.exports = {
           "--verbose"
         ],
         port: 9515,
-        log_path: "./logs"
+        log_path: "./test/ui/logs"
     },
     test_settings: {
         default: {

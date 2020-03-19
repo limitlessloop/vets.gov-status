@@ -8,4 +8,3 @@ results
 src/.jekyll-cache/
 target
 test/ui/logs/
-test/ui/node_modules/
