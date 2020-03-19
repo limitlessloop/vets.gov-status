@@ -1,7 +1,6 @@
 [run]
 branch = True
-include =
-  scripts/*
+source = scripts
 omit =
   **/test_*
   **/conftest*

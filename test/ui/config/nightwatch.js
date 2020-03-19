@@ -1,34 +1,35 @@
 /* eslint-disable camelcase, strict */
 "use strict";
-require("@babel/register");
-require("@babel/polyfill");
-
-const selenium_server_port = 4444;
-const selenium_host = process.env.selenium_host || "localhost";
-const jekyll_port = 4000;
-const jekyll_host = process.env.jekyll_host || "localhost";
+const path = require('path');
 
 module.exports = {
-    output_folder: "./logs/nightwatch",
-    src_folders: "./",
-    custom_commands_path: "./nightwatch-commands/",
+    output_folder: "./test/ui/logs/nightwatch",
+    src_folders: "./test/ui/",
+    custom_commands_path: "./test/ui/nightwatch-commands/",
     live_output: true,
     parallel_process_delay: 10,
     disable_colors: process.env.BUILDTYPE === "production",
     test_workers: false,
+    webdriver: {
+        start_process: true,
+        server_path: "node_modules/.bin/chromedriver",
+        cli_args: [
+          "--verbose"
+        ],
+        port: 9515,
+        log_path: "./test/ui/logs"
+    },
     test_settings: {
         default: {
-            launch_url: `http://${jekyll_host}:${jekyll_port}/scorecard/`,
+            launch_url: `file://${path.resolve(__dirname, '../../../_site/index.html')}`,
             filter: "**/*.e2e.spec.js",
-            selenium_host: selenium_host,
-            selenium_port: selenium_server_port,
             use_ssl: false,
             silent: true,
             output: true,
             screenshots: {
                 enabled: true,
                 on_failure: true,
-                path: "logs/screenshots"
+                path: "./test/ui/logs/screenshots"
             },
             desiredCapabilities: {
                 browserName: "chrome",
@@ -36,30 +37,16 @@ module.exports = {
                 acceptSslCerts: true,
                 webStorageEnabled: true,
                 chromeOptions: {
-                    args: ["--window-size=1024,768"],
+                    args: ["--window-size=1024,768", "no-sandbox", "disable-gpu"],
                     w3c: false
                 }
             },
-            selenium: {
-                start_process: false,
-                host: selenium_host,
-                port: selenium_server_port
-            },
-            test_workers: {
-                enabled: false,
-                workers: parseInt(process.env.CONCURRENCY || 1, 10)
-            }
         },
         headless: {
             desiredCapabilities: {
                 chromeOptions: {
                     args: ["--headless", "--window-size=1024,768"]
                 }
-            }
-        },
-        bestpractice: {
-            globals: {
-                rules: ["section508", "wcag2a", "wcag2aa", "best-practice"]
             }
         }
     }
