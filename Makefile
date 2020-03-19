@@ -16,7 +16,7 @@ help:  ## Prints out documentation for available commands
 ### Yarn / Node / etc.
 node_modules: yarn.lock package.json
 ifeq ($(CI_ARG), true)
-	yarn install --frozen-lockfile --production=true
+	yarn install --production=true --frozen-lockfile --non-interactive
 else
 	yarn install --production=false --check-files
 endif
@@ -45,7 +45,7 @@ jekyll-serve: yarn-install  ## Build the Jekyll site and start the Jekyll webser
 
 ## Pip / Python
 .PHONY: python-install
-python-install:  ## Sets up your python environment
+python-install:  ## Sets up your python environment for the first time (only need to run once)
 	pip install virtualenv
 	virtualenv -p ~/.pyenv/shims/python ENV
 	source ENV/bin/activate
@@ -62,7 +62,11 @@ SITE_PACKAGES := $(shell pip show pip | grep '^Location' | cut -f2 -d':')
 pip-install: $(SITE_PACKAGES)
 
 $(SITE_PACKAGES): scripts/requirements.txt scripts/dev-requirements.txt
+ifeq ($(CI_ARG), true)
+	@echo "Do nothing; assume python dependencies were installed by Dockerfile.test already"
+else
 	pip-sync scripts/requirements.txt scripts/dev-requirements.txt
+endif
 
 scripts/requirements.txt: scripts/requirements.in
 	pip-compile --upgrade --generate-hashes scripts/requirements.in --output-file scripts/requirements.txt
@@ -78,8 +82,16 @@ unit-test: pip-install  ## Run python unit tests
 
 .PHONY: flake8
 flake8: $(SITE_PACKAGES)	## Run Flake8 python static style checking and linting
-	@echo "Flake8 comments:"
+	@echo "flake8 comments:"
 	flake8 --max-line-length=120 --statistics scripts
+
+.PHONY: ci-unit-test
+ci-unit-test:  CONTAINER_NAME := dashboard-test-container-$(shell date "+%Y.%m.%d-%H.%M.%S")
+ci-unit-test:  ## Run unit tests and flake in a docker container, copy the results back out
+	docker build -q -t dashboard-test-img -f Dockerfile.test .
+	docker run --name $(CONTAINER_NAME) --env CI_ARG=$(CI_ARG) dashboard-test-img && \
+	docker cp $(CONTAINER_NAME):/dashboard/results . && \
+	docker rm $(CONTAINER_NAME)
 
 .PHONY: ui-test
 # CURRENT_UID needed to be able to run the command below as Jenkins in CI -
@@ -89,23 +101,13 @@ ui-test: export CURRENT_UID := $(shell id -u):$(shell id -g)
 ui-test:   ## Run UI tests using selenium / chrome / nightwatch
 	$(COMPOSE_UI_TEST) up --abort-on-container-exit --force-recreate --remove-orphans
 
-.PHONY: ci-unit-test
-ci-unit-test:  CONTAINER_NAME := dashboard-test-container-$(shell date "+%Y.%m.%d-%H.%M.%S")
-ci-unit-test:  ## Run unit tests and flake in a docker container, copy the results back out
-	docker build -q -t dashboard-test-img -f Dockerfile.test .
-	docker run --name $(CONTAINER_NAME) dashboard-test-img && \
-	docker cp $(CONTAINER_NAME):/dashboard/results . && \
-	docker rm $(CONTAINER_NAME)
-
 .PHONY: test
 test: unit-test flake8 ui-test ## Run unit tests, static analysis and ui tests
-	@echo "All tests run"
+	@echo "All tests passed."  # This should only be printed if all of the other targets succeed
 
 # .PHONY: docker-clean
 # docker-clean:
 # 	$(COMPOSE_UI_TEST) down --rmi all --volumes
-
-
 
 .PHONY: clean
 clean:  ## Delete any directories, files or logs that are auto-generated
