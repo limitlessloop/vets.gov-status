@@ -20,18 +20,80 @@
 @import "footer";
 @import "migration";
 @import "northstar";
-@import "accordion";
+@import "service_tile";
 
-.usa-sidenav-list a {
-  text-align: right;
-  color: $color-gray-dark;
+h2 {
+  margin-top: units(4);
+  margin-bottom: 0;
+  font-size: 3.2rem;
+}
 
-  &.usa-current {
-    color: $color-gray-dark;
+h4 {
+  font-size: 1.4rem;
+}
+
+.additional-info-container:not(.form-expanding-group-open) {
+  & .additional-info-content {
+    display: none;
   }
 }
 
-.chart-nav__total {
-  display: block;
-  font-size: 3.4rem;
+.usa-sidenav-list {
+  border-color: $color-gray-light;
+
+  & li {
+    border-color: $color-gray-light;
+  }
+
+  & a {
+    color: $color-gray-dark;
+    padding: units(2) units(1);
+
+    & h3 {
+      font-weight: normal;
+      font-size: 1.4rem;
+    }
+
+    &.usa-current {
+      padding: units(2) units(1);
+      color: $color-gray-dark;
+
+      & h3 {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $medium-screen) {
+  .usa-sidenav-list {
+    & a:not(.usa-current) {
+      border-left: .4rem solid transparent;
+    }
+  }
+}
+
+@media screen and (max-width: $medium-screen) {
+  .usa-sidenav-list {
+
+    border-top: 0;
+    margin-bottom: units(2);
+
+    & li {
+      border-top: 0;
+    }
+
+    & a {
+      text-align: center;
+
+      &.usa-current {
+        border-left: 0;
+        border-bottom: .4rem solid $color-blue;
+      }
+    }
+  }
+}
+
+.chart-nav * {
+  pointer-events: none; // force mouse clicks to have a "target" of their immediate parent - the chart tabs
 }

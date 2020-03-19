@@ -24,9 +24,19 @@ def find_last_full_twelve_months():
     return start_date.isoformat(), end_date.isoformat()
 
 
+def find_sunday():
+    """Finds the prior Sunday to ensure a full week of data
+
+    returns a datetime representing that Sunday"""
+
+    today = datetime.date.today()
+
+    # Monday is 1 and Sunday is 7 for isoweekday()
+    days_after_sunday = datetime.timedelta(days=today.isoweekday())
+    return today - days_after_sunday
+
+
 def find_last_twelve_months():
     current_date = datetime.datetime.now().date()
     previous_twelve_months = [find_last_day_of_previous_month(current_date - relativedelta(months=m)) for m in range(0, 12)]
     return [(last_day_of_month.replace(day=1), last_day_of_month) for last_day_of_month in previous_twelve_months]
-
-

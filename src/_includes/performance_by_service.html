@@ -1,0 +1,51 @@
+<section>
+
+    <div class="vads-l-row">
+        <div class="vads-l-col">
+            <h2 class="vads-u-font-family--serif">
+                Performance by service
+            </h2>
+        </div>
+    </div>
+
+    <div class="vads-l-row">
+        <div class="vads-l-col vads-u-margin-y--2 additional-info-container form-expanding-group">
+            <div class="additional-info-title">How is this measured?</div>
+            <div class="additional-info-content">Content</div>
+        </div>
+    </div>
+
+    <div class="vads-l-row">
+
+        {% comment %}
+
+        We want to render a tile for each service in the yaml file,
+        and distribute across two columns. The only way we found to do this
+        was to use two for-loops, and if-statements to check parity.
+
+        {% endcomment %}
+
+        <div class="vads-l-col--12 medium-screen:vads-l-col--6 medium-screen:vads-u-padding-right--1p5">
+
+            {% for service in site.data.counts.services %}
+                {% assign mod = forloop.index | modulo: 2 %}
+                {% if mod == 1 %}
+                    {% include service_tile.html %}
+                {% endif %}
+            {% endfor %}
+
+        </div>
+
+        <div class="vads-l-col--12 medium-screen:vads-l-col--6 medium-screen:vads-u-padding-left--1p5">
+
+            {% for service in site.data.counts.services %}
+                {% assign mod = forloop.index | modulo: 2 %}
+                {% if mod == 0 %}
+                    {% include service_tile.html %}
+                {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+
+</section>

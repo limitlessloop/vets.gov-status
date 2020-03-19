@@ -7,4 +7,10 @@ export GA_SERVICEACCOUNT="serviceaccount.json"
 echo Running Google Analytics scripts...
 python google_analytics/fetch_ga_data.py
 
+echo Modifying Last Updated date...
+current_date=$(date "+%B %d, %Y")
+echo "date: $current_date" > data/last_updated.yml
+
+echo Moving data to new directory...
 mv data/* ../src/_data/
+echo Done fetching data.

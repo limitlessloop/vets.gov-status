@@ -1,17 +1,29 @@
 .site-footer {
-  background: $color-primary-darkest;
-  color: white;
+  min-height: 10rem;
+  padding: 1.5rem 0;
 
   a {
-    color: white;
+    color: $color-white;
   }
 }
 
-.site-footer__logo {
-  max-width: 28rem;
-  display: block;
+.site-footer__vagov {
+  min-width: 9rem;
+}
 
-  img {
-    width: 100%;
+.site-footer__logo {
+  width: 20rem;
+}
+
+.site-footer__links {
+  a {
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  @include media($small-screen) {
+    a {
+      margin-bottom: 0;
+    }
   }
 }
