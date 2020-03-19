@@ -14,13 +14,17 @@ help:  ## Prints out documentation for available commands
 		}' $(MAKEFILE_LIST)
 
 ### Yarn / Node / etc.
+
+# Yarn install doesn't always change node_modules, but we touch the directory so it shows as up to date
 node_modules: yarn.lock package.json
 ifeq ($(CI_ARG), true)
-	yarn install --production=true --frozen-lockfile --non-interactive
+	yarn install --frozen-lockfile --non-interactive
 else
-	yarn install --production=false --check-files
+	yarn install --check-files
 endif
+	touch node_modules
 
+.PHONY: copy-node-dependencies
 copy-node-dependencies: node_modules
 	mkdir -p src/assets/vendor/jquery
 	cp node_modules/jquery/dist/jquery.min.js src/assets/vendor/jquery/
