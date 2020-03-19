@@ -1,8 +1,5 @@
 module.exports = {
     'UI Test': client => {
-        const date = new Date();
-        const displayDate = date.toLocaleString('default', { month: 'long' }) + ' ' + date.getDate()+ ', ' + date.getFullYear();
-
         console.log("**************", client.launch_url);
         client
             .url(client.launch_url)
@@ -26,6 +23,6 @@ module.exports = {
         client.expect.element("#education-tile").to.be.visible;
         client.expect.element("#health-care-tile").to.be.visible;
 
-        client.expect.element("#last-updated-date").text.to.equal(displayDate);
+        client.expect.element("#last-updated-date").text.to.match(new RegExp("\\w{3,9}\\s{1}\\d{1,2},\\s{1}\\d{4}"));
     }
 };
