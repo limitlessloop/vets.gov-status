@@ -61,7 +61,9 @@ pipeline {
     stage('UI tests') {
       steps {
         script {
-          sh 'make ui-test'
+          docker.image('circleci/node:12.16.1-buster-browsers').inside() {
+            sh 'cd test/ui && yarn install && yarn run test-headless'
+          }
         }
       }
     }
