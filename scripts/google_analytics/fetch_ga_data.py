@@ -1,4 +1,5 @@
 from ruamel import yaml
+import socket
 
 from analytics_helpers import make_df, initialize_analyticsreporting, get_totals_from_report
 from datetime_utils import reformat_date
@@ -66,13 +67,16 @@ def fetch_data_for_service(analytics_service, service):
     }
 
     if "page_path_filter" in service:
-        users_total, users_trend = run_report_and_get_total_with_trend(
-            analytics_service,
-            get_last_month_users_request(service["page_path_filter"])
-        )
+        try:
+            users_total, users_trend = run_report_and_get_total_with_trend(
+                analytics_service,
+                get_last_month_users_request(service["page_path_filter"])
+            )
 
-        service_data["users_total"] = users_total
-        service_data["users_trend"] = users_trend
+            service_data["users_total"] = users_total
+            service_data["users_trend"] = users_trend
+        except socket.timeout:
+            print("Timeout")
 
     return service_data
 
