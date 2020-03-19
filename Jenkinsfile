@@ -13,10 +13,7 @@ pipeline {
     stage('Unit tests') {
       steps {
         script {
-          sh 'make -v'
-          sh 'make -h'
-          sh 'exit 1'
-          sh './run-ci-tests.sh'  // this copies results into ./results directory
+          sh 'make ci-unit-test'  // this copies results into ./results directory
         }
       }
       post {
@@ -63,7 +60,7 @@ pipeline {
     stage('UI tests') {
       steps {
         script {
-          sh './run-ui-tests.sh'
+          sh 'make ui-test'
         }
       }
     }

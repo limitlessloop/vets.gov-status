@@ -1,11 +1,11 @@
 # ignore some directories
-.jekyll-cache/
 .pytest_cache
 .sass-cache
 ENV
 _site/
 node_modules
 results
+src/.jekyll-cache/
 target
-test/logs/
-test/node_modules/
+test/ui/logs/
+test/ui/node_modules/
