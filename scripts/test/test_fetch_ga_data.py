@@ -2,7 +2,7 @@ from unittest import mock
 
 import pandas as pd
 
-from google_analytics import fetch_ga_data
+from google_analytics import fetch_ga_data, ga_requests
 
 
 def test_add_month_column():
@@ -82,3 +82,53 @@ def test_fetch_data_for_service_fetches_data_for_each_tool(monkeypatch):
     mock_fetch_transactions_for_tool.assert_has_calls(expected_calls)
 
     assert service_data["tools"] == ["some-tool-data-1", "some-tool-data-2"]
+
+
+def test_transactions_for_tools_request_contains_correct_filters():
+    tool = {
+        'title': 'Some Title',
+        'page_path_filter': '/va.gov',
+        'event_category_filter': 'Transactions'
+    }
+
+    response = ga_requests.get_transactions_for_tools_request(tool)
+
+    filters = response['dimensionFilterClauses'][0]['filters']
+
+    expected_page_path_filter = {
+        'dimensionName': 'ga:pagePath',
+        'operator': 'REGEXP',
+        'expressions': [tool['page_path_filter']]
+    }
+
+    expected_event_category_filter = {
+        'dimensionName': 'ga:eventCategory',
+        'operator': 'REGEXP',
+        'expressions': [tool['event_category_filter']]
+    }
+
+    assert expected_page_path_filter in filters
+    assert expected_event_category_filter in filters
+    assert len(filters) == 2
+
+
+def test_transactions_for_tools_request_contains_event_action_filter():
+    tool = {
+        'title': 'Some Title',
+        'page_path_filter': '/va.gov',
+        'event_category_filter': 'Transactions',
+        'event_action_filter': 'Forms'
+    }
+
+    response = ga_requests.get_transactions_for_tools_request(tool)
+
+    filters = response['dimensionFilterClauses'][0]['filters']
+
+    expected_event_action_filter = {
+        'dimensionName': 'ga:eventAction',
+        'operator': 'REGEXP',
+        'expressions': [tool['event_action_filter']]
+    }
+
+    assert expected_event_action_filter in filters
+    assert len(filters) == 3

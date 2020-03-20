@@ -99,6 +99,26 @@ def get_all_transactions_request():
 
 def get_transactions_for_tools_request(tool):
     start_date, end_date = find_last_thirty_days()
+    filters = [
+        {
+            'dimensionName': 'ga:eventCategory',
+            'operator': 'REGEXP',
+            'expressions': [tool['event_category_filter']]
+        },
+        {
+            'dimensionName': 'ga:pagePath',
+            'operator': 'REGEXP',
+            'expressions': [tool['page_path_filter']]
+        }
+    ]
+    if 'event_action_filter' in tool:
+        filters.append(
+            {
+                'dimensionName': 'ga:eventAction',
+                'operator': 'REGEXP',
+                'expressions': [tool['event_action_filter']]
+            }
+        )
 
     return {
         'viewId': VADOTGOV_VIEW_ID,
@@ -108,18 +128,7 @@ def get_transactions_for_tools_request(tool):
         'dimensionFilterClauses': [
             {
                 'operator': 'AND',
-                'filters': [
-                    {
-                        'dimensionName': 'ga:eventCategory',
-                        'operator': 'REGEXP',
-                        'expressions': [tool['event_category_filter']]
-                    },
-                    {
-                        'dimensionName': 'ga:pagePath',
-                        'operator': 'REGEXP',
-                        'expressions': [tool['page_path_filter']]
-                    }
-                ]
+                'filters': filters
             }
         ]
     }
