@@ -13,7 +13,7 @@ MONTH_DATA = 'month_data'
 DATE_COLUMN = 'date'
 
 
-def get_measure_data(measure, from_date, to_date):
+def get_measure_data(forsee_user, forsee_pwd, measure, from_date, to_date):
     headers = {
         'accept': 'application/json'
     }
@@ -21,7 +21,7 @@ def get_measure_data(measure, from_date, to_date):
         "responseTime gt " + from_date + " and responseTime lt " + to_date
     scores_items = get_score_items(headers, basic_filter, measure)
 
-    responses_items = get_responses_items(basic_filter, headers, measure)
+    responses_items = get_responses_items(forsee_user, forsee_pwd, basic_filter, headers, measure)
 
     return merge_item_lists(responses_items, scores_items)
 
@@ -33,20 +33,20 @@ def merge_item_lists(responses_items, scores_items):
     return list(merged_df.T.to_dict().values())
 
 
-def get_responses_items(basic_filter, headers, measure):
+def get_responses_items(forsee_user, forsee_pwd, basic_filter, headers, measure):
     responses_url = \
         "https://api.foresee.com/v1/bi/cxmeasure/odata.svc/Measures(" \
         + measure \
         + ")/Responses?$filter=" + basic_filter + " and questionName eq 'url'"
     response = requests.request("GET", responses_url,
                                 headers=headers,
-                                auth=HTTPBasicAuth(environ.get('FORSEE_USER'), environ.get('FORESEE_PWD')))
+                                auth=HTTPBasicAuth(forsee_user, forsee_pwd))
     if response.status_code != 200:
         raise RuntimeError(str(response.status_code) + " " + response.text)
     return response.json()['value']
 
 
-def get_score_items(headers, basic_filter, measure):
+def get_score_items(forsee_user, forsee_pwd, headers, basic_filter, measure):
     respondents_scores_url = \
         "https://api.foresee.com/v1/bi/cxmeasure/odata.svc/Measures(" \
         + measure \
@@ -54,7 +54,7 @@ def get_score_items(headers, basic_filter, measure):
 
     response = requests.request("GET", respondents_scores_url,
                                 headers=headers,
-                                auth=HTTPBasicAuth(environ.get('FORSEE_USER'), environ.get('FORESEE_PWD')))
+                                auth=HTTPBasicAuth(forsee_user, forsee_pwd))
     if response.status_code != 200:
         raise RuntimeError(str(response.status_code) + " " + response.text)
     return response.json()['value']
@@ -65,7 +65,7 @@ def calculate_average_satisfaction(items):
     return round(sum(extracted_csats) / len(items), 2)
 
 
-def fetch_last_12_months_data():
+def fetch_last_12_months_data(forsee_user, forsee_pwd):
     last_year_data = []
     last_twelve_months = find_last_twelve_months()
 
@@ -73,7 +73,7 @@ def fetch_last_12_months_data():
 
     # get values for the last 12 months and calculate average for each month
     for start_end_date in last_twelve_months:
-        month_data = get_measure_data(measure_id, start_end_date[0].isoformat(),
+        month_data = get_measure_data(forsee_user, forsee_pwd, measure_id, start_end_date[0].isoformat(),
                                       start_end_date[1].isoformat())
         month_year_text = str(start_end_date[0].month) + '/' + str(start_end_date[0].year)
         one_month_dict = {
@@ -83,6 +83,7 @@ def fetch_last_12_months_data():
         }
         last_year_data.append(one_month_dict)
         logging.info("Calculated %s average: %.2f", month_year_text, one_month_dict[CSAT_SCORE])
+        # we use sleep to avoid ForeSee timeouts
         sleep(1)
 
     last_year_data.reverse()
@@ -110,8 +111,10 @@ def write_to_csv(twelve_months_scores):
 
 
 def update_csat():
+    forsee_user = environ.get('FORSEE_USER')
+    forsee_pwd = environ.get('FORESEE_PWD')
     # get dates for last 12 months
-    last_year_data = fetch_last_12_months_data()
+    last_year_data = fetch_last_12_months_data(forsee_user, forsee_pwd)
     # calculate average for the whole period
     overall_average_score = calculate_overall_average_satisfaction(last_year_data)
     write_to_csv(last_year_data)
