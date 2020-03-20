@@ -22,11 +22,14 @@ def get_ga_report(analytics_service, request):
     return response['reports'][0]
 
 
-def run_report(analytics_service, request):
+def run_report(analytics_service, request, return_df):
     report = get_ga_report(analytics_service, request)
-    df = make_df(report)
     total = get_totals_from_report(report)[0]
-    return df, total
+    if return_df:
+        df = make_df(report)
+        return df, total
+    else:
+        return total
 
 
 def run_report_and_get_total_with_trend(analytics_service, request):
@@ -36,12 +39,6 @@ def run_report_and_get_total_with_trend(analytics_service, request):
     trend = calculate_trend(previous_total, recent_total)
 
     return recent_total, trend
-
-
-def run_report_and_get_total(analytics_service, request):
-    report = get_ga_report(analytics_service, request)
-    total = get_totals_from_report(report)[0]
-    return total
 
 
 def add_month_column(raw_df):
@@ -58,9 +55,10 @@ def write_df_to_csv(df, filename):
 
 
 def fetch_transactions_for_tool(analytics_service, tool):
-    total_transactions = run_report_and_get_total(
+    total_transactions = run_report(
         analytics_service,
-        get_transactions_for_tools_request(tool)
+        get_transactions_for_tools_request(tool),
+        False
     )
     return {
         "title": tool["title"],
@@ -94,11 +92,11 @@ def fetch_data_for_service(analytics_service, service):
 def main():
     analytics_service = initialize_analyticsreporting()
 
-    df, transactions_total = run_report(analytics_service, get_all_transactions_request())
+    df, transactions_total = run_report(analytics_service, get_all_transactions_request(), True)
     df = add_month_column(df)
     write_df_to_csv(df, "all_transactions.csv")
 
-    df, users_total = run_report(analytics_service, get_logged_in_users_request())
+    df, users_total = run_report(analytics_service, get_logged_in_users_request(), True)
     df = add_month_column(df)
     write_df_to_csv(df, "all_logged_in_users.csv")
     # csat_overall = str(update_csat()) + '%'
