@@ -80,8 +80,8 @@ def fetch_data_for_service(analytics_service, service):
         "title": service["title"],
         "users_total": users_total,
         "users_trend": users_trend,
-        "csat": 76,
-        "csat_trend": 12,
+        # "csat": 76,
+        # "csat_trend": 12,
         "tools": [
             fetch_transactions_for_tool(analytics_service, tool)
             for tool in service["tools"]
