@@ -54,7 +54,9 @@ pipeline {
 
     GH = credentials('va-bot')
   }
-
+  options {
+    ansiColor('xterm')
+  }
   stages {
 
     stage('Setup Update Branch') {
