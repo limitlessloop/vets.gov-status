@@ -95,3 +95,31 @@ def get_all_transactions_request():
             }
         ]
     }
+
+
+def get_transactions_for_tools_request(tool):
+    start_date, end_date = find_last_thirty_days()
+
+    return {
+        'viewId': VADOTGOV_VIEW_ID,
+        'dateRanges': [{'startDate': start_date.isoformat(),
+                        'endDate': end_date.isoformat()}],
+        'metrics': [{'expression': 'ga:totalEvents'}],
+        'dimensionFilterClauses': [
+            {
+                'operator': 'AND',
+                'filters': [
+                    {
+                        'dimensionName': 'ga:eventCategory',
+                        'operator': 'REGEXP',
+                        'expressions': [tool['event_category_filter']]
+                    },
+                    {
+                        'dimensionName': 'ga:pagePath',
+                        'operator': 'REGEXP',
+                        'expressions': [tool['page_path_filter']]
+                    }
+                ]
+            }
+        ]
+    }

@@ -2,7 +2,7 @@ from google_analytics.analytics_helpers import make_df, initialize_analyticsrepo
     calculate_trend
 from datehelpers.datetime_utils import reformat_date
 from google_analytics.ga_requests import get_logged_in_users_request, get_all_transactions_request, \
-    get_last_month_users_request
+    get_last_month_users_request, get_transactions_for_tools_request
 from foresee.foresee_odata import update_csat
 from ruamel import yaml
 from tenacity import retry, wait_fixed, stop_after_attempt
@@ -39,6 +39,12 @@ def run_report_and_get_total_with_trend(analytics_service, request):
     return recent_total, trend
 
 
+def run_report_and_get_total(analytics_service, request):
+    report = get_ga_report(analytics_service, request)
+    total = get_totals_from_report(report)[0]
+    return total
+
+
 def add_month_column(raw_df):
     if 'yearMonth' in raw_df.columns:
         raw_df['date'] = raw_df['yearMonth'].apply(
@@ -52,10 +58,14 @@ def write_df_to_csv(df, filename):
     df.to_csv(full_filename, date_format="%m/%d/%y")
 
 
-def fetch_data_for_tool(tool):
+def fetch_transactions_for_tool(analytics_service, tool):
+    total_transactions = run_report_and_get_total(
+        analytics_service,
+        get_transactions_for_tools_request(tool)
+    )
     return {
         "title": tool["title"],
-        "transactions": 49123
+        "transactions": total_transactions
     }
 
 
@@ -71,11 +81,10 @@ def fetch_data_for_service(analytics_service, service):
         "title": service["title"],
         "users_total": users_total,
         "users_trend": users_trend,
-        # TODO: get real data for each service
         "csat": 76,
         "csat_trend": 12,
         "tools": [
-            fetch_data_for_tool(tool)
+            fetch_transactions_for_tool(analytics_service, tool)
             for tool in service["tools"]
         ]
     }
