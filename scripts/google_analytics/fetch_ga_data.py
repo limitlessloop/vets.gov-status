@@ -1,9 +1,10 @@
 from ruamel import yaml
 
 from analytics_helpers import make_df, initialize_analyticsreporting, get_total_from_report
-from datetime_utils import find_last_full_twelve_months, reformat_date
-from requests import get_logged_in_users_request, get_all_transactions_request
+from scripts.datehelpers.datetime_utils import find_last_full_twelve_months, reformat_date
+from ga_requests import get_logged_in_users_request, get_all_transactions_request
 import os
+from scripts.foresee.foresee_odata import update_csat
 
 
 def get_ga_report(analytics_service, get_request):
@@ -72,9 +73,11 @@ def main():
     df = add_month_column(df)
     write_df_to_csv(df, "all_logged_in_users.csv")
 
+    csat_overall = update_csat()
     counts = {
         "transactions_total": transactions_total,
-        "users_total": users_total
+        "users_total": users_total,
+        "csat_total": str(csat_overall) + '%'
     }
 
     services_file_path = os.path.join(os.environ['CONFIG_DIR'], 'services.yml')

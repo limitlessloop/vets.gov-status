@@ -6,6 +6,7 @@ import logging
 from itertools import zip_longest
 import pandas as pd
 from scripts.datehelpers import find_last_twelve_months
+from time import sleep
 
 COMMON_KEY = 'respondentId'
 CSAT_SCORE = 'csat_score'
@@ -86,6 +87,7 @@ def fetch_last_12_months_data():
         }
         last_year_data.append(one_month_dict)
         logging.info("Calculated %s average: %.2f", month_year_text, one_month_dict[CSAT_SCORE])
+        sleep(1)
 
     last_year_data.reverse()
     return last_year_data
@@ -111,14 +113,18 @@ def write_to_csv(twelve_months_scores):
         writer.writerows(twelve_months_scores)
 
 
-def main():
-    logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', level=logging.INFO)
-
+def update_csat():
     # get dates for last 12 months
     last_year_data = fetch_last_12_months_data()
     # calculate average for the whole period
-    calculate_overall_average_satisfaction(last_year_data)
+    overall_average_score = calculate_overall_average_satisfaction(last_year_data)
     write_to_csv(last_year_data)
+    return overall_average_score
+
+
+def main():
+    logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', level=logging.INFO)
+    update_csat()
 
 
 if __name__ == '__main__':

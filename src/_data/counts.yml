@@ -1,3 +1,4 @@
+csat_total: 54.0%
 services:
 - csat: 76
   csat_trend: 12
@@ -25,7 +26,7 @@ services:
     transactions: 49123
   - title: Apply for education benefits as an eligible dependent
     transactions: 49123
-  - title: Apply for education benefits as an eligible dependent
+  - title: Manage education benefits as an eligible dependent
     transactions: 49123
   - title: Apply for education benefits under the NCS program
     transactions: 49123
@@ -79,5 +80,5 @@ services:
     transactions: 49123
   users: 2926183
   users_trend: -9
-transactions_total: 27153090
-users_total: 7831583
+transactions_total: 27200509
+users_total: 7844139
