@@ -51,6 +51,13 @@ def write_df_to_csv(df, filename):
     df.to_csv(full_filename, date_format="%m/%d/%y")
 
 
+def fetch_data_for_tool(tool):
+    return {
+        "title": tool["title"],
+        "transactions": 49123
+    }
+
+
 def fetch_data_for_service(analytics_service, service):
     print("Getting data for '%s'" % service["title"])
 
@@ -60,10 +67,7 @@ def fetch_data_for_service(analytics_service, service):
         "csat": 76,
         "csat_trend": 12,
         "tools": [
-            {
-                "title": tool["title"],
-                "transactions": 49123
-            }
+            fetch_data_for_tool(tool)
             for tool in service["tools"]
         ]
     }
