@@ -19,9 +19,9 @@ services:
       - title: 'File for disability compensation'
         page_path_filter: '/file-disability-claim-form-21-526ez/'
         event_category_filter: 'Transactions'
-      - title: 'View VA disability ratings'
-        page_path_filter: '/view-disability-rating/'
-        event_category_filter: 'Transactions'
+#      - title: 'View VA disability ratings'
+#        page_path_filter: '/view-disability-rating/'
+#        event_category_filter: 'Transactions'
   - title: 'Education'
     page_path_filter: 'www.va.gov/(gi-bill|education)'
     tools:
