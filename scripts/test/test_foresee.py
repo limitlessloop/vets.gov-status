@@ -43,9 +43,8 @@ def test_calculates_average_satisfaction_score():
 def test_calculate_average_satisfaction_of_all_data():
     one_set_of_data = json.loads(response_str)
     multiple_data_items = [
-            {MONTH_DATA: one_set_of_data['items']}
-            , {MONTH_DATA: one_set_of_data['items']}
-            , {MONTH_DATA: one_set_of_data['items']}
+        {MONTH_DATA: one_set_of_data['items']},
+        {MONTH_DATA: one_set_of_data['items']},
+        {MONTH_DATA: one_set_of_data['items']}
     ]
     assert 85.0 == calculate_overall_average_satisfaction(multiple_data_items)
-

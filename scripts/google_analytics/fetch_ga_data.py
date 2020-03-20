@@ -3,7 +3,6 @@ from google_analytics.analytics_helpers import make_df, initialize_analyticsrepo
 from datehelpers.datetime_utils import reformat_date
 from google_analytics.ga_requests import get_logged_in_users_request, get_all_transactions_request, \
     get_last_month_users_request, get_transactions_for_tools_request
-from foresee.foresee_odata import update_csat
 from ruamel import yaml
 from tenacity import retry, wait_fixed, stop_after_attempt
 import os
