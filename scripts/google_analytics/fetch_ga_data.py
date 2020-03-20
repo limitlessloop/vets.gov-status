@@ -1,8 +1,9 @@
 from google_analytics.analytics_helpers import make_df, initialize_analyticsreporting, get_totals_from_report, \
     calculate_trend
-from google_analytics.datetime_utils import reformat_date
-from google_analytics.requests import get_logged_in_users_request, get_all_transactions_request, \
+from datehelpers.datetime_utils import reformat_date
+from google_analytics.ga_requests import get_logged_in_users_request, get_all_transactions_request, \
     get_last_month_users_request, get_transactions_for_tools_request
+from foresee.foresee_odata import update_csat
 from ruamel import yaml
 from tenacity import retry, wait_fixed, stop_after_attempt
 import os
@@ -101,10 +102,12 @@ def main():
     df, users_total = run_report(analytics_service, get_logged_in_users_request())
     df = add_month_column(df)
     write_df_to_csv(df, "all_logged_in_users.csv")
+    # csat_overall = str(update_csat()) + '%'
 
     counts = {
         "transactions_total": transactions_total,
         "users_total": users_total
+        # ,"csat_total": csat_overall
     }
 
     services_file_path = os.path.join(os.environ['CONFIG_DIR'], 'services.yml')

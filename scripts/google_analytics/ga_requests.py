@@ -1,4 +1,4 @@
-from google_analytics.datetime_utils import find_last_thirty_days, one_year_before, find_last_full_twelve_months
+from datehelpers.datetime_utils import find_last_thirty_days, one_year_before, find_last_full_twelve_months
 
 VADOTGOV_VIEW_ID = '176188361'
 
