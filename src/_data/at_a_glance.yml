@@ -5,6 +5,13 @@
   dataLabel: Users
   yAxisLabel: Logged in Users (Millions)
 
+- title: User Satisfaction
+  id: csat
+  csvFilename: csat_score
+  colName: csat_score
+  dataLabel: csat_score
+  yAxisLabel: User Satisfaction (%)
+
 - title: Successful Transactions
   id: transactions
   csvFilename: all_transactions
@@ -12,9 +19,3 @@
   dataLabel: Transactions
   yAxisLabel: Successful Transactions (Millions)
 
-- title: Satisfaction Score
-  id: csat
-  csvFilename: csat_score
-  colName: csat_score
-  dataLabel: csat_score
-  yAxisLabel: Satisfaction Score
