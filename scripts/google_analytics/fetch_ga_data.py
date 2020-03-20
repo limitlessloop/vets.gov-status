@@ -1,6 +1,6 @@
 from google_analytics.analytics_helpers import make_df, initialize_analyticsreporting, get_totals_from_report, \
     calculate_trend
-from datehelpers.datetime_utils import reformat_date
+from utils.datetime_utils import reformat_date
 from google_analytics.ga_requests import get_logged_in_users_request, get_all_transactions_request, \
     get_last_month_users_request, get_transactions_for_tools_request
 from ruamel import yaml

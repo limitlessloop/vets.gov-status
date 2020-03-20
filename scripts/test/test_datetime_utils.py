@@ -1,5 +1,5 @@
 from freezegun import freeze_time
-from datehelpers.datetime_utils import reformat_date, find_last_day_of_previous_month, \
+from utils.datetime_utils import reformat_date, find_last_day_of_previous_month, \
     find_last_full_twelve_months, find_sunday, find_last_thirty_days, one_year_before, find_last_twelve_months
 import datetime
 

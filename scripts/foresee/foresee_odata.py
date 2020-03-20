@@ -4,7 +4,7 @@ import requests
 from requests.auth import HTTPBasicAuth
 import logging
 import pandas as pd
-from datehelpers.datetime_utils import find_last_twelve_months
+from utils.datetime_utils import find_last_twelve_months
 from time import sleep
 
 COMMON_KEY = 'respondentId'

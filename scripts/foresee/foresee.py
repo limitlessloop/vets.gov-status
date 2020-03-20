@@ -2,7 +2,7 @@ from os import environ, path
 import csv
 import requests
 import logging
-from datehelpers.datetime_utils import find_last_twelve_months
+from utils.datetime_utils import find_last_twelve_months
 
 AUTHORIZATION = 'authorization'
 
