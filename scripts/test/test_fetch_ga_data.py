@@ -36,6 +36,7 @@ def test_fetch_data_for_service(monkeypatch):
 
     service_data = fetch_ga_data.fetch_data_for_service(mock_analytics_service, service)
 
+    mock_get_request.assert_called_with("www.foo.com")
     mock_run_report.assert_called_with(mock_analytics_service, "some-generated-request")
 
     assert service_data["title"] == "some-title"
