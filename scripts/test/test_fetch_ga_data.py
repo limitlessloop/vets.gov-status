@@ -46,15 +46,22 @@ def test_fetch_data_for_service(monkeypatch):
 
 def test_fetch_data_for_service_fetches_data_for_each_tool(monkeypatch):
     mock_analytics_service = mock.Mock()
+    mock_get_user_request = mock.Mock()
+
+    mock_run_user_report = mock.Mock()
+    mock_run_user_report.return_value = 100, -5
 
     mock_fetch_data_for_tool = mock.Mock()
     # mock return values for multiple calls
     mock_fetch_data_for_tool.side_effect = ["some-tool-data-1", "some-tool-data-2"]
 
+    monkeypatch.setattr(fetch_ga_data, "get_last_month_users_request", mock_get_user_request)
+    monkeypatch.setattr(fetch_ga_data, "run_report_and_get_total_with_trend", mock_run_user_report)
     monkeypatch.setattr(fetch_ga_data, "fetch_data_for_tool", mock_fetch_data_for_tool)
 
     service = {
         "title": "some-title",
+        "page_path_filter": "some-path-filter",
         "tools": [
             {
                 "title": "some-tool-title-1"

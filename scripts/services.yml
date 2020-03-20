@@ -70,7 +70,7 @@ services:
       - title: 'Apply for Veterans Pension benefits'
         page_path_filter: '/application/527ez/'
         event_category_filter: 'Transactions'
-  - title: 'Profle & Records'
+  - title: 'Profile & Records'
     page_path_filter: 'www.va.gov/profile|www.va.gov/records'
     tools:
       - title: 'Update contact information & preferences'

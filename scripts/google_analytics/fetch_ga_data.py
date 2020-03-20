@@ -61,8 +61,15 @@ def fetch_data_for_tool(tool):
 def fetch_data_for_service(analytics_service, service):
     print("Getting data for '%s'" % service["title"])
 
+    users_total, users_trend = run_report_and_get_total_with_trend(
+        analytics_service,
+        get_last_month_users_request(service["page_path_filter"])
+    )
+
     service_data = {
         "title": service["title"],
+        "users_total": users_total,
+        "users_trend": users_trend,
         # TODO: get real data for each service
         "csat": 76,
         "csat_trend": 12,
@@ -71,15 +78,6 @@ def fetch_data_for_service(analytics_service, service):
             for tool in service["tools"]
         ]
     }
-
-    if "page_path_filter" in service:
-        users_total, users_trend = run_report_and_get_total_with_trend(
-            analytics_service,
-            get_last_month_users_request(service["page_path_filter"])
-        )
-
-        service_data["users_total"] = users_total
-        service_data["users_trend"] = users_trend
 
     return service_data
 
