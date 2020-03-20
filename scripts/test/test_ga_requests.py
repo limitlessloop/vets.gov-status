@@ -79,3 +79,53 @@ def test_get_transactions_for_tools_request_should_substitute_dates_and_filters(
         ga_filter["dimensionName"] == "ga:pagePath" and ga_filter["expressions"][0] == "some-path-filter"
         for ga_filter in filters
     )
+
+
+def test_transactions_for_tools_request_contains_correct_filters():
+    tool = {
+        'title': 'Some Title',
+        'page_path_filter': '/va.gov',
+        'event_category_filter': 'Transactions'
+    }
+
+    response = ga_requests.get_transactions_for_tools_request(tool)
+
+    filters = response['dimensionFilterClauses'][0]['filters']
+
+    expected_page_path_filter = {
+        'dimensionName': 'ga:pagePath',
+        'operator': 'REGEXP',
+        'expressions': [tool['page_path_filter']]
+    }
+
+    expected_event_category_filter = {
+        'dimensionName': 'ga:eventCategory',
+        'operator': 'REGEXP',
+        'expressions': [tool['event_category_filter']]
+    }
+
+    assert expected_page_path_filter in filters
+    assert expected_event_category_filter in filters
+    assert len(filters) == 2
+
+
+def test_transactions_for_tools_request_contains_event_action_filter():
+    tool = {
+        'title': 'Some Title',
+        'page_path_filter': '/va.gov',
+        'event_category_filter': 'Transactions',
+        'event_action_filter': 'Forms'
+    }
+
+    response = ga_requests.get_transactions_for_tools_request(tool)
+
+    filters = response['dimensionFilterClauses'][0]['filters']
+
+    expected_event_action_filter = {
+        'dimensionName': 'ga:eventAction',
+        'operator': 'REGEXP',
+        'expressions': [tool['event_action_filter']]
+    }
+
+    assert expected_event_action_filter in filters
+    assert len(filters) == 3
