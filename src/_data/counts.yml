@@ -5,7 +5,7 @@ services:
   - title: Apply for health care benefits
     transactions: 7336
   - title: Schedule and view VA appointments online
-    transactions: 3990
+    transactions: 166
   users_total: 541082
   users_trend: 70.71525477204607
 - title: Disability
@@ -14,8 +14,6 @@ services:
     transactions: 1675395
   - title: File for disability compensation
     transactions: 20033
-  - title: View VA disability ratings
-    transactions: 0
   users_total: 439458
   users_trend: 72.57807990009543
 - title: Education
@@ -59,9 +57,9 @@ services:
 - title: Profile & Records
   tools:
   - title: Update contact information & preferences
-    transactions: 118371
+    transactions: 94119
   - title: Update direct deposit information
-    transactions: 118371
+    transactions: 16251
   - title: Download VA benefits letters
     transactions: 122797
   users_total: 329968
