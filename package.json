@@ -17,10 +17,8 @@
   "dependencies": {
     "@department-of-veterans-affairs/formation": "^6.9.1",
     "@fortawesome/fontawesome-free": "^5.12.1",
-    "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",
     "foundation-sites": "5",
-    "jquery": "^3.4.1",
     "uswds": "^1.6.10"
   },
   "devDependencies": {

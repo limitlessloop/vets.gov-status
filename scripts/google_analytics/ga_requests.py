@@ -1,4 +1,4 @@
-from datetime_utils import find_last_thirty_days, one_year_before, find_last_full_twelve_months
+from utils.datetime_utils import find_last_thirty_days, one_year_before, find_last_full_twelve_months
 
 VADOTGOV_VIEW_ID = '176188361'
 
@@ -90,6 +90,34 @@ def get_all_transactions_request():
                         'dimensionName': 'ga:pagePath',
                         'operator': 'REGEXP',
                         'expressions': ['www.va.gov/']
+                    }
+                ]
+            }
+        ]
+    }
+
+
+def get_transactions_for_tools_request(tool):
+    start_date, end_date = find_last_thirty_days()
+
+    return {
+        'viewId': VADOTGOV_VIEW_ID,
+        'dateRanges': [{'startDate': start_date.isoformat(),
+                        'endDate': end_date.isoformat()}],
+        'metrics': [{'expression': 'ga:totalEvents'}],
+        'dimensionFilterClauses': [
+            {
+                'operator': 'AND',
+                'filters': [
+                    {
+                        'dimensionName': 'ga:eventCategory',
+                        'operator': 'REGEXP',
+                        'expressions': [tool['event_category_filter']]
+                    },
+                    {
+                        'dimensionName': 'ga:pagePath',
+                        'operator': 'REGEXP',
+                        'expressions': [tool['page_path_filter']]
                     }
                 ]
             }

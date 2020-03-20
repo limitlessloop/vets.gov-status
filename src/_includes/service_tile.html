@@ -13,7 +13,7 @@
                     Up {{ service.users_trend | round }}% year-over-year
                 {% elsif service.users_trend < 0 %}
                     <i class="fas fa-arrow-circle-down vads-u-color--primary"></i>
-                    Down {{ service.users_trend | round }}% year-over-year
+                    Down {{ service.users_trend | abs | round }}% year-over-year
                 {% else %}
                     <i class="fas fa-minus-circle vads-u-color--primary"></i>
                     No change year-over-year
@@ -22,21 +22,23 @@
         </div>
     {% endif %}
 
-    <div class="vads-u-margin-y--2">
-        <h4 class="vads-u-font-family--sans vads-u-font-weight--normal vads-u-margin-bottom--0">
-            CUSTOMER SATISFACTION
-        </h4>
-        <span class="vads-u-font-weight--bold vads-u-font-size--lg vads-u-font-family--serif">{{ service.csat }}%</span>
-        <span>
-            {% if service.csat_trend > 0 %}
-                <i class="fas fa-arrow-circle-up vads-u-color--primary"></i>
-                Up {{ service.csat_trend }}% Last 30 days
-            {% else %}
-                <i class="fas fa-arrow-circle-down vads-u-color--primary"></i>
-                Down {{ service.csat_trend }}% Last 30 days
-            {% endif %}
-        </span>
-    </div>
+    {% if service.csat_total %}
+        <div class="vads-u-margin-y--2">
+            <h4 class="vads-u-font-family--sans vads-u-font-weight--normal vads-u-margin-bottom--0">
+                CUSTOMER SATISFACTION
+            </h4>
+            <span class="vads-u-font-weight--bold vads-u-font-size--lg vads-u-font-family--serif">{{ service.csat }}%</span>
+            <span>
+                {% if service.csat_trend > 0 %}
+                    <i class="fas fa-arrow-circle-up vads-u-color--primary"></i>
+                    Up {{ service.csat_trend }}% Last 30 days
+                {% else %}
+                    <i class="fas fa-arrow-circle-down vads-u-color--primary"></i>
+                    Down {{ service.csat_trend }}% Last 30 days
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
 
     <table class="vads-u-margin-bottom--0 vads-u-margin-top--2">
         <thead>
