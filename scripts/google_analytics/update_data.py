@@ -1,6 +1,6 @@
 """Pulls in data to update dashboards"""
 from analytics_helpers import make_df, initialize_analyticsreporting
-from datetime_utils import find_sunday
+from scripts.datehelpers.datetime_utils import find_sunday
 import datetime
 import json
 import numpy as np
