@@ -1,6 +1,8 @@
-from google_analytics.analytics_helpers import make_df, initialize_analyticsreporting, get_totals_from_report, calculate_trend
+from google_analytics.analytics_helpers import make_df, initialize_analyticsreporting, get_totals_from_report, \
+    calculate_trend
 from google_analytics.datetime_utils import reformat_date
-from google_analytics.requests import get_logged_in_users_request, get_all_transactions_request, get_last_month_users_request
+from google_analytics.requests import get_logged_in_users_request, get_all_transactions_request, \
+    get_last_month_users_request
 from ruamel import yaml
 from tenacity import retry, wait_fixed, stop_after_attempt
 import os
