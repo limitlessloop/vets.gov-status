@@ -10,6 +10,14 @@
 .site-footer .site-l-wrapper {
   padding: 0;
 
+  @include media($xsmall-screen) {
+    padding-left: 4rem;
+  }
+
+  @include media($small-screen) {
+    padding: 0;
+  }
+
   @include media($nav-width) {
     padding: 0 2.4rem;
   }
@@ -24,8 +32,12 @@
 }
 
 .site-footer__logo {
-  width: 20rem;
+  width: 15rem;
   max-width: none;
+
+  @include media($small-screen) {
+    width: 20rem;
+  }
 }
 
 .site-footer__links {
