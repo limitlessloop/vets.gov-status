@@ -102,12 +102,12 @@ def main():
     df, users_total = run_report(analytics_service, get_logged_in_users_request())
     df = add_month_column(df)
     write_df_to_csv(df, "all_logged_in_users.csv")
-    csat_overall = str(update_csat()) + '%'
+    # csat_overall = str(update_csat()) + '%'
 
     counts = {
         "transactions_total": transactions_total,
-        "users_total": users_total,
-        "csat_total": csat_overall
+        "users_total": users_total
+        # ,"csat_total": csat_overall
     }
 
     services_file_path = os.path.join(os.environ['CONFIG_DIR'], 'services.yml')
