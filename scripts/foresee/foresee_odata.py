@@ -4,7 +4,7 @@ import requests
 from requests.auth import HTTPBasicAuth
 import logging
 import pandas as pd
-from scripts.datehelpers import find_last_twelve_months
+from datehelpers import find_last_twelve_months
 from time import sleep
 
 COMMON_KEY = 'respondentId'
@@ -40,7 +40,7 @@ def get_responses_items(basic_filter, headers, measure):
         + ")/Responses?$filter=" + basic_filter + " and questionName eq 'url'"
     response = requests.request("GET", responses_url,
                                 headers=headers,
-                                auth=HTTPBasicAuth('saman.moshafi@va.gov', '1f35d458-69dd-4d2f-a45e-937f8e9c9efd'))
+                                auth=HTTPBasicAuth(environ.get('FORSEE_USER'), environ.get('FORESEE_PWD')))
     if response.status_code != 200:
         raise RuntimeError(str(response.status_code) + " " + response.text)
     return response.json()['value']
@@ -54,7 +54,7 @@ def get_score_items(headers, basic_filter, measure):
 
     response = requests.request("GET", respondents_scores_url,
                                 headers=headers,
-                                auth=HTTPBasicAuth(environ.get('USERID'), environ.get('USERPWD')))
+                                auth=HTTPBasicAuth(environ.get('FORSEE_USER'), environ.get('FORESEE_PWD')))
     if response.status_code != 200:
         raise RuntimeError(str(response.status_code) + " " + response.text)
     return response.json()['value']
