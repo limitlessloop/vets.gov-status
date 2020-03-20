@@ -21,7 +21,20 @@ def find_last_full_twelve_months():
 
     # relativedelta supports leap year calculation
     start_date = end_date - relativedelta(months=12) + relativedelta(days=1)
-    return start_date.isoformat(), end_date.isoformat()
+    return start_date, end_date
+
+
+def one_year_before(date):
+    if date.month == 2 and date.day == 29:
+        return date.replace(year=date.year-1, day=28)
+    return date.replace(year=date.year-1)
+
+
+def find_last_thirty_days():
+    today = datetime.date.today()
+    end_date = today - datetime.timedelta(days=1)
+    start_date = end_date - datetime.timedelta(days=29)
+    return start_date, end_date
 
 
 def find_sunday():

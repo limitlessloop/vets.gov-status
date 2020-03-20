@@ -1,8 +1,7 @@
-import datetime
 from freezegun import freeze_time
-
-from datehelpers import reformat_date, find_last_day_of_previous_month, find_last_full_twelve_months, find_sunday, \
-    find_last_twelve_months
+from datehelpers.datetime_utils import reformat_date, find_last_day_of_previous_month, \
+    find_last_full_twelve_months, find_sunday, find_last_thirty_days, one_year_before, find_last_twelve_months
+import datetime
 
 
 def test_yearMonth_formatting():
@@ -21,18 +20,31 @@ def test_find_last_day_of_previous_month():
 def test_find_last_full_twelve_months():
     with freeze_time("2021-01-01"):
         start_date, end_date = find_last_full_twelve_months()
-        assert end_date == datetime.date(2020, 12, 31).isoformat()
-        assert start_date == datetime.date(2020, 1, 1).isoformat()
+        assert end_date == datetime.date(2020, 12, 31)
+        assert start_date == datetime.date(2020, 1, 1)
 
     with freeze_time("2020-01-01"):
         start_date, end_date = find_last_full_twelve_months()
-        assert end_date == datetime.date(2019, 12, 31).isoformat()
-        assert start_date == datetime.date(2019, 1, 1).isoformat()
+        assert end_date == datetime.date(2019, 12, 31)
+        assert start_date == datetime.date(2019, 1, 1)
 
     with freeze_time("2019-11-03"):
         start_date, end_date = find_last_full_twelve_months()
-        assert end_date == datetime.date(2019, 10, 31).isoformat()
-        assert start_date == datetime.date(2018, 11, 1).isoformat()
+        assert end_date == datetime.date(2019, 10, 31)
+        assert start_date == datetime.date(2018, 11, 1)
+
+    with freeze_time("2020-03-19"):
+        start_date, end_date = find_last_full_twelve_months()
+        assert end_date == datetime.date(2020, 2, 29)
+        assert start_date == datetime.date(2019, 3, 1)
+
+
+def test_one_year_before():
+    date = datetime.date(2020, 3, 19)
+    assert one_year_before(date) == datetime.date(2019, 3, 19)
+
+    leap_day = datetime.date(2020, 2, 29)
+    assert one_year_before(leap_day) == datetime.date(2019, 2, 28)
 
 
 def test_find_sunday():
@@ -50,6 +62,18 @@ def test_find_sunday():
     with freeze_time("2019-11-03"):
         sun = find_sunday()
         assert sun == datetime.date(2019, 10, 27)
+
+
+def test_find_last_thirty_days():
+    with freeze_time("2019-05-01"):
+        start_date, end_date = find_last_thirty_days()
+        assert end_date == datetime.date(2019, 4, 30)
+        assert start_date == datetime.date(2019, 4, 1)
+
+    with freeze_time("2020-03-19"):
+        start_date, end_date = find_last_thirty_days()
+        assert end_date == datetime.date(2020, 3, 18)
+        assert start_date == datetime.date(2020, 2, 18)
 
 
 def test_find_last_twelve_months():

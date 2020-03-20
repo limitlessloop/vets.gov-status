@@ -8,17 +8,8 @@
 @import '../../../node_modules/@department-of-veterans-affairs/formation/sass/base/_b-mixins';
 
 @import "variables";
-@import "media";
-@import "va-notice";
 @import "header";
-@import "subhead";
-@import "tabs";
-@import "research-quotes";
-@import "tiles";
-@import "projects";
-@import "screenshots";
 @import "footer";
-@import "migration";
 @import "northstar";
 @import "service_tile";
 
@@ -45,9 +36,18 @@ h4 {
     border-color: $color-gray-light;
   }
 
-  & a {
+  & button {
     color: $color-gray-dark;
+    background-color: transparent;
     padding: units(2) units(1);
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    border-radius: 0;
+
+    &:hover {
+      background-color: $color-gray-lightest;
+    }
 
     & h3 {
       font-weight: normal;
@@ -55,8 +55,7 @@ h4 {
     }
 
     &.usa-current {
-      padding: units(2) units(1);
-      color: $color-gray-dark;
+      border-left: .4rem solid $color-blue;
 
       & h3 {
         font-weight: bold;
@@ -67,7 +66,7 @@ h4 {
 
 @media screen and (min-width: $medium-screen) {
   .usa-sidenav-list {
-    & a:not(.usa-current) {
+    & button:not(.usa-current) {
       border-left: .4rem solid transparent;
     }
   }
@@ -83,7 +82,7 @@ h4 {
       border-top: 0;
     }
 
-    & a {
+    & button {
       text-align: center;
 
       &.usa-current {

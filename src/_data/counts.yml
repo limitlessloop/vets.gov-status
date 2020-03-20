@@ -1,4 +1,3 @@
-csat_total: 54.0%
 services:
 - csat: 76
   csat_trend: 12
@@ -8,8 +7,20 @@ services:
     transactions: 49123
   - title: Schedule and view VA appointments online
     transactions: 49123
-  users: 2926183
-  users_trend: -9
+  users_total: 541082
+  users_trend: 70.71525477204607
+- csat: 76
+  csat_trend: 12
+  title: Disability
+  tools:
+  - title: Check VA claim or appeal status
+    transactions: 49123
+  - title: File for disability compensation
+    transactions: 49123
+  - title: View VA disability ratings
+    transactions: 49123
+  users_total: 439458
+  users_trend: 72.57807990009543
 - csat: 76
   csat_trend: 12
   title: Education
@@ -34,18 +45,8 @@ services:
     transactions: 49123
   - title: Check Post 9/11 GI Bill benefits
     transactions: 49123
-  users: 2926183
-  users_trend: -9
-- csat: 76
-  csat_trend: 12
-  title: Disability
-  tools:
-  - title: File for disability compensation
-    transactions: 49123
-  - title: View VA disability ratings
-    transactions: 49123
-  users: 2926183
-  users_trend: -9
+  users_total: 382023
+  users_trend: 51.38736982262589
 - csat: 76
   csat_trend: 12
   title: Burials & Memorials
@@ -54,31 +55,27 @@ services:
     transactions: 49123
   - title: Apply for burial benefits
     transactions: 49123
-  users: 2926183
-  users_trend: -9
+  users_total: 66264
+  users_trend: 66.00861809800581
 - csat: 76
   csat_trend: 12
   title: Pension & Fiduciary
   tools:
   - title: Apply for Veterans Pension benefits
     transactions: 49123
-  users: 2926183
-  users_trend: -9
+  users_total: 123841
+  users_trend: 103.88705959828779
 - csat: 76
   csat_trend: 12
-  title: Veteran Self Service
+  title: Profile & Records
   tools:
-  - title: Check VA claim or appeal status
-    transactions: 49123
   - title: Update contact information & preferences
     transactions: 49123
   - title: Update direct deposit information
     transactions: 49123
   - title: Download VA benefits letters
     transactions: 49123
-  - title: Apply for a Veteran ID Card
-    transactions: 49123
-  users: 2926183
-  users_trend: -9
+  users_total: 329968
+  users_trend: 41.83204597523286
 transactions_total: 27200509
 users_total: 7844139

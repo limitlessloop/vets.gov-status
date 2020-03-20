@@ -1,6 +1,6 @@
 FROM python:3.6.8
 
-WORKDIR scorecard
+WORKDIR dashboard
 
 COPY scripts/requirements.txt     scripts/requirements.txt
 COPY scripts/dev-requirements.txt scripts/dev-requirements.txt
@@ -11,6 +11,6 @@ RUN python3 -m pip install --trusted-host pypi.org --trusted-host files.pythonho
 COPY .coveragerc .
 COPY pytest.ini .
 COPY scripts/ scripts
-COPY run-tests.sh .
+COPY Makefile .
 
-CMD ["./run-tests.sh"]
+CMD ["make", "unit-test", "flake8"]

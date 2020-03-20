@@ -39,8 +39,8 @@ def make_df(report):
     return pd.DataFrame(table)
 
 
-def get_total_from_report(report):
-    return int(report['data']['totals'][0]['values'][0])
+def get_totals_from_report(report):
+    return [int(total['values'][0]) for total in report['data']['totals']]
 
 
 def make_table(rows, dim_labels, metric_labels):
@@ -60,3 +60,7 @@ def make_table(rows, dim_labels, metric_labels):
         output.append(current_data)
 
     return output
+
+
+def calculate_trend(previous_total, recent_total):
+    return ((recent_total - previous_total) / previous_total) * 100

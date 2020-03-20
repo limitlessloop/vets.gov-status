@@ -11,7 +11,10 @@
 <div class="vads-l-row">
     <div class="vads-l-col vads-u-margin-y--2 additional-info-container form-expanding-group">
         <div class="additional-info-title">How is this measured?</div>
-        <div class="additional-info-content">Content</div>
+        <div class="additional-info-content">
+            <p><span class="vads-u-font-weight--bold">Logged In Users: </span>The total count of all users who have logged in to VA.gov over the last 12 months, using ID.me or MyHealtheVet or DS Logon.</p>
+            <p><span class="vads-u-font-weight--bold">Successful Transactions: </span> The total count of completed actions taken on VA.gov over the last 12 months. This includes applications submitted (e.g. health care, education, etc.), health appointments scheduled, claims status checked, benefit letters downloaded, and all other transactions completed using VA.gov tools.</p>
+        </div>
     </div>
 </div>
 
@@ -22,7 +25,7 @@
         <ul class="vads-l-row usa-sidenav-list">
             {% for chart in site.data.at_a_glance %}
             <li class="vads-l-col--6 medium-screen:vads-l-col--12">
-                <a tabindex="0"
+                <button tabindex="0"
                    role="tab"
                    aria-controls="{{ chart.id }}Chart"
                    aria-selected="{% if chart.id == 'users' %}true{% else %}false{% endif %}"
@@ -37,7 +40,7 @@
                         {{ site.data.counts[chart_total_key] | intcomma }}
                     </span>
 
-                </a>
+                </button>
             </li>
             {% endfor %}
         </ul>
