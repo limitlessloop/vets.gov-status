@@ -4,6 +4,8 @@ import requests
 import logging
 from scripts.datehelpers import find_last_twelve_months
 
+AUTHORIZATION = 'authorization'
+
 CSAT_SCORE = 'csat_score'
 MONTH_DATA = 'month_data'
 DATE_COLUMN = 'date'
@@ -33,7 +35,7 @@ def get_measure_data(bearer_token, measure, from_date, to_date):
     url = "https://api.foresee.com/v1/measures/" + measure + "/data"
     headers = {
         'accept': 'application/json',
-        'authorization': "Bearer " + bearer_token
+        AUTHORIZATION: "Bearer " + bearer_token
     }
     querystring = {
         "from": from_date,
@@ -51,9 +53,7 @@ def get_measure_data(bearer_token, measure, from_date, to_date):
 
     while has_more:
         logging.info("Downloading page: {:n} ".format(offset))
-        response = requests.request("GET", url, headers=headers, params=querystring)
-        if response.status_code != 200:
-            raise RuntimeError(str(response.status_code) + " " + response.text)
+        response = send_one_request(headers, querystring, url)
         response_json = response.json()
         has_more = response_json['hasMore']
         offset += 1
@@ -64,8 +64,35 @@ def get_measure_data(bearer_token, measure, from_date, to_date):
     return measure_data
 
 
+def send_one_request(headers, querystring, url):
+    request_counter = 3
+    should_try = True
+    while should_try:
+        response = requests.request("GET", url, headers=headers, params=querystring)
+        if response.status_code != 200:
+            fail_reason = str(response.status_code) + " " + response.text
+            # try for 3 times
+            request_counter -= 1
+            if request_counter > 0:
+                logging.warning("request to foresee failed, trying again. The reason was " + fail_reason)
+                renew_token(headers)
+                continue
+            else:
+                raise RuntimeError(fail_reason)
+    return response
+
+
+def renew_token(headers):
+    new_token = authenticate()
+    headers[AUTHORIZATION] = "Bearer " + new_token
+
+
 def calculate_average_satisfaction(items):
-    extracted_csats = (next(latent_score['score'] for latent_score in item['latentScores'] if latent_score['name'] == 'Satisfaction') for item in items)
+    extracted_csats = (
+        next(latent_score['score']
+             for latent_score in item['latentScores'] if latent_score['name'] == 'Satisfaction')
+        for item in items
+    )
     return round(sum(extracted_csats) / len(items), 2)
 
 
@@ -111,14 +138,18 @@ def write_to_csv(twelve_months_scores):
         writer.writerows(twelve_months_scores)
 
 
-def main():
-    logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', level=logging.INFO)
-
+def update_csat():
     # get dates for last 12 months
     last_year_data = fetch_last_12_months_data()
     # calculate average for the whole period
-    calculate_overall_average_satisfaction(last_year_data)
+    overall_average_score = calculate_overall_average_satisfaction(last_year_data)
     write_to_csv(last_year_data)
+    return overall_average_score
+
+
+def main():
+    logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', level=logging.INFO)
+    update_csat()
 
 
 if __name__ == '__main__':

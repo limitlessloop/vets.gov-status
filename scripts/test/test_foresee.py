@@ -1,6 +1,5 @@
-import pytest
 import json
-from scripts.foresee.foresee import *
+from scripts.foresee.foresee import calculate_overall_average_satisfaction, calculate_average_satisfaction, MONTH_DATA
 
 response_str: str = \
     "{\"hasMore\":true,\"total\":5221,\"items\":[{\"id\":\"V185Vop4U5hthwFF5cUdRA4C\"," \

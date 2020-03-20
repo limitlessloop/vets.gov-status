@@ -3,7 +3,6 @@ import csv
 import requests
 from requests.auth import HTTPBasicAuth
 import logging
-from itertools import zip_longest
 import pandas as pd
 from scripts.datehelpers import find_last_twelve_months
 from time import sleep
@@ -28,9 +27,6 @@ def get_measure_data(measure, from_date, to_date):
 
 
 def merge_item_lists(responses_items, scores_items):
-    # return [{**left, **right} for left, right in
-    #         zip_longest(sorted(scores_items, key=lambda item: item['respondentId']),
-    #                     sorted(responses_items, key=lambda item: item['respondentId']), fillvalue={})]
     responses_df = pd.DataFrame(responses_items).set_index(COMMON_KEY)
     scores_df = pd.DataFrame(scores_items).set_index(COMMON_KEY)
     merged_df = responses_df.merge(scores_df, left_index=True, right_index=True)

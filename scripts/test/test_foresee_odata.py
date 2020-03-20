@@ -1,6 +1,5 @@
 import json
-import pandas as pd
-from scripts.foresee.foresee_odata import *
+from scripts.foresee.foresee_odata import merge_item_lists
 
 scores_text = \
     "{\"@odata.context\":\"https://services-edge.foresee.com/cxmeasure-public-api-adapter/bi/cxmeasure" \
