@@ -2,6 +2,7 @@
 branch = True
 source = scripts
 omit =
+  **/test/*
   **/test_*
   **/conftest*
 

@@ -10,7 +10,7 @@ credstash --region ${AWS_DEFAULT_REGION} get vagovanalytics.prod.service_account
 #python prometheus/update_from_prometheus.py
 
 echo Running Google Analytics scripts...
-python google_analytics/fetch_ga_data.py
+python -m google_analytics.fetch_ga_data
 
 echo Modifying Last Updated date...
 current_date=$(date "+%B %d, %Y")

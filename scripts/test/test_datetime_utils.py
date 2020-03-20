@@ -1,7 +1,7 @@
-from scripts.google_analytics.datetime_utils import reformat_date, find_last_day_of_previous_month, \
+from freezegun import freeze_time
+from google_analytics.datetime_utils import reformat_date, find_last_day_of_previous_month, \
     find_last_full_twelve_months, find_sunday, find_last_thirty_days, one_year_before
 import datetime
-from freezegun import freeze_time
 
 
 def test_yearMonth_formatting():

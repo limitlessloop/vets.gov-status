@@ -1,4 +1,4 @@
-from scripts.google_analytics.analytics_helpers import make_df, make_table, get_totals_from_report, calculate_trend
+from google_analytics.analytics_helpers import make_df, make_table, get_totals_from_report, calculate_trend
 import pytest
 
 
