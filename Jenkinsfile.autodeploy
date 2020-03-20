@@ -42,7 +42,9 @@ pipeline {
   agent {
     label 'vetsgov-general-purpose'
   }
-
+  options {
+    ansiColor('xterm')
+  }
   stages {
 
     stage('Create PR'){

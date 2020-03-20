@@ -28,17 +28,6 @@ pipeline {
       }
     }
 
-    // Temporary - this stage should be removed and only run in Jenkinsfile.update
-    stage('Update Data') {
-      steps{
-        script {
-          dir('scripts') {
-            sh './run-ci-fetch-data.sh'
-          }
-        }
-      }
-    }
-
     stage('Build website') {
       steps {
         script {
