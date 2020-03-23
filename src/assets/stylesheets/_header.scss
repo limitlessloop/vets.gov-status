@@ -9,6 +9,7 @@
   flex-wrap: wrap;
 
   @include media($nav-width) {
+    height: 10rem;
     flex-wrap: nowrap;
   }
 }
@@ -18,6 +19,7 @@
   font-weight: 300;
   margin: units(3) 0;
   width: 60rem;
+  align-self: center;
 
   @include media($nav-width) {
     font-size: 3.2rem;
