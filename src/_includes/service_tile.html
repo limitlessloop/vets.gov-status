@@ -40,20 +40,22 @@
         </div>
     {% endif %}
 
-    <table class="vads-u-margin-bottom--0 vads-u-margin-top--2">
-        <thead>
-            <tr>
-                <th>Tool</th>
-                <th>Transactions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for tool in service.tools %}
+    {% if service.tools and service.tools.size > 0 %}
+        <table class="vads-u-margin-bottom--0 vads-u-margin-top--2">
+            <thead>
                 <tr>
-                    <td>{{ tool.title }}</td>
-                    <td>{{ tool.transactions | intcomma }}</td>
+                    <th>Tool</th>
+                    <th>Transactions</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for tool in service.tools %}
+                    <tr>
+                        <td>{{ tool.title }}</td>
+                        <td>{{ tool.transactions | intcomma }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
 </section>

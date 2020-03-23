@@ -1,4 +1,5 @@
-from google_analytics.analytics_helpers import make_df, make_table, get_totals_from_report, calculate_trend
+from google_analytics.analytics_helpers import make_df, make_table, get_totals_from_report, calculate_trend, \
+    sort_tools_by_transactions
 import pytest
 
 
@@ -107,3 +108,17 @@ def test_calculate_trend():
     ]
     for (previous, recent, expected_trend) in cases:
         assert calculate_trend(previous, recent) == expected_trend
+
+
+def test_sort_tools_by_transactions():
+    tools = [
+        {"title": "some-tool-title-1", "transactions": 100},
+        {"title": "some-tool-title-2", "transactions": 300},
+        {"title": "some-tool-title-3", "transactions": 200},
+    ]
+    sort_tools_by_transactions(tools)
+    assert tools == [
+        {"title": "some-tool-title-2", "transactions": 300},
+        {"title": "some-tool-title-3", "transactions": 200},
+        {"title": "some-tool-title-1", "transactions": 100},
+    ]
