@@ -80,6 +80,11 @@ This is an optional field.
 **To add tools for that service**, add items to the `tools` list within each `service` entry. For each tool, it is mandatory
 to provide the fields `page_path_filter` and `event_category_filter`, and optional to provide `event_action_filter`.
 
+The values for `page_path_filter`, `event_category_filter`, and `event_action_filter` are used to build queries
+for Google Analytics. Use the [GA query explorer](https://ga-dev-tools.appspot.com/query-explorer/) or "Try this API" on
+the [batchGet](https://developers.google.com/analytics/devguides/reporting/core/v4/rest/v4/reports/batchGet) documentation
+to interactively test queries and validate filters.
+
 ## Getting Started
 
 ### Makefile
