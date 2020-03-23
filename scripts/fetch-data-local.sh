@@ -5,7 +5,7 @@ export CONFIG_DIR="."
 export GA_SERVICEACCOUNT="serviceaccount.json"
 export AWS_DEFAULT_REGION=us-east-2
 export FORESEE_USER=`credstash --region ${AWS_DEFAULT_REGION} get foresee.prod.odata.username`
-export FORESEE_PWD=`credstash --region ${AWS_DEFAULT_REGION} get foresee.prod.udata.password`
+export FORESEE_PWD=`credstash --region ${AWS_DEFAULT_REGION} get foresee.prod.odata.password`
 
 echo Running Google Analytics scripts...
 python -m google_analytics.fetch_ga_data
