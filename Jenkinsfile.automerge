@@ -9,7 +9,7 @@ def create_pr = {
   def update_branch = "refs/heads/master"
   def target_branch = 'refs/heads/production'
 
-  def pr_title = "Automated Production Deploy for ${now}"
+  def pr_title = "Automated merge to production branch for ${now}"
   def pr_body = 'Run from Jenkins'
 
   def repo = github.getRepository('department-of-veterans-affairs/vets.gov-status')
@@ -81,10 +81,10 @@ pipeline {
       deleteDir()
     }
     success {
-      slackSend message: "Performance dashboard production deployment succeeded", color: "good", channel: "scorecard-ci-temp"
+      slackSend message: "Performance dashboard production automerge succeeded", color: "good", channel: "scorecard-ci-temp"
     }
     failure {
-      slackSend message: "<!here> Performance dashboard production deployment *FAILED*!", color: "danger", channel: "scorecard-ci-temp"
+      slackSend message: "<!here> Performance dashboard production automerge *FAILED*!", color: "danger", channel: "scorecard-ci-temp"
     }
   }
 }
