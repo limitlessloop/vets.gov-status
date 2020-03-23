@@ -107,9 +107,9 @@ def main():
     csat_overall = str(update_csat()) + '%'
 
     counts = {
-        "transactions_total": transactions_total
-        , "users_total": users_total
-        , "csat_total": csat_overall
+        "transactions_total": transactions_total,
+        "users_total": users_total,
+        "csat_total": csat_overall
     }
 
     services_file_path = os.path.join(os.environ['CONFIG_DIR'], 'services.yml')
