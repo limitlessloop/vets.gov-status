@@ -3,6 +3,8 @@ from googleapiclient.discovery import build
 import os
 import pandas as pd
 
+from utils.datetime_utils import reformat_date
+
 
 def initialize_analyticsreporting():
     """Initializes an analyticsreporting service object.
@@ -43,6 +45,10 @@ def get_totals_from_report(report):
     return [int(total['values'][0]) for total in report['data']['totals']]
 
 
+def get_total_from_report(report):
+    return get_totals_from_report(report)[0]
+
+
 def make_table(rows, dim_labels, metric_labels):
     output = []
 
@@ -68,3 +74,22 @@ def calculate_trend(previous_total, recent_total):
 
 def sort_tools_by_transactions(tools):
     tools.sort(reverse=True, key=lambda t: t['transactions'])
+
+
+def write_report_to_csv(report, filename):
+    df = make_df(report)
+    df = add_month_column(df)
+    write_df_to_csv(df, filename)
+
+
+def add_month_column(raw_df):
+    if 'yearMonth' in raw_df.columns:
+        raw_df['date'] = raw_df['yearMonth'].apply(
+            lambda d: reformat_date(d))
+        del raw_df['yearMonth']
+    return raw_df
+
+
+def write_df_to_csv(df, filename):
+    full_filename = os.path.join(os.environ['DATA_DIR'], filename)
+    df.to_csv(full_filename, date_format="%m/%d/%y")
