@@ -49,6 +49,37 @@ The charts are powered by the va.gov Google Analytics account. The Python script
 
 Once deployed the data is static until the next deploy. Because the executive scorecard is meant for external audiences, this ensures that the data is available and can be quality controlled prior to putting it in front of an audience. Once deployed, we do not have to worry about data abnormalities or failures appearing.
 
+### Services data
+
+The tiles in the "Performance by service" section are generated using `scripts/services.yml`,
+which must have the following structure:
+
+```
+services:
+  - title: 'Health Care'
+    page_path_filter: 'www.va.gov/health-care'
+    tools:
+      - title: 'Apply for health care benefits'
+        page_path_filter: '/health-care/apply'
+        event_category_filter: 'Transactions'
+        event_action_filter: 'Forms'
+  - title: 'Disability'
+    tools:
+      - title: 'Check VA claim or appeal status'
+        page_path_filter: 'www.va.gov/track-claims/'
+        event_category_filter: 'Transactions'
+
+```
+
+**To add another service**, add an additional item to the `services` list. You can duplicate an existing one and edit its fields.
+
+If you want the tile on the frontend to have a "Total Users" metric for that service, add a `page_path_filter` field
+to the entry in the YAML file. The value of this field is used to perform a query to Google Analytics.
+This is an optional field.
+
+**To add tools for that service**, add items to the `tools` list within each `service` entry. For each tool, it is mandatory
+to provide the fields `page_path_filter` and `event_category_filter`, and optional to provide `event_action_filter`.
+
 ## Getting Started
 
 ### Makefile
