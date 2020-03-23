@@ -1,9 +1,0 @@
-.north-star__logo-text {
-  line-height: units(3);
-  font-size: 2.1rem;
-
-  @include media($nav-width) {
-    font-size: 3rem;
-  }
-}
-
