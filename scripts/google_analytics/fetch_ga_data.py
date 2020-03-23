@@ -1,5 +1,5 @@
 from google_analytics.analytics_helpers import make_df, initialize_analyticsreporting, get_totals_from_report, \
-    calculate_trend
+    calculate_trend, sort_tools_by_transactions
 from utils.datetime_utils import reformat_date
 from google_analytics.ga_requests import get_logged_in_users_request, get_all_transactions_request, \
     get_last_month_users_request, get_transactions_for_tools_request
@@ -74,16 +74,20 @@ def fetch_data_for_service(analytics_service, service):
         get_last_month_users_request(service["page_path_filter"])
     )
 
+    tools = [
+        fetch_transactions_for_tool(analytics_service, tool)
+        for tool in service["tools"]
+    ]
+
+    sort_tools_by_transactions(tools)
+
     service_data = {
         "title": service["title"],
         "users_total": users_total,
         "users_trend": users_trend,
         # "csat": 76,
         # "csat_trend": 12,
-        "tools": [
-            fetch_transactions_for_tool(analytics_service, tool)
-            for tool in service["tools"]
-        ]
+        "tools": tools
     }
 
     return service_data

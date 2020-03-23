@@ -55,9 +55,12 @@ def test_fetch_data_for_service_fetches_data_for_each_tool(monkeypatch):
     # mock return values for multiple calls
     mock_fetch_transactions_for_tool.side_effect = ["some-tool-data-1", "some-tool-data-2"]
 
+    mock_sort_tools_by_transactions = mock.Mock()
+
     monkeypatch.setattr(fetch_ga_data, "get_last_month_users_request", mock_get_user_request)
     monkeypatch.setattr(fetch_ga_data, "run_report_and_get_total_with_trend", mock_run_user_report)
     monkeypatch.setattr(fetch_ga_data, "fetch_transactions_for_tool", mock_fetch_transactions_for_tool)
+    monkeypatch.setattr(fetch_ga_data, "sort_tools_by_transactions", mock_sort_tools_by_transactions)
 
     service = {
         "title": "some-title",
@@ -80,5 +83,6 @@ def test_fetch_data_for_service_fetches_data_for_each_tool(monkeypatch):
     ]
 
     mock_fetch_transactions_for_tool.assert_has_calls(expected_calls)
+    mock_sort_tools_by_transactions.assert_called_once()
 
     assert service_data["tools"] == ["some-tool-data-1", "some-tool-data-2"]
