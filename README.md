@@ -75,7 +75,7 @@ services:
 
 If you want the tile on the frontend to have a "Total Users" metric for that service, add a `page_path_filter` field
 to the entry in the YAML file. The value of this field is used to perform a query to Google Analytics.
-This is an optional field.
+This is a required field.
 
 **To add tools for that service**, add items to the `tools` list within each `service` entry. For each tool, it is mandatory
 to provide the fields `page_path_filter` and `event_category_filter`, and optional to provide `event_action_filter`.
