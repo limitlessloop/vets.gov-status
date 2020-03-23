@@ -3,68 +3,66 @@ services:
 - title: Health Care
   tools:
   - title: Apply for health care benefits
-    transactions: 7336
+    transactions: 7145
   - title: Schedule and view VA appointments online
-    transactions: 3990
-  users_total: 541082
-  users_trend: 70.71525477204607
+    transactions: 183
+  users_total: 510771
+  users_trend: 62.261303818821226
 - title: Disability
   tools:
   - title: Check VA claim or appeal status
-    transactions: 1675395
+    transactions: 1586740
   - title: File for disability compensation
-    transactions: 20033
-  - title: View VA disability ratings
-    transactions: 0
-  users_total: 439458
-  users_trend: 72.57807990009543
+    transactions: 18939
+  users_total: 424491
+  users_trend: 67.98950488545208
 - title: Education
   tools:
   - title: "GI Bill\xAE Comparison Tool"
-    transactions: 144576
-  - title: Apply for education benefits
-    transactions: 18288
-  - title: Apply to use transferred education benefits
-    transactions: 2431
-  - title: Manage education benefits
-    transactions: 14422
-  - title: Apply for VET TEC
-    transactions: 5278
-  - title: Apply for education benefits as an eligible dependent
-    transactions: 4759
-  - title: Manage education benefits as an eligible dependent
-    transactions: 1455
-  - title: Apply for education benefits under the NCS program
-    transactions: 104
-  - title: "GI Bill\xAE School Feedback Tool"
-    transactions: 291
+    transactions: 133810
   - title: Check Post 9/11 GI Bill benefits
-    transactions: 64568
-  users_total: 382023
-  users_trend: 51.38736982262589
+    transactions: 58968
+  - title: Apply for education benefits
+    transactions: 16422
+  - title: Manage education benefits
+    transactions: 13600
+  - title: Apply for VET TEC
+    transactions: 5095
+  - title: Apply for education benefits as an eligible dependent
+    transactions: 4364
+  - title: Apply to use transferred education benefits
+    transactions: 2233
+  - title: Manage education benefits as an eligible dependent
+    transactions: 1259
+  - title: "GI Bill\xAE School Feedback Tool"
+    transactions: 304
+  - title: Apply for education benefits under the NCS program
+    transactions: 101
+  users_total: 355847
+  users_trend: 43.06039664065547
 - title: Burials & Memorials
   tools:
   - title: Apply for pre-need eligibility determination
-    transactions: 1642
+    transactions: 1583
   - title: Apply for burial benefits
-    transactions: 707
-  users_total: 66264
-  users_trend: 66.00861809800581
+    transactions: 690
+  users_total: 62212
+  users_trend: 60.15033722905834
 - title: Pension & Fiduciary
   tools:
   - title: Apply for Veterans Pension benefits
-    transactions: 748
-  users_total: 123841
-  users_trend: 103.88705959828779
+    transactions: 731
+  users_total: 116040
+  users_trend: 92.21467616365744
 - title: Profile & Records
   tools:
-  - title: Update contact information & preferences
-    transactions: 118371
-  - title: Update direct deposit information
-    transactions: 118371
   - title: Download VA benefits letters
-    transactions: 122797
-  users_total: 329968
-  users_trend: 41.83204597523286
+    transactions: 114425
+  - title: Update contact information & preferences
+    transactions: 90939
+  - title: Update direct deposit information
+    transactions: 15610
+  users_total: 309682
+  users_trend: 34.50808528751308
 transactions_total: 27200509
 users_total: 7844139

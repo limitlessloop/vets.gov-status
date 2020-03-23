@@ -10,7 +10,6 @@
 @import "variables";
 @import "header";
 @import "footer";
-@import "northstar";
 @import "service_tile";
 
 h2 {
@@ -26,6 +25,16 @@ h4 {
 .additional-info-container:not(.form-expanding-group-open) {
   & .additional-info-content {
     display: none;
+  }
+}
+
+.vads-l-grid-container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @include media($large-screen) {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

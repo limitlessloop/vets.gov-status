@@ -13,9 +13,6 @@
     function generateArrays () {
         tabs = document.querySelectorAll('[role="tab"]');
         panels = document.querySelectorAll('div.chart > canvas');
-
-        console.log(tabs);
-        console.log(panels);
     };
 
     // For easy reference

@@ -39,6 +39,7 @@ __pycache__/
 results/
 .coverage
 test/ui/logs/
+test/logs/
 
 # Misc
 .DS_Store

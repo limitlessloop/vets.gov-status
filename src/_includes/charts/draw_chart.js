@@ -39,17 +39,17 @@ var chart = new Chart(ctx, {
                     zeroLineWidth: 1,
                     zeroLineColor: 'rgb(0,0,0)'
                 },
-                {% if chart.id == 'csat' %} ticks: {
-                    suggestedMin: 0,
-                    suggestedMax: 100
-                },
-                {% else %} ticks: {
-                    beginAtZero: true,
-                    padding: 10,
+                ticks: {
+                    {% if chart.id == 'csat' %}
+                    suggestedMax: 100,
+                    {% else %}
                     callback: function(value, index, values) {
                         return (value / 1000000);
-                    }
-                }, {% endif %}
+                    },
+                    {% endif %}
+                    beginAtZero: true,
+                    padding: 10,
+                },
                 scaleLabel: {
                     display: true,
                     labelString: '{{ chart.yAxisLabel }}'
