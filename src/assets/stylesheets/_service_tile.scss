@@ -1,0 +1,42 @@
+.service-tile {
+  background-color: $color-gray-lightest;
+  margin-bottom: units(2);
+  padding: units(3);
+
+  & h3 {
+    font-size: 2.4rem;
+    color: $color-gray-dark;
+    margin-top: 0;
+  }
+
+  & span {
+    display: block;
+  }
+
+  & table {
+
+    & * {
+      background-color: $color-gray-lightest;
+      border-color: $color-gray-light;
+      border-left: none;
+      border-right: none;
+    }
+
+    & th {
+      border-top: none;
+    }
+
+    & tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    & td,th {
+      padding: units(1) 0;
+
+      &:last-child {
+        text-align: right;
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.site-header {
+  color: #fff;
+  background-color: $color-primary-darkest;
+}
+
+.site-header__masthead {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include media($nav-width) {
+    height: 10rem;
+    flex-wrap: nowrap;
+  }
+}
+
+.site-header__logo-text {
+  font-size: 2.1rem;
+  font-weight: 300;
+  margin: units(3) 0;
+  width: 60rem;
+  align-self: center;
+
+  @include media($nav-width) {
+    font-size: 3.2rem;
+  }
+}
+
+.site-header__logo-link,
+.site-header__logo-link:visited {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-header__logo-link:hover,
+.site-header__logo-link:focus {
+  text-decoration: none;
+}
+
+.site-header__utility-links {
+  width: 20rem;
+  flex: 0 1 auto;
+  align-self: center;
+}

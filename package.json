@@ -1,0 +1,33 @@
+{
+  "name": "va-performance-dashboard",
+  "version": "2.0.0",
+  "description": "performance dashboard for va.gov",
+  "repository": "https://github.com/department-of-veterans-affairs/vets.gov-status.git",
+  "author": "VA",
+  "bugs": {
+    "url": "https://github.com/department-of-veterans-affairs/vets.gov-status/issues"
+  },
+  "homepage": "https://www.va.gov/scorecard",
+  "license": "PUBLIC DOMAIN",
+  "private": true,
+  "scripts": {
+    "ui-test": "nightwatch -c test/ui/config/nightwatch.js",
+    "ui-test-headless": "nightwatch -c test/ui/config/nightwatch.js --headless"
+  },
+  "dependencies": {
+    "@department-of-veterans-affairs/formation": "^6.9.1",
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "chart.js": "^2.9.3",
+    "foundation-sites": "5",
+    "uswds": "^1.6.10"
+  },
+  "devDependencies": {
+    "axe-core": "^3.5.2",
+    "chromedriver": "^80.0.1",
+    "nightwatch": "^1.3.4"
+  },
+  "engines": {
+    "node": "^12",
+    "yarn": "^1.22"
+  }
+}

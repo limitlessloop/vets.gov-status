@@ -1,21 +1,9 @@
-collections:
-  boards:
-    output: true
+source: src
+destination: _site
 
-defaults:
-  - scope:
-      path: ""
-      type: boards
-    values:
-      layout: board
+sass:
+  sass_dir: assets/stylesheets
 
-exclude:
-  - scripts
-  - LICENSE.md
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-  - Jenkinsfile
-  - Jenkinsfile.update
+exclude: ["webpack"]
 
 baseurl: "/scorecard"

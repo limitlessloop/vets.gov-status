@@ -1,0 +1,57 @@
+.site-footer {
+  min-height: 10rem;
+  padding: 1.5rem 3rem;
+
+  a {
+    color: $color-white;
+  }
+}
+
+.site-footer .site-l-wrapper {
+  padding: 0;
+
+  @include media($xsmall-screen) {
+    padding-left: 6rem;
+  }
+
+  @include media($small-screen) {
+    padding: 0;
+  }
+
+  @include media($nav-width) {
+    padding: 0 2.4rem;
+  }
+
+  @include media($large-screen) {
+    padding: 0 8rem;
+  }
+}
+
+.site-footer__vagov {
+  min-width: 9rem;
+}
+
+.site-footer__logo {
+  width: 15rem;
+  max-width: none;
+
+  @include media($small-screen) {
+    width: 20rem;
+  }
+}
+
+.site-footer__links {
+  a {
+    margin: 0 2rem 1rem 0;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  @include media($small-screen) {
+    a {
+      margin-bottom: 0;
+    }
+  }
+}

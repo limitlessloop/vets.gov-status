@@ -1,0 +1,107 @@
+---
+---
+
+// Files that allow us to use Formation’s Sass functions, variables, and mixins
+@import '../../../node_modules/@department-of-veterans-affairs/formation/sass/base/b-variables';
+@import '../../../node_modules/@department-of-veterans-affairs/formation/sass/base/_b-breakpoints';
+@import '../../../node_modules/@department-of-veterans-affairs/formation/sass/base/b-functions';
+@import '../../../node_modules/@department-of-veterans-affairs/formation/sass/base/_b-mixins';
+
+@import "variables";
+@import "header";
+@import "footer";
+@import "service_tile";
+
+h2 {
+  margin-top: units(4);
+  margin-bottom: 0;
+  font-size: 3.2rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+.additional-info-container:not(.form-expanding-group-open) {
+  & .additional-info-content {
+    display: none;
+  }
+}
+
+.vads-l-grid-container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @include media($large-screen) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.usa-sidenav-list {
+  border-color: $color-gray-light;
+
+  & li {
+    border-color: $color-gray-light;
+  }
+
+  & button {
+    color: $color-gray-dark;
+    background-color: transparent;
+    padding: units(2) units(1);
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    border-radius: 0;
+
+    &:hover {
+      background-color: $color-gray-lightest;
+    }
+
+    & h3 {
+      font-weight: normal;
+      font-size: 1.4rem;
+    }
+
+    &.usa-current {
+      border-left: .4rem solid $color-blue;
+
+      & h3 {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $medium-screen) {
+  .usa-sidenav-list {
+    & button:not(.usa-current) {
+      border-left: .4rem solid transparent;
+    }
+  }
+}
+
+@media screen and (max-width: $medium-screen) {
+  .usa-sidenav-list {
+
+    border-top: 0;
+    margin-bottom: units(2);
+
+    & li {
+      border-top: 0;
+    }
+
+    & button {
+      text-align: center;
+
+      &.usa-current {
+        border-left: 0;
+        border-bottom: .4rem solid $color-blue;
+      }
+    }
+  }
+}
+
+.chart-nav * {
+  pointer-events: none; // force mouse clicks to have a "target" of their immediate parent - the chart tabs
+}

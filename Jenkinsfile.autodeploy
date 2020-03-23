@@ -42,7 +42,9 @@ pipeline {
   agent {
     label 'vetsgov-general-purpose'
   }
-
+  options {
+    ansiColor('xterm')
+  }
   stages {
 
     stage('Create PR'){
@@ -79,10 +81,10 @@ pipeline {
       deleteDir()
     }
     success {
-      slackSend message: "Scorecard production deployment succeeded", color: "good", channel: "analytics-deploys"
+      slackSend message: "Performance dashboard production deployment succeeded", color: "good", channel: "scorecard-ci-temp"
     }
     failure {
-      slackSend message: "<!here> Scorecard production deployment *FAILED*!", color: "danger", channel: "analytics-deploys"
+      slackSend message: "<!here> Performance dashboard production deployment *FAILED*!", color: "danger", channel: "scorecard-ci-temp"
     }
   }
 }
