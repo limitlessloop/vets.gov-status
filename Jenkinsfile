@@ -5,6 +5,7 @@ pipeline {
   environment {
     // Needed for credstash
     AWS_DEFAULT_REGION = 'us-gov-west-1'
+    // Variable used in makefile to determine behavior of some scripts
     CI = "true"
   }
   options {
@@ -31,8 +32,6 @@ pipeline {
     stage('Build website') {
       steps {
         script {
-          // slackSend message: "Scorecard Jenkins build started", color: "good", channel: "scorecard-ci-temp"
-
           nodeImg = docker.image('node:12.16.1')
           nodeImg.inside() {
             sh 'make yarn-install'
@@ -60,7 +59,7 @@ pipeline {
     stage('Upload') {
       when {
         expression {
-          (env.BRANCH_NAME == 'demo' ||
+          (env.BRANCH_NAME == 'development' ||
           env.BRANCH_NAME == 'master' ||
           env.BRANCH_NAME == 'production') &&
           !env.CHANGE_TARGET
@@ -68,11 +67,10 @@ pipeline {
       }
       steps {
         script {
-          // slackSend message: "Scorecard Jenkins upload started", color: "good", channel: "scorecard-ci-temp"
           def envs = [
-            'demo': ['dev'],
+            'development': ['dev'],
             'master': ['staging'],
-            'production': ['staging'],  // todo: point this back to production once we are ready to golive
+            'production': ['staging'],  // todo: point this back to production once we are ready to go live
           ]
 
           for (e in envs.get(env.BRANCH_NAME, [])) {
@@ -89,11 +87,9 @@ pipeline {
     }
     success {
       echo "Build success"
-      // slackSend message: "Scorecard Jenkins build succeeded", color: "good", channel: "scorecard-ci-temp"
     }
     failure {
       echo "Build failure"
-      // slackSend message: "Scorecard Jenkins build *FAILED*!", color: "danger", channel: "scorecard-ci-temp"
     }
   }
 }

@@ -175,7 +175,7 @@ Note that we pass in the host machine's AWS credentials.
 
 ## Deploying
 
-Our deployments are handled by Jenkins using the `Jenkinsfile`. We deploy by committing to the `production` branch. We use the `demo` branch to deploy to our development server to internally demo new boards or tile updates without blocking the data update path from `master` to `production`.
+Our deployments are handled by Jenkins using the `Jenkinsfile`. We deploy by committing to the `production` branch. We use the `development` branch to deploy to our development server to internally demo new boards or tile updates without blocking the data update path from `master` to `production`.
 
 ## Developer Onboarding
 
