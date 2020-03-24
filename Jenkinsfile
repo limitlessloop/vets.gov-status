@@ -29,12 +29,12 @@ pipeline {
       }
     }
 
-    // todo - temp add back in just for testing, remove this
-    stage('Update Data') {
+    stage('Data fetch integration test') {
       steps{
         script {
           dir('scripts') {
-            sh './fetch-data-docker-wrapper.sh'
+            // sh './fetch-data-docker-wrapper.sh'
+            echo "Disabled for now"
           }
         }
       }

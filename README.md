@@ -90,7 +90,7 @@ We use [ForeSee API](https://developer.foresee.com/docs/public-api) to collect C
 The ForeSee API has a 100 record limit per request so multiple API calls are required to obtain all the records for a period.  For example, we have to send 25 requests to fetch all the records
 for one month. To fetch one year worth of data it takes around 10 minutes.  The API token might expire between the requests hence the code supports renewing API token. 
 
-To fetch CSAT data locally, you will need `FORESEE_CREDENTIALS` environment variable in order to to generate API token.
+To fetch CSAT data locally, you will need to export a `FORESEE_CREDENTIALS` environment variable in order to to generate API token.
 In the CI pipeline, the ForeSee service account credentials are obtained through credstash.  
 
 
