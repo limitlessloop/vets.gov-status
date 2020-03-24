@@ -53,6 +53,9 @@ pipeline {
     AWS_DEFAULT_REGION = 'us-gov-west-1'
 
     GH = credentials('va-bot')
+
+    // Variable used to determine behavior of fetch data scripts
+    CI = "true"
   }
   options {
     ansiColor('xterm')
