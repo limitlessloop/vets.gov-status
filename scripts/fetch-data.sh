@@ -3,9 +3,8 @@ set -o errexit
 set -o nounset
 # set -x
 
-printenv
 # todo: Make credstash credential keys environment variables as well
-if [ ! -z "${CI:-}" ]; then
+if [ -n "${CI:-}" ]; then
   credstash --region ${AWS_DEFAULT_REGION} get vagovanalytics.prod.service_account_credentials > ${GA_SERVICEACCOUNT}
   export FORESEE_CREDENTIALS=`credstash --region ${AWS_DEFAULT_REGION} get foresee.prod.api.credentials`
 fi

@@ -34,7 +34,7 @@ pipeline {
       steps{
         script {
           dir('scripts') {
-            sh './run-ci-fetch-data.sh'
+            sh './fetch-data-docker-wrapper.sh'
           }
         }
       }
