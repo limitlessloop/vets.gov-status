@@ -17,7 +17,7 @@ def initialize_analyticsreporting():
     credentials = Credentials.from_service_account_file(os.environ['GA_SERVICEACCOUNT'], scopes=SCOPES)
 
     # Build the service object.
-    analytics_service = build('analyticsreporting', 'v4', credentials=credentials)
+    analytics_service = build('analyticsreporting', 'v4', credentials=credentials, cache_discovery=False)
 
     return analytics_service
 
