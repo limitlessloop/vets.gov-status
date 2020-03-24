@@ -29,6 +29,17 @@ pipeline {
       }
     }
 
+    # todo - temp add back in just for testing, remove this
+    stage('Update Data') {
+      steps{
+        script {
+          dir('scripts') {
+            sh './run-ci-fetch-data.sh'
+          }
+        }
+      }
+    }
+
     stage('Build website') {
       steps {
         script {
