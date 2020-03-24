@@ -86,11 +86,12 @@ We use the [`google-api-python-client`](https://pypi.org/project/google-api-pyth
 Service account credentials are obtained through credstash.
 
 ### Foresee
-TBC
+We use [ForeSee API](https://developer.foresee.com/docs/public-api) to collect CSAT scores.
+The ForeSee API has a 100 record limit per request so multiple API calls are required to obtain all the records for a period.  For example, we have to send 25 requests to fetch all the records
+for one month. To fetch one year worth of data it takes around 10 minutes.  The API token might expire between the requests hence the code supports renewing API token. 
 
-**Maintenance Task**:
-We're currently using individual credentials to make requests to Foresee, in the absence of service account credentials.
-These credentials expire every 90 days and will need to be replaced in credstash.
+To fetch CSAT data locally, you will need `FORESEE_CREDENTIALS` environment variable in order to to generate API token.
+In the CI pipeline, the ForeSee service account credentials are obtained through credstash.  
 
 
 ## Getting Started

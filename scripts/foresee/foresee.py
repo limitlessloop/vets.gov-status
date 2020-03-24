@@ -94,7 +94,7 @@ def calculate_average_satisfaction(items):
              for latent_score in item['latentScores'] if latent_score['name'] == 'Satisfaction')
         for item in items
     )
-    return round(sum(extracted_csats) / len(items), 2)
+    return round(sum(extracted_csats) / len(items), 1)
 
 
 def fetch_last_12_months_data():
@@ -147,6 +147,7 @@ def update_csat():
     # calculate average for the whole period
     overall_average_score = calculate_overall_average_satisfaction(last_year_data)
     write_to_csv(last_year_data)
+    print(overall_average_score)
     return overall_average_score
 
 
