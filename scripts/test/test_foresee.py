@@ -1,5 +1,7 @@
 import json
-from scripts.foresee.foresee import calculate_overall_average_satisfaction, calculate_average_satisfaction, MONTH_DATA
+from unittest import mock
+import pandas as pd
+import foresee.foresee as foresee
 
 response_str: str = \
     "{\"hasMore\":true,\"total\":5221,\"items\":[{\"id\":\"V185Vop4U5hthwFF5cUdRA4C\"," \
@@ -37,14 +39,53 @@ response_str: str = \
 
 def test_calculates_average_satisfaction_score():
     json_response = json.loads(response_str)
-    assert 85.0 == calculate_average_satisfaction(json_response['items'])
+    assert 85.0 == foresee.calculate_average_satisfaction(json_response['items'])
 
 
 def test_calculate_average_satisfaction_of_all_data():
     one_set_of_data = json.loads(response_str)
     multiple_data_items = [
-        {MONTH_DATA: one_set_of_data['items']},
-        {MONTH_DATA: one_set_of_data['items']},
-        {MONTH_DATA: one_set_of_data['items']}
+        {foresee.MONTH_DATA: one_set_of_data['items']},
+        {foresee.MONTH_DATA: one_set_of_data['items']},
+        {foresee.MONTH_DATA: one_set_of_data['items']}
     ]
-    assert 85.0 == calculate_overall_average_satisfaction(multiple_data_items)
+    assert 85.0 == foresee.calculate_overall_average_satisfaction(multiple_data_items)
+
+
+def test_fetch_foresee_data_for_services(monkeypatch):
+    recent_data = [
+        {'Satisfaction': 80.0, 'url': 'some-url-1'},
+        {'Satisfaction': 70.0, 'url': 'some-url-1'},
+        {'Satisfaction': 40.0, 'url': 'some-url-2'},
+    ]
+    recent_df = pd.DataFrame(recent_data)
+
+    last_year_data = [
+        {'Satisfaction': 60.0, 'url': 'some-url-1'},
+        {'Satisfaction': 50.0, 'url': 'some-url-1'},
+        {'Satisfaction': 80.0, 'url': 'some-url-2'},
+    ]
+    last_year_df = pd.DataFrame(last_year_data)
+
+    mock_get_foresee_items_for_services = mock.Mock()
+    mock_get_foresee_items_for_services.return_value = (recent_df, last_year_df)
+
+    monkeypatch.setattr(foresee, "get_foresee_items_for_services", mock_get_foresee_items_for_services)
+
+    services = [
+        {'title': 'Some-Service-1', 'page_path_filter': 'some-url-1'},
+        {'title': 'Some-Service-2', 'page_path_filter': 'some-url-2'}
+    ]
+
+    expected_result = {
+        'Some-Service-1': {
+            'csat': 75.0,
+            'csat_trend': 20.0
+        },
+        'Some-Service-2': {
+            'csat': 40.0,
+            'csat_trend': -40.0
+        }
+    }
+
+    assert expected_result == foresee.fetch_foresee_data_for_services(services)
