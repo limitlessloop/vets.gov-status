@@ -36,7 +36,7 @@ def fetch_data_for_service(analytics_service, service):
 
     report = get_ga_report(analytics_service, get_last_month_users_request(service["page_path_filter"]))
     users_total, previous_total = get_totals_from_report(report)
-    users_trend = calculate_trend(previous_total, users_total)
+    users_trend = round(calculate_trend(previous_total, users_total), 1)
 
     tools = [
         fetch_transactions_for_tool(analytics_service, tool)
