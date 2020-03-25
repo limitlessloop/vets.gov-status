@@ -124,6 +124,28 @@ test: unit-test flake8 ui-test ## Run unit tests, static analysis and ui tests
 # docker-clean:
 # 	$(COMPOSE_UI_TEST) down --rmi all --volumes
 
+## Sonarqube
+# Bring up sonar and wait a bit for it to start
+.PHONY: sonar-up
+sonar-up: ## Start sonarqube local containers
+	result=`docker ps | grep sonarqube | wc -l`; \
+	if [ $$result -eq 0 ]; then \
+		docker-compose -f local-dev/sonar/docker-compose.yml up --detach; \
+		echo "Waiting for 45 seconds..."; \
+		sleep 45; \
+	else\
+		echo "Sonarqube already up"; \
+	fi;
+
+.PHONY: sonar-down
+sonar-down: ## Stop sonarqube local containers
+	docker-compose -f local-dev/sonar/docker-compose.yml down
+
+.PHONY: sonar-start
+sonar-scan: sonar-up unit-test ## Perform the sonar scan. This will start sonarqube if it needs to.
+	mvn sonar:sonar
+	open http://localhost:9000/dashboard?id=gov.va%3Aperformancedashboard
+
 .PHONY: clean
 clean:  ## Delete any directories, files or logs that are auto-generated, except node_modules and python packages
 	rm -rf target

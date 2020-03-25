@@ -3,10 +3,11 @@ set -o errexit
 set -o nounset
 # set -x
 
-# todo: Make credentials key an environment variable as well
-credstash --region ${AWS_DEFAULT_REGION} get vagovanalytics.prod.service_account_credentials > ${GA_SERVICEACCOUNT}
-export FORESEE_USER=`credstash --region ${AWS_DEFAULT_REGION} get foresee.prod.odata.username`
-export FORESEE_PWD=`credstash --region ${AWS_DEFAULT_REGION} get foresee.prod.odata.password`
+# todo: Make credstash credential keys environment variables as well
+if [ -n "${CI:-}" ]; then
+  credstash --region ${AWS_DEFAULT_REGION} get vagovanalytics.prod.service_account_credentials > ${GA_SERVICEACCOUNT}
+  export FORESEE_CREDENTIALS=`credstash --region ${AWS_DEFAULT_REGION} get foresee.prod.api.credentials`
+fi
 
 echo Running Google Analytics scripts...
 python -m google_analytics.fetch_ga_data

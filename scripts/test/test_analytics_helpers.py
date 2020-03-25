@@ -1,6 +1,8 @@
+import google_analytics.analytics_helpers
 from google_analytics.analytics_helpers import make_df, make_table, get_totals_from_report, calculate_trend, \
     sort_tools_by_transactions
 import pytest
+import pandas as pd
 
 
 def test_make_df_should_throw_error_if_data_empty():
@@ -122,3 +124,14 @@ def test_sort_tools_by_transactions():
         {"title": "some-tool-title-3", "transactions": 200},
         {"title": "some-tool-title-1", "transactions": 100},
     ]
+
+
+def test_add_month_column():
+    d = {'totalEvents': [123, 456], 'date': ['3/2019', '4/2019']}
+    expected_df = pd.DataFrame(data=d)
+
+    d = {'totalEvents': [123, 456], 'yearMonth': ['201903', '201904']}
+    df = pd.DataFrame(data=d)
+    actual_df = google_analytics.analytics_helpers.add_month_column(df)
+
+    assert actual_df.equals(expected_df)

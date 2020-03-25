@@ -3,6 +3,7 @@ import csv
 import requests
 import logging
 from utils.datetime_utils import find_last_twelve_months
+from time import sleep
 
 AUTHORIZATION = 'authorization'
 
@@ -19,7 +20,7 @@ def authenticate():
     headers = {
         'accept': "application/json",
         'content-type': "application/json",
-        'authorization': "Basic " + environ.get('FORSEE_CREDENTIALS')
+        'authorization': "Basic " + environ.get('FORESEE_CREDENTIALS')
     }
 
     response = requests.request("POST", url, headers=headers, params=querystring)
@@ -79,7 +80,7 @@ def send_one_request(headers, querystring, url):
                 continue
             else:
                 raise RuntimeError(fail_reason)
-    return response
+        return response
 
 
 def renew_token(headers):
@@ -93,7 +94,7 @@ def calculate_average_satisfaction(items):
              for latent_score in item['latentScores'] if latent_score['name'] == 'Satisfaction')
         for item in items
     )
-    return round(sum(extracted_csats) / len(items), 2)
+    return round(sum(extracted_csats) / len(items), 1)
 
 
 def fetch_last_12_months_data():
@@ -115,6 +116,8 @@ def fetch_last_12_months_data():
         }
         last_year_data.append(one_month_dict)
         logging.info("Calculated %s average: %.2f", month_year_text, one_month_dict[CSAT_SCORE])
+        # we use sleep to avoid ForeSee timeouts
+        sleep(1)
     return last_year_data
 
 
@@ -144,6 +147,7 @@ def update_csat():
     # calculate average for the whole period
     overall_average_score = calculate_overall_average_satisfaction(last_year_data)
     write_to_csv(last_year_data)
+    print(overall_average_score)
     return overall_average_score
 
 

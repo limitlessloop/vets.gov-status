@@ -1,12 +1,12 @@
-from foresee.foresee_odata import update_csat
-from google_analytics.analytics_helpers import make_df, initialize_analyticsreporting, get_totals_from_report, \
-    calculate_trend, sort_tools_by_transactions
-from utils.datetime_utils import reformat_date
+from foresee.foresee import update_csat
+from google_analytics.analytics_helpers import initialize_analyticsreporting, get_totals_from_report, \
+    calculate_trend, sort_tools_by_transactions, get_total_from_report, write_report_to_csv
 from google_analytics.ga_requests import get_logged_in_users_request, get_all_transactions_request, \
     get_last_month_users_request, get_transactions_for_tools_request
 from ruamel import yaml
 from tenacity import retry, wait_fixed, stop_after_attempt
 import os
+import logging
 
 
 @retry(wait=wait_fixed(10), stop=stop_after_attempt(5))
@@ -23,57 +23,20 @@ def get_ga_report(analytics_service, request):
     return response['reports'][0]
 
 
-def run_report(analytics_service, request, return_df):
-    report = get_ga_report(analytics_service, request)
-    total = get_totals_from_report(report)[0]
-    if return_df:
-        df = make_df(report)
-        return df, total
-    else:
-        return total
-
-
-def run_report_and_get_total_with_trend(analytics_service, request):
-    report = get_ga_report(analytics_service, request)
-    recent_total, previous_total = get_totals_from_report(report)
-
-    trend = calculate_trend(previous_total, recent_total)
-
-    return recent_total, trend
-
-
-def add_month_column(raw_df):
-    if 'yearMonth' in raw_df.columns:
-        raw_df['date'] = raw_df['yearMonth'].apply(
-            lambda d: reformat_date(d))
-        del raw_df['yearMonth']
-    return raw_df
-
-
-def write_df_to_csv(df, filename):
-    full_filename = os.path.join(os.environ['DATA_DIR'], filename)
-    df.to_csv(full_filename, date_format="%m/%d/%y")
-
-
 def fetch_transactions_for_tool(analytics_service, tool):
-    total_transactions = run_report(
-        analytics_service,
-        get_transactions_for_tools_request(tool),
-        False
-    )
+    report = get_ga_report(analytics_service, get_transactions_for_tools_request(tool))
     return {
         "title": tool["title"],
-        "transactions": total_transactions
+        "transactions": get_total_from_report(report)
     }
 
 
 def fetch_data_for_service(analytics_service, service):
     print("Getting data for '%s'" % service["title"])
 
-    users_total, users_trend = run_report_and_get_total_with_trend(
-        analytics_service,
-        get_last_month_users_request(service["page_path_filter"])
-    )
+    report = get_ga_report(analytics_service, get_last_month_users_request(service["page_path_filter"]))
+    users_total, previous_total = get_totals_from_report(report)
+    users_trend = calculate_trend(previous_total, users_total)
 
     tools = [
         fetch_transactions_for_tool(analytics_service, tool)
@@ -86,8 +49,7 @@ def fetch_data_for_service(analytics_service, service):
         "title": service["title"],
         "users_total": users_total,
         "users_trend": users_trend,
-        # "csat": 76,
-        # "csat_trend": 12,
+        # additional keys: csat, csat_trend
         "tools": tools
     }
 
@@ -97,18 +59,20 @@ def fetch_data_for_service(analytics_service, service):
 def main():
     analytics_service = initialize_analyticsreporting()
 
-    df, transactions_total = run_report(analytics_service, get_all_transactions_request(), True)
-    df = add_month_column(df)
-    write_df_to_csv(df, "all_transactions.csv")
+    logging.info("Writing transactions data...")
+    transactions_report = get_ga_report(analytics_service, get_all_transactions_request())
+    write_report_to_csv(transactions_report, "all_transactions.csv")
 
-    df, users_total = run_report(analytics_service, get_logged_in_users_request(), True)
-    df = add_month_column(df)
-    write_df_to_csv(df, "all_logged_in_users.csv")
+    logging.info("Writing users data...")
+    users_report = get_ga_report(analytics_service, get_logged_in_users_request())
+    write_report_to_csv(users_report, "all_logged_in_users.csv")
+
+    logging.info("Getting csat data from foresee...")
     csat_overall = str(update_csat()) + '%'
 
     counts = {
-        "transactions_total": transactions_total,
-        "users_total": users_total,
+        "transactions_total": get_total_from_report(transactions_report),
+        "users_total": get_total_from_report(users_report),
         "csat_total": csat_overall
     }
 
@@ -127,4 +91,5 @@ def main():
 
 
 if __name__ == '__main__':
+    logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', level=logging.INFO)
     main()
