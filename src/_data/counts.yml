@@ -3,66 +3,66 @@ services:
 - title: Health Care
   tools:
   - title: Apply for health care benefits
-    transactions: 7255
+    transactions: 7326
   - title: Schedule and view VA appointments online
-    transactions: 207
-  users_total: 518894
-  users_trend: 67.47862516823905
+    transactions: 211
+  users_total: 528224
+  users_trend: 70.76280501209057
 - title: Disability
   tools:
   - title: Check VA claim or appeal status
-    transactions: 1613159
+    transactions: 1636198
   - title: File for disability compensation
-    transactions: 18698
-  users_total: 431813
-  users_trend: 72.04938999609534
+    transactions: 18621
+  users_total: 438735
+  users_trend: 75.07871329207121
 - title: Education
   tools:
   - title: "GI Bill\xAE Comparison Tool"
-    transactions: 133832
+    transactions: 134360
   - title: Check Post 9/11 GI Bill benefits
-    transactions: 60884
+    transactions: 61501
   - title: Apply for education benefits
-    transactions: 16812
+    transactions: 16848
   - title: Manage education benefits
-    transactions: 13827
+    transactions: 14040
   - title: Apply for VET TEC
-    transactions: 5203
+    transactions: 5384
   - title: Apply for education benefits as an eligible dependent
-    transactions: 4540
+    transactions: 4603
   - title: Apply to use transferred education benefits
-    transactions: 2197
+    transactions: 2280
   - title: Manage education benefits as an eligible dependent
-    transactions: 1223
+    transactions: 1330
   - title: "GI Bill\xAE School Feedback Tool"
-    transactions: 311
+    transactions: 317
   - title: Apply for education benefits under the NCS program
-    transactions: 104
-  users_total: 358491
-  users_trend: 46.521408602677916
+    transactions: 127
+  users_total: 361695
+  users_trend: 48.0360497525877
 - title: Burials & Memorials
   tools:
   - title: Apply for pre-need eligibility determination
-    transactions: 1638
+    transactions: 1816
   - title: Apply for burial benefits
-    transactions: 746
-  users_total: 62599
-  users_trend: 63.20949028809804
+    transactions: 781
+  users_total: 63126
+  users_trend: 64.7768206734534
 - title: Pension & Fiduciary
   tools:
   - title: Apply for Veterans Pension benefits
-    transactions: 726
-  users_total: 117295
-  users_trend: 95.08199447826232
+    transactions: 760
+  users_total: 118033
+  users_trend: 95.76567760768249
 - title: Profile & Records
   tools:
   - title: Download VA benefits letters
-    transactions: 117808
+    transactions: 119265
   - title: Update contact information & preferences
-    transactions: 90859
+    transactions: 92536
   - title: Update direct deposit information
-    transactions: 16024
-  users_total: 314892
-  users_trend: 38.70916587377101
+    transactions: 16742
+  users_total: 318378
+  users_trend: 40.48484741514729
 transactions_total: 27200509
 users_total: 7844139
