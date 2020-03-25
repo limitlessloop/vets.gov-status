@@ -1,4 +1,4 @@
-from foresee.foresee_odata import update_csat
+from foresee.foresee import update_csat
 from google_analytics.analytics_helpers import initialize_analyticsreporting, get_totals_from_report, \
     calculate_trend, sort_tools_by_transactions, get_total_from_report, write_report_to_csv
 from google_analytics.ga_requests import get_logged_in_users_request, get_all_transactions_request, \
@@ -6,6 +6,7 @@ from google_analytics.ga_requests import get_logged_in_users_request, get_all_tr
 from ruamel import yaml
 from tenacity import retry, wait_fixed, stop_after_attempt
 import os
+import logging
 
 
 @retry(wait=wait_fixed(10), stop=stop_after_attempt(5))
@@ -48,8 +49,7 @@ def fetch_data_for_service(analytics_service, service):
         "title": service["title"],
         "users_total": users_total,
         "users_trend": users_trend,
-        # "csat": 76,
-        # "csat_trend": 12,
+        # additional keys: csat, csat_trend
         "tools": tools
     }
 
@@ -59,12 +59,15 @@ def fetch_data_for_service(analytics_service, service):
 def main():
     analytics_service = initialize_analyticsreporting()
 
+    logging.info("Writing transactions data...")
     transactions_report = get_ga_report(analytics_service, get_all_transactions_request())
     write_report_to_csv(transactions_report, "all_transactions.csv")
 
+    logging.info("Writing users data...")
     users_report = get_ga_report(analytics_service, get_logged_in_users_request())
     write_report_to_csv(users_report, "all_logged_in_users.csv")
 
+    logging.info("Getting csat data from foresee...")
     csat_overall = str(update_csat()) + '%'
 
     counts = {
@@ -88,4 +91,5 @@ def main():
 
 
 if __name__ == '__main__':
+    logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', level=logging.INFO)
     main()
