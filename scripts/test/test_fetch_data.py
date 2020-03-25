@@ -1,6 +1,6 @@
 from unittest import mock
 
-from google_analytics import fetch_ga_data
+import fetch_data
 
 
 def test_fetch_data_for_service(monkeypatch):
@@ -22,12 +22,12 @@ def test_fetch_data_for_service(monkeypatch):
 
     mock_sort_tools_by_transactions = mock.Mock()
 
-    monkeypatch.setattr(fetch_ga_data, "get_last_month_users_request", mock_get_request)
-    monkeypatch.setattr(fetch_ga_data, "get_ga_report", mock_get_ga_report)
-    monkeypatch.setattr(fetch_ga_data, "get_totals_from_report", mock_get_totals_from_report)
-    monkeypatch.setattr(fetch_ga_data, "calculate_trend", mock_calculate_trend)
-    monkeypatch.setattr(fetch_ga_data, "fetch_transactions_for_tool", mock_fetch_transactions_for_tool)
-    monkeypatch.setattr(fetch_ga_data, "sort_tools_by_transactions", mock_sort_tools_by_transactions)
+    monkeypatch.setattr(fetch_data, "get_last_month_users_request", mock_get_request)
+    monkeypatch.setattr(fetch_data, "get_ga_report", mock_get_ga_report)
+    monkeypatch.setattr(fetch_data, "get_totals_from_report", mock_get_totals_from_report)
+    monkeypatch.setattr(fetch_data, "calculate_trend", mock_calculate_trend)
+    monkeypatch.setattr(fetch_data, "fetch_transactions_for_tool", mock_fetch_transactions_for_tool)
+    monkeypatch.setattr(fetch_data, "sort_tools_by_transactions", mock_sort_tools_by_transactions)
 
     service = {
         "title": "some-title",
@@ -42,7 +42,7 @@ def test_fetch_data_for_service(monkeypatch):
         ]
     }
 
-    service_data = fetch_ga_data.fetch_data_for_service(mock_analytics_service, service)
+    service_data = fetch_data.fetch_data_for_service(mock_analytics_service, service)
 
     mock_get_request.assert_called_with("www.foo.com")
     mock_get_ga_report.assert_called_with(mock_analytics_service, "some-generated-request")
@@ -72,15 +72,15 @@ def test_fetch_transactions_for_tool(monkeypatch):
     mock_get_total_from_report = mock.Mock()
     mock_get_total_from_report.return_value = 1234
 
-    monkeypatch.setattr(fetch_ga_data, "get_ga_report", mock_get_ga_report)
-    monkeypatch.setattr(fetch_ga_data, "get_transactions_for_tools_request", mock_get_transactions_for_tools_request)
-    monkeypatch.setattr(fetch_ga_data, "get_total_from_report", mock_get_total_from_report)
+    monkeypatch.setattr(fetch_data, "get_ga_report", mock_get_ga_report)
+    monkeypatch.setattr(fetch_data, "get_transactions_for_tools_request", mock_get_transactions_for_tools_request)
+    monkeypatch.setattr(fetch_data, "get_total_from_report", mock_get_total_from_report)
 
     tool = {
         "title": "some-tool-title-1"
     }
 
-    tool_data = fetch_ga_data.fetch_transactions_for_tool(mock_analytics_service, tool)
+    tool_data = fetch_data.fetch_transactions_for_tool(mock_analytics_service, tool)
 
     assert tool_data["title"] == "some-tool-title-1"
     assert tool_data["transactions"] == 1234
