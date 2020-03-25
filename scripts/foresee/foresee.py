@@ -140,7 +140,7 @@ def get_foresee_items_for_services():
 
 
 def get_average_score(df, url):
-    return df[df['url'].str.contains(url)].mean(axis=0)['Satisfaction']
+    return float(df[df['url'].str.contains(url)].mean(axis=0)['Satisfaction'])
 
 
 def fetch_foresee_data_for_services(services):
