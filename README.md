@@ -91,7 +91,8 @@ The ForeSee API has a 100 record limit per request so multiple API calls are req
 for one month. To fetch one year worth of data it takes around 10 minutes.  The API token might expire between the requests hence the code supports renewing API token. 
 
 To fetch CSAT data locally, you will need to export a `FORESEE_CREDENTIALS` environment variable in order to to generate API token.
-In the CI pipeline, the ForeSee service account credentials are obtained through credstash.  
+
+The ForeSee service account credentials are obtained through credstash.  
 
 
 ## Getting Started
@@ -145,19 +146,44 @@ Activate the virtual environment with `source ENV/bin/activate`
 
 Go into the scripts directory and run the scripts with `./fetch-data-local.sh`
 
-### Connecting to AWS
+### Credentials
 
-The scripts get secrets out of [credstash](https://github.com/fugue/credstash), which connects to a running
-AWS instance using your local credentials.
+The scripts get secrets out of [credstash](https://github.com/fugue/credstash) when running in CI.
+
+When running locally, you can ask a colleague for the `ga-serviceaccount.json` file and place it in `scripts/local_credentials`.
+The Foresee credentials can be set locally by exporting the FORESEE_CREDENTIALS variable with valid Foresee credentials.
 
 ### Adding new packages to python scripts
 
 Add the package names to `requirements.in` for run-time dependencies, or `dev-requirements.in` for dependencies used during testing. 
 Then, you can run `make pip-install` to update the `requirements.txt` or `dev-requirements.txt` files and sync your installed packages.
 
-## Deployment
+## Continuous integration and deployment
+### CI
+`Jenkinsfile` manages several automated checks that are run on every commit pushed to github.
+- Unit tests (these currently test the python scripts)
+- Flake8 static analysis (of python scripts)
+- UI tests (simple smoke tests to confirm the Jekyll build succeeded)
+- Integration tests (For now, consists of running the data update scripts to confirm they don't throw errors)
 
-Our deployments are handled by Jenkins using the `Jenkinsfile`. We deploy by committing to the `production` branch. We use the `development` branch to deploy to our development server to internally demo new boards or tile updates without blocking the data update path from `master` to `production`.
+### Deployment
+The site is automatically deployed by `Jenkinsfile` when certain branches change, provided the tests pass:
+
+| branch | environment |
+|---|---|
+| development | https://dev.va.gov/scorecard |
+| master | https://staging.va.gov/scorecard |
+| production | https://www.va.gov/scorecard |
+
+There are two pathways to getting into production:
+1. Merge development branch to master, confirm staging works, then merge master to production. The merging is currently
+ a manual process and is used for code updates. (the deploy is automated by `Jenkinsfile`)
+2. The `Jenkinsfile.update` script runs nightly, which downloads new data and commits it to `master` 
+branch. If this is successful, it triggers the `Jenkinsfile.automerge` script, which will merge the latest from master 
+into production. New commits to `production` will trigger `Jenkinsfile` which will run CI and deploy the site. This is 
+automated (defined [here](https://github.com/department-of-veterans-affairs/devops/blob/master/ansible/deployment/config/jenkins-vetsgov/seed_job.groovy)).
+
+
 
 ## Developer Onboarding
 
@@ -167,7 +193,10 @@ More useful developer onboarding documentation can be [found here](dev/onboardin
 
 The current list of supported browsers for scorecard redesign include Chrome 61, Firefox 60, iOS 11, Edge 16, ChromeAndroid 67, Safari 11. This list aligns with the [vets-website list](https://github.com/department-of-veterans-affairs/vets-website/blob/master/.babelrc#L16).
 
-## Previous Repo
+## Previous Dashboards
 
-This repo previously held a now defunct dashboard. The prior work is archived as a release on this repo in case that 
-work needs to be revisited.
+This repo previously held two now defunct dashboards / 
+
+The first iteration (vets.gov status) is archived as  [release 0.1](https://github.com/department-of-veterans-affairs/vets.gov-status/releases/tag/0.1).
+
+The second iteration (VA.gov scorecard) is archived as [release 1.0](https://github.com/department-of-veterans-affairs/vets.gov-status/releases/tag/1.0).
