@@ -32,7 +32,7 @@
                 {% if service.csat_trend > 0 %}
                     <i class="fas fa-arrow-circle-up vads-u-color--primary"></i>
                     Up {{ service.csat_trend | abs }}% year-over-year
-                {% elsif service.users_trend < 0 %}
+                {% elsif service.csat_trend < 0 %}
                     <i class="fas fa-arrow-circle-down vads-u-color--primary"></i>
                     Down {{ service.csat_trend | abs }}% year-over-year
                 {% else %}
