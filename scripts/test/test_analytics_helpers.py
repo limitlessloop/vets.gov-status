@@ -1,6 +1,6 @@
 import google_analytics.analytics_helpers
-from google_analytics.analytics_helpers import make_df, make_table, get_totals_from_report, calculate_trend, \
-    sort_tools_by_transactions
+from google_analytics.analytics_helpers import make_df, make_table, get_totals_from_report, sort_tools_by_transactions
+from utils.calculation_utils import calculate_trend
 import pytest
 import pandas as pd
 

@@ -3,8 +3,10 @@ import csv
 import requests
 import logging
 import pandas as pd
+
+from utils.calculation_utils import calculate_trend
 from utils.datetime_utils import find_last_twelve_months, find_last_thirty_days, one_year_before
-from foresee.foresee_helpers import make_table_from_foresee_response
+from foresee.foresee_helpers import make_table_from_foresee_response, get_average_score
 
 MEASURE_ID = "8847572"
 
@@ -139,10 +141,6 @@ def get_foresee_items_for_services():
     return recent_df, last_year_df
 
 
-def get_average_score(df, url):
-    return float(df[df['url'].str.contains(url)].mean(axis=0)['Satisfaction'])
-
-
 def fetch_foresee_data_for_services(services):
     recent_df, last_year_df = get_foresee_items_for_services()
 
@@ -154,7 +152,7 @@ def fetch_foresee_data_for_services(services):
         last_year_csat_score = get_average_score(last_year_df, page_path)
         service_data[service['title']] = {
             'csat': recent_csat_score,
-            'csat_trend': recent_csat_score - last_year_csat_score
+            'csat_trend': calculate_trend(last_year_csat_score, recent_csat_score)
         }
 
     return service_data

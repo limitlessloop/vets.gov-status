@@ -68,10 +68,6 @@ def make_table(rows, dim_labels, metric_labels):
     return output
 
 
-def calculate_trend(previous_total, recent_total):
-    return ((recent_total - previous_total) / previous_total) * 100
-
-
 def sort_tools_by_transactions(tools):
     tools.sort(reverse=True, key=lambda t: t['transactions'])
 
