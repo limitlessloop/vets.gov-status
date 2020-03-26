@@ -179,12 +179,3 @@ def update_csat():
     write_to_csv(last_year_data)
     print(overall_average_score)
     return overall_average_score
-
-
-def main():
-    logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', level=logging.INFO)
-    update_csat()
-
-
-if __name__ == '__main__':
-    main()
