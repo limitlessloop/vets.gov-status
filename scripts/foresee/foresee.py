@@ -148,11 +148,11 @@ def fetch_foresee_data_for_services(services):
 
     for service in services:
         page_path = service['page_path_filter']
-        recent_csat_score = get_average_score(recent_df, page_path)
-        last_year_csat_score = get_average_score(last_year_df, page_path)
+        recent_csat_score = round(get_average_score(recent_df, page_path), 1)
+        last_year_csat_score = round(get_average_score(last_year_df, page_path), 1)
         service_data[service['title']] = {
             'csat': recent_csat_score,
-            'csat_trend': calculate_trend(last_year_csat_score, recent_csat_score)
+            'csat_trend': round(calculate_trend(last_year_csat_score, recent_csat_score))
         }
 
     return service_data

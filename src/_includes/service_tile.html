@@ -27,14 +27,14 @@
             <h4 class="vads-u-font-family--sans vads-u-font-weight--normal vads-u-margin-bottom--0">
                 USER SATISFACTION
             </h4>
-            <span class="vads-u-font-weight--bold vads-u-font-size--lg vads-u-font-family--serif">{{ service.csat | round: 1 }}%</span>
+            <span class="vads-u-font-weight--bold vads-u-font-size--lg vads-u-font-family--serif">{{ service.csat }}%</span>
             <span>
                 {% if service.csat_trend > 0 %}
                     <i class="fas fa-arrow-circle-up vads-u-color--primary"></i>
-                    Up {{ service.csat_trend | abs | round }}% Last 30 days
+                    Up {{ service.csat_trend | abs }}% year-over-year
                 {% elsif service.users_trend < 0 %}
                     <i class="fas fa-arrow-circle-down vads-u-color--primary"></i>
-                    Down {{ service.csat_trend | abs | round }}% Last 30 days
+                    Down {{ service.csat_trend | abs }}% year-over-year
                 {% else %}
                     <i class="fas fa-minus-circle vads-u-color--primary"></i>
                     No change year-over-year
