@@ -159,6 +159,7 @@ def fetch_foresee_data_for_services(services):
 
 
 def write_to_csv(twelve_months_scores):
+    twelve_months_scores.reverse()
     full_filename = path.join(environ['DATA_DIR'], 'csat_score.csv')
     mode = 'x'
     if path.exists(full_filename):
