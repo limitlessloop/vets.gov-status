@@ -78,18 +78,18 @@ def test_find_last_thirty_days():
 
 def test_find_last_twelve_months():
     expected_dates = [
-        (datetime.date(2020, 2, 1), datetime.date(2020, 2, 29)),
-        (datetime.date(2020, 1, 1), datetime.date(2020, 1, 31)),
-        (datetime.date(2019, 12, 1), datetime.date(2019, 12, 31)),
-        (datetime.date(2019, 11, 1), datetime.date(2019, 11, 30)),
-        (datetime.date(2019, 10, 1), datetime.date(2019, 10, 31)),
-        (datetime.date(2019, 9, 1), datetime.date(2019, 9, 30)),
-        (datetime.date(2019, 8, 1), datetime.date(2019, 8, 31)),
-        (datetime.date(2019, 7, 1), datetime.date(2019, 7, 31)),
-        (datetime.date(2019, 6, 1), datetime.date(2019, 6, 30)),
-        (datetime.date(2019, 5, 1), datetime.date(2019, 5, 31)),
+        (datetime.date(2019, 3, 1), datetime.date(2019, 3, 31)),
         (datetime.date(2019, 4, 1), datetime.date(2019, 4, 30)),
-        (datetime.date(2019, 3, 1), datetime.date(2019, 3, 31))
+        (datetime.date(2019, 5, 1), datetime.date(2019, 5, 31)),
+        (datetime.date(2019, 6, 1), datetime.date(2019, 6, 30)),
+        (datetime.date(2019, 7, 1), datetime.date(2019, 7, 31)),
+        (datetime.date(2019, 8, 1), datetime.date(2019, 8, 31)),
+        (datetime.date(2019, 9, 1), datetime.date(2019, 9, 30)),
+        (datetime.date(2019, 10, 1), datetime.date(2019, 10, 31)),
+        (datetime.date(2019, 11, 1), datetime.date(2019, 11, 30)),
+        (datetime.date(2019, 12, 1), datetime.date(2019, 12, 31)),
+        (datetime.date(2020, 1, 1), datetime.date(2020, 1, 31)),
+        (datetime.date(2020, 2, 1), datetime.date(2020, 2, 29))
     ]
     with freeze_time("2020-03-10"):
         last_twelve_month_dates = find_last_twelve_months()
