@@ -54,4 +54,7 @@ def find_last_twelve_months():
     previous_twelve_months = [
         find_last_day_of_previous_month(current_date - relativedelta(months=m)) for m in range(0, 12)
     ]
-    return [(last_day_of_month.replace(day=1), last_day_of_month) for last_day_of_month in previous_twelve_months]
+    month_time_ranges = [(last_day_of_month.replace(day=1), last_day_of_month)
+                         for last_day_of_month in previous_twelve_months]
+    month_time_ranges.reverse()
+    return month_time_ranges

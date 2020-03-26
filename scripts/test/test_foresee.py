@@ -2,6 +2,7 @@ import json
 from unittest import mock
 import pandas as pd
 import foresee.foresee as foresee
+import foresee.foresee_helpers as foresee_helpers
 
 response_str: str = \
     "{\"hasMore\":true,\"total\":5221,\"items\":[{\"id\":\"V185Vop4U5hthwFF5cUdRA4C\"," \
@@ -70,7 +71,15 @@ def test_fetch_foresee_data_for_services(monkeypatch):
     mock_get_foresee_items_for_services = mock.Mock()
     mock_get_foresee_items_for_services.return_value = (recent_df, last_year_df)
 
+    mock_get_average_score = mock.Mock()
+    mock_get_average_score.side_effect = [75.0, 55.0, 40.0, 80.0]
+
+    mock_calculate_trend = mock.Mock()
+    mock_calculate_trend.side_effect = [10.0, -10.0]
+
     monkeypatch.setattr(foresee, "get_foresee_items_for_services", mock_get_foresee_items_for_services)
+    monkeypatch.setattr(foresee_helpers, "get_average_score", mock_get_average_score)
+    monkeypatch.setattr(foresee, "calculate_trend", mock_calculate_trend)
 
     services = [
         {'title': 'Some-Service-1', 'page_path_filter': 'some-url-1'},
@@ -80,11 +89,11 @@ def test_fetch_foresee_data_for_services(monkeypatch):
     expected_result = {
         'Some-Service-1': {
             'csat': 75.0,
-            'csat_trend': 20.0
+            'csat_trend': 10.0
         },
         'Some-Service-2': {
             'csat': 40.0,
-            'csat_trend': -40.0
+            'csat_trend': -10.0
         }
     }
 
