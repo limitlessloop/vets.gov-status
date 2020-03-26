@@ -10,7 +10,7 @@ if [ -n "${CI:-}" ]; then
 fi
 
 echo Running Google Analytics scripts...
-python -m google_analytics.fetch_ga_data
+python -m fetch_data
 
 echo Modifying Last Updated date...
 current_date=$(date "+%B %d, %Y")

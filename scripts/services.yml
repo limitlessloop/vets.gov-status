@@ -23,7 +23,7 @@ services:
 #        page_path_filter: '/view-disability-rating/'
 #        event_category_filter: 'Transactions'
   - title: 'Education'
-    page_path_filter: 'www.va.gov/(gi-bill|education)'
+    page_path_filter: 'www.va.gov/gi-bill|www.va.gov/education'
     tools:
       - title: 'GI Bill® Comparison Tool'
         page_path_filter: '/gi-bill-comparison-tool'
