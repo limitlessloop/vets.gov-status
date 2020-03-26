@@ -2,8 +2,11 @@ from os import environ, path
 import csv
 import requests
 import logging
-from utils.datetime_utils import find_last_twelve_months
-from time import sleep
+import pandas as pd
+from utils.datetime_utils import find_last_twelve_months, find_last_thirty_days, one_year_before
+from foresee.foresee_helpers import make_table_from_foresee_response
+
+MEASURE_ID = "8847572"
 
 AUTHORIZATION = 'authorization'
 
@@ -31,9 +34,9 @@ def authenticate():
     return response.json()['access_token']
 
 
-def get_measure_data(bearer_token, measure, from_date, to_date):
+def get_measure_data(bearer_token, from_date, to_date):
     offset = 0
-    url = "https://api.foresee.com/v1/measures/" + measure + "/data"
+    url = "https://api.foresee.com/v1/measures/" + MEASURE_ID + "/data"
     headers = {
         'accept': 'application/json',
         AUTHORIZATION: "Bearer " + bearer_token
@@ -101,12 +104,11 @@ def fetch_last_12_months_data():
     last_year_data = []
     last_twelve_months = find_last_twelve_months()
 
-    measure_id = "8847572"
     bearer_token = authenticate()
 
     # get values for the last 12 months and calculate average for each month
     for start_end_date in last_twelve_months:
-        month_data = get_measure_data(bearer_token, measure_id, start_end_date[0].isoformat(),
+        month_data = get_measure_data(bearer_token, start_end_date[0].isoformat(),
                                       start_end_date[1].isoformat())
         month_year_text = str(start_end_date[0].month) + '/' + str(start_end_date[0].year)
         one_month_dict = {
@@ -116,8 +118,6 @@ def fetch_last_12_months_data():
         }
         last_year_data.append(one_month_dict)
         logging.info("Calculated %s average: %.2f", month_year_text, one_month_dict[CSAT_SCORE])
-        # we use sleep to avoid ForeSee timeouts
-        sleep(1)
     return last_year_data
 
 
@@ -126,6 +126,38 @@ def calculate_overall_average_satisfaction(last_year_data):
     for one_month_data in last_year_data:
         all_data.extend(one_month_data[MONTH_DATA])
     return calculate_average_satisfaction(all_data)
+
+
+def get_foresee_items_for_services():
+    start_date, end_date = find_last_thirty_days()
+    recent_items = get_measure_data(authenticate(), start_date, end_date)
+    recent_df = pd.DataFrame(make_table_from_foresee_response(recent_items))
+
+    last_year_items = get_measure_data(authenticate(), one_year_before(start_date), one_year_before(end_date))
+    last_year_df = pd.DataFrame(make_table_from_foresee_response(last_year_items))
+
+    return recent_df, last_year_df
+
+
+def get_average_score(df, url):
+    return float(df[df['url'].str.contains(url)].mean(axis=0)['Satisfaction'])
+
+
+def fetch_foresee_data_for_services(services):
+    recent_df, last_year_df = get_foresee_items_for_services()
+
+    service_data = {}
+
+    for service in services:
+        page_path = service['page_path_filter']
+        recent_csat_score = get_average_score(recent_df, page_path)
+        last_year_csat_score = get_average_score(last_year_df, page_path)
+        service_data[service['title']] = {
+            'csat': recent_csat_score,
+            'csat_trend': recent_csat_score - last_year_csat_score
+        }
+
+    return service_data
 
 
 def write_to_csv(twelve_months_scores):
