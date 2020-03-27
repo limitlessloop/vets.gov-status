@@ -2,7 +2,6 @@
 # Tested with GNU Make 3.8.1
 MAKEFLAGS += --warn-undefined-variables
 SHELL        	:= /usr/bin/env bash -e
-COMPOSE_UI_TEST := docker-compose -f docker-compose-ui-test.yml
 CI_ARG      	:= $(CI)
 
 .DEFAULT_GOAL := help
@@ -51,8 +50,8 @@ run: yarn-install  ## Build the Jekyll site and start the Jekyll webserver on po
 
 ## Pip / Python
 
-# python-install recipe all has to run in a single shell
 .PHONY: python-install
+# python-install recipe all has to run in a single shell because it's running inside a virtualenv
 python-install:  ## Sets up your python environment for the first time (only need to run once)
 	pip install virtualenv ;\
 	virtualenv -p ~/.pyenv/shims/python ENV ;\
@@ -89,6 +88,11 @@ endif
 .PHONY: pip-install
 pip-install: $(SITE_PACKAGES)
 
+## Data fetch targets
+.PHONY: fetch-data-local
+fetch-data-local: pip-install
+	cd scripts; ./fetch-data-local.sh
+
 ## Test targets
 .PHONY: unit-test
 unit-test: pip-install  ## Run python unit tests
@@ -123,10 +127,6 @@ integration-test: pip-install  ## Run data integration test
 .PHONY: test
 test: unit-test flake8 ui-test integration-test  ## Run unit tests, static analysis, integration, and ui tests
 	@echo "All tests passed."  # This should only be printed if all of the other targets succeed
-
-# .PHONY: docker-clean
-# docker-clean:
-# 	$(COMPOSE_UI_TEST) down --rmi all --volumes
 
 ## Sonarqube
 # Bring up sonar and wait a bit for it to start

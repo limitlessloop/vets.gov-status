@@ -9,7 +9,7 @@
   id: csat
   csvFilename: csat_score
   colName: csat_score
-  dataLabel: CSAT Score
+  dataLabel: User Satisfaction
   yAxisLabel: User Satisfaction (%)
 
 - title: Successful Transactions
