@@ -116,8 +116,12 @@ ui-test: build   ## Run UI tests nightwatch, chromedriver and chrome
 ci-ui-test:    ## Run UI tests nightwatch, chromedriver and chrome in CI without jekyll-build
 	yarn run ui-test-headless
 
+.PHONY: integration-test
+integration-test: pip-install  ## Run data integration test
+	cd scripts; INTEGRATION_TEST=TRUE ./fetch-data-docker-wrapper.sh
+
 .PHONY: test
-test: unit-test flake8 ui-test ## Run unit tests, static analysis and ui tests
+test: unit-test flake8 ui-test integration-test  ## Run unit tests, static analysis, integration, and ui tests
 	@echo "All tests passed."  # This should only be printed if all of the other targets succeed
 
 # .PHONY: docker-clean

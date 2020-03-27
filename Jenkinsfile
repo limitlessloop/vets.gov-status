@@ -32,10 +32,7 @@ pipeline {
     stage('Data fetch integration test') {
       steps{
         script {
-          dir('scripts') {
-            // sh './fetch-data-docker-wrapper.sh'
-            echo "Disabled for now"
-          }
+          sh 'make integration-test'
         }
       }
     }

@@ -86,7 +86,10 @@ We use the [`google-api-python-client`](https://pypi.org/project/google-api-pyth
 Service account credentials are obtained through credstash.
 
 ### Foresee
-We use [ForeSee API](https://developer.foresee.com/docs/public-api) to collect CSAT scores.
+We use [ForeSee API](https://developer.foresee.com/docs/public-api) to collect CSAT scores.  We pull data for the [VA Main V2](https://cxsuite.foresee.com/client/measures/8847572/analytics/summary) CX survey.
+For the API VA Main V2 corresponds to measure id `8847572`.
+This means that if for any reason a new survey is created the measure id will change hence the code should change.
+
 The ForeSee API has a 100 record limit per request so multiple API calls are required to obtain all the records for a period.  For example, we have to send 25 requests to fetch all the records
 for one month. To fetch one year worth of data it takes around 10 minutes.  The API token might expire between the requests hence the code supports renewing API token. 
 
@@ -151,6 +154,7 @@ Go into the scripts directory and run the scripts with `./fetch-data-local.sh`
 The scripts get secrets out of [credstash](https://github.com/fugue/credstash) when running in CI.
 
 When running locally, you can ask a colleague for the `ga-serviceaccount.json` file and place it in `scripts/local_credentials`.
+
 The Foresee credentials can be set locally by exporting the FORESEE_CREDENTIALS variable with valid Foresee credentials.
 
 ### Adding new packages to python scripts

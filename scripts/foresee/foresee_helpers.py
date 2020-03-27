@@ -8,3 +8,7 @@ def make_table_from_foresee_response(response_items):
                 'url': url_responses[0]['answers'][0]
             })
     return score_url_table
+
+
+def get_average_score(df, url):
+    return float(df[df['url'].str.contains(url)].mean(axis=0)['Satisfaction'])

@@ -1,4 +1,6 @@
-from foresee.foresee_helpers import make_table_from_foresee_response
+import pandas as pd
+
+import foresee.foresee_helpers as foresee_helpers
 
 
 def test_make_table_from_foresee_response():
@@ -49,7 +51,7 @@ def test_make_table_from_foresee_response():
         }
     ]
 
-    assert expected_table == make_table_from_foresee_response(response_items)
+    assert expected_table == foresee_helpers.make_table_from_foresee_response(response_items)
 
 
 def test_make_table_from_foresee_response_should_not_include_items_without_urls():
@@ -84,4 +86,17 @@ def test_make_table_from_foresee_response_should_not_include_items_without_urls(
         }
     ]
 
-    assert make_table_from_foresee_response(response_items) == []
+    assert foresee_helpers.make_table_from_foresee_response(response_items) == []
+
+
+def test_get_average_score():
+    data = [
+        {'Satisfaction': 80.0, 'url': 'some-url-1'},
+        {'Satisfaction': 70.0, 'url': 'some-url-1'},
+        {'Satisfaction': 40.0, 'url': 'some-url-2'},
+    ]
+    df = pd.DataFrame(data)
+
+    score = foresee_helpers.get_average_score(df, 'some-url-1')
+    assert isinstance(score, float)
+    assert score == 75.0

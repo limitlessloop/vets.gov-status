@@ -1,6 +1,7 @@
 from foresee.foresee import update_csat, fetch_foresee_data_for_services
 from google_analytics.analytics_helpers import initialize_analyticsreporting, get_totals_from_report, \
-    calculate_trend, sort_tools_by_transactions, get_total_from_report, write_report_to_csv
+    sort_tools_by_transactions, get_total_from_report, write_report_to_csv
+from utils.calculation_utils import calculate_trend
 from google_analytics.ga_requests import get_logged_in_users_request, get_all_transactions_request, \
     get_last_month_users_request, get_transactions_for_tools_request
 from ruamel import yaml
