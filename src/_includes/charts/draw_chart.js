@@ -25,6 +25,9 @@ var chart = new Chart(ctx, {
                     }
                     // regex taken from https://stackoverflow.com/a/2901298
                     label += tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    {% if chart.id == 'csat' %}
+                    label += '%'
+                    {% endif %}
                     return label;
                 }
             }
