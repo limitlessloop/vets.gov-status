@@ -15,6 +15,11 @@ var chart = new Chart(ctx, {
         }]
     },
     options: {
+        layout: {
+            padding: {
+                left: 5,
+            },
+        },
         tooltips: {
             callbacks: {
                 label: function(tooltipItem, data) {
@@ -25,6 +30,9 @@ var chart = new Chart(ctx, {
                     }
                     // regex taken from https://stackoverflow.com/a/2901298
                     label += tooltipItem.yLabel.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    {% if chart.id == 'csat' %}
+                    label += '%'
+                    {% endif %}
                     return label;
                 }
             }
@@ -34,6 +42,9 @@ var chart = new Chart(ctx, {
         },
         scales: {
             yAxes: [{
+                afterFit: function(scale) {
+                    scale.width = 55  //<-- set value as you wish
+                },
                 gridLines: {
                     tickMarkLength: 0,
                     zeroLineWidth: 1,
