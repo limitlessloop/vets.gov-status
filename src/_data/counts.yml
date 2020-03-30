@@ -5,9 +5,9 @@ services:
   title: Health Care
   tools:
   - title: Apply for health care benefits
-    transactions: 6515
+    transactions: 6511
   - title: Schedule and view VA appointments online
-    transactions: 244
+    transactions: 243
   users_total: 481156
   users_trend: 48.4
 - csat: 59.7
@@ -15,9 +15,9 @@ services:
   title: Disability
   tools:
   - title: Check VA claim or appeal status
-    transactions: 1557901
+    transactions: 1559017
   - title: File for disability compensation
-    transactions: 18243
+    transactions: 18220
   users_total: 422888
   users_trend: 55.8
 - csat: 76.7
@@ -25,25 +25,25 @@ services:
   title: Education
   tools:
   - title: "GI Bill\xAE Comparison Tool"
-    transactions: 115323
+    transactions: 115630
   - title: Check Post 9/11 GI Bill benefits
-    transactions: 53508
+    transactions: 53427
   - title: Apply for education benefits
-    transactions: 15047
+    transactions: 15065
   - title: Manage education benefits
-    transactions: 11545
+    transactions: 11587
   - title: Apply for VET TEC
-    transactions: 5233
+    transactions: 5217
   - title: Apply for education benefits as an eligible dependent
-    transactions: 3991
+    transactions: 4044
   - title: Apply to use transferred education benefits
-    transactions: 2199
+    transactions: 2204
   - title: Manage education benefits as an eligible dependent
-    transactions: 1181
+    transactions: 1193
   - title: "GI Bill\xAE School Feedback Tool"
-    transactions: 326
+    transactions: 344
   - title: Apply for education benefits under the NCS program
-    transactions: 102
+    transactions: 101
   users_total: 317828
   users_trend: 19.5
 - csat: 83.2
@@ -51,9 +51,9 @@ services:
   title: Burials & Memorials
   tools:
   - title: Apply for pre-need eligibility determination
-    transactions: 2077
+    transactions: 2063
   - title: Apply for burial benefits
-    transactions: 713
+    transactions: 708
   users_total: 58539
   users_trend: 42.9
 - csat: 74.1
@@ -61,7 +61,7 @@ services:
   title: Pension & Fiduciary
   tools:
   - title: Apply for Veterans Pension benefits
-    transactions: 733
+    transactions: 728
   users_total: 107185
   users_trend: 65.8
 - csat: 60.2
@@ -69,11 +69,11 @@ services:
   title: Profile & Records
   tools:
   - title: Download VA benefits letters
-    transactions: 111149
+    transactions: 111888
   - title: Update contact information & preferences
-    transactions: 88814
+    transactions: 88775
   - title: Update direct deposit information
-    transactions: 15800
+    transactions: 15793
   users_total: 291141
   users_trend: 21.8
 transactions_total: 27200509
