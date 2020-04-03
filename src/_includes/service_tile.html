@@ -1,6 +1,8 @@
 <section class="service-tile">
     <h3 class="vads-u-font-family--serif" id="{{ service.title | slugify }}-tile">{{ service.title }}</h3>
 
+    <span class="vads-u-font-size--sm">Usage data from previous 30 days</span>
+
     {% if service.users_total %}
         <div class="vads-u-margin-y--2">
             <h4 class="vads-u-font-family--sans vads-u-font-weight--normal vads-u-margin-bottom--0">
