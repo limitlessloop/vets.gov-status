@@ -110,12 +110,11 @@ def test_send_one_request_fail_all_attempts(monkeypatch):
     mock_request.return_value = mock_response
 
     mock_authenticate = mock.Mock()
-    mock_authenticate.return_value = mock.Mock()
     mock_authenticate.return_value = "anything"
 
     monkeypatch.setattr("requests.request", mock_request)
     monkeypatch.setattr(foresee, "authenticate", mock_authenticate)
-    with pytest.raises(Exception) as ex:
+    with pytest.raises(RuntimeError) as ex:
         foresee.send_one_request({'h1': 'h1'}, 'query', 'url')
 
     assert str(ex.value) == "401 for testing"
@@ -123,7 +122,6 @@ def test_send_one_request_fail_all_attempts(monkeypatch):
 
 def test_send_one_request_success_after_one_attempt(monkeypatch):
     mock_authenticate = mock.Mock()
-    mock_authenticate.return_value = mock.Mock()
     mock_authenticate.return_value = "anything"
     counter_dict = {"counter": 0}
 
@@ -140,3 +138,47 @@ def test_send_one_request_success_after_one_attempt(monkeypatch):
     response = foresee.send_one_request({'h1': 'h1'}, 'query', 'url')
 
     assert response.status_code == 200
+
+
+def test_authenticate_failure(monkeypatch):
+    mock_response = mock.Mock()
+    mock_response.status_code = 401
+
+    mock_request = mock.Mock()
+    mock_request.return_value = mock_response
+
+    monkeypatch.setattr("requests.request", mock_request)
+    monkeypatch.setenv("FORESEE_CREDENTIALS", "dummy credentials")
+
+    with pytest.raises(PermissionError):
+        foresee.authenticate()
+
+
+def test_authenticate_success(monkeypatch):
+    mock_response = mock.Mock()
+    mock_response.status_code = 200
+
+    mock_request = mock.Mock()
+    mock_request.return_value = mock_response
+
+    monkeypatch.setattr(mock_response, 'json', lambda: {'access_token': 'dummy token'})
+    monkeypatch.setattr('requests.request', mock_request)
+    monkeypatch.setenv('FORESEE_CREDENTIALS', 'dummy credentials')
+
+    token = foresee.authenticate()
+
+    assert token == 'dummy token'
+
+
+def test_get_measure_data(monkeypatch):
+    mock_send_one_request_response = mock.Mock()
+
+    mock_send_one_request = mock.Mock()
+    mock_send_one_request.return_value = mock_send_one_request_response
+
+    monkeypatch.setattr(mock_send_one_request_response, 'json', lambda: {'hasMore': False, 'items': []})
+    monkeypatch.setattr(foresee, "send_one_request", mock_send_one_request)
+
+    actual_return_items = foresee.get_measure_data('None', 'None', 'None')
+
+    assert actual_return_items == []
