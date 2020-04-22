@@ -81,12 +81,12 @@ class ForeSeeError(RuntimeError):
 
 
 @retry(
-    retry=retry_if_exception_type(ForeSeeError)
-    , wait=wait_exponential(multiplier=3, min=10, max=50)
-    , stop=stop_after_attempt(5)
-    , before_sleep=before_sleep_log(logging.getLogger(), logging.WARNING)
-    , after=renew_token
-    , reraise=True
+    retry=retry_if_exception_type(ForeSeeError),
+    wait=wait_exponential(multiplier=3, min=10, max=50),
+    stop=stop_after_attempt(5),
+    before_sleep=before_sleep_log(logging.getLogger(), logging.WARNING),
+    after=renew_token,
+    reraise=True
 )
 def send_one_request(headers, querystring, url):
     response = requests.request("GET", url, headers=headers, params=querystring)
