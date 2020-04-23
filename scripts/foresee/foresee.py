@@ -1,4 +1,5 @@
 from os import environ, path
+from tenacity import retry, stop_after_attempt, wait_exponential, before_sleep_log, retry_if_exception_type
 import csv
 import requests
 import logging
@@ -70,27 +71,29 @@ def get_measure_data(bearer_token, from_date, to_date):
     return measure_data
 
 
-def send_one_request(headers, querystring, url):
-    request_counter = 3
-    should_try = True
-    while should_try:
-        response = requests.request("GET", url, headers=headers, params=querystring)
-        if response.status_code != 200:
-            fail_reason = str(response.status_code) + " " + response.text
-            # try for 3 times
-            request_counter -= 1
-            if request_counter > 0:
-                logging.warning("request to foresee failed, trying again. The reason was " + fail_reason)
-                renew_token(headers)
-                continue
-            else:
-                raise RuntimeError(fail_reason)
-        return response
-
-
-def renew_token(headers):
+def renew_token(retry_state):
     new_token = authenticate()
-    headers[AUTHORIZATION] = "Bearer " + new_token
+    retry_state.args[0][AUTHORIZATION] = "Bearer " + new_token
+
+
+class ForeSeeError(RuntimeError):
+    pass
+
+
+@retry(
+    retry=retry_if_exception_type(ForeSeeError),
+    wait=wait_exponential(multiplier=3, min=10, max=50),
+    stop=stop_after_attempt(5),
+    before_sleep=before_sleep_log(logging.getLogger(), logging.WARNING),
+    after=renew_token,
+    reraise=True
+)
+def send_one_request(headers, querystring, url):
+    response = requests.request("GET", url, headers=headers, params=querystring)
+    if response.status_code != 200:
+        fail_reason = str(response.status_code) + " " + response.text
+        raise ForeSeeError(fail_reason)
+    return response
 
 
 def calculate_average_satisfaction(items):

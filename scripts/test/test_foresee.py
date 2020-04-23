@@ -2,6 +2,7 @@ import json
 from unittest import mock
 import pytest
 import pandas as pd
+
 import foresee.foresee as foresee
 import foresee.foresee_helpers as foresee_helpers
 
@@ -102,6 +103,9 @@ def test_fetch_foresee_data_for_services(monkeypatch):
 
 
 def test_send_one_request_fail_all_attempts(monkeypatch):
+    # we do this so unit test does not wait for the @retry sleep
+    foresee.send_one_request.retry.sleep = mock.Mock()
+
     mock_response = mock.Mock()
     mock_response.status_code = 401
     mock_response.text = "for testing"
@@ -114,13 +118,16 @@ def test_send_one_request_fail_all_attempts(monkeypatch):
 
     monkeypatch.setattr("requests.request", mock_request)
     monkeypatch.setattr(foresee, "authenticate", mock_authenticate)
-    with pytest.raises(RuntimeError) as ex:
-        foresee.send_one_request({'h1': 'h1'}, 'query', 'url')
+    with pytest.raises(foresee.ForeSeeError) as ex:
+        foresee.send_one_request({foresee.AUTHORIZATION: 'Bearer h1'}, 'query', 'url')
 
+    assert mock_authenticate.call_count == 5
     assert str(ex.value) == "401 for testing"
 
 
 def test_send_one_request_success_after_one_attempt(monkeypatch):
+    # we do this so unit test does not wait for the @retry sleep
+    foresee.send_one_request.retry.sleep = mock.Mock()
     mock_authenticate = mock.Mock()
     mock_authenticate.return_value = "anything"
     counter_dict = {"counter": 0}
@@ -135,8 +142,9 @@ def test_send_one_request_success_after_one_attempt(monkeypatch):
     monkeypatch.setattr("requests.request", mock_request_attr)
     monkeypatch.setattr(foresee, "authenticate", mock_authenticate)
 
-    response = foresee.send_one_request({'h1': 'h1'}, 'query', 'url')
+    response = foresee.send_one_request({foresee.AUTHORIZATION: 'h1'}, 'query', 'url')
 
+    assert mock_authenticate.call_count == 1
     assert response.status_code == 200
 
 
