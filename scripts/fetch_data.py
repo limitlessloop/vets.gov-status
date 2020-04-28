@@ -2,8 +2,9 @@ from foresee.foresee import update_csat, fetch_foresee_data_for_services
 from google_analytics.analytics_helpers import initialize_analyticsreporting, get_totals_from_report, \
     sort_tools_by_transactions, get_total_from_report, write_report_to_csv
 from utils.calculation_utils import calculate_trend
-from google_analytics.ga_requests import get_logged_in_users_request, get_all_transactions_request, \
-    get_last_month_users_request, get_transactions_for_tools_request
+from google_analytics.ga_requests import get_all_transactions_request, get_last_month_users_request, \
+    get_transactions_for_tools_request, get_total_logged_in_users_request, \
+    get_logged_in_users_per_month_request
 from ruamel import yaml
 from tenacity import retry, wait_fixed, stop_after_attempt
 import os
@@ -74,12 +75,14 @@ def main():
     write_report_to_csv(transactions_report, "all_transactions.csv")
 
     logging.info("Writing users data...")
-    users_report = get_ga_report(analytics_service, get_logged_in_users_request())
-    write_report_to_csv(users_report, "all_logged_in_users.csv")
+    total_users_report = get_ga_report(analytics_service, get_total_logged_in_users_request())
+    write_report_to_csv(total_users_report, "all_logged_in_users_total.csv")
+    monthly_users_report = get_ga_report(analytics_service, get_logged_in_users_per_month_request())
+    write_report_to_csv(monthly_users_report, "all_logged_in_users_per_month.csv")
 
     counts = {
         "transactions_total": get_total_from_report(transactions_report),
-        "users_total": get_total_from_report(users_report)
+        "users_total": get_total_from_report(total_users_report)
     }
 
     services_file_path = os.path.join(os.environ['CONFIG_DIR'], 'services.yml')

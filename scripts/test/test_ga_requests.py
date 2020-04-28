@@ -3,18 +3,24 @@ from unittest import mock
 from google_analytics import ga_requests
 
 
-def test_get_logged_in_users_request_should_substitute_dates(monkeypatch):
+def test_get_logged_in_users_requests_should_substitute_dates(monkeypatch):
 
     mock_find_last_full_twelve_months = mock.Mock()
     mock_find_last_full_twelve_months.return_value = (datetime.date(2018, 12, 25), datetime.date(2019, 12, 25))
 
     monkeypatch.setattr(ga_requests, "find_last_full_twelve_months", mock_find_last_full_twelve_months)
 
-    request = ga_requests.get_logged_in_users_request()
+    request_total = ga_requests.get_total_logged_in_users_request()
 
-    assert len(request["dateRanges"]) == 1
-    assert request["dateRanges"][0]["startDate"] == "2018-12-25"
-    assert request["dateRanges"][0]["endDate"] == "2019-12-25"
+    assert len(request_total["dateRanges"]) == 1
+    assert request_total["dateRanges"][0]["startDate"] == "2018-12-25"
+    assert request_total["dateRanges"][0]["endDate"] == "2019-12-25"
+
+    request_by_month = ga_requests.get_logged_in_users_per_month_request()
+
+    assert len(request_by_month["dateRanges"]) == 1
+    assert request_by_month["dateRanges"][0]["startDate"] == "2018-12-25"
+    assert request_by_month["dateRanges"][0]["endDate"] == "2019-12-25"
 
 
 def test_get_last_month_users_request_should_substitute_dates_and_path(monkeypatch):

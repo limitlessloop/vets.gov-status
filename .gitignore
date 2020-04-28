@@ -16,7 +16,7 @@ scripts/data/*
 !scripts/data/.keep
 
 # local cache of credentials
-serviceaccount.json
+scripts/local_credentials/ga-serviceaccount.json
 scripts/local_credentials/*
 !/scripts/local_credentials/.keep
 
