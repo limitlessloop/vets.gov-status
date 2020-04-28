@@ -25,7 +25,7 @@
          aria-label="Select a dataset">
         <ul class="vads-l-row usa-sidenav-list">
             {% for chart in site.data.at_a_glance %}
-            <li class="vads-l-col--6 small-screen:vads-l-col--4 medium-screen:vads-l-col--12">
+            <li class="vads-l-col--4 medium-screen:vads-l-col--12">
                 <button tabindex="0"
                    role="tab"
                    aria-controls="{{ chart.id }}Chart"
@@ -37,7 +37,7 @@
                     <h3 class="vads-u-font-family--sans vads-u-margin-y--0">
                         {{ chart.title | upcase }}
                     </h3>
-                    <span class="vads-u-font-weight--bold vads-u-font-size--lg vads-u-font-family--serif">
+                    <span class="vads-u-font-weight--bold vads-u-font-family--serif vads-u-font-size--md small-screen:vads-u-font-size--lg">
                         {{ site.data.counts[chart_total_key] | intcomma }}
                     </span>
 
