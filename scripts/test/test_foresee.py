@@ -190,3 +190,27 @@ def test_get_measure_data(monkeypatch):
     actual_return_items = foresee.get_measure_data('None', 'None', 'None')
 
     assert actual_return_items == []
+
+
+def test_fetch_last_month_csat():
+    last_year_data = [
+        {
+            'date': '4/2019',
+            'month_data': 'month_data',
+            'csat_score': 40.0
+        },
+        {
+            'date': '5/2019',
+            'month_data': 'month_data',
+            'csat_score': 50.0
+        },
+        {
+            'date': '6/2019',
+            'month_data': 'month_data',
+            'csat_score': 60.0
+        }
+    ]
+
+    last_month_csat = foresee.fetch_last_month_csat(last_year_data)
+
+    assert last_month_csat == 60.0
