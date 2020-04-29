@@ -76,7 +76,6 @@ def main():
 
     logging.info("Writing users data...")
     total_users_report = get_ga_report(analytics_service, get_total_logged_in_users_request())
-    write_report_to_csv(total_users_report, "all_logged_in_users_total.csv")
     monthly_users_report = get_ga_report(analytics_service, get_logged_in_users_per_month_request())
     write_report_to_csv(monthly_users_report, "all_logged_in_users_per_month.csv")
 
