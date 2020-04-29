@@ -45,16 +45,6 @@ def test_calculates_average_satisfaction_score():
     assert 85.0 == foresee.calculate_average_satisfaction(json_response['items'])
 
 
-def test_calculate_average_satisfaction_of_all_data():
-    one_set_of_data = json.loads(response_str)
-    multiple_data_items = [
-        {foresee.MONTH_DATA: one_set_of_data['items']},
-        {foresee.MONTH_DATA: one_set_of_data['items']},
-        {foresee.MONTH_DATA: one_set_of_data['items']}
-    ]
-    assert 85.0 == foresee.calculate_overall_average_satisfaction(multiple_data_items)
-
-
 def test_fetch_foresee_data_for_services(monkeypatch):
     recent_data = [
         {'Satisfaction': 80.0, 'url': 'some-url-1'},

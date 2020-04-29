@@ -126,13 +126,6 @@ def fetch_last_12_months_data():
     return last_year_data
 
 
-def calculate_overall_average_satisfaction(last_year_data):
-    all_data = []
-    for one_month_data in last_year_data:
-        all_data.extend(one_month_data[MONTH_DATA])
-    return calculate_average_satisfaction(all_data)
-
-
 def get_foresee_items_for_services():
     start_date, end_date = find_last_thirty_days()
     recent_items = get_measure_data(authenticate(), start_date, end_date)
