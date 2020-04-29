@@ -126,13 +126,6 @@ def fetch_last_12_months_data():
     return last_year_data
 
 
-def calculate_overall_average_satisfaction(last_year_data):
-    all_data = []
-    for one_month_data in last_year_data:
-        all_data.extend(one_month_data[MONTH_DATA])
-    return calculate_average_satisfaction(all_data)
-
-
 def get_foresee_items_for_services():
     start_date, end_date = find_last_thirty_days()
     recent_items = get_measure_data(authenticate(), start_date, end_date)
@@ -177,8 +170,9 @@ def write_to_csv(twelve_months_scores):
 def update_csat():
     # get dates for last 12 months
     last_year_data = fetch_last_12_months_data()
-    # calculate average for the whole period
-    overall_average_score = calculate_overall_average_satisfaction(last_year_data)
     write_to_csv(last_year_data)
-    print(overall_average_score)
-    return overall_average_score
+    return fetch_last_month_csat(last_year_data)
+
+
+def fetch_last_month_csat(last_year_data):
+    return last_year_data[-1][CSAT_SCORE]

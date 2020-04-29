@@ -160,6 +160,7 @@ clean:  ## Delete any directories, files or logs that are auto-generated, except
 	rm -rf src/.jekyll-cache
 	rm -rf src/assets/vendor
 	rm -rf test/ui/logs
+	find scripts/data ! -name '.keep' -type f -exec rm -f {} +
 	find scripts -name '__pycache__' -type d | xargs rm -rf
 
 .PHONY: deepclean

@@ -45,16 +45,6 @@ def test_calculates_average_satisfaction_score():
     assert 85.0 == foresee.calculate_average_satisfaction(json_response['items'])
 
 
-def test_calculate_average_satisfaction_of_all_data():
-    one_set_of_data = json.loads(response_str)
-    multiple_data_items = [
-        {foresee.MONTH_DATA: one_set_of_data['items']},
-        {foresee.MONTH_DATA: one_set_of_data['items']},
-        {foresee.MONTH_DATA: one_set_of_data['items']}
-    ]
-    assert 85.0 == foresee.calculate_overall_average_satisfaction(multiple_data_items)
-
-
 def test_fetch_foresee_data_for_services(monkeypatch):
     recent_data = [
         {'Satisfaction': 80.0, 'url': 'some-url-1'},
@@ -190,3 +180,27 @@ def test_get_measure_data(monkeypatch):
     actual_return_items = foresee.get_measure_data('None', 'None', 'None')
 
     assert actual_return_items == []
+
+
+def test_fetch_last_month_csat():
+    last_year_data = [
+        {
+            'date': '4/2019',
+            'month_data': 'month_data',
+            'csat_score': 40.0
+        },
+        {
+            'date': '5/2019',
+            'month_data': 'month_data',
+            'csat_score': 50.0
+        },
+        {
+            'date': '6/2019',
+            'month_data': 'month_data',
+            'csat_score': 60.0
+        }
+    ]
+
+    last_month_csat = foresee.fetch_last_month_csat(last_year_data)
+
+    assert last_month_csat == 60.0

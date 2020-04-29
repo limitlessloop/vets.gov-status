@@ -78,7 +78,7 @@ pipeline {
           def envs = [
             'development': ['dev'],
             'master': ['staging'],
-            'production': ['staging'],  // todo: point this back to production once we are ready to go live
+            'production': ['prod'],
           ]
 
           for (e in envs.get(env.BRANCH_NAME, [])) {

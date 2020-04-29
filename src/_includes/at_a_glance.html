@@ -13,7 +13,7 @@
         <div class="additional-info-title">How is this measured?</div>
         <div class="additional-info-content">
             <p><span class="vads-u-font-weight--bold">Logged In Users: </span>The total count of all users who have logged in to VA.gov over the last 12 months, using ID.me or MyHealtheVet or DS Logon.</p>
-            <p><span class="vads-u-font-weight--bold">User Satisfaction: </span>An average user satisfaction score based on the feedback responses from users within the various service lines on VA.gov for the last 12 months.</p>
+            <p><span class="vads-u-font-weight--bold">User Satisfaction: </span>A monthly average user satisfaction score based on the feedback responses from users within the various service lines on VA.gov.</p>
             <p><span class="vads-u-font-weight--bold">Successful Transactions: </span> The total count of completed actions taken on VA.gov over the last 12 months. This includes applications submitted (e.g. health care, education, etc.), health appointments scheduled, claims status checked, benefit letters downloaded, and all other transactions completed using VA.gov tools.</p>
         </div>
     </div>
@@ -25,7 +25,7 @@
          aria-label="Select a dataset">
         <ul class="vads-l-row usa-sidenav-list">
             {% for chart in site.data.at_a_glance %}
-            <li class="vads-l-col--6 small-screen:vads-l-col--4 medium-screen:vads-l-col--12">
+            <li class="vads-l-col--4 medium-screen:vads-l-col--12">
                 <button tabindex="0"
                    role="tab"
                    aria-controls="{{ chart.id }}Chart"
@@ -37,9 +37,12 @@
                     <h3 class="vads-u-font-family--sans vads-u-margin-y--0">
                         {{ chart.title | upcase }}
                     </h3>
-                    <span class="vads-u-font-weight--bold vads-u-font-size--lg vads-u-font-family--serif">
+                    <span class="vads-u-font-weight--bold vads-u-font-family--serif vads-u-font-size--md small-screen:vads-u-font-size--lg">
                         {{ site.data.counts[chart_total_key] | intcomma }}
                     </span>
+                    <h3 class="vads-u-font-family--sans vads-u-margin-y--0">
+                        {{ chart.timeScaleLabel }}
+                    </h3>
 
                 </button>
             </li>
